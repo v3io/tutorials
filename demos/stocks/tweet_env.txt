@@ -1,5 +1,0 @@
-# Twitter credentials, fill with your App credentials
-app_key=qLreDnUMcI7LtYOxg3CorA4Gf
-app_secret=50fW4PXeUrBsjkaZVPeslmwbGutuQXPMRJx3nk8XKYmDqD9lSt
-oauth_token=1009953600-eSp3fFfq1KHrYhCFhkzjybPFaTWe57JQHY0BCBX
-oauth_token_secret=MT5NSJi70WMRcOpJ16i1tZDL3GqdyZsLKSUjA11hVEl0Z
