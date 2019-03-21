@@ -28,10 +28,11 @@ Iguazio provides a fully integrated and secure data science PaaS which simplify 
 enable collaboration, and address operational challenges. The platform incorporate the following components:
 
 •	Data science workbench (Jupyter with integrated analytics engines & Python packages) <br>
-•	Real-time dashboards based on Grafana
+•	Real-time dashboards based on Grafana<br>
 •	Managed data and ML services over scalable Kubernetes cluster <br>
 •	Real-time serverless functions framework (aka [Nuclio](https://github.com/nuclio/nuclio)).<br>
 •	Extremely fast and secure data layer supporting SQL, NoSQL, time series , files/objects and streaming <br>
+•	Integration with 3rd party data sources (S3, HDFS, SQL DBs, Streaming/messaging protocols, etc.)<br>
 
 <br>![](GettingStarted/iguazio-cloud.png)
 
