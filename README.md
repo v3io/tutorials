@@ -34,7 +34,7 @@ enable collaboration, and address operational challenges. The platform incorpora
 •	Extremely fast and secure data layer supporting SQL, NoSQL, time series , files/objects and streaming <br>
 •	Integration with 3rd party data sources (S3, HDFS, SQL DBs, Streaming/messaging protocols, etc.)<br>
 
-<br>![](GettingStarted/iguazio-cloud.png)
+<br>![](assets/images/igz-self-service-platform.png)
 
 We use Kubernetes as the baseline cluster manager and deploy various microservices on top to address the different data-science tasks.<br>
 most services support scaling out, support GPU acceleration, and have secure and low-latency access to iguazio shared database and file-system<br> 
@@ -58,7 +58,7 @@ Iguazio  enable a complete data science workflow in a single ready to use platfo
 * Deploy models and applications into production with Serverless functions
 * Log, monitor, and version all your data and services 
 
-<br><img src="GettingStarted/ds-workflow.png" align="middle">
+<br><img src="assets/images/igz-data-science-workflow.png" align="middle">
 
 
 Iguazio provides all the building blocks for creating data science applications from research to production. <br> 
