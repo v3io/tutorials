@@ -117,7 +117,7 @@ The examples include the following:
   - Using V3IO Frames &mdash; see the [frames](GettingStarted/frames.ipynb) notebook.
 - Ingesting and using Parquet data files &mdash;
   - Using Spark DataFrames &mdash; see the [getting-started tutorial example](GettingStarted/GettingStarted.ipynb#getting-started-example-step-convert-data-to-parquet) and [Getting Started with Data Ingestion Using Spark](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/data-ingestion-w-spark-qs/) tutorial.
-  - Using pandas DataFrames &mdash; see the [ReadWriteFromParquet](GettingStarted/.ipynb) notebook.
+  - Using pandas DataFrames &mdash; see the [ReadWriteFromParquet](GettingStarted/ReadWriteFromParquet.ipynb) notebook.
 - Ingesting binary image files &mdash; see the [Ingesting and Consuming Files](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/ingest-n-consume-files/) tutorial.
 
 <a id="data-exploration-and-processing"></a>
