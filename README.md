@@ -85,40 +85,7 @@ There are many ways to collect and ingest data from various sources into the pla
 - Ingesting (writing) data directly into the system using RESTful AWS-like simple-object, streaming, or NoSQL APIs
 - Using serverless functions to scrape or read data from external sources such as Twitter, weather services, or stock-trading data services
 
-<a id="data-collection-and-ingestion-examples"></a>
-#### Examples
-
-For details and examples, see the [GettingStarted](GettingStarted/GettingStarted.ipynb#data-collection-and-ingestion) tutorial Jupyter notbeooks and the [getting-started tutorials and guides](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/) in the platform documentation.
-The examples include the following:
-
-<a id="data-collection-and-ingestion-examples-by-data-sources"></a>
-##### Examples By Data Source
-
-- Ingesting data from an external SQL database to a NoSQL table using V3IO Frames &mdash; see the [ReadingFromExternalDB](GettingStarted/ReadingFromExternalDB.ipynb) notbeook.
-- Ingesting data from Amazon S3 &mdash; see the [GettingStarted](GettingStarted/GettingStarted.ipynb#ingest-from-amazon-s3) notebook.
-  - Ingesting data from Amazon S3 to a NoSQL table &mdash;
-    - Using Spark DataFrames and curl or Botocore &mdash; see the [getting-started tutorial example](GettingStarted/GettingStarted.ipynb#getting-started-example) and [Converting a CSV File to a NoSQL Table](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/ingest-n-consume-files/#convert-csv-to-nosql) tutorial, and the [SparkSQLAnalytics](GettingStarted/SparkSQLAnalytics.ipynb) notebook.
-    - Using V3IO Frames and pandas DataFrames &mdash; see the [frames](GettingStarted/frames.ipynb) notebook.
-- Streaming data from an external streaming engine to a NoSQL or time-series database (TSDB) table &mdash; see the [GettingStarted](GettingStarted/GettingStarted.ipynb#streaming-data-from-an-external-streaming-engine) notebook.
-
-<a id="data-collection-and-ingestion-examples-by-api"></a>
-##### Examples By API
-
-- Ingesting data using the platform's RESTful web APIs &mdash; see the [Ingesting and Consuming Files](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/ingest-n-consume-files/) and [Sending HTTP and HTTPS Requests](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/fundamentals/#sending-http-requests) tutorials and the [web-API references](https://www.iguazio.com/docs/reference/latest-release/api-reference/web-apis/).
-- Ingesting, consuming, and analyzing data using Spark DataFrames &mdash; see the [getting-started tutorial example](GettingStarted/GettingStarted.ipynb#getting-started-example) and [Converting a CSV File to a NoSQL Table](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/ingest-n-consume-files/#convert-csv-to-nosql) tutorial, the [SparkSQLAnalytics](GettingStarted/SparkSQLAnalytics.ipynb) notebook, and the [Getting Started with Data Ingestion Using Spark](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/data-ingestion-w-spark-qs/) tutorial.
-- Ingesting, consuming, and analyzing data using V3IO Frames and pandas DataFrames &mdash; see the [frames](GettingStarted/frames.ipynb) notebook.
-- Ingesting files (objects) from the dashboard &mdash; see the [Ingesting and Consuming Files](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/ingest-n-consume-files/) tutorial.
-
-<a id="data-collection-and-ingestion-examples-by-file-type"></a>
-##### Examples By File Type
-
-- Ingesting and using CSV files &mdash;
-  - Using Spark DataFrames and curl or Botocore &mdash; see the [GettingStarted](GettingStarted/GettingStarted.ipynb), [FilesAccess](GettingStarted/FilesAccess.ipynb), and [SparkSQLAnalytics](GettingStarted/SparkSQLAnalytics.ipynb) notebooks, and the [Converting a CSV File to a NoSQL Table](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/ingest-n-consume-files/#convert-csv-to-nosql) and [Getting Started with Data Ingestion Using Spark](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/data-ingestion-w-spark-qs/) tutorials.
-  - Using V3IO Frames &mdash; see the [frames](GettingStarted/frames.ipynb) notebook.
-- Ingesting and using Parquet data files &mdash;
-  - Using Spark DataFrames &mdash; see the [getting-started tutorial example](GettingStarted/GettingStarted.ipynb#getting-started-example-step-convert-data-to-parquet) and [Getting Started with Data Ingestion Using Spark](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/data-ingestion-w-spark-qs/) tutorial.
-  - Using pandas DataFrames &mdash; see the [ReadWriteFromParquet](GettingStarted/ReadWriteFromParquet.ipynb) notebook.
-- Ingesting binary image files &mdash; see the [Ingesting and Consuming Files](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/ingest-n-consume-files/) tutorial.
+For an overview of available platform data collection and ingestion examples, see the [GettingStarted](GettingStarted/GettingStarted.ipynb#data-collection-and-ingestion-examples-overview) tutorial Jupyter notebook.
 
 <a id="data-exploration-and-processing"></a>
 ### Exploring and Processing Data
@@ -134,24 +101,13 @@ The platform includes a wide range of integrated open-source data query and expl
 - [V3IO Frames](https://github.com/v3io/frames) <font color="#00BCF2">\[Tech Preview\]</font> &mdash; Iguazio's open-source data-access library, which provides a unified high-performance API for accessing NoSQL, stream, and time-series data in the platform's data store and features native integration with pandas and [NVIDIA RAPIDS](https://rapids.ai/).
 - Built-in support for ML packages such as [scikit-learn](https://scikit-learn.org), [Pyplot](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html), [NumPy](http://www.numpy.org/), [PyTorch](https://pytorch.org/), and [TensorFlow](https://www.tensorflow.org/).
 
-All these tools are integrated with the platform's Jupyter Notebook service, enabling users to access the same data through different interfaces with minimal configuration overhead.
+All these tools are integrated with the platform's Jupyter Notebook service, allowing users to access the same data from Jupyter through different interfaces with minimal configuration overhead.
 Users can easily install additional Python packages by using the [Conda](https://anaconda.org/anaconda/conda) binary package and environment manager and the [pip](https://pip.pypa.io) Python package installer, which are both available as part of the Jupyter Notebook service.
+This design, coupled with the platform's unified data model, enables users to store and access data using different formats &mdash; such as NoSQL ("key/value"), time series, stream data, and files (simple objects) &mdash; and leverage different tools and APIs for accessing and manipulating the data, all from a single development environment (namely, Jupyter Notebook).
 
 > **Note:** You can deploy and manage application services, such as Spark and Jupyter Notebook, from the **Services** page of the platform dashboard.
 
-Typically, data scientists use Jupyter Notebook to run the exploration phase.
-You can execute code that uses different tools &mdash; such as Spark jobs or SQL queries &mdash; on the same data set from the same Jupyter notebook and without having to move the data.
-The platform's unified ata model enables you to store and analyze different types of data &mdash; such as NoSQL ("key/value"), time series, stream data, and files (simple objects) &mdash; and leverage different tools for accessing and manipulating the data from a single interface.
-
-<a id="data-exploration-and-processing-examples"></a>
-#### Examples
-
-For details and examples, see the [GettingStarted](GettingStarted/GettingStarted.ipynb#data-exploration-and-processing) platform tutorial Jupyter notebook.
-The examples include the following:
-
-- Exploring data using Spark DataFrames &mdash; see the [SparkSQLAnalytics](GettingStarted/SparkSQLAnalytics.ipynb) getting-started tutorial notebook.
-- Exploring data using V3IO Frames and pandas DataFrames &mdasbh; see the [frames](GettingStarted/frames.ipynb) getting-started tutorial notebook.
-- Exploring data using SQL &mdash; see the [GettingStarted](GettingStarted/GettingStarted.ipynb#data-exploration-sql) getting-started tutorial notebook.
+For an overview of available platform data exploration and processing examples, see the [GettingStarted](GettingStarted/GettingStarted.ipynb#data-exploration-and-processing) tutorial Jupyter notebook.
 
 <a id="building-and-training-models"></a>
 ### Building and Training Models
