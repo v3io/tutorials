@@ -105,7 +105,7 @@ This design, coupled with the platform's unified data model, enables users to st
 
 > **Note:** You can deploy and manage application services, such as Spark and Jupyter Notebook, from the **Services** page of the platform dashboard.
 
-For an overview of available platform data exploration and processing examples, see the [GettingStarted](GettingStarted/GettingStarted.ipynb#data-exploration-and-processing) tutorial Jupyter notebook.
+For an overview of available platform data exploration and processing examples, see the [GettingStarted](GettingStarted/GettingStarted.ipynb#gs-data-exploration-and-processing) tutorial Jupyter notebook.
 
 <a id="building-and-training-models"></a>
 ### Building and Training Models
