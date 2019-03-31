@@ -58,7 +58,7 @@ For a more in-depth introduction to the platform, see the following resources:
 
 A good place to start your development is with the platform [tutorial Jupyter notebooks](https://github.com/v3io/tutorials).
 
-- The [**GettingStarted**](GettingStarted/GettingStarted.ipynb) directory contains examples for performing basic tasks using the different platform APIs, as outlined in the [Data Science Workflow](#data-science-workflow) section of this introductory tutorial.
+- The [**GettingStarted**](GettingStarted/GettingStarted.ipynb) directory contains examples for performing basic tasks using the different platform APIs.
 - The [**demos**](demos/README.ipynb) directory contains full end-to-end use-case application demos.
 
 <a id="data-science-workflow"></a>
