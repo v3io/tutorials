@@ -158,7 +158,7 @@ For information on how to create Grafana dashboards to monitor and visualize dat
 
 - [References](https://iguazio.com/docs/reference/latest-release/)
 - [Development Ecosystem and Managed Services](https://www.iguazio.com/docs/intro/latest-release/ecosystem/)
-- [Iguazio sample data sets](http://iguazio-sample-data.s3.amazonaws.com/) public Amazon S3 bucket
+- [Iguazio sample data-set](http://iguazio-sample-data.s3.amazonaws.com/) public Amazon S3 bucket
 
  <a id="third-party-resources"></a>
  ### Third-Party Documentation, Examples, and Sample Data Sets
