@@ -1,9 +1,6 @@
 
 # Welcome to the Iguazio Data Science Platform
 
-<a id="document-toc"></a>
-**In This Document**
-
 - [Platform Overview](#platform-overview)
 - [Data Science Workflow](#data-science-workflow)
   - [Collecting and Ingesting Data](#data-collection-and-ingestion)
@@ -11,20 +8,15 @@
   - [Building and Training Models](#building-and-training-models)
   - [Deploying Models to Production](#deploying-models-to-production)
   - [Visualization, Monitoring, and Logging](#visualization-monitoring-and-logging)
+- [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
+  - [Smart Stock Trading](demos/stocks/read_stocks.ipynb)
+  - [Predictive Infrastructure Monitoring](demos/netops/generator.ipynb)
+  - [Image Recognition](demos/image_classification/keras-cnn-dog-or-cat-classification.ipynb)
+  - [Natural Language Processing (NLP)](demos/nlp/nlp-example.ipynb)
 - [Additional Resources](#additional-resources)
   - [Platform Documentation, Examples, and Sample Data Sets](#platform-resources)
   - [Third-Party Documentation, Examples, and Sample Data Sets](#third-party-resources)
 - [Support](#support)
-
-<a id="demo-tutorials"></a>
-**End-to-End Platform Use-Case Application Demos**
-
-See the [**demos**](demos/README.ipynb) tutorial notebooks directory for full end-to-end platform use-case application demos:
-
-- [**stocks**](demos/stocks/read_stocks.ipynb) &mdash; combining real-time stocks data with Twitter based sentiments for smart trading
-- [**netops**](demos/netops/generator.ipynb) &mdash; predictive infrastructure monitoring
-- [**image_classification**](demos/image_classification/keras-cnn-dog-or-cat-classification.ipynb) &mdash; image recognition using Keras and TensorFlow
-- [**nlp**](demos/nlp/nlp-example.ipynb) &mdash; natural language processing (NLP), including corrections, sentiments, and translation
 
 <a id="platform-overview"></a>
 ## Platform Overview
@@ -142,6 +134,17 @@ Platform users can easily instrument code and functions to collect various stati
 The [Grafana](https://grafana.com/grafana) open-source analytics and monitoring framework is natively integrated into the platform, allowing users to create dashboards that provide access to platform NoSQL tables and time-series databases from different dashboard widgets.
 You can also create Grafana dashboards programmatically (for example, from Jupyter Notebook) using wizard scripts.
 For information on how to create Grafana dashboards to monitor and visualize data in the platform, see [Adding a Custom Grafana Dashboard](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/grafana-dashboards/).
+
+<a id="end-to-end-use-case-applications"></a>
+## End-to-End Use-Case Applications
+
+Iguazio provides full end-to-end use-case applications that demonstrate how to use the Iguazio Data Science Platform and related tools to address data science requirements for different industries and implementations.
+The applications are provided in the [**demos**](demos/README.ipynb) directory of the platform's tutorial Jupyter notebooks and cover the following use cases:
+
+- <a id="stocks-use-case-app"></a>Smart stock trading ([**stocks**](demos/stocks/read_stocks.ipynb)) &mdash; combines real-time stocks data with Twitter based sentiments for smart stock-exchange trading.
+- <a id="netops-use-case-app"></a>Predictive infrastructure monitoring ([**netops**](demos/netops/generator.ipynb)) &mdash; builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow.
+- <a id="image-recog-use-case-app"></a>Image recognition ([**image_classification**](demos/image_classification/keras-cnn-dog-or-cat-classification.ipynb)) &mdash; identifies (recognizes) and classifies images using [TensorFlow](https://www.tensorflow.org/) and [Keras](https://keras.io/).
+- <a id="nlp-use-case-app"></a>Natural language processing (NLP) ([**nlp**](demos/nlp/nlp-example.ipynb)) &mdash; processes natural-language text, applies corrections, calculates sentiments, and translates the text.
 
 <a id="additional-resources"></a>
 ## Additional Resources
