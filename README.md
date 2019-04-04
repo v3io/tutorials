@@ -13,6 +13,7 @@
   - [Predictive Infrastructure Monitoring](demos/netops/generator.ipynb)
   - [Image Recognition](demos/image_classification/keras-cnn-dog-or-cat-classification.ipynb)
   - [Natural Language Processing (NLP)](demos/nlp/nlp-example.ipynb)
+  - [Streaming Enrichment](demos/streaming-enrichment/Streaming-enrichment.ipynb)
 - [Additional Resources](#additional-resources)
   - [Platform Documentation, Examples, and Sample Data Sets](#platform-resources)
   - [Third-Party Documentation, Examples, and Sample Data Sets](#third-party-resources)
@@ -144,7 +145,8 @@ The applications are provided in the **demos** directory of the platform's tutor
 - <a id="stocks-use-case-app"></a>**Smart stock trading** ([**stocks**](demos/stocks/read_stocks.ipynb)) &mdash; the application reads stock-exchange data from an internet service into a time-series database (TSDB); uses Twitter to analyze the market sentiment on specific stocks, in real time; and saves the data to a platform NoSQL table that is used for generating reports and analyzing and visualization the data in a Grafana dashboard.
 - <a id="netops-use-case-app"></a>**Predictive infrastructure monitoring** ([**netops**](demos/netops/generator.ipynb)) &mdash; the application builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow. The goal is to identify anomalies for device metrics &mdash; such as CPU, memory consumption, or temperature &mdash; which can signify an upcoming issue or failure.
 - <a id="image-recog-use-case-app"></a>**Image recognition** ([**image_classification**](demos/image_classification/keras-cnn-dog-or-cat-classification.ipynb)) &mdash; the application builds and trains an ML model that identifies (recognizes) and classifies images by using Keras, TensorFlow, and scikit-learn.
-- <a id="nlp-use-case-app"></a>**Natural language processing (NLP)** ([**nlp**](demos/nlp/nlp-example.ipynb)) &mdash; the application processes natural-language textual data &mdash; including spelling correction and sentiment analysis &mdash; and generates a serverless Nuclio function that translates any given text string to another (configurable) language.
+- <a id="nlp-use-case-app"></a>**Natural language processing (NLP)** ([**nlp**](demos/nlp/nlp-example.ipynb)) &mdash; the application processes natural-language textual data &mdash; including spelling correction and sentiment analysis &mdash; and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
+- <a id="streaming-enrichment-use-case-app"></a>**Streaming enrichment** ([**streaming-enrichment**](demos/streaming-enrichment/Streaming-enrichment.ipynb)) &mdash; the application demonstrates a typical stream-based data-engineering pipeline, which is required in many real-world scenarios: data is streamed from an event streaming engine; the data is enriched, in real time, using data from a NoSQL table; the enriched data is saved to an output data stream and then consumed from this stream.
 
 <a id="additional-resources"></a>
 ## Additional Resources
