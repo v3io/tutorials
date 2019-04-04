@@ -14,6 +14,7 @@
   - [Image Recognition](demos/image_classification/keras-cnn-dog-or-cat-classification.ipynb)
   - [Natural Language Processing (NLP)](demos/nlp/nlp-example.ipynb)
   - [Streaming Enrichment](demos/streaming-enrichment/Streaming-enrichment.ipynb)
+- [Jupyter Notebook Basics](#jupyter-notebook-basics)
 - [Additional Resources](#additional-resources)
   - [Platform Documentation, Examples, and Sample Data Sets](#platform-resources)
   - [Third-Party Documentation, Examples, and Sample Data Sets](#third-party-resources)
@@ -154,6 +155,31 @@ The applications are provided in the **demos** directory of the platform's tutor
 - <a id="image-recog-use-case-app"></a>**Image recognition** ([**image_classification**](demos/image_classification/keras-cnn-dog-or-cat-classification.ipynb)) &mdash; the application builds and trains an ML model that identifies (recognizes) and classifies images by using Keras, TensorFlow, and scikit-learn.
 - <a id="nlp-use-case-app"></a>**Natural language processing (NLP)** ([**nlp**](demos/nlp/nlp-example.ipynb)) &mdash; the application processes natural-language textual data &mdash; including spelling correction and sentiment analysis &mdash; and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
 - <a id="streaming-enrichment-use-case-app"></a>**Streaming enrichment** ([**streaming-enrichment**](demos/streaming-enrichment/Streaming-enrichment.ipynb)) &mdash; the application demonstrates a typical stream-based data-engineering pipeline, which is required in many real-world scenarios: data is streamed from an event streaming engine; the data is enriched, in real time, using data from a NoSQL table; the enriched data is saved to an output data stream and then consumed from this stream.
+
+<a id="jupyter-notebook-basics"></a>
+## Jupyter Notebook Basics
+
+The platform's Jupyter Notebook service displays the JupyterLab UI, which consists of a collapsible left sidebar, a main work area (on the right), and a top menu bar.
+For details, see the [JupyterLab documentation](https://jupyterlab.readthedocs.io/en/stable/user/interface.html#the-jupyterlab-interface).
+
+The main work area (on the right) contains tabs of documents and activities &mdash; for creating, viewing, editing, and running  interactive notebooks, shell terminals, or consoles, as well as viewing and editing other common file types.
+To create a new notebook or terminal, select the **New Launcher** option (`+` icon) from the top action toolbar in the left sidebar.
+
+The top menu bar exposes available top-level actions, such as exporting a notebook in a different format.
+
+The left-sidebar menu contains commonly used tabs, including a **File Browser** (directory icon) for browsing files.<br>
+The root file-browser directory of the platform's Jupyter Notebook service contains the following files and directories:
+
+- **v3io** directory, which displays the contents of the `v3io` platform cluster data mount for browsing the contents of the cluster's data containers.
+  You can also browse the contents of the data containers from the **Data** page of the platform dashboard.
+- The contents of the running-user home directory &mdash; **users/&lt;running user&gt;**.
+  This directory contains the platform's [tutorial Jupyter notebooks](https://github.com/v3io/tutorials):
+
+  - [**Welcome.ipynb**](../Welcome.ipynb) &mdash; a documentation notebook that provides a short introduction to the platform and how to use it to implement a full data science workflow.
+  - **GettingStarted** &mdash; a directory containing getting-started tutorials that explain and demonstrate how to perform basic platform operations &mdash; such as data collection, ingestion, and analysis &mdash; as detailed in the current notebook.
+  - **demos** &mdash; a directory containing [end-to-end application use-case demos](../demos/README.ipynb).
+
+For information about the predefined data containers and how to reference data in these containers, see the [Platform Data Containers](GettingStarted/GettingStarted.ipynb/#platform-data-containers) section in the **GettingStarted** notebook.
 
 <a id="additional-resources"></a>
 ## Additional Resources
