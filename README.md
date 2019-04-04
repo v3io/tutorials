@@ -72,12 +72,16 @@ The Iguazio Data Science Platform provides a complete data science workflow in a
 
 There are many ways to collect and ingest data from various sources into the platform:
 
-- Streaming data in real time from sources such as Kafka, Kinesis, Azure Event Hubs, or Google Pub/Sub
-- Loading data directly from external databases using an event-driven or periodic/scheduled implementation
-- Loading files (objects), in any format (for example, CSV, Parquet, JSON, or a binary image), from internal or external sources such as Amazon S3 or Hadoop
-- Importing time-series telemetry data using a Prometheus compatible scraping API
-- Ingesting (writing) data directly into the system using RESTful AWS-like simple-object, streaming, or NoSQL APIs
-- Using serverless functions to scrape or read data from external sources such as Twitter, weather services, or stock-trading data services
+- Streaming data in real time from sources such as Kafka, Kinesis, Azure Event Hubs, or Google Pub/Sub.
+- Loading data directly from external databases using an event-driven or periodic/scheduled implementation.
+  See, for example [Ingesting Data From an External Database to a NoSQL Table Using V3IO Frames](GettingStarted/GettingStarted.ipynb#ingest-from-external-db-to-no-sql-using-frames).
+- Loading files (objects), in any format (for example, CSV, Parquet, JSON, or a binary image), from internal or external sources such as Amazon S3 or Hadoop.
+  See, for example, the [**FilesAccess**](GettingStarted/FilesAccess.ipynb) tutorial.
+- Importing time-series telemetry data using a Prometheus compatible scraping API.
+- Ingesting (writing) data directly into the system using RESTful AWS-like simple-object, streaming, or NoSQL APIs.
+  See the platform's [Web-API References](https://www.iguazio.com/docs/reference/latest-release/api-reference/web-apis/).
+- Scraping or reading data from external sources &mdash; such as Twitter, weather services, or stock-trading data services &mdash; using serverless functions.
+  See, for example, the [**stocks**](demos/stocks/read_stocks.ipynb) demo use-case application.
 
 For an overview of available platform data collection and ingestion examples, see the [GettingStarted](GettingStarted/GettingStarted.ipynb#data-collection-and-ingestion-examples-overview) tutorial Jupyter notebook.
 
@@ -86,12 +90,15 @@ For an overview of available platform data collection and ingestion examples, se
 
 The platform includes a wide range of integrated open-source data query and exploration tools, including the following:
 
-- [Apache Spark](https://spark.apache.org/) data-processing engine &mdash; including the Spark SQL and Datasets, MLlib, R, and GraphX libraries &mdash; with real-time access to the platform's NoSQL data store and file system
-- [Presto](http://prestodb.github.io/) distributed SQL query engine, which can be used to run interactive SQL queries over platform NoSQL tables or other object (file) data sources
-- [pandas](https://pandas.pydata.org/) Python analysis library, including structured DataFrames
-- [Dask](https://dask.org/) parallel-computing Python library, including scaled pandas DataFrames
-- [V3IO Frames](https://github.com/v3io/frames) <font color="#00BCF2">\[Tech Preview\]</font> &mdash; Iguazio's open-source data-access library, which provides a unified high-performance API for accessing NoSQL, stream, and time-series data in the platform's data store and features native integration with pandas and [NVIDIA RAPIDS](https://rapids.ai/)
-- Built-in support for ML packages such as [scikit-learn](https://scikit-learn.org), [Pyplot](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html), [NumPy](http://www.numpy.org/), [PyTorch](https://pytorch.org/), and [TensorFlow](https://www.tensorflow.org/)
+- [Apache Spark](https://spark.apache.org/) data-processing engine &mdash; including the Spark SQL and Datasets, MLlib, R, and GraphX libraries &mdash; with real-time access to the platform's NoSQL data store and file system.
+  See the platform's [Spark APIs reference](https://www.iguazio.com/docs/reference/latest-release/api-reference/spark-apis/) and the examples in the [**SparkSQLAnalytics**](GettingStarted/SparkSQLAnalytics.ipynb) tutorial.
+- [Presto](http://prestodb.github.io/) distributed SQL query engine, which can be used to run interactive SQL queries over platform NoSQL tables or other object (file) data sources.
+- [pandas](https://pandas.pydata.org/) Python analysis library, including structured DataFrames.
+  See the platform's [Presto reference](https://www.iguazio.com/docs/reference/latest-release/presto/).
+- [Dask](https://dask.org/) parallel-computing Python library, including scaled pandas DataFrames.
+- [V3IO Frames](https://github.com/v3io/frames) <font color="#00BCF2">\[Tech Preview\]</font> &mdash; Iguazio's open-source data-access library, which provides a unified high-performance API for accessing NoSQL, stream, and time-series data in the platform's data store and features native integration with pandas and [NVIDIA RAPIDS](https://rapids.ai/).
+  See, for example, the [**frames**](GettingStarted/frames.ipynb) tutorial.
+- Built-in support for ML packages such as [scikit-learn](https://scikit-learn.org), [Pyplot](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html), [NumPy](http://www.numpy.org/), [PyTorch](https://pytorch.org/), and [TensorFlow](https://www.tensorflow.org/).
 
 All these tools are integrated with the platform's Jupyter Notebook service, allowing users to access the same data from Jupyter through different interfaces with minimal configuration overhead.
 Users can easily install additional Python packages by using the [Conda](https://anaconda.org/anaconda/conda) binary package and environment manager and the [pip](https://pip.pypa.io) Python package installer, which are both available as part of the Jupyter Notebook service.
