@@ -94,8 +94,8 @@ The platform includes a wide range of integrated open-source data query and expl
 - [Apache Spark](https://spark.apache.org/) data-processing engine &mdash; including the Spark SQL and Datasets, MLlib, R, and GraphX libraries &mdash; with real-time access to the platform's NoSQL data store and file system.
   See the platform's [Spark APIs reference](https://www.iguazio.com/docs/reference/latest-release/api-reference/spark-apis/) and the examples in the [**SparkSQLAnalytics**](GettingStarted/SparkSQLAnalytics.ipynb) tutorial.
 - [Presto](http://prestodb.github.io/) distributed SQL query engine, which can be used to run interactive SQL queries over platform NoSQL tables or other object (file) data sources.
-- [pandas](https://pandas.pydata.org/) Python analysis library, including structured DataFrames.
   See the platform's [Presto reference](https://www.iguazio.com/docs/reference/latest-release/presto/).
+- [pandas](https://pandas.pydata.org/) Python analysis library, including structured DataFrames.
 - [Dask](https://dask.org/) parallel-computing Python library, including scaled pandas DataFrames.
 - [V3IO Frames](https://github.com/v3io/frames) <font color="#00BCF2">\[Tech Preview\]</font> &mdash; Iguazio's open-source data-access library, which provides a unified high-performance API for accessing NoSQL, stream, and time-series data in the platform's data store and features native integration with pandas and [NVIDIA RAPIDS](https://rapids.ai/).
   See, for example, the [**frames**](GettingStarted/frames.ipynb) tutorial.
