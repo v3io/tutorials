@@ -53,7 +53,7 @@ For a more in-depth introduction to the platform, see the following resources:
 
 A good place to start your development is with the platform [tutorial Jupyter notebooks](https://github.com/v3io/tutorials).
 
-- The [**GettingStarted**](GettingStarted/data-collection-n-exploration.ipynb) directory contains examples for performing basic tasks using the different platform APIs.
+- The [**GettingStarted**](GettingStarted/data-collection-n-exploration.ipynb) directory contains information and code examples to help you quickly get started using the platform.
 - The [**demos**](demos/README.ipynb) directory contains full end-to-end use-case application demos.
 
 <a id="data-science-workflow"></a>
