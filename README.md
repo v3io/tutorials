@@ -53,7 +53,7 @@ For a more in-depth introduction to the platform, see the following resources:
 
 A good place to start your development is with the platform [tutorial Jupyter notebooks](https://github.com/v3io/tutorials).
 
-- The [**GettingStarted**](GettingStarted/data-collection-n-exploration.ipynb) directory contains information and code examples to help you quickly get started using the platform.
+- The [**GettingStarted**](GettingStarted/collect-n-explore.ipynb) directory contains information and code examples to help you quickly get started using the platform.
 - The [**demos**](demos/README.ipynb) directory contains full end-to-end use-case application demos.
 
 <a id="data-science-workflow"></a>
@@ -75,7 +75,7 @@ There are many ways to collect and ingest data from various sources into the pla
 
 - Streaming data in real time from sources such as Kafka, Kinesis, Azure Event Hubs, or Google Pub/Sub.
 - Loading data directly from external databases using an event-driven or periodic/scheduled implementation.
-  See the explanation and examples in the [**data-collection-n-exploration**](GettingStarted/data-collection-n-exploration.ipynb#ingest-from-external-db-to-no-sql-using-frames) tutorial.
+  See the explanation and examples in the [**collect-n-explore**](GettingStarted/collect-n-explore.ipynb#ingest-from-external-db-to-no-sql-using-frames) tutorial.
 - Loading files (objects), in any format (for example, CSV, Parquet, JSON, or a binary image), from internal or external sources such as Amazon S3 or Hadoop.
   See, for example, the [**FilesAccess**](GettingStarted/FilesAccess.ipynb) tutorial.
 - Importing time-series telemetry data using a Prometheus compatible scraping API.
@@ -84,7 +84,7 @@ There are many ways to collect and ingest data from various sources into the pla
 - Scraping or reading data from external sources &mdash; such as Twitter, weather services, or stock-trading data services &mdash; using serverless functions.
   See, for example, the [**stocks**](demos/stocks/read_stocks.ipynb) demo use-case application.
 
-For more information and examples of data collection and ingestion with the platform, see the [**data-collection-n-exploration**](GettingStarted/data-collection-n-exploration.ipynb#gs-data-collection-and-ingestion) tutorial Jupyter notebook.
+For more information and examples of data collection and ingestion wcollect-n-exploreith the platform, see the [**collect-n-explore**](GettingStarted/collect-n-explore.ipynb#gs-data-collection-and-ingestion) tutorial Jupyter notebook.
 
 <a id="data-exploration-and-processing"></a>
 ### Exploring and Processing Data
@@ -107,7 +107,7 @@ This design, coupled with the platform's unified data model, enables users to st
 
 > **Note:** You can deploy and manage application services, such as Spark and Jupyter Notebook, from the **Services** page of the platform dashboard.
 
-For more information and examples of data exploration with the platform, see the [**data-collection-n-exploration**](GettingStarted/data-collection-n-exploration.ipynb#gs-data-exploration-and-processing) tutorial Jupyter notebook.
+For more information and examples of data exploration with the platform, see the [**collect-n-explore**](GettingStarted/collect-n-explore.ipynb#gs-data-exploration-and-processing) tutorial Jupyter notebook.
 
 <a id="building-and-training-models"></a>
 ### Building and Training Models
@@ -187,7 +187,7 @@ The root file-browser directory of the platform's Jupyter Notebook service conta
   - **GettingStarted** &mdash; a directory containing getting-started tutorials that explain and demonstrate how to perform basic platform operations &mdash; such as data collection, ingestion, and analysis &mdash; as detailed in the current notebook.
   - **demos** &mdash; a directory containing [end-to-end application use-case demos](../demos/README.ipynb).
 
-For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](GettingStarted/data-collection-n-exploration.ipynb/#platform-data-containers) in the **data-collection-n-exploration** tutorial notebook.
+For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](GettingStarted/collect-n-explore.ipynb/#platform-data-containers) in the **collect-n-explore** tutorial notebook.
 
 <a id="creating-virtual-environments-in-jupyter-notebook"></a>
 ### Creating Virtual Environments in Jupyter Notebook
