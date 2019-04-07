@@ -183,9 +183,9 @@ The root file-browser directory of the platform's Jupyter Notebook service conta
 - The contents of the running-user home directory &mdash; **users/&lt;running user&gt;**.
   This directory contains the platform's [tutorial Jupyter notebooks](https://github.com/v3io/tutorials):
 
-  - [**Welcome.ipynb**](../Welcome.ipynb) &mdash; a documentation notebook that provides a short introduction to the platform and how to use it to implement a full data science workflow.
-  - **GettingStarted** &mdash; a directory containing getting-started tutorials that explain and demonstrate how to perform basic platform operations &mdash; such as data collection, ingestion, and analysis &mdash; as detailed in the current notebook.
-  - **demos** &mdash; a directory containing [end-to-end application use-case demos](../demos/README.ipynb).
+  - [**welcome.ipynb**](../welcome.ipynb) / [**README.md**](../README.md) &mdash; the current document, which provides a short introduction to the platform and how to use it to implement a full data science workflow.
+  - **GettingStarted** &mdash; a directory containing getting-started tutorials that explain and demonstrate how to perform different platform operations using the platform APIs and integrated tools.
+  - **demos** &mdash; a directory containing [end-to-end application use-case demos](#end-to-end-use-case-applications).
 
 For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](GettingStarted/data-collection-n-exploration.ipynb/#platform-data-containers) in the **data-collection-n-exploration** tutorial notebook.
 
