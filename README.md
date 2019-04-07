@@ -92,7 +92,7 @@ For more information and examples of data collection and ingestion wcollect-n-ex
 The platform includes a wide range of integrated open-source data query and exploration tools, including the following:
 
 - [Apache Spark](https://spark.apache.org/) data-processing engine &mdash; including the Spark SQL and Datasets, MLlib, R, and GraphX libraries &mdash; with real-time access to the platform's NoSQL data store and file system.
-  See the platform's [Spark APIs reference](https://www.iguazio.com/docs/reference/latest-release/api-reference/spark-apis/) and the examples in the [**SparkSQLAnalytics**](GettingStarted/SparkSQLAnalytics.ipynb) tutorial.
+  See the platform's [Spark APIs reference](https://www.iguazio.com/docs/reference/latest-release/api-reference/spark-apis/) and the examples in the [**spark-sql-analytics**](GettingStarted/spark-sql-analytics.ipynb) tutorial.
 - [Presto](http://prestodb.github.io/) distributed SQL query engine, which can be used to run interactive SQL queries over platform NoSQL tables or other object (file) data sources.
   See the platform's [Presto reference](https://www.iguazio.com/docs/reference/latest-release/presto/).
 - [pandas](https://pandas.pydata.org/) Python analysis library, including structured DataFrames.
