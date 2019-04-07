@@ -77,7 +77,7 @@ There are many ways to collect and ingest data from various sources into the pla
 - Loading data directly from external databases using an event-driven or periodic/scheduled implementation.
   See the explanation and examples in the [**collect-n-explore**](GettingStarted/collect-n-explore.ipynb#ingest-from-external-db-to-no-sql-using-frames) tutorial.
 - Loading files (objects), in any format (for example, CSV, Parquet, JSON, or a binary image), from internal or external sources such as Amazon S3 or Hadoop.
-  See, for example, the [**FilesAccess**](GettingStarted/FilesAccess.ipynb) tutorial.
+  See, for example, the [**file-access**](GettingStarted/file-access.ipynb) tutorial.
 - Importing time-series telemetry data using a Prometheus compatible scraping API.
 - Ingesting (writing) data directly into the system using RESTful AWS-like simple-object, streaming, or NoSQL APIs.
   See the platform's [Web-API References](https://www.iguazio.com/docs/reference/latest-release/api-reference/web-apis/).
