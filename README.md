@@ -53,7 +53,7 @@ For a more in-depth introduction to the platform, see the following resources:
 
 A good place to start your development is with the platform [tutorial Jupyter notebooks](https://github.com/v3io/tutorials).
 
-- The [**GettingStarted**](GettingStarted/collect-n-explore.ipynb) directory contains information and code examples to help you quickly get started using the platform.
+- The [**getting-started**](getting-started/collect-n-explore.ipynb) directory contains information and code examples to help you quickly get started using the platform.
 - The [**demos**](demos/README.ipynb) directory contains full end-to-end use-case application demos.
 
 <a id="data-science-workflow"></a>
@@ -75,16 +75,16 @@ There are many ways to collect and ingest data from various sources into the pla
 
 - Streaming data in real time from sources such as Kafka, Kinesis, Azure Event Hubs, or Google Pub/Sub.
 - Loading data directly from external databases using an event-driven or periodic/scheduled implementation.
-  See the explanation and examples in the [**collect-n-explore**](GettingStarted/collect-n-explore.ipynb#ingest-from-external-db-to-no-sql-using-frames) tutorial.
+  See the explanation and examples in the [**collect-n-explore**](getting-started/collect-n-explore.ipynb#ingest-from-external-db-to-no-sql-using-frames) tutorial.
 - Loading files (objects), in any format (for example, CSV, Parquet, JSON, or a binary image), from internal or external sources such as Amazon S3 or Hadoop.
-  See, for example, the [**file-access**](GettingStarted/file-access.ipynb) tutorial.
+  See, for example, the [**file-access**](getting-started/file-access.ipynb) tutorial.
 - Importing time-series telemetry data using a Prometheus compatible scraping API.
 - Ingesting (writing) data directly into the system using RESTful AWS-like simple-object, streaming, or NoSQL APIs.
   See the platform's [Web-API References](https://www.iguazio.com/docs/reference/latest-release/api-reference/web-apis/).
 - Scraping or reading data from external sources &mdash; such as Twitter, weather services, or stock-trading data services &mdash; using serverless functions.
   See, for example, the [**stocks**](demos/stocks/read_stocks.ipynb) demo use-case application.
 
-For more information and examples of data collection and ingestion wcollect-n-exploreith the platform, see the [**collect-n-explore**](GettingStarted/collect-n-explore.ipynb#gs-data-collection-and-ingestion) tutorial Jupyter notebook.
+For more information and examples of data collection and ingestion wcollect-n-exploreith the platform, see the [**collect-n-explore**](getting-started/collect-n-explore.ipynb#gs-data-collection-and-ingestion) tutorial Jupyter notebook.
 
 <a id="data-exploration-and-processing"></a>
 ### Exploring and Processing Data
@@ -92,13 +92,13 @@ For more information and examples of data collection and ingestion wcollect-n-ex
 The platform includes a wide range of integrated open-source data query and exploration tools, including the following:
 
 - [Apache Spark](https://spark.apache.org/) data-processing engine &mdash; including the Spark SQL and Datasets, MLlib, R, and GraphX libraries &mdash; with real-time access to the platform's NoSQL data store and file system.
-  See the platform's [Spark APIs reference](https://www.iguazio.com/docs/reference/latest-release/api-reference/spark-apis/) and the examples in the [**spark-sql-analytics**](GettingStarted/spark-sql-analytics.ipynb) tutorial.
+  See the platform's [Spark APIs reference](https://www.iguazio.com/docs/reference/latest-release/api-reference/spark-apis/) and the examples in the [**spark-sql-analytics**](getting-started/spark-sql-analytics.ipynb) tutorial.
 - [Presto](http://prestodb.github.io/) distributed SQL query engine, which can be used to run interactive SQL queries over platform NoSQL tables or other object (file) data sources.
   See the platform's [Presto reference](https://www.iguazio.com/docs/reference/latest-release/presto/).
 - [pandas](https://pandas.pydata.org/) Python analysis library, including structured DataFrames.
 - [Dask](https://dask.org/) parallel-computing Python library, including scaled pandas DataFrames.
 - [V3IO Frames](https://github.com/v3io/frames) <font color="#00BCF2">\[Tech Preview\]</font> &mdash; Iguazio's open-source data-access library, which provides a unified high-performance API for accessing NoSQL, stream, and time-series data in the platform's data store and features native integration with pandas and [NVIDIA RAPIDS](https://rapids.ai/).
-  See, for example, the [**frames**](GettingStarted/frames.ipynb) tutorial.
+  See, for example, the [**frames**](getting-started/frames.ipynb) tutorial.
 - Built-in support for ML packages such as [scikit-learn](https://scikit-learn.org), [Pyplot](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html), [NumPy](http://www.numpy.org/), [PyTorch](https://pytorch.org/), and [TensorFlow](https://www.tensorflow.org/).
 
 All these tools are integrated with the platform's Jupyter Notebook service, allowing users to access the same data from Jupyter through different interfaces with minimal configuration overhead.
@@ -107,7 +107,7 @@ This design, coupled with the platform's unified data model, enables users to st
 
 > **Note:** You can deploy and manage application services, such as Spark and Jupyter Notebook, from the **Services** page of the platform dashboard.
 
-For more information and examples of data exploration with the platform, see the [**collect-n-explore**](GettingStarted/collect-n-explore.ipynb#gs-data-exploration-and-processing) tutorial Jupyter notebook.
+For more information and examples of data exploration with the platform, see the [**collect-n-explore**](getting-started/collect-n-explore.ipynb#gs-data-exploration-and-processing) tutorial Jupyter notebook.
 
 <a id="building-and-training-models"></a>
 ### Building and Training Models
@@ -184,17 +184,17 @@ The root file-browser directory of the platform's Jupyter Notebook service conta
   This directory contains the platform's [tutorial Jupyter notebooks](https://github.com/v3io/tutorials):
 
   - [**welcome.ipynb**](../welcome.ipynb) / [**README.md**](../README.md) &mdash; the current document, which provides a short introduction to the platform and how to use it to implement a full data science workflow.
-  - **GettingStarted** &mdash; a directory containing getting-started tutorials that explain and demonstrate how to perform different platform operations using the platform APIs and integrated tools.
+  - **getting-started** &mdash; a directory containing getting-started tutorials that explain and demonstrate how to perform different platform operations using the platform APIs and integrated tools.
   - **demos** &mdash; a directory containing [end-to-end application use-case demos](#end-to-end-use-case-applications).
 
-For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](GettingStarted/collect-n-explore.ipynb/#platform-data-containers) in the **collect-n-explore** tutorial notebook.
+For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](getting-started/collect-n-explore.ipynb/#platform-data-containers) in the **collect-n-explore** tutorial notebook.
 
 <a id="creating-virtual-environments-in-jupyter-notebook"></a>
 ### Creating Virtual Environments in Jupyter Notebook
 
 A virtual environment is a named, isolated, working copy of Python that maintains its own files, directories, and paths so that you can work with specific versions of libraries or Python itself without affecting other Python projects.
 Virtual environments make it easy to cleanly separate projects and avoid problems with different dependencies and version requirements across components.
-See the [virutal-env](GettingStarted/virutal-env.ipynb) tutorial notebook for step-by-step instructions for using conda to create your own Python virtual environments, which will appear as custom kernels in Jupyter Notebook.
+See the [virutal-env](getting-started/virutal-env.ipynb) tutorial notebook for step-by-step instructions for using conda to create your own Python virtual environments, which will appear as custom kernels in Jupyter Notebook.
 
 <a id="additional-resources"></a>
 ## Additional Resources
