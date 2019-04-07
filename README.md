@@ -15,6 +15,7 @@
   - [Natural Language Processing (NLP)](demos/nlp/nlp-example.ipynb)
   - [Streaming Enrichment](demos/streaming-enrichment/Streaming-enrichment.ipynb)
 - [Jupyter Notebook Basics](#jupyter-notebook-basics)
+  - [Creating Virtual Environments in Jupyter Notebook](#creating-virtual-environments-in-jupyter-notebook)
 - [Additional Resources](#additional-resources)
   - [Platform Documentation, Examples, and Sample Data Sets](#platform-resources)
   - [Third-Party Documentation, Examples, and Sample Data Sets](#third-party-resources)
@@ -179,7 +180,14 @@ The root file-browser directory of the platform's Jupyter Notebook service conta
   - **GettingStarted** &mdash; a directory containing getting-started tutorials that explain and demonstrate how to perform basic platform operations &mdash; such as data collection, ingestion, and analysis &mdash; as detailed in the current notebook.
   - **demos** &mdash; a directory containing [end-to-end application use-case demos](../demos/README.ipynb).
 
-For information about the predefined data containers and how to reference data in these containers, see the [Platform Data Containers](GettingStarted/GettingStarted.ipynb/#platform-data-containers) section in the **GettingStarted** notebook.
+For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](GettingStarted/GettingStarted.ipynb/#platform-data-containers) in the **GettingStarted** notebook.
+
+<a id="creating-virtual-environments-in-jupyter-notebook"></a>
+### Creating Virtual Environments in Jupyter Notebook
+
+A virtual environment is a named, isolated, working copy of Python that maintains its own files, directories, and paths so that you can work with specific versions of libraries or Python itself without affecting other Python projects.
+Virtual environments make it easy to cleanly separate projects and avoid problems with different dependencies and version requirements across components.
+See the [CondaVirtualEnv](GettingStarted/CondaVirtualEnv.ipynb) tutorial notebook for step-by-step instructions for using conda to create your own Python virtual environments, which will appear as custom kernels in Jupyter Notebook.
 
 <a id="additional-resources"></a>
 ## Additional Resources
