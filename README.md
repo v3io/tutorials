@@ -51,6 +51,11 @@ For a more in-depth introduction to the platform, see the following resources:
 - [Unique data-layer architecture](https://www.iguazio.com/docs/intro/latest-release/architecture/)
 - [Creating and deploying Nuclio functions with Python and Jupyter Notebook](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md)
 
+A good place to start your development is with the platform [tutorial Jupyter notebooks](https://github.com/v3io/tutorials).
+
+- The [**GettingStarted**](GettingStarted/GettingStarted.ipynb) directory contains examples for performing basic tasks using the different platform APIs.
+- The [**demos**](demos/README.ipynb) directory contains full end-to-end use-case application demos.
+
 <a id="data-science-workflow"></a>
 ## Data Science Workflow
 
@@ -79,7 +84,7 @@ There are many ways to collect and ingest data from various sources into the pla
 - Scraping or reading data from external sources &mdash; such as Twitter, weather services, or stock-trading data services &mdash; using serverless functions.
   See, for example, the [**stocks**](demos/stocks/read_stocks.ipynb) demo use-case application.
 
-For details and examples, see the [data collection and exploration tutorial](GettingStarted/GettingStarted.ipynb).
+For an overview of available platform data collection and ingestion examples, see the [GettingStarted](GettingStarted/GettingStarted.ipynb#gs-data-collection-and-ingestion) tutorial Jupyter notebook.
 
 <a id="data-exploration-and-processing"></a>
 ### Exploring and Processing Data
@@ -96,11 +101,13 @@ The platform includes a wide range of integrated open-source data query and expl
   See, for example, the [**frames**](GettingStarted/frames.ipynb) tutorial.
 - Built-in support for ML packages such as [scikit-learn](https://scikit-learn.org), [Pyplot](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html), [NumPy](http://www.numpy.org/), [PyTorch](https://pytorch.org/), and [TensorFlow](https://www.tensorflow.org/).
 
-All these tools are integrated with the platform's Jupyter Notebook service, enabling users to access the same data through different interfaces with minimal configuration overhead.
-Users can easily install any Python package by using the [Conda](https://anaconda.org/anaconda/conda) binary package and environment manager and the [pip](https://pip.pypa.io) Python package installer, which are both available as part of the Jupyter Notebook service.
+All these tools are integrated with the platform's Jupyter Notebook service, allowing users to access the same data from Jupyter through different interfaces with minimal configuration overhead.
+Users can easily install additional Python packages by using the [Conda](https://anaconda.org/anaconda/conda) binary package and environment manager and the [pip](https://pip.pypa.io) Python package installer, which are both available as part of the Jupyter Notebook service.
+This design, coupled with the platform's unified data model, enables users to store and access data using different formats &mdash; such as NoSQL ("key/value"), time series, stream data, and files (simple objects) &mdash; and leverage different tools and APIs for accessing and manipulating the data, all from a single development environment (namely, Jupyter Notebook).
 
 > **Note:** You can deploy and manage application services, such as Spark and Jupyter Notebook, from the **Services** page of the platform dashboard.
 
+For an overview of available platform data exploration and processing examples, see the [GettingStarted](GettingStarted/GettingStarted.ipynb#gs-data-exploration-and-processing) tutorial Jupyter notebook.
 
 <a id="building-and-training-models"></a>
 ### Building and Training Models
@@ -197,7 +204,7 @@ See the [CondaVirtualEnv](GettingStarted/CondaVirtualEnv.ipynb) tutorial noteboo
 
 - [References](https://iguazio.com/docs/reference/latest-release/)
 - [Development Ecosystem and Managed Services](https://www.iguazio.com/docs/intro/latest-release/ecosystem/)
-- [Iguazio sample data sets](http://iguazio-sample-data.s3.amazonaws.com/) public Amazon S3 bucket
+- [Iguazio sample data-set](http://iguazio-sample-data.s3.amazonaws.com/) public Amazon S3 bucket
 
  <a id="third-party-resources"></a>
  ### Third-Party Documentation, Examples, and Sample Data Sets
