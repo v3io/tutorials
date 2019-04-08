@@ -75,7 +75,7 @@ There are many ways to collect and ingest data from various sources into the pla
 
 - Streaming data in real time from sources such as Kafka, Kinesis, Azure Event Hubs, or Google Pub/Sub.
 - Loading data directly from external databases using an event-driven or periodic/scheduled implementation.
-  See the explanation and examples in the [**collect-n-explore**](GettingStarted/collect-n-explore.ipynb#ingest-from-external-db-to-no-sql-using-frames) tutorial.
+  See the explanation and examples in the [**ReadingFromExternalDB**](GettingStarted/ReadingFromExternalDB.ipynb) tutorial.
 - Loading files (objects), in any format (for example, CSV, Parquet, JSON, or a binary image), from internal or external sources such as Amazon S3 or Hadoop.
   See, for example, the [**FilesAccess**](GettingStarted/FilesAccess.ipynb) tutorial.
 - Importing time-series telemetry data using a Prometheus compatible scraping API.
@@ -97,7 +97,7 @@ The platform includes a wide range of integrated open-source data query and expl
   See the platform's [Presto reference](https://www.iguazio.com/docs/reference/latest-release/presto/).
 - [pandas](https://pandas.pydata.org/) Python analysis library, including structured DataFrames.
 - [Dask](https://dask.org/) parallel-computing Python library, including scaled pandas DataFrames.
-- [V3IO Frames](https://github.com/v3io/frames) <font color="#00BCF2">\[Tech Preview\]</font> &mdash; Iguazio's open-source data-access library, which provides a unified high-performance API for accessing NoSQL, stream, and time-series data in the platform's data store and features native integration with pandas and [NVIDIA RAPIDS](https://rapids.ai/).
+- [V3IO Frames](https://github.com/v3io/frames) &mdash; Iguazio's open-source data-access library, which provides a unified high-performance API for accessing NoSQL, stream, and time-series data in the platform's data store and features native integration with pandas and [NVIDIA RAPIDS](https://rapids.ai/).
   See, for example, the [**frames**](GettingStarted/frames.ipynb) tutorial.
 - Built-in support for ML packages such as [scikit-learn](https://scikit-learn.org), [Pyplot](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html), [NumPy](http://www.numpy.org/), [PyTorch](https://pytorch.org/), and [TensorFlow](https://www.tensorflow.org/).
 
