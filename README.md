@@ -75,7 +75,7 @@ There are many ways to collect and ingest data from various sources into the pla
 
 - Streaming data in real time from sources such as Kafka, Kinesis, Azure Event Hubs, or Google Pub/Sub.
 - Loading data directly from external databases using an event-driven or periodic/scheduled implementation.
-  See the explanation and examples in the [**collect-n-explore**](getting-started/collect-n-explore.ipynb#ingest-from-external-db-to-no-sql-using-frames) tutorial.
+  See the explanation and examples in the [**read-external-db**](getting-started/read-external-db.ipynb#ingest-from-external-db-to-no-sql-using-frames) tutorial.
 - Loading files (objects), in any format (for example, CSV, Parquet, JSON, or a binary image), from internal or external sources such as Amazon S3 or Hadoop.
   See, for example, the [**file-access**](getting-started/file-access.ipynb) tutorial.
 - Importing time-series telemetry data using a Prometheus compatible scraping API.
