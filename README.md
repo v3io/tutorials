@@ -97,7 +97,7 @@ The platform includes a wide range of integrated open-source data query and expl
   See the platform's [Presto reference](https://www.iguazio.com/docs/reference/latest-release/presto/).
 - [pandas](https://pandas.pydata.org/) Python analysis library, including structured DataFrames.
 - [Dask](https://dask.org/) parallel-computing Python library, including scaled pandas DataFrames.
-- [V3IO Frames](https://github.com/v3io/frames) <font color="#00BCF2">\[Tech Preview\]</font> &mdash; Iguazio's open-source data-access library, which provides a unified high-performance API for accessing NoSQL, stream, and time-series data in the platform's data store and features native integration with pandas and [NVIDIA RAPIDS](https://rapids.ai/).
+- [V3IO Frames](https://github.com/v3io/frames) &mdash; Iguazio's open-source data-access library, which provides a unified high-performance API for accessing NoSQL, stream, and time-series data in the platform's data store and features native integration with pandas and [NVIDIA RAPIDS](https://rapids.ai/).
   See, for example, the [**frames**](getting-started/frames.ipynb) tutorial.
 - Built-in support for ML packages such as [scikit-learn](https://scikit-learn.org), [Pyplot](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html), [NumPy](http://www.numpy.org/), [PyTorch](https://pytorch.org/), and [TensorFlow](https://www.tensorflow.org/).
 
