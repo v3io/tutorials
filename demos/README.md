@@ -40,7 +40,7 @@ The goal is to identify anomalies for device metrics &mdash; such as CPU, memory
 <a id="image-classification-demo"></a>
 ## Image Recognition
 
-The [**image_classification**](image_classification/keras-cnn-dog-or-cat-classification.ipynb) demo demonstrates image recognition: the application builds and trains an ML model that identifies (recognizes) and classifies images.
+The [**image-classification**](image-classification/keras-cnn-dog-or-cat-classification.ipynb) demo demonstrates image recognition: the application builds and trains an ML model that identifies (recognizes) and classifies images.
 
 - The data is collected by downloading images of dogs and cats from the Iguazio sample data-set AWS bucket.
 - The training data for the ML model is prepared by using [pandas](https://pandas.pydata.org/) DataFrames to build a predecition map.
