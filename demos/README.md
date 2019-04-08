@@ -18,7 +18,7 @@ The **demos** tutorials directory contains full end-to-end use-case applications
 <a id="stocks-demo"></a>
 ## Smart Stock Trading
 
-The [**stocks**](stocks/read_stocks.ipynb) demo demonstrates a smart stock-trading application: 
+The [**stocks**](stocks/read-stocks.ipynb) demo demonstrates a smart stock-trading application: 
 the application reads stock-exchange data from an internet service into a time-series database (TSDB); uses Twitter to analyze the market sentiment on specific stocks, in real time; and saves the data to a platform NoSQL table that is used for generating reports and analyzing and visualization the data in a Grafana dashboard.
 
 - The stock data is read from Twitter by using the [TwythonStreamer](https://twython.readthedocs.io/en/latest/usage/streaming_api.html) Python wrapper to the Twitter Streaming API, and saved to TSDB and NoSQL tables in the platform.
