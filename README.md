@@ -46,7 +46,7 @@ The platform supports various methods for generating Nuclio functions &mdash; us
 
 For a more in-depth introduction to the platform, see the following resources:
 
-- [Development Ecosystem and Managed Services](https://www.iguazio.com/docs/intro/latest-release/ecosystem)
+- [Components, Services, and Development Ecosystem](https://www.iguazio.com/docs/intro/latest-release/ecosystem)
 - [Introduction video](https://www.youtube.com/watch?v=hR_Hv0_WcUw)
 - [Unique data-layer architecture](https://www.iguazio.com/docs/intro/latest-release/architecture/)
 - [Creating and deploying Nuclio functions with Python and Jupyter Notebook](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md)
@@ -203,7 +203,7 @@ See the [virutal-env](getting-started/virutal-env.ipynb) tutorial notebook for s
 ### Platform Documentation, Examples, and Sample Data Sets
 
 - [References](https://iguazio.com/docs/reference/latest-release/)
-- [Development Ecosystem and Managed Services](https://www.iguazio.com/docs/intro/latest-release/ecosystem/)
+- [Components, Services, and Development Ecosystem](https://www.iguazio.com/docs/intro/latest-release/ecosystem/)
 - [Iguazio sample data-set](http://iguazio-sample-data.s3.amazonaws.com/) public Amazon S3 bucket
 
  <a id="third-party-resources"></a>
