@@ -16,6 +16,7 @@
   - [Stream Enrichment](demos/stream-enrich/stream-enrich.ipynb)
 - [Jupyter Notebook Basics](#jupyter-notebook-basics)
   - [Creating Virtual Environments in Jupyter Notebook](#creating-virtual-environments-in-jupyter-notebook)
+  - [Sync notebooks](#sync-notebooks)
 - [Additional Resources](#additional-resources)
   - [Platform Documentation, Examples, and Sample Data Sets](#platform-resources)
   - [Third-Party Documentation, Examples, and Sample Data Sets](#third-party-resources)
@@ -195,6 +196,19 @@ For information about the predefined data containers and how to reference data i
 A virtual environment is a named, isolated, working copy of Python that maintains its own files, directories, and paths so that you can work with specific versions of libraries or Python itself without affecting other Python projects.
 Virtual environments make it easy to cleanly separate projects and avoid problems with different dependencies and version requirements across components.
 See the [virutal-env](getting-started/virutal-env.ipynb) tutorial notebook for step-by-step instructions for using conda to create your own Python virtual environments, which will appear as custom kernels in Jupyter Notebook.
+
+<a id="sync-notebooks"></a>
+### Sync notebooks with the latest notebooks from Git
+
+At any point in time you can sync the demo notebooks from git to get the latest versions
+
+Note that the sync would not overwrite any new files that had been created by the user
+
+
+```python
+!chmod +x /v3io/${V3IO_HOME}/get_demos.sh
+!/v3io/${V3IO_HOME}/get_demos.sh iguazio
+```
 
 <a id="additional-resources"></a>
 ## Additional Resources
