@@ -200,7 +200,7 @@ See the [virutal-env](getting-started/virutal-env.ipynb) tutorial notebook for s
 <a id="update-notebooks"></a>
 ### Updating the Tutorial Notebooks to the Latest Version
 
-You can use the provided **get_demos.sh** script to update the tutorial notebooks to the latest stable version available on [GitHub](https://github.com/v3io/tutorials/).
+You can use the provided **igz-tutorials-get.sh** script to update the tutorial notebooks to the latest stable version available on [GitHub](https://github.com/v3io/tutorials/).
 For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebook.
 
 <a id="additional-resources"></a>
