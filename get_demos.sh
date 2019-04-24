@@ -6,12 +6,13 @@ GIT_REPO="https://github.com/v3io/tutorials.git"
 USER=${V3IO_USERNAME}
 
 USAGE="\
-$SCRIPT: Retrieves latest-release ${PRODUCT} tutorial files from the v3io/tutorials GitHub repository.
+$SCRIPT:
+Retrieves latest-release ${PRODUCT} tutorial files from the v3io/tutorials GitHub repo.
 USAGE: ${SCRIPT} [<username>]
-PARAMETERS
+PARAMETERS:
   <username> - Username, which determines the directory to which to copy the files - /v3io/users/<username>.
                Default = \$V3IO_USERNAME (if set to a non-empty string)
-OPTIONS
+OPTIONS:
   h|--help   -  Display this message and exit."
 
 while :
