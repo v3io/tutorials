@@ -29,7 +29,7 @@ the application reads stock-exchange data from an internet service into a time-s
 <a id="netops-demo"></a>
 ## Predictive Infrastructure Monitoring
 
-The [**netops**](netops/generator.ipynb) demo demonstrates predictive infrastructure monitoring: the application builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow.
+The [**netops**](netops/01-generator.ipynb) demo demonstrates predictive infrastructure monitoring: the application builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow.
 The goal is to identify anomalies for device metrics &mdash; such as CPU, memory consumption, or temperature &mdash; which can signify an upcoming issue or failure.
 
 - The model training is sped up by using the [Dask](https://dask.org/) Python library for parallel computing, which extends [pandas](https://pandas.pydata.org/) DataFrames.
