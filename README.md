@@ -85,7 +85,7 @@ There are many ways to collect and ingest data from various sources into the pla
 - Scraping or reading data from external sources &mdash; such as Twitter, weather services, or stock-trading data services &mdash; using serverless functions.
   See, for example, the [**stocks**](demos/stocks/read-stocks.ipynb) demo use-case application.
 
-For more information and examples of data collection and ingestion wcollect-n-exploreith the platform, see the [**collect-n-explore**](getting-started/collect-n-explore.ipynb#gs-data-collection-and-ingestion) tutorial Jupyter notebook.
+For more information and examples of data collection and ingestion with the platform, see the [**collect-n-explore**](getting-started/collect-n-explore.ipynb#gs-data-collection-and-ingestion) tutorial Jupyter notebook.
 
 <a id="data-exploration-and-processing"></a>
 ### Exploring and Processing Data
