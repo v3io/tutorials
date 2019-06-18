@@ -41,7 +41,6 @@ The model is then saved to a file for future usage.
 Using the model file from the previous step and the feature vectors created by the Preprocessing stage, predict if a device is about to fail.
 
 ## Jupyter-Dask
-
  - [Generator](01-generator.ipynb)
  - [Exploration](02-explore.ipynb)
  - [Training](03-training.ipynb)
@@ -49,9 +48,7 @@ Using the model file from the previous step and the feature vectors created by t
  - [Dashboard](05-grafana.ipynb)
  
  ## Nuclio
- 
- - [Generator](pipelines/nuclio-generator.ipynb)  
- - [PreProcessing](pipelines/nuclio-data-preperations.ipynb)  
- 
+ - [Generator](pipelines/nuclio-generator.ipynb)
+ - [PreProcessing](pipelines/nuclio-data-preperations.ipynb)
  - [Training](pipelines/nuclio-training.ipynb)
  - [Inference](pipelines/nuclio-inference.ipynb)
