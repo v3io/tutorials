@@ -44,4 +44,4 @@ metrics:
     validation:
       distribution: {max: 1, min: -1, validate: false}
       metric: {max: 300, min: 0, validate: true}
-timestamps: {interval: 6s, stochastic_interval: true}
+timestamps: {interval: 5s, stochastic_interval: true}
