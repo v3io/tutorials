@@ -16,6 +16,7 @@
   - [Stream Enrichment](demos/stream-enrich/stream-enrich.ipynb)
 - [Jupyter Notebook Basics](#jupyter-notebook-basics)
   - [Creating Virtual Environments in Jupyter Notebook](#creating-virtual-environments-in-jupyter-notebook)
+  - [Updating the Tutorial Notebooks](#update-notebooks)
 - [Additional Resources](#additional-resources)
   - [Platform Documentation, Examples, and Sample Data Sets](#platform-resources)
   - [Third-Party Documentation, Examples, and Sample Data Sets](#third-party-resources)
@@ -158,7 +159,7 @@ For information on how to create Grafana dashboards to monitor and visualize dat
 Iguazio provides full end-to-end use-case applications that demonstrate how to use the Iguazio Data Science Platform and related tools to address data science requirements for different industries and implementations.
 The applications are provided in the **demos** directory of the platform's tutorial Jupyter notebooks and cover the following use cases; for more detailed descriptions, see the demos README ([notebook](demos/README.ipynb) / [Markdown](demos/README.md)):
 
-- <a id="stocks-use-case-app"></a>**Smart stock trading** ([**stocks**](demos/stocks/read-stocks.ipynb)) &mdash; the application reads stock-exchange data from an internet service into a time-series database (TSDB); uses Twitter to analyze the market sentiment on specific stocks, in real time; and saves the data to a platform NoSQL table that is used for generating reports and analyzing and visualization the data in a Grafana dashboard.
+- <a id="stocks-use-case-app"></a>**Smart stock trading** ([**stocks**](demos/stocks/read-stocks.ipynb)) &mdash; the application reads stock-exchange data from an internet service into a time-series database (TSDB); uses Twitter to analyze the market sentiment on specific stocks, in real time; and saves the data to a platform NoSQL table that is used for generating reports and analyzing and visualizing the data on a Grafana dashboard.
 - <a id="netops-use-case-app"></a>**Predictive infrastructure monitoring** ([**netops**](demos/netops/generator.ipynb)) &mdash; the application builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow. The goal is to identify anomalies for device metrics &mdash; such as CPU, memory consumption, or temperature &mdash; which can signify an upcoming issue or failure.
 - <a id="image-recog-use-case-app"></a>**Image recognition** ([**image-classification**](demos/image-classification/keras-cnn-dog-or-cat-classification.ipynb)) &mdash; the application builds and trains an ML model that identifies (recognizes) and classifies images by using Keras, TensorFlow, and scikit-learn.
 - <a id="nlp-use-case-app"></a>**Natural language processing (NLP)** ([**nlp**](demos/nlp/nlp-example.ipynb)) &mdash; the application processes natural-language textual data &mdash; including spelling correction and sentiment analysis &mdash; and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
@@ -195,6 +196,12 @@ For information about the predefined data containers and how to reference data i
 A virtual environment is a named, isolated, working copy of Python that maintains its own files, directories, and paths so that you can work with specific versions of libraries or Python itself without affecting other Python projects.
 Virtual environments make it easy to cleanly separate projects and avoid problems with different dependencies and version requirements across components.
 See the [virutal-env](getting-started/virutal-env.ipynb) tutorial notebook for step-by-step instructions for using conda to create your own Python virtual environments, which will appear as custom kernels in Jupyter Notebook.
+
+<a id="update-notebooks"></a>
+### Updating the Tutorial Notebooks to the Latest Version
+
+You can use the provided **igz-tutorials-get.sh** script to update the tutorial notebooks to the latest stable version available on [GitHub](https://github.com/v3io/tutorials/).
+For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebook.
 
 <a id="additional-resources"></a>
 ## Additional Resources
