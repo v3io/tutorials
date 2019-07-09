@@ -1,16 +1,16 @@
 {
   "__inputs": [
     {
-      "name": "DS_STORE_LOCATIONS",
-      "label": "Store_Locations",
+      "name": "DS_RECOMMENDATION-WORLDMAP",
+      "label": "recommendation-worldmap",
       "description": "",
       "type": "datasource",
       "pluginId": "grafana-simple-json-datasource",
       "pluginName": "SimpleJson"
     },
     {
-      "name": "DS_IGUAZIO_PREDICTIONS_2",
-      "label": "iguazio_predictions_2",
+      "name": "DS_IGUAZIO",
+      "label": "iguazio",
       "description": "",
       "type": "datasource",
       "pluginId": "grafana-simple-json-datasource",
@@ -22,19 +22,19 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.1.3"
+      "version": "5.4.2"
     },
     {
       "type": "datasource",
       "id": "grafana-simple-json-datasource",
       "name": "SimpleJson",
-      "version": "1.3.5"
+      "version": "1.4.0"
     },
     {
       "type": "panel",
       "id": "grafana-worldmap-panel",
       "name": "Worldmap Panel",
-      "version": "0.0.21"
+      "version": "0.2.0"
     },
     {
       "type": "panel",
@@ -70,16 +70,17 @@
   "links": [],
   "panels": [
     {
-      "circleMaxSize": "5",
-      "circleMinSize": 2,
+      "circleMaxSize": "4",
+      "circleMinSize": "1",
       "colors": [
         "rgba(245, 54, 54, 0.9)",
         "#c15c17",
         "#e5ac0e",
         "#7eb26d",
+        "#629e51",
         "rgba(50, 172, 45, 0.97)"
       ],
-      "datasource": "${DS_STORE_LOCATIONS}",
+      "datasource": "${DS_RECOMMENDATION-WORLDMAP}",
       "decimals": 0,
       "esMetric": "Count",
       "gridPos": {
@@ -92,15 +93,24 @@
       "hideZero": true,
       "id": 10,
       "initialZoom": "12",
+      "jsonUrl": "http://worldmap-endpoint:8080",
       "links": [],
       "locationData": "json result",
       "mapCenter": "custom",
       "mapCenterLatitude": "51.522924",
       "mapCenterLongitude": "-0.133341",
       "maxDataPoints": 1,
+      "mouseWheelZoom": true,
       "repeat": null,
       "showLegend": true,
       "stickyLabels": false,
+      "tableQueryOptions": {
+        "geohashField": "geohash",
+        "latitudeField": "latitude",
+        "longitudeField": "longitude",
+        "metricField": "metric",
+        "queryType": "geohash"
+      },
       "targets": [
         {
           "refId": "A",
@@ -108,20 +118,20 @@
           "type": "table"
         }
       ],
-      "thresholds": "0, 2, 5, 10",
+      "thresholds": "0, 1, 3, 7, 10",
       "title": "Stores visitors",
       "type": "grafana-worldmap-panel",
       "unitPlural": "Customers",
       "unitSingle": "",
       "unitSingular": "Customer",
-      "valueName": "total"
+      "valueName": "current"
     },
     {
       "aliasColors": {},
-      "bars": false,
+      "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_IGUAZIO_PREDICTIONS_2}",
+      "datasource": "${DS_IGUAZIO}",
       "fill": 1,
       "gridPos": {
         "h": 13,
@@ -129,68 +139,69 @@
         "x": 0,
         "y": 9
       },
-      "id": 8,
+      "id": 11,
       "legend": {
-        "alignAsTable": false,
+        "alignAsTable": true,
         "avg": false,
         "current": false,
-        "hideEmpty": true,
-        "hideZero": true,
+        "hideEmpty": false,
+        "hideZero": false,
         "max": false,
         "min": false,
         "rightSide": true,
-        "show": false,
-        "sideWidth": null,
+        "show": true,
+        "sideWidth": 10,
         "total": false,
         "values": false
       },
       "lines": false,
-      "linewidth": 2,
+      "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
-      "pointradius": 2,
-      "points": true,
+      "pointradius": 5,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
-      "steppedLine": false,
+      "steppedLine": true,
       "targets": [
         {
+          "rawQuery": true,
           "refId": "A",
-          "target": "product",
+          "target": "backend=tsdb;container=bigdata;start=now-1h;query=select count(prediction) times  from predictions group by product_id",
           "type": "timeserie"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
-      "title": "Recommended Products",
+      "title": "Prediction Confidence",
       "tooltip": {
         "shared": false,
-        "sort": 2,
+        "sort": 1,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
-        "buckets": 50000,
-        "mode": "histogram",
+        "buckets": null,
+        "mode": "series",
         "name": null,
-        "show": true,
+        "show": false,
         "values": [
-          "total"
+          "current"
         ]
       },
       "yaxes": [
         {
           "decimals": 0,
-          "format": "none",
-          "label": "# Recommended",
+          "format": "short",
+          "label": "Times Recommended",
           "logBase": 1,
           "max": null,
-          "min": "2",
+          "min": "0",
           "show": true
         },
         {
@@ -209,11 +220,11 @@
     },
     {
       "aliasColors": {},
-      "bars": false,
+      "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_IGUAZIO_PREDICTIONS_2}",
-      "fill": 1,
+      "datasource": "${DS_IGUAZIO}",
+      "fill": 4,
       "gridPos": {
         "h": 6,
         "w": 12,
@@ -222,16 +233,18 @@
       },
       "id": 4,
       "legend": {
+        "alignAsTable": false,
         "avg": false,
-        "current": false,
+        "current": true,
         "max": false,
         "min": false,
+        "rightSide": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
-      "lines": true,
-      "linewidth": 1,
+      "lines": false,
+      "linewidth": 4,
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
@@ -241,30 +254,34 @@
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
-      "steppedLine": false,
+      "steppedLine": true,
       "targets": [
         {
+          "rawQuery": true,
           "refId": "A",
-          "target": "prediction",
+          "target": "backend=tsdb;container=bigdata;start=now-1h;query=select avg(prediction) as prediction_avg from predictions group by prediction_num",
           "type": "timeserie"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Prediction Confidence",
       "tooltip": {
-        "shared": true,
-        "sort": 0,
+        "shared": false,
+        "sort": 1,
         "value_type": "individual"
       },
       "type": "graph",
       "xaxis": {
         "buckets": null,
-        "mode": "time",
+        "mode": "series",
         "name": null,
-        "show": true,
-        "values": []
+        "show": false,
+        "values": [
+          "total"
+        ]
       },
       "yaxes": [
         {
@@ -291,7 +308,7 @@
     },
     {
       "columns": [],
-      "datasource": "${DS_IGUAZIO_PREDICTIONS_2}",
+      "datasource": "${DS_IGUAZIO}",
       "fontSize": "100%",
       "gridPos": {
         "h": 7,
@@ -399,32 +416,18 @@
       ],
       "targets": [
         {
+          "rawQuery": true,
           "refId": "A",
-          "target": "user_id",
-          "type": "timeserie"
-        },
-        {
-          "refId": "B",
-          "target": "product",
-          "type": "timeserie"
-        },
-        {
-          "refId": "C",
-          "target": "prediction_num",
-          "type": "timeserie"
-        },
-        {
-          "refId": "D",
-          "target": "prediction",
-          "type": "timeserie"
+          "target": "backend=tsdb;container=bigdata;start=now-1m;query=select customer_id, store, product_id, prediction_num, prediction from predictions limit 20",
+          "type": "table"
         }
       ],
       "title": "Latest Predictions",
-      "transform": "timeseries_to_columns",
+      "transform": "table",
       "type": "table"
     }
   ],
-  "refresh": "5s",
+  "refresh": "10s",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
@@ -463,5 +466,5 @@
   "timezone": "",
   "title": "Location_Based_Recommendations",
   "uid": "vuijtD4mk",
-  "version": 17
+  "version": 3
 }
