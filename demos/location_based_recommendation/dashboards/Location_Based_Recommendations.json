@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -26,11 +26,11 @@
         "rgba(245, 54, 54, 0.9)",
         "#c15c17",
         "#e5ac0e",
+        "rgb(227, 255, 134)",
         "#7eb26d",
-        "#629e51",
-        "rgba(50, 172, 45, 0.97)"
+        "rgba(10, 255, 0, 0.97)"
       ],
-      "datasource": "recommendation-worldmap",
+      "datasource": "worldmap",
       "decimals": 0,
       "esMetric": "Count",
       "gridPos": {
@@ -68,7 +68,7 @@
           "type": "table"
         }
       ],
-      "thresholds": "0, 1, 2, 3, 4",
+      "thresholds": "0, 5, 12, 21, 31",
       "title": "Stores visitors",
       "type": "grafana-worldmap-panel",
       "unitPlural": "Customers",
@@ -377,7 +377,7 @@
       "type": "table"
     }
   ],
-  "refresh": "10s",
+  "refresh": "1m",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
@@ -416,5 +416,5 @@
   "timezone": "",
   "title": "Location_Based_Recommendations",
   "uid": "vuijtD4mk",
-  "version": 4
+  "version": 2
 }
