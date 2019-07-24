@@ -10,7 +10,7 @@
   - [Visualization, Monitoring, and Logging](#visualization-monitoring-and-logging)
 - [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
   - [Smart Stock Trading](demos/stocks/read-stocks.ipynb)
-  - [Predictive Infrastructure Monitoring](demos/netops/generator.ipynb)
+  - [Predictive Infrastructure Monitoring](demos/netops/01-generator.ipynb)
   - [Image Recognition](demos/image-classification/keras-cnn-dog-or-cat-classification.ipynb)
   - [Natural Language Processing (NLP)](demos/nlp/nlp-example.ipynb)
   - [Stream Enrichment](demos/stream-enrich/stream-enrich.ipynb)
@@ -85,7 +85,7 @@ There are many ways to collect and ingest data from various sources into the pla
 - Scraping or reading data from external sources &mdash; such as Twitter, weather services, or stock-trading data services &mdash; using serverless functions.
   See, for example, the [**stocks**](demos/stocks/read-stocks.ipynb) demo use-case application.
 
-For more information and examples of data collection and ingestion wcollect-n-exploreith the platform, see the [**collect-n-explore**](getting-started/collect-n-explore.ipynb#gs-data-collection-and-ingestion) tutorial Jupyter notebook.
+For more information and examples of data collection and ingestion with the platform, see the [**collect-n-explore**](getting-started/collect-n-explore.ipynb#gs-data-collection-and-ingestion) tutorial Jupyter notebook.
 
 <a id="data-exploration-and-processing"></a>
 ### Exploring and Processing Data
@@ -117,7 +117,7 @@ You can develop and test data science models in the platform's Jupyter Notebook 
 When your model is ready, you can train it in Jupyter Notebook or by using scalable cluster resources such as Nuclio functions, Dask, Spark ML, or Kubernetes jobs.
 You can find model-training examples in the platform's tutorial Jupyter notebooks:
 
-- The [NetOps demo](demos/netops/training.ipynb) tutorial demonstrates predictive infrastructure-monitoring using scikit-learn.
+- The [NetOps demo](demos/netops/03-training.ipynb) tutorial demonstrates predictive infrastructure-monitoring using scikit-learn.
 - The [image-classification demo](demos/image-classification/infer.ipynb) tutorial demonstrates image recognition using TensorFlow and Keras.
 
 If you're are a beginner, you might find the following ML guide useful &mdash; [Machine Learning Algorithms In Layman's Terms](https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-1-d0368d769a7b).
@@ -137,7 +137,7 @@ For detailed information about Nuclio, visit the [Nuclio web site](https://nucli
 > **Note:** Nuclio functions aren't limited to model serving: they can automate data collection, serve custom APIs, build real-time feature vectors, drive triggers, and more.
 
 For an overview of Nuclio and how to develop, document, and deploy serverless Python Nuclio functions from Jupyter Notebook, see the [nuclio-jupyter documentation](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md).
-You can also find examples in the platform tutorial Jupyter notebooks; for example, the [NetOps demo](demos/netops/infer.ipynb) tutorial demonstrates how to deploy a network-operations model as a function.
+You can also find examples in the platform tutorial Jupyter notebooks; for example, the [NetOps demo](demos/netops/04-infer.ipynb) tutorial demonstrates how to deploy a network-operations model as a function.
 
 <a id="visualization-monitoring-and-logging"></a>
 ### Visualization, Monitoring, and Logging
@@ -160,7 +160,7 @@ Iguazio provides full end-to-end use-case applications that demonstrate how to u
 The applications are provided in the **demos** directory of the platform's tutorial Jupyter notebooks and cover the following use cases; for more detailed descriptions, see the demos README ([notebook](demos/README.ipynb) / [Markdown](demos/README.md)):
 
 - <a id="stocks-use-case-app"></a>**Smart stock trading** ([**stocks**](demos/stocks/read-stocks.ipynb)) &mdash; the application reads stock-exchange data from an internet service into a time-series database (TSDB); uses Twitter to analyze the market sentiment on specific stocks, in real time; and saves the data to a platform NoSQL table that is used for generating reports and analyzing and visualizing the data on a Grafana dashboard.
-- <a id="netops-use-case-app"></a>**Predictive infrastructure monitoring** ([**netops**](demos/netops/generator.ipynb)) &mdash; the application builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow. The goal is to identify anomalies for device metrics &mdash; such as CPU, memory consumption, or temperature &mdash; which can signify an upcoming issue or failure.
+- <a id="netops-use-case-app"></a>**Predictive infrastructure monitoring** ([**netops**](demos/netops/01-generator.ipynb)) &mdash; the application builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow. The goal is to identify anomalies for device metrics &mdash; such as CPU, memory consumption, or temperature &mdash; which can signify an upcoming issue or failure.
 - <a id="image-recog-use-case-app"></a>**Image recognition** ([**image-classification**](demos/image-classification/keras-cnn-dog-or-cat-classification.ipynb)) &mdash; the application builds and trains an ML model that identifies (recognizes) and classifies images by using Keras, TensorFlow, and scikit-learn.
 - <a id="nlp-use-case-app"></a>**Natural language processing (NLP)** ([**nlp**](demos/nlp/nlp-example.ipynb)) &mdash; the application processes natural-language textual data &mdash; including spelling correction and sentiment analysis &mdash; and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
 - <a id="stream-enrich-use-case-app"></a>**Stream enrichment** ([**stream-enrich**](demos/stream-enrich/stream-enrich.ipynb)) &mdash; the application demonstrates a typical stream-based data-engineering pipeline, which is required in many real-world scenarios: data is streamed from an event streaming engine; the data is enriched, in real time, using data from a NoSQL table; the enriched data is saved to an output data stream and then consumed from this stream.
