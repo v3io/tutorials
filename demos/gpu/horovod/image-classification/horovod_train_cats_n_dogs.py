@@ -20,7 +20,6 @@ HOROVOD_DIR = sys.argv[2]
 epochs = 6
 batch_size = 64
 
-
 # Define image parameters
 IMAGE_WIDTH=128
 IMAGE_HEIGHT=128
