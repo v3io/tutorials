@@ -13,7 +13,7 @@ import horovod.keras as hvd
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-# get the images path
+# Get the images path
 DATA_PATH = sys.argv[1]
 HOROVOD_DIR = sys.argv[2]
 
@@ -27,17 +27,17 @@ IMAGE_HEIGHT=128
 IMAGE_SIZE=(IMAGE_WIDTH, IMAGE_HEIGHT)
 IMAGE_CHANNELS=3 # RGB color
 
-# create filenames list (jpg only)
+# Create a file-names list (JPG image-files only)
 filenames = [file for file in os.listdir(DATA_PATH + "/cats_n_dogs/") if file.endswith('jpg')]
 categories = []
 
-# categories & prediction classes map
+# Create a categories and prediction classes map
 categories_map = {
     'dog': 1,
     'cat': 0,
 }
 
-# Full samples DF
+# Create a pandas DataFrame for the full sample
 for filename in filenames:
     category = filename.split('.')[0]
     categories.append([categories_map[category]])
@@ -48,7 +48,7 @@ df = pd.DataFrame({
 })
 df['category'] = df['category'].astype('str');
 
-# Prepare Test and Train Data
+# Prepare, test, and train the data
 train_df, validate_df = train_test_split(df, test_size=0.20, random_state=42)
 train_df = train_df.reset_index(drop=True)
 validate_df = validate_df.reset_index(drop=True)
@@ -59,11 +59,10 @@ total_validate = validate_df.shape[0]
 total_train = train_df.shape[0]
 total_validate = validate_df.shape[0]
 
-
 # Horovod: initialize Horovod.
 hvd.init()
 
-# Horovod: pin GPU to be used to process local rank (one GPU per process)
+# Horovod: pin GPU to be used to process local rank (one GPU per process).
 config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
 config.gpu_options.visible_device_list = str(hvd.local_rank())
@@ -172,7 +171,8 @@ history = model.fit_generator(
     validation_steps=total_validate // batch_size
 )
 
-# save the model
+# Save the model
 model.save(HOROVOD_DIR + '/cats_dogs.hd5')
 
 print(pd.DataFrame(history.history))
+
