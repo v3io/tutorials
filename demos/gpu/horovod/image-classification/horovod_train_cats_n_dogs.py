@@ -170,8 +170,9 @@ history = model.fit_generator(
     validation_steps=total_validate // batch_size
 )
 
-# Save the model
-model.save(HOROVOD_DIR + '/cats_dogs.hd5')
+#save the model only on worker 0 to prevent failures ("cannot lock file")
+if hvd.rank() == 0:
+    model.save(HOROVOD_DIR + '/cats_dogs.hd5')
 
 print(pd.DataFrame(history.history))
 
