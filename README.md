@@ -1,4 +1,3 @@
-
 # Welcome to the Iguazio Data Science Platform
 
 - [Platform Overview](#platform-overview)
@@ -9,7 +8,7 @@
   - [Deploying Models to Production](#deploying-models-to-production)
   - [Visualization, Monitoring, and Logging](#visualization-monitoring-and-logging)
 - [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
-  - [Smart Stock Trading](demos/stocks/read-stocks.ipynb)
+  - [Smart Stock Trading](demos/stocks/01-gen-demo-data.ipynb)
   - [Predictive Infrastructure Monitoring](demos/netops/01-generator.ipynb)
   - [Image Recognition](demos/image-classification/keras-cnn-dog-or-cat-classification.ipynb)
   - [Natural Language Processing (NLP)](demos/nlp/nlp-example.ipynb)
@@ -52,10 +51,8 @@ For a more in-depth introduction to the platform, see the following resources:
 - [Unique data-layer architecture](https://www.iguazio.com/docs/intro/latest-release/architecture/)
 - [Creating and deploying Nuclio functions with Python and Jupyter Notebook](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md)
 
-A good place to start your development is with the platform [tutorial Jupyter notebooks](https://github.com/v3io/tutorials).
-
-- The [**getting-started**](getting-started/collect-n-explore.ipynb) directory contains information and code examples to help you quickly get started using the platform.
-- The [**demos**](demos/README.ipynb) directory contains full end-to-end use-case application demos.
+A good place to start your development is with the platform [tutorial Jupyter notebooks](https://github.com/v3io/tutorials), which are available in the home directory of the platform's Jupyter Notebook service; see especially the [getting-started examples](getting-started/collect-n-explore.ipynb) and full [use-case demo applications](demos/README.ipynb).
+You can find a tutorials overview in the [Jupyter Notebook Basics](#jupyter-notebook-basics) section of this document.
 
 <a id="data-science-workflow"></a>
 ## Data Science Workflow
@@ -122,6 +119,15 @@ You can find model-training examples in the platform's tutorial Jupyter notebook
 
 If you're are a beginner, you might find the following ML guide useful &mdash; [Machine Learning Algorithms In Layman's Terms](https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-1-d0368d769a7b).
 
+<a id="experiment-tracking"></a>
+#### Experiment Tracking
+
+One of the most important and challenging areas of managing a data science environment is the ability to track experiments.
+Data scientists need a simple way to track and view current and historical experiments along with the metadata that is associated with each experiment.
+This capability is critical for comparing different runs, and eventually helps to determine the best model and configuration for production deployment.
+The platform leverages the open-source [MLrun](https://github.com/mlrun/mlrun) library to help tackle these challenges.
+You can find examples of using MLrun in the [**experiment tracking**](experiment-tracking/01-mlrun-getting-started.ipynb) platform-tutorials directory.
+
 <a id="deploying-models-to-production"></a>
 ### Deploying Models to Production
 
@@ -177,16 +183,17 @@ To create a new notebook or terminal, select the **New Launcher** option (`+` ic
 The top menu bar exposes available top-level actions, such as exporting a notebook in a different format.
 
 The left-sidebar menu contains commonly used tabs, including a **File Browser** (directory icon) for browsing files.<br>
-The root file-browser directory of the platform's Jupyter Notebook service contains the following files and directories:
+The home directory of the platform's Jupyter Notebook service contains the following files and directories:
 
 - **v3io** directory, which displays the contents of the `v3io` platform cluster data mount for browsing the contents of the cluster's data containers.
   You can also browse the contents of the data containers from the **Data** page of the platform dashboard.
 - The contents of the running-user home directory &mdash; **users/&lt;running user&gt;**.
   This directory contains the platform's [tutorial Jupyter notebooks](https://github.com/v3io/tutorials):
 
-  - [**welcome.ipynb**](../welcome.ipynb) / [**README.md**](../README.md) &mdash; the current document, which provides a short introduction to the platform and how to use it to implement a full data science workflow.
-  - **getting-started** &mdash; a directory containing getting-started tutorials that explain and demonstrate how to perform different platform operations using the platform APIs and integrated tools.
-  - **demos** &mdash; a directory containing [end-to-end application use-case demos](#end-to-end-use-case-applications).
+  - **welcome.ipynb** / [**README.md**](../README.md) &mdash; the current document, which provides a short introduction to the platform and how to use it to implement a full data science workflow.
+  - [**getting-started**]() &mdash; a directory containing getting-started tutorials that explain and demonstrate how to perform different platform operations using the platform APIs and integrated tools.
+  - [**demos**](demos/README.ipynb) &mdash; a directory containing [end-to-end application use-case demos](#end-to-end-use-case-applications).
+  - [**experiment-tracking**](experiment-tracking/01-mlrun-getting-started.ipynb) &mdash; a directory containing sample ML experiment-tracking and pipelines-execution code.
 
 For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](getting-started/collect-n-explore.ipynb/#platform-data-containers) in the **collect-n-explore** tutorial notebook.
 
