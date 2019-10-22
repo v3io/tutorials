@@ -125,8 +125,8 @@ If you're are a beginner, you might find the following ML guide useful &mdash; [
 One of the most important and challenging areas of managing a data science environment is the ability to track experiments.
 Data scientists need a simple way to track and view current and historical experiments along with the metadata that is associated with each experiment.
 This capability is critical for comparing different runs, and eventually helps to determine the best model and configuration for production deployment.
-The platform leverages the open-source [MLrun](https://github.com/mlrun/mlrun) library to help tackle these challenges.
-You can find examples of using MLrun in the [**experiment tracking**](experiment-tracking/01-mlrun-getting-started.ipynb) platform-tutorials directory.
+The platform leverages the open-source [MLRun](https://github.com/mlrun/mlrun) library to help tackle these challenges.
+You can find examples of using MLRun in the [**experiment tracking**](experiment-tracking/01-mlrun-getting-started.ipynb) platform-tutorials directory.
 
 <a id="deploying-models-to-production"></a>
 ### Deploying Models to Production
