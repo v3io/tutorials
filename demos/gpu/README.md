@@ -12,7 +12,7 @@
 The GPU demos are aimed at demonstrating how to run code over graphics processing units (GPUs) in the Iguazio Data Science Platform (**the platform**).
 The **demos/gpu** directory includes the following:
 
-- A **horovod** directory with applications that use Uber's [Horovod](https://eng.uber.com/horovod/) distributed deep-learning framework, which can be used to convert a single-GPU TensorFlow, Keras, or PyTorch model-training program to a distributed program that trains the model simultaneously over multiple GPUs.
+- A **horovod** directory with applications that use Uber's [Horovod](https://eng.uber.com/horovod/) [(github)](https://github.com/horovod/horovod) distributed deep-learning framework, which can be used to convert a single-GPU TensorFlow, Keras, or PyTorch model-training program to a distributed program that trains the model simultaneously over multiple GPUs.
     The objective is to speed up your model training with minimal changes to your existing single-GPU code and without complicating the execution.
     Horovod code can also run over CPUs with only minor modifications.
     The Horovod tutorials include the following:
@@ -44,7 +44,7 @@ The following prerequisites must be met to successfully run the Horovod demo tut
 
 The following prerequisites must be met to successfully run the RAPIDS demo tutorials (**demos/rapids**):
 
-- Your environment has one or more GPUs with the [NVIDIA Pascal](https://www.nvidia.com/en-us/geforce/products/10series/architecture/) architecture or better and [compute capability](https://developer.nvidia.com/cuda-gpus) 6.0+.
+- Your environment has one or more GPUs with the [NVIDIA Pascal](https://www.nvidia.com/en-us/geforce/products/10series/architecture/) architecture or better and [CUDA](https://developer.nvidia.com/cuda-gpus) 6.0+.
 - At least one GPU resource has been configured for the parent Jupyter Notebook service (**Common Parameters > Resources > GPU > Limit**).
   See also the [GPU Resources Note](#gpu-resources-note).
 - The Jupyter Notebook service from which the code is executed uses the **"Jupyter Full Stack with GPU"** flavor.
