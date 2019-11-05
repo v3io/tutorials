@@ -1,4 +1,3 @@
-
 # GPU Demos
 
 - [Overview](#gpu-demos-overview)
@@ -15,6 +14,8 @@ The **demos/gpu** directory includes the following:
 - A **horovod** directory with applications that use Uber's [Horovod](https://eng.uber.com/horovod/) distributed deep-learning framework, which can be used to convert a single-GPU TensorFlow, Keras, or PyTorch model-training program to a distributed program that trains the model simultaneously over multiple GPUs.
     The objective is to speed up your model training with minimal changes to your existing single-GPU code and without complicating the execution.
     Horovod code can also run over CPUs with only minor modifications.
+    For more information and examples, see the [Horovod GitHub repository](https://github.com/horovod/horovod).
+    
     The Horovod tutorials include the following:
 
     - An image-recognition demo application for execution over GPUs (**image-classification**).
@@ -22,6 +23,7 @@ The **demos/gpu** directory includes the following:
     - Benchmark tests (**benchmark-tf.ipynb**, which executes **tf_cnn_benchmarks.py**).
 
 - A **rapids** directory with applications that use NVIDIA's [RAPIDS](https://rapids.ai/) open-source libraries suite for executing end-to-end data science and analytics pipelines entirely on GPUs.
+
   The RAPIDS tutorials include the following:
 
     - Demo applications that use the [cuDF](https://rapidsai.github.io/projects/cudf/en/latest/index.html) RAPIDS GPU DataFrame library to perform batching and aggregation of data that's read from a Kafaka stream, and then write the results to a Parquet file.<br>
