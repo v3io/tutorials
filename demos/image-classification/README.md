@@ -14,10 +14,10 @@ The Example also demonstrate an [automated pipeline](mlrun_mpijob_pipe.ipynb) us
 
 ## Notebooks & Code
 
-* [All-in-one: Import, tag, launch training, deploy serving](mlrun_mpijob_classify.ipynb) 
+* [All-in-one: Import, tag, launch training, deploy serving](01-image-classification.ipynb) 
 * [Training function code](horovod-training.py)
 * [Serving function development and testing](nuclio-serving-tf-images.ipynb)
-* [Auto generation of KubeFlow pipelines workflow](mlrun_mpijob_pipe.ipynb)
+* [Auto generation of KubeFlow pipelines workflow](02-create_pipeline.ipynb)
 * [Building serving function using Dockerfile](./inference-docker)
   * [function code](./inference-docker/main.py)
   * [Dockerfile](./inference-docker/Dockerfile)
