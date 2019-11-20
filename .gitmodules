@@ -1,3 +1,0 @@
-[submodule "demos/mlrun"]
-	path = demos/mlrun
-	url = git@github.com:mlrun/demos.git
