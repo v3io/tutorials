@@ -16,17 +16,14 @@ The **demos/gpu** directory includes the following:
     Horovod code can also run over CPUs with only minor modifications.
     For more information and examples, see the [Horovod GitHub repository](https://github.com/horovod/horovod).
     
-    The Horovod tutorials include the following:
-
-    - An image-recognition demo application for execution over GPUs (**image-classification**).
-    - A slightly modified version of the GPU image-classification demo application for execution over CPUs (**cpu/image-classification**).
-    - Benchmark tests (**benchmark-tf.ipynb**, which executes **tf_cnn_benchmarks.py**).
+    The Horovod GPU tutorials include benchmark tests (**benchmark-tf.ipynb**, which executes **tf_cnn_benchmarks.py**).<br>
+    In addition, the image-classification demo ([**demos/image-classification/**](../image-classification/01-image-classification.ipynb)) demonstrates how to use Horovod for image recognition, and can be configured to run over GPUs.
 
 - A **rapids** directory with applications that use NVIDIA's [RAPIDS](https://rapids.ai/) open-source libraries suite for executing end-to-end data science and analytics pipelines entirely on GPUs.
 
   The RAPIDS tutorials include the following:
 
-    - Demo applications that use the [cuDF](https://rapidsai.github.io/projects/cudf/en/latest/index.html) RAPIDS GPU DataFrame library to perform batching and aggregation of data that's read from a Kafaka stream, and then write the results to a Parquet file.<br>
+    - Demo applications that use the [cuDF](https://rapidsai.github.io/projects/cudf/en/latest/index.html) RAPIDS GPU DataFrame library to perform batching and aggregation of data that's read from a Kafka stream, and then write the results to a Parquet file.<br>
       The **nuclio-cudf-agg.ipynb** demo implements this by using a Nuclio serverless function while the **python-agg.ipynb** demo implements this by using a standalone Python function.
     - Benchmark tests that compare the performance of RAPIDS cuDF to pandas DataFrames (**benchmark-cudf-vs-pd.ipynb**).
 
