@@ -17,17 +17,15 @@ The **demos** tutorials directory contains full end-to-end use-case applications
 <a id="image-classification-demo"></a>
 ## Image Classification
 
-The [**image-classification**](image-classification/01-image-classification.ipynb) demo demonstrates image recognition: the application builds and trains an ML model that identifies (recognizes) and classifies images.
+The [**image-classification**](image-classification/01-image-classification.ipynb) demo demonstrates an end-to-end solution for image recognition: the application uses TensorFlow, Keras, Horovod, and Nuclio to build and train an ML model that identifies (recognizes) and classifies images. 
+The application consists of four MLRun and Nuclio functions for performing the following operations:
 
-This example is using TensorFlow, Horovod, and Nuclio demonstrating end to end solution for image classification, 
-it consists of 4 MLRun and Nuclio functions:
+1. Import an image archive from from an Amazon Simple Storage (S3) bucket to the platform's data store.
+2. Tag the images based on their name structure.
+3. Train the image-classification ML model by using [TensorFlow](https://www.tensorflow.org/) and [Keras](https://keras.io/); use [Horovod](https://eng.uber.com/horovod/) to perform distributed training over either GPUs or CPUs.
+4. Automatically deploy a Nuclio model-serving function from [Jupyter Notebook](nuclio-serving-tf-images.ipynb) or from a [Dockerfile](./inference-docker).
 
-1. import an image archive from S3 to the cluster file system
-2. Tag the images based on their name structure 
-3. Distrubuted training using TF, Keras and Horovod
-4. Automated deployment of Nuclio model serving function (form [Notebook](nuclio-serving-tf-images.ipynb) and from [Dockerfile](./inference-docker))
-
-The Example also demonstrate an [automated pipeline](mlrun_mpijob_pipe.ipynb) using MLRun and KubeFlow pipelines 
+This demo also provides an example of an [automated pipeline](image-classification/02-create_pipeline.ipynb) using [MLRun](https://github.com/mlrun/mlrun) and [Kubeflow pipelines](https://github.com/kubeflow/pipelines).
 
 <a id="netops-demo"></a>
 ## Predictive Infrastructure Monitoring
