@@ -42,6 +42,7 @@ cp -rf ${TEMP_DIR}/getting-started ${DEST_DIR}
 cp -rf ${TEMP_DIR}/demos ${DEST_DIR}
 cp -rf ${TEMP_DIR}/*.ipynb ${DEST_DIR}
 cp -rf ${TEMP_DIR}/assets ${DEST_DIR}
+cp -rf ${TEMP_DIR}/experiment-tracking ${DEST_DIR}
 cp -f ${TEMP_DIR}/README.md ${TEMP_DIR}/LICENSE ${DEST_DIR}
 echo "Deleting temporary ${DEST_DIR} directory ..."
 rm -rf ${TEMP_DIR}
