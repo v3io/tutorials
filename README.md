@@ -7,12 +7,16 @@
   - [Building and Training Models](#building-and-training-models)
   - [Deploying Models to Production](#deploying-models-to-production)
   - [Visualization, Monitoring, and Logging](#visualization-monitoring-and-logging)
-- [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
-  - [Image Classification](demos/image-classification/01-image-classification.ipynb)
-  - [Predictive Infrastructure Monitoring](demos/netops/01-generator.ipynb)
+- [End-to-End Use-Case Applications](#end-to-end-use-case-applications) -- see below instruction on fetching the demo
+  - [Image Classification](demos/image_classification/README.md)
+  - [XGBoost Classification](demos/xgboost/train_xgboost_serverless.ipynb)
+  - [LightGBM Classification](demos/lightgbm/README.md)
+  - [Predictive Infrastructure Monitoring](demos/netops/README.md)
   - [Natural Language Processing (NLP)](demos/nlp/nlp-example.ipynb)
   - [Stream Enrichment](demos/stream-enrich/stream-enrich.ipynb)
   - [Smart Stock Trading](demos/stocks/01-gen-demo-data.ipynb)
+  - [Serverless Spark](demos/spark/mlrun_sparkk8s.ipynb)
+  - [Real-time-user-segmentation](demos/slots-stream/real-time-user-segmentation.ipynb)
 - [Jupyter Notebook Basics](#jupyter-notebook-basics)
   - [Creating Virtual Environments in Jupyter Notebook](#creating-virtual-environments-in-jupyter-notebook)
   - [Updating the Tutorial Notebooks](#update-notebooks)
@@ -83,7 +87,7 @@ There are many ways to collect and ingest data from various sources into the pla
 - Scraping or reading data from external sources &mdash; such as Twitter, weather services, or stock-trading data services &mdash; using serverless functions.
   See, for example, the [**stocks**](demos/stocks/read-stocks.ipynb) demo use-case application.
 
-For more information and examples of data collection and ingestion with the platform, see the [**collect-n-explore**](getting-started/collect-n-explore.ipynb#gs-data-collection-and-ingestion) tutorial Jupyter notebook.
+For more information and examples of data collection and ingestion with the platform, see the [**getting-started-basic**](getting-started/getting-started-basic.ipynb#gs-data-collection-and-ingestion) tutorial Jupyter notebook.
 
 <a id="data-exploration-and-processing"></a>
 ### Exploring and Processing Data
@@ -163,14 +167,32 @@ For information on how to create Grafana dashboards to monitor and visualize dat
 <a id="end-to-end-use-case-applications"></a>
 ## End-to-End Use-Case Applications
 
+
+```python
+The platform comes with few built-in demos but in order to get the latest demos one should run the following commands:
+```
+
+
+```python
+!chmod +x /User/get-demos.sh
+!/User/get-demos.sh
+```
+
 Iguazio provides full end-to-end use-case applications that demonstrate how to use the Iguazio Data Science Platform and related tools to address data science requirements for different industries and implementations.
 The applications are provided in the **demos** directory of the platform's tutorial Jupyter notebooks and cover the following use cases; for more detailed descriptions, see the demos README ([notebook](demos/README.ipynb) / [Markdown](demos/README.md)):
 
-- <a id="image-recog-use-case-app"></a>**Image recognition** ([**image-classification**](demos/image-classification/01-image-classification.ipynb)) &mdash; the application builds and trains an ML model that identifies (recognizes) and classifies images by using Keras, TensorFlow, and scikit-learn.
-- <a id="netops-use-case-app"></a>**Predictive infrastructure monitoring** ([**netops**](demos/netops/01-generator.ipynb)) &mdash; the application builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow. The goal is to identify anomalies for device metrics &mdash; such as CPU, memory consumption, or temperature &mdash; which can signify an upcoming issue or failure.
+- <a id="XGBoost Classification with Hyper Parameters (Iris dataset)"></a>**XGBoost Classification** ([**XGBoost Classification**](demos/xgboost/train_xgboost_serverless.ipynb)) &mdash;Demonstrate a popular machine learning use case (iris dataset) and how to run training in parallel with hyper-parameters.
+- <a id="LighGBM Classification with Hyper Parameters (HIGGS dataset)"></a>**LighGBM Classification** ([**LighGMB Classification**](demos/lightgbm/README.md)) &mdash;Demonstrate a popular big data, machine learning competition use case (the HIGGS UCI dataset) and how to run training in parallel with hyper-parameters.
+- <a id="Real-time face Recognition with re-enforced learning"></a>**Face recognition** ([**Face recognition**](demos/faces/README.md))
+Demonstrate real-time face image capture, recognition, and location tracking of identities.
+- <a id="Running Serverless Spark"></a>**Serverless Spark** ([**Serverless Spark**](demos/spark/mlrun_sparkk8s.ipynb)) Demonstrate how the same spark job can run locally and as a distributed MLRun job over Kubernetes. The Spark function can be incorporated as a step in various data preparation and machine learning scenarios.
+- <a id="image-recog-use-case-app"></a>**Image recognition** ([**image-classification**](demos/image_classification/README.md)) &mdash; the application builds and trains an ML model that identifies (recognizes) and classifies images by using Keras, TensorFlow, and scikit-learn.
+- <a id="netops-use-case-app"></a>**Predictive infrastructure monitoring** ([**netops**](demos/netops/README.md)) &mdash; the application builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow. The goal is to identify anomalies for device metrics &mdash; such as CPU, memory consumption, or temperature &mdash; which can signify an upcoming issue or failure.
 - <a id="nlp-use-case-app"></a>**Natural language processing (NLP)** ([**nlp**](demos/nlp/nlp-example.ipynb)) &mdash; the application processes natural-language textual data &mdash; including spelling correction and sentiment analysis &mdash; and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
 - <a id="stream-enrich-use-case-app"></a>**Stream enrichment** ([**stream-enrich**](demos/stream-enrich/stream-enrich.ipynb)) &mdash; the application demonstrates a typical stream-based data-engineering pipeline, which is required in many real-world scenarios: data is streamed from an event streaming engine; the data is enriched, in real time, using data from a NoSQL table; the enriched data is saved to an output data stream and then consumed from this stream.
 - <a id="stocks-use-case-app"></a>**Smart stock trading** ([**stocks**](demos/stocks/read-stocks.ipynb)) &mdash; the application reads stock-exchange data from an internet service into a time-series database (TSDB); uses Twitter to analyze the market sentiment on specific stocks, in real time; and saves the data to a platform NoSQL table that is used for generating reports and analyzing and visualizing the data on a Grafana dashboard.
+- <a id="real-time-user-segmentation"></a>**Real Time User Segmentation** ([**Real Time User Segmentation**](demos/slots-stream/real-time-user-segmentation.ipynb)) &mdash; The application demonstrates how to build a streaming complex event processing on a sliding time window for tagging and untagging users based on programmatic rules of user behavior.
+
 
 <a id="jupyter-notebook-basics"></a>
 ## Jupyter Notebook Basics
