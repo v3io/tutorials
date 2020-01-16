@@ -7,16 +7,21 @@
   - [Building and Training Models](#building-and-training-models)
   - [Deploying Models to Production](#deploying-models-to-production)
   - [Visualization, Monitoring, and Logging](#visualization-monitoring-and-logging)
-- [End-to-End Use-Case Applications](#end-to-end-use-case-applications) -- see below instruction on fetching the demo
-  - [Image Classification](demos/image_classification/README.md)
-  - [XGBoost Classification](demos/xgboost/train_xgboost_serverless.ipynb)
-  - [LightGBM Classification](demos/lightgbm/README.md)
-  - [Predictive Infrastructure Monitoring](demos/netops/README.md)
-  - [Natural Language Processing (NLP)](demos/nlp/nlp-example.ipynb)
-  - [Stream Enrichment](demos/stream-enrich/stream-enrich.ipynb)
-  - [Smart Stock Trading](demos/stocks/01-gen-demo-data.ipynb)
-  - [Serverless Spark](demos/spark/mlrun_sparkk8s.ipynb)
+- [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
+  
+  Pre-deployed demos &mdash;
+  - [Natural language processing (NLP)](demos/nlp/nlp-example.ipynb)
+  - [Stream enrichment](demos/stream-enrich/stream-enrich.ipynb)
+  - [Smart stock trading](demos/stocks/01-gen-demo-data.ipynb)
   - [Real-time-user-segmentation](demos/slots-stream/real-time-user-segmentation.ipynb)
+  
+  Additional demos (see the [download instructions](#mlrun-demos-download)) &mdash;
+  - [XGBoost classification](demos/xgboost/train_xgboost_serverless.ipynb)
+  - [LightGBM classification](demos/lightgbm/README.md)
+  - [Face recognition](demos/faces/README.md)
+  - [Serverless Spark](demos/spark/mlrun_sparkk8s.ipynb)
+  - [Image recognition](demos/image_classification/README.md)
+  - [Predictive infrastructure monitoring](demos/netops/README.md)
 - [Jupyter Notebook Basics](#jupyter-notebook-basics)
   - [Creating Virtual Environments in Jupyter Notebook](#creating-virtual-environments-in-jupyter-notebook)
   - [Updating the Tutorial Notebooks](#update-notebooks)
@@ -167,10 +172,9 @@ For information on how to create Grafana dashboards to monitor and visualize dat
 <a id="end-to-end-use-case-applications"></a>
 ## End-to-End Use-Case Applications
 
-
-```python
-The platform comes with few built-in demos but in order to get the latest demos one should run the following commands:
-```
+Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the Iguazio Data Science Platform and related tools to address data science requirements for different industries and implementations.
+Some of the demos are pre-deployed with the platform and available in the **demos** tutorial-notebooks directory.<br>
+<a id="mlrun-demos-download"></a>Run the following commands to download additional demos:
 
 
 ```python
@@ -178,21 +182,23 @@ The platform comes with few built-in demos but in order to get the latest demos 
 !/User/get-demos.sh
 ```
 
-Iguazio provides full end-to-end use-case applications that demonstrate how to use the Iguazio Data Science Platform and related tools to address data science requirements for different industries and implementations.
-The applications are provided in the **demos** directory of the platform's tutorial Jupyter notebooks and cover the following use cases; for more detailed descriptions, see the demos README ([notebook](demos/README.ipynb) / [Markdown](demos/README.md)):
+The downloaded demos include the following applications; for more details, see [**demos/README-MLRUN.md**](demos/README-MLRUN.md) (which is created as part of the download):
 
-- <a id="XGBoost Classification with Hyper Parameters (Iris dataset)"></a>**XGBoost Classification** ([**XGBoost Classification**](demos/xgboost/train_xgboost_serverless.ipynb)) &mdash;Demonstrate a popular machine learning use case (iris dataset) and how to run training in parallel with hyper-parameters.
-- <a id="LighGBM Classification with Hyper Parameters (HIGGS dataset)"></a>**LighGBM Classification** ([**LighGMB Classification**](demos/lightgbm/README.md)) &mdash;Demonstrate a popular big data, machine learning competition use case (the HIGGS UCI dataset) and how to run training in parallel with hyper-parameters.
-- <a id="Real-time face Recognition with re-enforced learning"></a>**Face recognition** ([**Face recognition**](demos/faces/README.md))
-Demonstrate real-time face image capture, recognition, and location tracking of identities.
-- <a id="Running Serverless Spark"></a>**Serverless Spark** ([**Serverless Spark**](demos/spark/mlrun_sparkk8s.ipynb)) Demonstrate how the same spark job can run locally and as a distributed MLRun job over Kubernetes. The Spark function can be incorporated as a step in various data preparation and machine learning scenarios.
-- <a id="image-recog-use-case-app"></a>**Image recognition** ([**image-classification**](demos/image_classification/README.md)) &mdash; the application builds and trains an ML model that identifies (recognizes) and classifies images by using Keras, TensorFlow, and scikit-learn.
-- <a id="netops-use-case-app"></a>**Predictive infrastructure monitoring** ([**netops**](demos/netops/README.md)) &mdash; the application builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow. The goal is to identify anomalies for device metrics &mdash; such as CPU, memory consumption, or temperature &mdash; which can signify an upcoming issue or failure.
-- <a id="nlp-use-case-app"></a>**Natural language processing (NLP)** ([**nlp**](demos/nlp/nlp-example.ipynb)) &mdash; the application processes natural-language textual data &mdash; including spelling correction and sentiment analysis &mdash; and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
-- <a id="stream-enrich-use-case-app"></a>**Stream enrichment** ([**stream-enrich**](demos/stream-enrich/stream-enrich.ipynb)) &mdash; the application demonstrates a typical stream-based data-engineering pipeline, which is required in many real-world scenarios: data is streamed from an event streaming engine; the data is enriched, in real time, using data from a NoSQL table; the enriched data is saved to an output data stream and then consumed from this stream.
-- <a id="stocks-use-case-app"></a>**Smart stock trading** ([**stocks**](demos/stocks/read-stocks.ipynb)) &mdash; the application reads stock-exchange data from an internet service into a time-series database (TSDB); uses Twitter to analyze the market sentiment on specific stocks, in real time; and saves the data to a platform NoSQL table that is used for generating reports and analyzing and visualizing the data on a Grafana dashboard.
-- <a id="real-time-user-segmentation"></a>**Real Time User Segmentation** ([**Real Time User Segmentation**](demos/slots-stream/real-time-user-segmentation.ipynb)) &mdash; The application demonstrates how to build a streaming complex event processing on a sliding time window for tagging and untagging users based on programmatic rules of user behavior.
+- <a id="xgboost-demo"></a>**XGBoost classification** ([**xgboost**](demos/xgboost/train_xgboost_serverless.ipynb)) &mdash; uses XGBoost to perform binary classification on the Iris data set (a popular machine-learning use case), and runs parallel model training with hyperparameters.
+- <a id="lightgbm-demo"></a>**LightGBM classification** ([**lightgbm**](demos/lightgbm/README.md)) &mdash; uses LightGBM to perform binary classification on the HIGGS data set (a popluar machine-learning competition use case), and runs parallel model training with hyperparameters.
+- <a id="face-reco-demo"></a>**Face recognition** ([**faces**](demos/faces/README.md)) &mdash; implements real-time capture of face images, image recognition, and location tracking of identities.
+- <a id="serverless-spark-demo"></a>**Serverless Spark** ([**spark**](demos/spark/mlrun_sparkk8s.ipynb)) &mdash; demonstrates how to run the same Spark job locally and as a distributed MLRun job over Kubernetes.
+  The Spark function can be incorporated as a step in various data-preparation and machine-learning scenarios.
+- <a id="image-recog-demo"></a>**Image recognition** ([**image_classification**](demos/image_classification/README.md)) &mdash; builds and trains an ML model that identifies (recognizes) and classifies images by using Keras, TensorFlow, and scikit-learn.
+- <a id="netops-demo"></a>**Predictive infrastructure monitoring** ([**netops**](demos/netops/README.md)) &mdash; builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow.
+  The goal is to identify anomalies for device metrics &mdash; such as CPU, memory consumption, or temperature &mdash; which can signify an upcoming issue or failure.
 
+The pre-deployed demos include the following use-cases applications; for more details, see [**demos/README.md**](demos/README.md) (available also as a [notebook](demos/README.ipynb):
+
+- <a id="nlp-demo"></a>**Natural language processing (NLP)** ([**nlp**](demos/nlp/nlp-example.ipynb)) &mdash; processes natural-language textual data &mdash; including spelling correction and sentiment analysis &mdash; and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
+- <a id="stream-enrich-demo"></a>**Stream enrichment** ([**stream-enrich**](demos/stream-enrich/stream-enrich.ipynb)) &mdash; implements a typical stream-based data-engineering pipeline, which is required in many real-world scenarios: data is streamed from an event streaming engine; the data is enriched, in real time, using data from a NoSQL table; the enriched data is saved to an output data stream and then consumed from this stream.
+- <a id="stocks-demo"></a>**Smart stock trading** ([**stocks**](demos/stocks/01-gen-demo-data.ipynb)) &mdash; reads stock-exchange data from an internet service into a time-series database (TSDB); uses Twitter to analyze the market sentiment on specific stocks, in real time; and saves the data to a platform NoSQL table that is used for generating reports and analyzing and visualizing the data on a Grafana dashboard.
+- <a id="real-time-user-segmentation-demo"></a>**Real-time user segmentation** ([**slots-stream/real-time-user-segmentation**](demos/slots-stream/real-time-user-segmentation.ipynb)) &mdash; builds a stream-event processor on a sliding time window for tagging and untagging users based on programmatic rules of user behavior.
 
 <a id="jupyter-notebook-basics"></a>
 ## Jupyter Notebook Basics
