@@ -8,11 +8,21 @@
   - [Deploying Models to Production](#deploying-models-to-production)
   - [Visualization, Monitoring, and Logging](#visualization-monitoring-and-logging)
 - [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
-  - [Image Classification](demos/image-classification/01-image-classification.ipynb)
-  - [Predictive Infrastructure Monitoring](demos/netops/01-generator.ipynb)
-  - [Natural Language Processing (NLP)](demos/nlp/nlp-example.ipynb)
-  - [Stream Enrichment](demos/stream-enrich/stream-enrich.ipynb)
-  - [Smart Stock Trading](demos/stocks/01-gen-demo-data.ipynb)
+  
+  Pre-deployed demos &mdash;
+  - [Natural language processing (NLP)](demos/nlp/nlp-example.ipynb)
+  - [Stream enrichment](demos/stream-enrich/stream-enrich.ipynb)
+  - [Smart stock trading](demos/stocks/01-gen-demo-data.ipynb)
+  - [Loaction-based recommendations](demos/location-based-recommendations/01-generate-stores-and-customers.ipynb)
+  - [Real-time-user-segmentation](demos/slots-stream/real-time-user-segmentation.ipynb)
+  
+  Additional demos (see the [download instructions](#mlrun-demos-download)) &mdash;
+  - [XGBoost classification](demos/xgboost/train_xgboost_serverless.ipynb)
+  - [LightGBM classification](demos/lightgbm/README.md)
+  - [Face recognition](demos/faces/README.md)
+  - [Serverless Spark](demos/spark/mlrun_sparkk8s.ipynb)
+  - [Image recognition](demos/image_classification/README.md)
+  - [Predictive infrastructure monitoring](demos/netops/README.md)
 - [Jupyter Notebook Basics](#jupyter-notebook-basics)
   - [Creating Virtual Environments in Jupyter Notebook](#creating-virtual-environments-in-jupyter-notebook)
   - [Updating the Tutorial Notebooks](#update-notebooks)
@@ -83,7 +93,7 @@ There are many ways to collect and ingest data from various sources into the pla
 - Scraping or reading data from external sources &mdash; such as Twitter, weather services, or stock-trading data services &mdash; using serverless functions.
   See, for example, the [**stocks**](demos/stocks/read-stocks.ipynb) demo use-case application.
 
-For more information and examples of data collection and ingestion with the platform, see the [**collect-n-explore**](getting-started/collect-n-explore.ipynb#gs-data-collection-and-ingestion) tutorial Jupyter notebook.
+For more information and examples of data collection and ingestion with the platform, see the [**getting-started-basic**](getting-started/getting-started-basic.ipynb#gs-data-collection-and-ingestion) tutorial Jupyter notebook.
 
 <a id="data-exploration-and-processing"></a>
 ### Exploring and Processing Data
@@ -127,7 +137,7 @@ One of the most important and challenging areas of managing a data science envir
 Data scientists need a simple way to track and view current and historical experiments along with the metadata that is associated with each experiment.
 This capability is critical for comparing different runs, and eventually helps to determine the best model and configuration for production deployment.
 The platform leverages the open-source [MLRun](https://github.com/mlrun/mlrun) library to help tackle these challenges.
-You can find examples of using MLRun in the [**experiment tracking**](experiment-tracking/01-mlrun-getting-started.ipynb) platform-tutorials directory.
+You can find examples of using MLRun in the [MLRun demos](#mlrun-demos-download).
 
 <a id="deploying-models-to-production"></a>
 ### Deploying Models to Production
@@ -163,14 +173,36 @@ For information on how to create Grafana dashboards to monitor and visualize dat
 <a id="end-to-end-use-case-applications"></a>
 ## End-to-End Use-Case Applications
 
-Iguazio provides full end-to-end use-case applications that demonstrate how to use the Iguazio Data Science Platform and related tools to address data science requirements for different industries and implementations.
-The applications are provided in the **demos** directory of the platform's tutorial Jupyter notebooks and cover the following use cases; for more detailed descriptions, see the demos README ([notebook](demos/README.ipynb) / [Markdown](demos/README.md)):
+Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the Iguazio Data Science Platform and related tools to address data science requirements for different industries and implementations.
+Some of the demos are pre-deployed with the platform and available in the **demos** tutorial-notebooks directory.<br>
+<a id="mlrun-demos-download"></a>You can get additional demos from the [MLRun demos repository](https://github.com/mlrun/demos) by running the following code.
+> **Note:** Some of the MLRun demos are still works in progress.
 
-- <a id="image-recog-use-case-app"></a>**Image recognition** ([**image-classification**](demos/image-classification/01-image-classification.ipynb)) &mdash; the application builds and trains an ML model that identifies (recognizes) and classifies images by using Keras, TensorFlow, and scikit-learn.
-- <a id="netops-use-case-app"></a>**Predictive infrastructure monitoring** ([**netops**](demos/netops/01-generator.ipynb)) &mdash; the application builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow. The goal is to identify anomalies for device metrics &mdash; such as CPU, memory consumption, or temperature &mdash; which can signify an upcoming issue or failure.
-- <a id="nlp-use-case-app"></a>**Natural language processing (NLP)** ([**nlp**](demos/nlp/nlp-example.ipynb)) &mdash; the application processes natural-language textual data &mdash; including spelling correction and sentiment analysis &mdash; and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
-- <a id="stream-enrich-use-case-app"></a>**Stream enrichment** ([**stream-enrich**](demos/stream-enrich/stream-enrich.ipynb)) &mdash; the application demonstrates a typical stream-based data-engineering pipeline, which is required in many real-world scenarios: data is streamed from an event streaming engine; the data is enriched, in real time, using data from a NoSQL table; the enriched data is saved to an output data stream and then consumed from this stream.
-- <a id="stocks-use-case-app"></a>**Smart stock trading** ([**stocks**](demos/stocks/read-stocks.ipynb)) &mdash; the application reads stock-exchange data from an internet service into a time-series database (TSDB); uses Twitter to analyze the market sentiment on specific stocks, in real time; and saves the data to a platform NoSQL table that is used for generating reports and analyzing and visualizing the data on a Grafana dashboard.
+
+```python
+# Get MLRun demos
+!chmod +x /User/get-demos.sh
+!/User/get-demos.sh
+```
+
+The downloaded demos include the following applications; for more details, see [**demos/README-MLRUN.md**](demos/README-MLRUN.md) (which is created as part of the download):
+
+- <a id="xgboost-demo"></a>**XGBoost classification** ([**xgboost**](demos/xgboost/train_xgboost_serverless.ipynb)) &mdash; uses XGBoost to perform binary classification on the Iris data set (a popular machine-learning use case), and runs parallel model training with hyperparameters.
+- <a id="lightgbm-demo"></a>**LightGBM classification** ([**lightgbm**](demos/lightgbm/README.md)) &mdash; uses LightGBM to perform binary classification on the HIGGS data set (a popluar machine-learning competition use case), and runs parallel model training with hyperparameters.
+- <a id="face-reco-demo"></a>**Face recognition** ([**faces**](demos/faces/README.md)) &mdash; implements real-time capture of face images, image recognition, and location tracking of identities.
+- <a id="serverless-spark-demo"></a>**Serverless Spark** ([**spark**](demos/spark/mlrun_sparkk8s.ipynb)) &mdash; demonstrates how to run the same Spark job locally and as a distributed MLRun job over Kubernetes.
+  The Spark function can be incorporated as a step in various data-preparation and machine-learning scenarios.
+- <a id="image-recog-demo"></a>**Image recognition** ([**image_classification**](demos/image_classification/README.md)) &mdash; builds and trains an ML model that identifies (recognizes) and classifies images by using Keras, TensorFlow, and scikit-learn.
+- <a id="netops-demo"></a>**Predictive infrastructure monitoring** ([**netops**](demos/netops/README.md)) &mdash; builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow.
+  The goal is to identify anomalies for device metrics &mdash; such as CPU, memory consumption, or temperature &mdash; which can signify an upcoming issue or failure.
+
+The pre-deployed demos include the following use-cases applications; for more details, see [**demos/README.md**](demos/README.md) (available also as a [notebook](demos/README.ipynb):
+
+- <a id="nlp-demo"></a>**Natural language processing (NLP)** ([**nlp**](demos/nlp/nlp-example.ipynb)) &mdash; processes natural-language textual data &mdash; including spelling correction and sentiment analysis &mdash; and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
+- <a id="stream-enrich-demo"></a>**Stream enrichment** ([**stream-enrich**](demos/stream-enrich/stream-enrich.ipynb)) &mdash; implements a typical stream-based data-engineering pipeline, which is required in many real-world scenarios: data is streamed from an event streaming engine; the data is enriched, in real time, using data from a NoSQL table; the enriched data is saved to an output data stream and then consumed from this stream.
+- <a id="stocks-demo"></a>**Smart stock trading** ([**stocks**](demos/stocks/01-gen-demo-data.ipynb)) &mdash; reads stock-exchange data from an internet service into a time-series database (TSDB); uses Twitter to analyze the market sentiment on specific stocks, in real time; and saves the data to a platform NoSQL table that is used for generating reports and analyzing and visualizing the data on a Grafana dashboard.
+- <a id="location-based-recommendations-demo"></a>**Location-based recommendations** ([**location-based-recommendations**](demos/location-based-recommendations/01-generate-stores-and-customers.ipynb)) &mdash; generates real-time product purchase recommendations for users of a credit-card company based on the users' physical location.
+- <a id="real-time-user-segmentation-demo"></a>**Real-time user segmentation** ([**slots-stream**](demos/slots-stream/real-time-user-segmentation.ipynb)) &mdash; builds a stream-event processor on a sliding time window for tagging and untagging users based on programmatic rules of user behavior.
 
 <a id="jupyter-notebook-basics"></a>
 ## Jupyter Notebook Basics
@@ -194,9 +226,9 @@ The home directory of the platform's Jupyter Notebook service contains the follo
   - **welcome.ipynb** / [**README.md**](../README.md) &mdash; the current document, which provides a short introduction to the platform and how to use it to implement a full data science workflow.
   - [**getting-started**]() &mdash; a directory containing getting-started tutorials that explain and demonstrate how to perform different platform operations using the platform APIs and integrated tools.
   - [**demos**](demos/README.ipynb) &mdash; a directory containing [end-to-end application use-case demos](#end-to-end-use-case-applications).
-  - [**experiment-tracking**](experiment-tracking/01-mlrun-getting-started.ipynb) &mdash; a directory containing sample ML experiment-tracking and pipelines-execution code.
+  - Scripts and related notebooks for [updating the tutorial notebooks](#update-notebooks) and [downloading additional demo applications](#mlrun-demos-download).
 
-For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](getting-started/collect-n-explore.ipynb/#platform-data-containers) in the **collect-n-explore** tutorial notebook.
+For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](getting-started/collect-n-explore.ipynb/#platform-data-containers) in the [**getting-started-basic**](getting-started/getting-started-basic.ipynb) tutorial notebook.
 
 <a id="creating-virtual-environments-in-jupyter-notebook"></a>
 ### Creating Virtual Environments in Jupyter Notebook
