@@ -13,7 +13,7 @@
   - [Natural language processing (NLP)](demos/nlp/nlp-example.ipynb)
   - [Stream enrichment](demos/stream-enrich/stream-enrich.ipynb)
   - [Smart stock trading](demos/stocks/01-gen-demo-data.ipynb)
-  - [Loaction-based recommendations](demos/location-based-recommendations/01-generate-stores-and-customers.ipynb)
+  - [Location-based recommendations](demos/location-based-recommendations/01-generate-stores-and-customers.ipynb)
   - [Real-time-user-segmentation](demos/slots-stream/real-time-user-segmentation.ipynb)
   
   Additional demos (see the [download instructions](#mlrun-demos-download)) &mdash;
