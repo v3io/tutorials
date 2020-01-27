@@ -8,7 +8,7 @@ git clone ${GIT_REPO} ${TEMP_DIR}
 
 echo "Copying files to ${DEST_DIR}..."
 cp -rf ${TEMP_DIR}/faces ${DEST_DIR}
-cp -rf ${TEMP_DIR}/image_classification ${DEST_DIR}
+cp -rf ${TEMP_DIR}/image-classification ${DEST_DIR}
 cp -rf ${TEMP_DIR}/lightgbm ${DEST_DIR}
 cp -rf ${TEMP_DIR}/spark ${DEST_DIR}
 cp -rf ${TEMP_DIR}/xgboost ${DEST_DIR}
