@@ -17,11 +17,11 @@
   - [Real-time-user-segmentation](demos/slots-stream/real-time-user-segmentation.ipynb)
   
   Additional demos (see the [download instructions](#mlrun-demos-download)) &mdash;
-  - [XGBoost classification](demos/xgboost/train_xgboost_serverless.ipynb)
+  - [XGBoost classification](demos/xgboost/train-xgboost-serverless.ipynb)
   - [LightGBM classification](demos/lightgbm/README.md)
   - [Face recognition](demos/faces/README.md)
-  - [Serverless Spark](demos/spark/mlrun_sparkk8s.ipynb)
-  - [Image recognition](demos/image_classification/README.md)
+  - [Serverless Spark](demos/spark/mlrun-sparkk8s.ipynb)
+  - [Image recognition](demos/image-classification/README.md)
   - [Predictive infrastructure monitoring](demos/netops/README.md)
 - [Jupyter Notebook Basics](#jupyter-notebook-basics)
   - [Creating Virtual Environments in Jupyter Notebook](#creating-virtual-environments-in-jupyter-notebook)
@@ -187,12 +187,12 @@ Some of the demos are pre-deployed with the platform and available in the **demo
 
 The downloaded demos include the following applications; for more details, see [**demos/README-MLRUN.md**](demos/README-MLRUN.md) (which is created as part of the download):
 
-- <a id="xgboost-demo"></a>**XGBoost classification** ([**xgboost**](demos/xgboost/train_xgboost_serverless.ipynb)) &mdash; uses XGBoost to perform binary classification on the Iris data set (a popular machine-learning use case), and runs parallel model training with hyperparameters.
+- <a id="xgboost-demo"></a>**XGBoost classification** ([**xgboost**](demos/xgboost/train-xgboost-serverless.ipynb)) &mdash; uses XGBoost to perform binary classification on the Iris data set (a popular machine-learning use case), and runs parallel model training with hyperparameters.
 - <a id="lightgbm-demo"></a>**LightGBM classification** ([**lightgbm**](demos/lightgbm/README.md)) &mdash; uses LightGBM to perform binary classification on the HIGGS data set (a popluar machine-learning competition use case), and runs parallel model training with hyperparameters.
 - <a id="face-reco-demo"></a>**Face recognition** ([**faces**](demos/faces/README.md)) &mdash; implements real-time capture of face images, image recognition, and location tracking of identities.
-- <a id="serverless-spark-demo"></a>**Serverless Spark** ([**spark**](demos/spark/mlrun_sparkk8s.ipynb)) &mdash; demonstrates how to run the same Spark job locally and as a distributed MLRun job over Kubernetes.
+- <a id="serverless-spark-demo"></a>**Serverless Spark** ([**spark**](demos/spark/mlrun-sparkk8s.ipynb)) &mdash; demonstrates how to run the same Spark job locally and as a distributed MLRun job over Kubernetes.
   The Spark function can be incorporated as a step in various data-preparation and machine-learning scenarios.
-- <a id="image-recog-demo"></a>**Image recognition** ([**image_classification**](demos/image_classification/README.md)) &mdash; builds and trains an ML model that identifies (recognizes) and classifies images by using Keras, TensorFlow, and scikit-learn.
+- <a id="image-recog-demo"></a>**Image recognition** ([**image-classification**](demos/image-classification/README.md)) &mdash; builds and trains an ML model that identifies (recognizes) and classifies images by using Keras, TensorFlow, and scikit-learn.
 - <a id="netops-demo"></a>**Predictive infrastructure monitoring** ([**netops**](demos/netops/README.md)) &mdash; builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow.
   The goal is to identify anomalies for device metrics &mdash; such as CPU, memory consumption, or temperature &mdash; which can signify an upcoming issue or failure.
 
