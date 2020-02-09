@@ -59,8 +59,9 @@ For a more in-depth introduction to the platform, see the following resources:
 
 - [Components, Services, and Development Ecosystem](https://www.iguazio.com/docs/intro/latest-release/ecosystem)
 - [Introduction video](https://www.youtube.com/watch?v=hR_Hv0_WcUw)
-- [Unique data-layer architecture](https://www.iguazio.com/docs/intro/latest-release/architecture/)
 - [Creating and deploying Nuclio functions with Python and Jupyter Notebook](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md)
+<!-- [c-arch-page-update] IG-14804 TODO: When the doc architecture page is updated, return this link after the intro video: -->
+<!-- - [Unique data-layer architecture](https://www.iguazio.com/docs/intro/latest-release/architecture/) -->
 
 A good place to start your development is with the platform [tutorial Jupyter notebooks](https://github.com/v3io/tutorials), which are available in the home directory of the platform's Jupyter Notebook service; see especially the [getting-started examples](getting-started/collect-n-explore.ipynb) and full [use-case demo applications](demos/README.ipynb).
 You can find a tutorials overview in the [Jupyter Notebook Basics](#jupyter-notebook-basics) section of this document.
