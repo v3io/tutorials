@@ -124,7 +124,7 @@ For more information and examples of data exploration with the platform, see the
 
 You can develop and test data science models in the platform's Jupyter Notebook service or in your preferred external editor.
 When your model is ready, you can train it in Jupyter Notebook or by using scalable cluster resources such as Nuclio functions, Dask, Spark ML, or Kubernetes jobs.
-You can find model-training examples in the platform's tutorial Jupyter notebooks:
+You can find model-training examples in the MLRun demos tutorial Jupyter notebooks (see the [download instructions](#mlrun-demos-download)):
 
 - The [NetOps demo](demos/netops/03-training.ipynb) tutorial demonstrates predictive infrastructure-monitoring using scikit-learn.
 - The [image-classification demo](demos/image-classification/01-image-classification.ipynb) tutorial demonstrates image recognition using TensorFlow and Horovod with MLRun.
