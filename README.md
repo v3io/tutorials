@@ -8,14 +8,14 @@
   - [Deploying Models to Production](#deploying-models-to-production)
   - [Visualization, Monitoring, and Logging](#visualization-monitoring-and-logging)
 - [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
-  
+
   Pre-deployed demos &mdash;
   - [Natural language processing (NLP)](demos/nlp/nlp-example.ipynb)
   - [Stream enrichment](demos/stream-enrich/stream-enrich.ipynb)
   - [Smart stock trading](demos/stocks/01-gen-demo-data.ipynb)
   - [Location-based recommendations](demos/location-based-recommendations/01-generate-stores-and-customers.ipynb)
   - [Real-time-user-segmentation](demos/slots-stream/real-time-user-segmentation.ipynb)
-  
+
   Additional demos (see the [download instructions](#mlrun-demos-download)) &mdash;
   - [XGBoost classification](demos/xgboost/train_xgboost_serverless.ipynb)
   - [LightGBM classification](demos/lightgbm/README.md)
@@ -254,8 +254,8 @@ For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebo
 - [Components, Services, and Development Ecosystem](https://www.iguazio.com/docs/intro/latest-release/ecosystem/)
 - [Iguazio sample data-set](http://iguazio-sample-data.s3.amazonaws.com/) public Amazon S3 bucket
 
- <a id="third-party-resources"></a>
- ### Third-Party Documentation, Examples, and Sample Data Sets
+<a id="third-party-resources"></a>
+### Third-Party Documentation, Examples, and Sample Data Sets
 
 - [10 Minutes to pandas](https://pandas.pydata.org/pandas-docs/stable/10min.html)
 - [JupyterLab Tutorial](https://jupyterlab.readthedocs.io/en/stable/)
