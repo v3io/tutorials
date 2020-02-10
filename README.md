@@ -124,7 +124,7 @@ For more information and examples of data exploration with the platform, see the
 
 You can develop and test data science models in the platform's Jupyter Notebook service or in your preferred external editor.
 When your model is ready, you can train it in Jupyter Notebook or by using scalable cluster resources such as Nuclio functions, Dask, Spark ML, or Kubernetes jobs.
-You can find model-training examples in the platform's tutorial Jupyter notebooks:
+You can find model-training examples in the MLRun demos tutorial Jupyter notebooks (see the [download instructions](#mlrun-demos-download)):
 
 - The [NetOps demo](demos/netops/03-training.ipynb) tutorial demonstrates predictive infrastructure-monitoring using scikit-learn.
 - The [image-classification demo](demos/image-classification/01-image-classification.ipynb) tutorial demonstrates image recognition using TensorFlow and Horovod with MLRun.
@@ -236,7 +236,7 @@ For information about the predefined data containers and how to reference data i
 
 A virtual environment is a named, isolated, working copy of Python that maintains its own files, directories, and paths so that you can work with specific versions of libraries or Python itself without affecting other Python projects.
 Virtual environments make it easy to cleanly separate projects and avoid problems with different dependencies and version requirements across components.
-See the [virtual-env](getting-started/virtual-env.ipynb) tutorial notebook for step-by-step instructions for using conda to create your own Python virtual environments, which will appear as custom kernels in Jupyter Notebook.
+See the [virtual-env](getting-started/virtual-env.ipynb) tutorial notebook for step-by-step instructions for using Conda to create your own Python virtual environments, which will appear as custom kernels in Jupyter Notebook.
 
 <a id="update-notebooks"></a>
 ### Updating the Tutorial Notebooks to the Latest Version
