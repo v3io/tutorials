@@ -236,7 +236,7 @@ For information about the predefined data containers and how to reference data i
 
 A virtual environment is a named, isolated, working copy of Python that maintains its own files, directories, and paths so that you can work with specific versions of libraries or Python itself without affecting other Python projects.
 Virtual environments make it easy to cleanly separate projects and avoid problems with different dependencies and version requirements across components.
-See the [virutal-env](getting-started/virutal-env.ipynb) tutorial notebook for step-by-step instructions for using conda to create your own Python virtual environments, which will appear as custom kernels in Jupyter Notebook.
+See the [virtual-env](getting-started/virtual-env.ipynb) tutorial notebook for step-by-step instructions for using conda to create your own Python virtual environments, which will appear as custom kernels in Jupyter Notebook.
 
 <a id="update-notebooks"></a>
 ### Updating the Tutorial Notebooks to the Latest Version
