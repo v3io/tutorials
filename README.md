@@ -226,7 +226,7 @@ The home directory of the platform's Jupyter Notebook service contains the follo
 
   - **welcome.ipynb** / [**README.md**](../README.md) &mdash; the current document, which provides a short introduction to the platform and how to use it to implement a full data science workflow.
   - [**getting-started**]() &mdash; a directory containing getting-started tutorials that explain and demonstrate how to perform different platform operations using the platform APIs and integrated tools.
-  - [**demos**](demos/README.ipynb) &mdash; a directory containing [end-to-end application use-case demos](#end-to-end-use-case-applications).
+  - [**demos**](demos/README.ipynb) &mdash; a directory containing [end-to-end use-case application demos](#end-to-end-use-case-applications).
   - Scripts and related notebooks for [updating the tutorial notebooks](#update-notebooks) and [downloading additional demo applications](#mlrun-demos-download).
 
 For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](getting-started/collect-n-explore.ipynb/#platform-data-containers) in the [**getting-started-basic**](getting-started/getting-started-basic.ipynb) tutorial notebook.
