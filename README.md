@@ -155,7 +155,7 @@ For detailed information about Nuclio, visit the [Nuclio web site](https://nucli
 > **Note:** Nuclio functions aren't limited to model serving: they can automate data collection, serve custom APIs, build real-time feature vectors, drive triggers, and more.
 
 For an overview of Nuclio and how to develop, document, and deploy serverless Python Nuclio functions from Jupyter Notebook, see the [nuclio-jupyter documentation](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md).
-You can also find examples in the platform tutorial Jupyter notebooks; for example, the [NetOps demo](demos/netops/04-infer.ipynb) tutorial demonstrates how to deploy a network-operations model as a function.
+You can also find examples in the platform tutorial Jupyter notebooks; for example, the [NetOps demo](demos/netops/04-infer.ipynb) tutorial demonstrates how to deploy a network-operations model as a function; (see [End-to-End Use-Case Applications](#mlrun-demos-download) for demo download instructions).
 
 <a id="visualization-monitoring-and-logging"></a>
 ### Visualization, Monitoring, and Logging
