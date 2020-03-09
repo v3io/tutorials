@@ -4,7 +4,7 @@
 - [Natural Language Processing (NLP)](#nlp-demo)
 - [Real-Time Location-Based Recommendations](#location-based-recommendations-demo)
 - [Real-Time User Segmentation](#user-segmentation-demo)
-- [Smark Stock Trading](#stocks-demo)
+- [Smart Stock Trading](#stocks-demo)
 - [Stream Enrichment](#stream-enrich-demo)
 
 <a id="overview"></a>
