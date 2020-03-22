@@ -10,19 +10,8 @@
 <a id="overview"></a>
 ## Overview
 
-The **demos** tutorials directory contains full end-to-end use-case applications (demos) that demonstrate how to use the Iguazio Data Science Platform ("the platform") and related tools to address data science requirements for different industries and implementations.
-
-> <a id="mlrun-demos-note"></a>**Note:**<br>
-> You can get additional demos from the **mlrun/demos** GitHub repository by running the following code.<br>
-> The downloaded files include a **README-MLRUN.md** file that describes the demos.<br>
-> Note that some of the MLRun demos are still works in progress.
-
-
-```python
-# Get MLRun demos
-!chmod +x /User/get-demos.sh
-!/User/get-demos.sh
-```
+The **demos** tutorials directory contains full end-to-end use-case applications (demos) that demonstrate how to use the Iguazio Data Science Platform (**"the platform"**) and related tools to address data science requirements for different industries and implementations.<br>
+For information on how to get additional end-to-end platform demos, see the [**welcoeme.ipynb**](../platform-overview.ipynb#additional-demos) notebook or main [**README.md**](../README.md#additional-demos) file.
 
 <a id="nlp-demo"></a>
 ## Natural Language Processing (NLP)
