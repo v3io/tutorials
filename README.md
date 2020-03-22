@@ -62,7 +62,7 @@ For a more in-depth introduction to the platform, see the following resources:
 - [Unique data-layer architecture](https://www.iguazio.com/docs/intro/latest-release/architecture/)
 - [Creating and deploying Nuclio functions with Python and Jupyter Notebook](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md)
 
-A good place to start your development is with the platform [tutorial Jupyter notebooks](https://github.com/v3io/tutorials), which are available in the home directory of the platform's Jupyter Notebook service; see especially the [getting-started examples](getting-started/collect-n-explore.ipynb) and full [use-case demo applications](demos/README.ipynb).
+A good place to start your development is with the platform [tutorial Jupyter notebooks](https://github.com/v3io/tutorials), which are available in the home directory of the platform's Jupyter Notebook service; see especially the [getting-started examples](getting-started/getting-started-basic.ipynb) and full [use-case demo applications](demos/README.ipynb).
 You can find a tutorials overview in the [Jupyter Notebook Basics](#jupyter-notebook-basics) section of this document.
 
 <a id="data-science-workflow"></a>
@@ -116,7 +116,7 @@ This design, coupled with the platform's unified data model, enables users to st
 
 > **Note:** You can deploy and manage application services, such as Spark and Jupyter Notebook, from the **Services** page of the platform dashboard.
 
-For more information and examples of data exploration with the platform, see the [**collect-n-explore**](getting-started/collect-n-explore.ipynb#gs-data-exploration-and-processing) tutorial Jupyter notebook.
+For more information and examples of data exploration with the platform, see the [**getting-started-basic**](getting-started/getting-started-basic.ipynb#gs-data-exploration-and-processing) tutorial Jupyter notebook.
 
 <a id="building-and-training-models"></a>
 ### Building and Training Models
@@ -228,7 +228,7 @@ The home directory of the platform's Jupyter Notebook service contains the follo
   - [**demos**](demos/README.ipynb) &mdash; a directory containing [end-to-end application use-case demos](#end-to-end-use-case-applications).
   - Scripts and related notebooks for [updating the tutorial notebooks](#update-notebooks) and [downloading additional demo applications](#mlrun-demos-download).
 
-For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](getting-started/collect-n-explore.ipynb/#platform-data-containers) in the [**getting-started-basic**](getting-started/getting-started-basic.ipynb) tutorial notebook.
+For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](getting-started/getting-started-basic.ipynb/#platform-data-containers) in the [**getting-started-basic**](getting-started/getting-started-basic.ipynb) tutorial notebook.
 
 <a id="creating-virtual-environments-in-jupyter-notebook"></a>
 ### Creating Virtual Environments in Jupyter Notebook
