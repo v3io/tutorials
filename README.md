@@ -4,11 +4,10 @@ An initial introduction to the Iguazio Data Science Platform and the platform tu
 
 - [Platform Overview](#platform-overview)
 - [Data Science Workflow](#data-science-workflow)
-- [Getting Started](#getting-started)
+- [The Tutorial Notebooks](#the-tutorial-notebooks)
 - [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
-- [Jupyter Notebook Basics](#jupyter-notebook-basics)
-- [Additional Resources](#additional-resources)
-- [Support](#support)
+- [Additional Platform Resources](#platform-resources)
+- [Miscellaneous](#misc)
 
 <a id="platform-overview"></a>
 ## Platform Overview
@@ -38,22 +37,21 @@ The platform provides a complete data science workflow in a single ready-to-use 
 
 ![Data Science Workflow](./assets/images/igz-data-science-workflow.gif)
 
-<a id="getting-started"></a>
-## Getting Started
+<a id="the-tutorial-notebooks"></a>
+## The Tutorial Notebooks
 
-See the following resources for a more in-depth introduction to the platform:
+The home directory of the platform's running-user directory (**/User/&lt;running user&gt;**) contains pre-deployed tutorial Jupyter notebooks with code samples and documentation to assist you in your development &mdash; including a **demos** directory with end-to-end use-case applications (see the next section) and a **getting-started** directory with examples for performing basic tasks.
 
-- [Introduction video](https://www.youtube.com/watch?v=8OmAN4wd7To)
-- [In-depth platform overview](platform-overview.ipynb), which details how you can leverage the platform to implement each step of the data science workflow from research to production
-- [Creating and deploying Nuclio functions with Python and Jupyter Notebook](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md)
-
-A good place to start your development is with the platform [tutorial Jupyter notebooks](https://github.com/v3io/tutorials), which are available in the home directory of the platform's Jupyter Notebook service; see especially the examples in the [**getting-started**](getting-started/getting-started-basic.ipynb) directory and the full [use-case demo applications](#end-to-end-use-case-applications).
-You can find a tutorials overview in the [Jupyter Notebook Basics](#jupyter-notebook-basics) section of this document.
+> **Note:**
+> - To view and run the tutorials from the platform, you first need to create a Jupyter Notebook service.
+> - The **v3io** directory that you see in the file browser of the Jupyter UI displays the contents of the `v3io` data mount for browsing the platform data containers.
+>   For information about the predefined data containers and data mounts and how to reference data in these containers, see [Platform Data Containers](getting-started/getting-started-basic.ipynb/#platform-data-containers).
+> - The **welcome.ipynb** notebook and main **README.md** file provide the same introduction in different formats.
 
 <a id="end-to-end-use-case-applications"></a>
 ## End-to-End Use-Case Applications
 
-Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the Iguazio Data Science Platform and related tools to address data science requirements for different industries and implementations.
+Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the platform and related tools to address data science requirements for different industries and implementations.
 
 <a id="predeployed-demos"></a>
 ### Pre-Deployed Platform Demos
@@ -89,27 +87,18 @@ cd /User/demos/
 git clone git://github.com/mlrun/demo-xgb-project.git
 ```
 
-<a id="jupyter-notebook-basics"></a>
-## Jupyter Notebook Basics
+<a id="platform-resources"></a>
+## Additional Platform Resources
 
-<a id="jupyter-ui-n-home-dir"></a>
-### The Jupyter UI and Home Directory
+- [Introduction video](https://www.youtube.com/watch?v=8OmAN4wd7To)
+- [In-depth platform overview](platform-overview.ipynb) with a break down of the steps for developing a full data science workflow from development to production
+- [Platform components, services, and development ecosystem introduction](https://www.iguazio.com/docs/intro/latest-release/ecosystem/)
+- [References](https://iguazio.com/docs/reference/latest-release/)
+- [nuclio-jupyter SDK](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md) for creating and deploying Nuclio functions with Python and Jupyter Notebook
+- [Iguazio sample data-set](http://iguazio-sample-data.s3.amazonaws.com/) public Amazon S3 bucket
 
-The platform's Jupyter Notebook service uses the JupyterLab UI, which is described in detail in the [JupyterLab documentation](https://jupyterlab.readthedocs.io/en/stable/user/interface.html#the-jupyterlab-interface).
-
-By default, the **File Browser** in the left-sidebar menu displays the home directory of the platform's Jupyter Notebook service, which includes these components:
-
-- **v3io** directory, which displays the contents of the `v3io` platform cluster data mount for browsing the cluster's data containers.
-  You can also browse the containers data from the **Data** page of the platform dashboard.
-- The contents of the running-user home directory &mdash; **users/&lt;running user&gt;**.
-  This directory contains the platform's [tutorial Jupyter notebooks](https://github.com/v3io/tutorials):
-
-  - [**welcome.ipynb**](welcome.ipynb) / [**README.md**](../README.md) &mdash; the current document, which provides a short introduction to the platform and how to use it to implement a full data science workflow.
-  - [**platform-overview.ipynb**](platform-overview.ipynb) &mdash; an in-depth platform overview, which details how you can leverage the platform to implement each step of the data science workflow from research to production.
-  - [**getting-started**](getting-started/getting-started-basic.ipynb) &mdash; a directory containing getting-started tutorials that explain and demonstrate how to perform different platform operations using the platform APIs and integrated tools.
-  - [**demos**](demos/README.ipynb) &mdash; a directory containing [end-to-end application use-case demos](#end-to-end-use-case-applications).
-
-For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](getting-started/getting-started-basic.ipynb/#platform-data-containers) in the **getting-started-basic.ipynb** tutorial notebook.
+<a id="misc"></a>
+## Miscellaneous
 
 <a id="creating-virtual-environments-in-jupyter-notebook"></a>
 ### Creating Virtual Environments in Jupyter Notebook
@@ -124,18 +113,8 @@ See the [virutal-env](getting-started/virutal-env.ipynb) tutorial notebook for s
 You can use the provided **igz-tutorials-get.sh** script to update the tutorial notebooks to the latest stable version available on [GitHub](https://github.com/v3io/tutorials/).
 For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebook.
 
-<a id="additional-resources"></a>
-## Additional Resources
-
-<a id="platform-resources"></a>
-### Platform Documentation, Examples, and Sample Data Sets
-
-- [References](https://iguazio.com/docs/reference/latest-release/)
-- [Components, Services, and Development Ecosystem](https://www.iguazio.com/docs/intro/latest-release/ecosystem/)
-- [Iguazio sample data-set](http://iguazio-sample-data.s3.amazonaws.com/) public Amazon S3 bucket
-
  <a id="third-party-resources"></a>
- ### Third-Party Documentation, Examples, and Sample Data Sets
+ ### Additional Third-Party Resources
 
 - [10 Minutes to pandas](https://pandas.pydata.org/pandas-docs/stable/10min.html)
 - [JupyterLab Tutorial](https://jupyterlab.readthedocs.io/en/stable/)
@@ -143,6 +122,6 @@ For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebo
 - [Registry of Open Data on AWS](https://registry.opendata.aws/)
 
 <a id="support"></a>
-## Support
+### Support
 
 The Iguazio [support team](mailto:support@iguazio.com) will be happy to assist with any questions.
