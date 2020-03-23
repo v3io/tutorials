@@ -7,12 +7,7 @@ An initial introduction to the Iguazio Data Science Platform and the platform tu
 - [Getting Started](#getting-started)
 - [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
 - [Jupyter Notebook Basics](#jupyter-notebook-basics)
-  - [The Jupyter UI and Home Directory](#jupyter-ui-n-home-dir)
-  - [Creating Virtual Environments in Jupyter Notebook](#creating-virtual-environments-in-jupyter-notebook)
-  - [Updating the Tutorial Notebooks](#update-notebooks)
 - [Additional Resources](#additional-resources)
-  - [Platform Documentation, Examples, and Sample Data Sets](#platform-resources)
-  - [Third-Party Documentation, Examples, and Sample Data Sets](#third-party-resources)
 - [Support](#support)
 
 <a id="platform-overview"></a>
@@ -60,9 +55,6 @@ You can find a tutorials overview in the [Jupyter Notebook Basics](#jupyter-note
 
 Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the Iguazio Data Science Platform and related tools to address data science requirements for different industries and implementations.
 
-- [Pre-deployed platform demos](#predeployed-demos)
-- [Additional demos](#additional-demos)
-
 <a id="predeployed-demos"></a>
 ### Pre-Deployed Platform Demos
 
@@ -97,10 +89,6 @@ The following example code downloads the [mlrun/demo-xgb-project](https://github
 
 <a id="jupyter-notebook-basics"></a>
 ## Jupyter Notebook Basics
-
-- [The Jupyter UI and Home Directory](#jupyter-ui-n-home-dir)
-- [Creating Virtual Environments in Jupyter Notebook](#creating-virtual-environments-in-jupyter-notebook)
-- [Updating the Tutorial Notebooks](#update-notebooks)
 
 <a id="jupyter-ui-n-home-dir"></a>
 ### The Jupyter UI and Home Directory
