@@ -82,9 +82,11 @@ For each downloaded demo, start out by reading its **README.md** file.
 The following example code downloads the [mlrun/demo-xgb-project](https://github.com/mlrun/demo-xgb-project) XGBoost-classification demo:
 
 
-```python
+```sh
+%%sh
 # Download the MLRun XGBoost classificaiton demo
-!mlrun project demos/xgboost/ -u git://github.com/mlrun/demo-xgb-project.git
+cd /User/demos/
+git clone git://github.com/mlrun/demo-xgb-project.git
 ```
 
 <a id="jupyter-notebook-basics"></a>
