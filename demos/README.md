@@ -11,7 +11,7 @@
 ## Overview
 
 The **demos** tutorials directory contains full end-to-end use-case applications (demos) that demonstrate how to use the Iguazio Data Science Platform (**"the platform"**) and related tools to address data science requirements for different industries and implementations.<br>
-For information on how to get additional end-to-end platform demos, see the [**welcoeme.ipynb**](../platform-overview.ipynb#additional-demos) notebook or main [**README.md**](../README.md#additional-demos) file.
+For information on how to get additional end-to-end platform demos, see the [**welcome.ipynb**](../welcome.ipynb#additional-demos) notebook or main [**README.md**](../README.md#additional-demos) file.
 
 <a id="nlp-demo"></a>
 ## Natural Language Processing (NLP)
