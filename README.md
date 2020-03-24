@@ -48,6 +48,7 @@ To view and run the tutorials from the platform, you first need to create a Jupy
 2. Select Jupyter Notebook  
 3. Follow the wizard to configure and create the service
 4. Select Apply Changes
+5. Click on the Jupyter service
 
 
 > **Note:**
@@ -77,7 +78,6 @@ You can download additional demos from GitHub &mdash; for example:
 
 - <a id="xgboost-demo"></a>[**XGBoost classification**](https://github.com/mlrun/demo-xgb-project) &mdash; uses XGBoost to perform binary classification on the popular Iris ML data set, and runs parallel model training with hyperparameters.
 - <a id="image-classification-demo"></a>[**Image classification**](https://github.com/mlrun/demo-image-classification) &mdash; builds and trains an ML model that identifies (recognizes) and classifies (labels) images by using Keras, TensorFlow, and Horovod.
-- <a id="serverless-spark-demo"></a>[**Serverless Spark**](demos/spark/mlrun_sparkk8s.ipynb) &mdash; demonstrates how to run the same Spark job locally and as a distributed MLRun job over Kubernetes.
 
 For information on the available demos, see the [demo listing](https://github.com/mlrun/mlrun/blob/master/demos.md).<br>
 For each downloaded demo, start out by reading its **README.md** file.
