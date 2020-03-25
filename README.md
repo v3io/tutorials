@@ -113,7 +113,7 @@ For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebo
 <a id="v3io-dir"></a>
 ### The v3io Directory
 
-he **v3io** directory that you see in the file browser of the Jupyter UI displays the contents of the `v3io` data mount for browsing the platform data containers.
+The **v3io** directory that you see in the file browser of the Jupyter UI displays the contents of the `v3io` data mount for browsing the platform data containers.
 For information about the predefined data containers and data mounts and how to reference data in these containers, see [Platform Data Containers](getting-started/getting-started-basic.ipynb/#platform-data-containers).
 
 <a id="support"></a>
