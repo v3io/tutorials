@@ -44,8 +44,6 @@ The home directory of the platform's running-user directory (**/User/&lt;running
 
 > **Note:**
 > - To view and run the tutorials from the platform, you first need to create a Jupyter Notebook service.
-> - The **v3io** directory that you see in the file browser of the Jupyter UI displays the contents of the `v3io` data mount for browsing the platform data containers.
->   For information about the predefined data containers and data mounts and how to reference data in these containers, see [Platform Data Containers](getting-started/getting-started-basic.ipynb/#platform-data-containers).
 > - The **welcome.ipynb** notebook and main **README.md** file provide the same introduction in different formats.
 
 <a id="end-to-end-use-case-applications"></a>
@@ -72,9 +70,8 @@ You can download additional demos from GitHub &mdash; for example:
 
 - <a id="xgboost-demo"></a>[**XGBoost classification**](https://github.com/mlrun/demo-xgb-project) &mdash; uses XGBoost to perform binary classification on the popular Iris ML data set, and runs parallel model training with hyperparameters.
 - <a id="image-classification-demo"></a>[**Image classification**](https://github.com/mlrun/demo-image-classification) &mdash; builds and trains an ML model that identifies (recognizes) and classifies (labels) images by using Keras, TensorFlow, and Horovod.
-- <a id="serverless-spark-demo"></a>[**Serverless Spark**](demos/spark/mlrun_sparkk8s.ipynb) &mdash; demonstrates how to run the same Spark job locally and as a distributed MLRun job over Kubernetes.
 
-For information on the available demos, contact the Iguazio [support team](mailto:support@iguazio.com).<br>
+For information on the available demos, see the [demo listing](https://github.com/mlrun/mlrun/blob/master/docs/demos.md).<br>
 For each downloaded demo, start out by reading its **README.md** file.
 
 The following example code downloads the [mlrun/demo-xgb-project](https://github.com/mlrun/demo-xgb-project) XGBoost-classification demo:
@@ -113,13 +110,11 @@ See the [virutal-env](getting-started/virutal-env.ipynb) tutorial notebook for s
 You can use the provided **igz-tutorials-get.sh** script to update the tutorial notebooks to the latest stable version available on [GitHub](https://github.com/v3io/tutorials/).
 For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebook.
 
- <a id="third-party-resources"></a>
- ### Additional Third-Party Resources
+<a id="v3io-dir"></a>
+### The v3io Directory
 
-- [10 Minutes to pandas](https://pandas.pydata.org/pandas-docs/stable/10min.html)
-- [JupyterLab Tutorial](https://jupyterlab.readthedocs.io/en/stable/)
-- [Machine Learning Algorithms In Layman's Terms](https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-1-d0368d769a7b)
-- [Registry of Open Data on AWS](https://registry.opendata.aws/)
+he **v3io** directory that you see in the file browser of the Jupyter UI displays the contents of the `v3io` data mount for browsing the platform data containers.
+For information about the predefined data containers and data mounts and how to reference data in these containers, see [Platform Data Containers](getting-started/getting-started-basic.ipynb/#platform-data-containers).
 
 <a id="support"></a>
 ### Support
