@@ -42,17 +42,8 @@ The platform provides a complete data science workflow in a single ready-to-use 
 
 The home directory of the platform's running-user directory (**/User/&lt;running user&gt;**) contains pre-deployed tutorial Jupyter notebooks with code samples and documentation to assist you in your development &mdash; including a **demos** directory with end-to-end use-case applications (see the next section) and a **getting-started** directory with examples for performing basic tasks.
 
-To view and run the tutorials from the platform, you first need to create a Jupyter Notebook service
-
-1. On the dashboard Services page, select New Service
-2. Select Jupyter Notebook  
-3. Follow the wizard to configure and create the service
-4. Select Apply Changes
-5. Click on the Jupyter service
-
-
 > **Note:**
-> - The **welcome.ipynb** notebook and main **README.md** file provide the same introduction in different formats.
+> The **welcome.ipynb** notebook and main **README.md** file provide the same introduction in different formats.
 
 <a id="end-to-end-use-case-applications"></a>
 ## End-to-End Use-Case Applications
@@ -79,7 +70,7 @@ You can download additional demos from GitHub &mdash; for example:
 - <a id="xgboost-demo"></a>[**XGBoost classification**](https://github.com/mlrun/demo-xgb-project) &mdash; uses XGBoost to perform binary classification on the popular Iris ML data set, and runs parallel model training with hyperparameters.
 - <a id="image-classification-demo"></a>[**Image classification**](https://github.com/mlrun/demo-image-classification) &mdash; builds and trains an ML model that identifies (recognizes) and classifies (labels) images by using Keras, TensorFlow, and Horovod.
 
-For information on the available demos, see the [demo listing](https://github.com/mlrun/mlrun/blob/master/demos.md).<br>
+For information on the available demos, see the [demo listing](https://github.com/mlrun/mlrun/blob/master/docs/demos.md).<br>
 For each downloaded demo, start out by reading its **README.md** file.
 
 The following example code downloads the [mlrun/demo-xgb-project](https://github.com/mlrun/demo-xgb-project) XGBoost-classification demo:
