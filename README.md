@@ -1,13 +1,12 @@
 # Welcome to the Iguazio Data Science Platform
 
+An initial introduction to the Iguazio Data Science Platform and the platform tutorials
+
 - [Platform Overview](#platform-overview)
 - [Data Science Workflow](#data-science-workflow)
-  - [Collecting and Ingesting Data](#data-collection-and-ingestion)
-  - [Exploring and Processing Data](#data-exploration-and-processing)
-  - [Building and Training Models](#building-and-training-models)
-  - [Deploying Models to Production](#deploying-models-to-production)
-  - [Visualization, Monitoring, and Logging](#visualization-monitoring-and-logging)
+- [The Tutorial Notebooks](#the-tutorial-notebooks)
 - [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
+<<<<<<< HEAD
   
   Pre-deployed demos &mdash;
   - [Natural language processing (NLP)](demos/nlp/nlp-example.ipynb)
@@ -30,6 +29,10 @@
   - [Platform Documentation, Examples, and Sample Data Sets](#platform-resources)
   - [Third-Party Documentation, Examples, and Sample Data Sets](#third-party-resources)
 - [Support](#support)
+=======
+- [Additional Platform Resources](#platform-resources)
+- [Miscellaneous](#misc)
+>>>>>>> c2f6a71fe129ef2e0905d788e9045b1c40b6e2fe
 
 <a id="platform-overview"></a>
 ## Platform Overview
@@ -45,6 +48,7 @@ The platform incorporates the following components:
 - Integration with third-party data sources such as Amazon S3, HDFS, SQL databases, and streaming or messaging protocols
 - Real-time dashboards based on Grafana
 
+<<<<<<< HEAD
 <br><img src="assets/images/igz-self-service-platform.png" alt="Self-service data science platform" width="650"/><br>
 
 The platform uses [Kubernetes](https://kubernetes.io) (k8s) as the baseline cluster manager, and deploys various application microservices on top of Kubernetes to address different data science tasks.
@@ -64,17 +68,21 @@ For a more in-depth introduction to the platform, see the following resources:
 
 A good place to start your development is with the platform [tutorial Jupyter notebooks](https://github.com/v3io/tutorials), which are available in the home directory of the platform's Jupyter Notebook service; see especially the [getting-started examples](getting-started/getting-started-basic.ipynb) and full [use-case demo applications](demos/README.ipynb).
 You can find a tutorials overview in the [Jupyter Notebook Basics](#jupyter-notebook-basics) section of this document.
+=======
+<br><img src="./assets/images/igz-self-service-platform.png" alt="Self-service data science platform" width="650"/><br>
+>>>>>>> c2f6a71fe129ef2e0905d788e9045b1c40b6e2fe
 
 <a id="data-science-workflow"></a>
 ## Data Science Workflow
 
-The Iguazio Data Science Platform provides a complete data science workflow in a single ready-to-use platform that includes all the required building blocks for creating data science applications from research to production:
+The platform provides a complete data science workflow in a single ready-to-use platform that includes all the required building blocks for creating data science applications from research to production:
 
 - Collect, explore, and label data from various real-time or offline sources
 - Run ML training and validation at scale over multiple CPUs and GPUs
 - Deploy models and applications into production with serverless functions
 - Log, monitor, and visualize all your data and services
 
+<<<<<<< HEAD
 <br>![](assets/images/igz-data-science-workflow.png)<br>
 
 <a id="data-collection-and-ingestion"></a>
@@ -129,64 +137,31 @@ You can find model-training examples in the platform's tutorial Jupyter notebook
 - The [image-classification demo](demos/image-classification/01-image-classification.ipynb) tutorial demonstrates image recognition and classification using TensorFlow and Horovod with MLRun.
 
 If you're are a beginner, you might find the following ML guide useful &mdash; [Machine Learning Algorithms In Layman's Terms](https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-1-d0368d769a7b).
+=======
+![Data Science Workflow](./assets/images/igz-data-science-workflow.gif)
+>>>>>>> c2f6a71fe129ef2e0905d788e9045b1c40b6e2fe
 
-<a id="experiment-tracking"></a>
-#### Experiment Tracking
+<a id="the-tutorial-notebooks"></a>
+## The Tutorial Notebooks
 
-One of the most important and challenging areas of managing a data science environment is the ability to track experiments.
-Data scientists need a simple way to track and view current and historical experiments along with the metadata that is associated with each experiment.
-This capability is critical for comparing different runs, and eventually helps to determine the best model and configuration for production deployment.
-The platform leverages the open-source [MLRun](https://github.com/mlrun/mlrun) library to help tackle these challenges.
-You can find examples of using MLRun in the [MLRun demos](#mlrun-demos-download).
+The home directory of the platform's running-user directory (**/User/&lt;running user&gt;**) contains pre-deployed tutorial Jupyter notebooks with code samples and documentation to assist you in your development &mdash; including a **demos** directory with end-to-end use-case applications (see the next section) and a **getting-started** directory with examples for performing basic tasks.
 
-<a id="deploying-models-to-production"></a>
-### Deploying Models to Production
-
-The platform allows you to easily deploy your models to production in a reproducible way by using the open-source Nuclio serverless framework.
-You provide Nuclio with code or Jupyter notebooks, resource definitions (such as CPU, memory, and GPU), environment variables, package or software dependencies, data links, and trigger information.
-Nuclio uses this information to automatically build the code, generate custom container images, and connect them to the relevant compute or data resources.
-The functions can be triggered by a wide variety of event sources, including the most commonly used streaming and messaging protocols, HTTP APIs, scheduled (cron) tasks, and batch jobs.
-
-Nuclio functions can be created from the platform dashboard or by using standard code IDEs, and can be deployed on your platform cluster.
-A convenient way to develop and deploy Nuclio functions is by using Jupyter Notebook and Python tools.
-For detailed information about Nuclio, visit the [Nuclio web site](https://nuclio.io/) and see the product [documentation](https://nuclio.io/docs/latest/).
-
-> **Note:** Nuclio functions aren't limited to model serving: they can automate data collection, serve custom APIs, build real-time feature vectors, drive triggers, and more.
-
-For an overview of Nuclio and how to develop, document, and deploy serverless Python Nuclio functions from Jupyter Notebook, see the [nuclio-jupyter documentation](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md).
-You can also find examples in the platform tutorial Jupyter notebooks; for example, the [NetOps demo](demos/netops/04-infer.ipynb) tutorial demonstrates how to deploy a network-operations model as a function.
-
-<a id="visualization-monitoring-and-logging"></a>
-### Visualization, Monitoring, and Logging
-
-Data in the platform &mdash; including collected data, internal or external telemetry and logs, and program-output data &mdash; can be analyzed and visualized in different ways simultaneously.
-The platform supports multiple standard data analytics and visualization tools, including SQL, Prometheus, Grafana, and pandas.
-For example, you can plot or chart data within Jupyter Notebook using [Matplotlib](https://matplotlib.org/); use your favorite BI visualization tools, such as [Tableau](https://www.tableau.com), to query data in the platform over a Java database connectivity connector (JDBC); or build real-time dashboards in Grafana.
-
-The data analytics and visualization tools and services generate telemetry and log data that can be stored using the platform's time-series database (TSDB) service or by using external tools such as [Elasticsearch](https://www.elastic.co/products/elasticsearch).
-Platform users can easily instrument code and functions to collect various statistics or logs, and explore the collected data in real time.
-
-The [Grafana](https://grafana.com/grafana) open-source analytics and monitoring framework is natively integrated into the platform, allowing users to create dashboards that provide access to platform NoSQL tables and time-series databases from different dashboard widgets.
-You can also create Grafana dashboards programmatically (for example, from Jupyter Notebook) using wizard scripts.
-For information on how to create Grafana dashboards to monitor and visualize data in the platform, see [Adding a Custom Grafana Dashboard](https://www.iguazio.com/docs/tutorials/latest-release/getting-started/grafana-dashboards/).
+> **Note:**
+> - To view and run the tutorials from the platform, you first need to create a Jupyter Notebook service.
+> - The **welcome.ipynb** notebook and main **README.md** file provide the same introduction in different formats.
 
 <a id="end-to-end-use-case-applications"></a>
 ## End-to-End Use-Case Applications
 
-Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the Iguazio Data Science Platform and related tools to address data science requirements for different industries and implementations.
-Some of the demos are pre-deployed with the platform and available in the **demos** tutorial-notebooks directory.<br>
-<a id="mlrun-demos-download"></a>You can get additional demos from the [MLRun demos repository](https://github.com/mlrun/demos) by running the following code.
-> **Note:** Some of the MLRun demos are still works in progress.
+Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the platform and related tools to address data science requirements for different industries and implementations.
 
+<a id="predeployed-demos"></a>
+### Pre-Deployed Platform Demos
 
-```python
-# Get MLRun demos
-!chmod +x /User/get-demos.sh
-!/User/get-demos.sh
-```
+The platform comes pre-deployed with the following end-to-end use-case demos, which are available in the **demos** tutorial-notebooks directory.
+For more details, see [**demos/README.md**](demos/README.md) (available also as a [notebook](demos/README.ipynb)):
 
-The downloaded demos include the following applications; for more details, see [**demos/README-MLRUN.md**](demos/README-MLRUN.md) (which is created as part of the download):
-
+<<<<<<< HEAD
 - <a id="xgboost-demo"></a>**XGBoost classification** ([**xgboost**](demos/xgboost/train_xgboost_serverless.ipynb)) &mdash; uses XGBoost to perform binary classification on the Iris data set (a popular machine-learning use case), and runs parallel model training with hyperparameters.
 - <a id="lightgbm-demo"></a>**LightGBM classification** ([**lightgbm**](demos/lightgbm/README.md)) &mdash; uses LightGBM to perform binary classification on the HIGGS data set (a popluar machine-learning competition use case), and runs parallel model training with hyperparameters.
 - <a id="face-reco-demo"></a>**Face recognition** ([**faces**](demos/faces/README.md)) &mdash; implements real-time capture of face images, image recognition, and location tracking of identities.
@@ -195,40 +170,51 @@ The downloaded demos include the following applications; for more details, see [
 - <a id="image-classification-demo"></a>**Image classification** ([**image_classification**](demos/image_classification/README.md)) &mdash; builds and trains an ML model that identifies (recognizes) and classifies (labels) images by using Keras, TensorFlow, and Horovod.
 - <a id="netops-demo"></a>**Predictive infrastructure monitoring** ([**netops**](demos/netops/README.md)) &mdash; builds, trains, and deploys a machine-learning model for analyzing and predicting failure in network devices as part of a network operations (NetOps) flow.
   The goal is to identify anomalies for device metrics &mdash; such as CPU, memory consumption, or temperature &mdash; which can signify an upcoming issue or failure.
+=======
+- <a id="nlp-demo"></a>[**Natural language processing (NLP)**](demos/nlp/nlp-example.ipynb) &mdash; processes natural-language textual data and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
+- <a id="stream-enrich-demo"></a>[**Stream enrichment**](demos/stream-enrich/stream-enrich.ipynb) &mdash; implements a typical stream-based data-engineering pipeline, including real-time data enrichment using a NoSQL table.
+- <a id="stocks-demo"></a>[**Smart stock trading**](demos/stocks/01-gen-demo-data.ipynb) &mdash; reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard.
+- <a id="location-based-recommendations-demo"></a>[**Location-based recommendations**](demos/location-based-recommendations/01-generate-stores-and-customers.ipynb) &mdash; generates real-time product purchase recommendations for users of a credit-card company based on the users' physical location.
+- <a id="real-time-user-segmentation-demo"></a>[**Real-time user segmentation**](demos/slots-stream/real-time-user-segmentation.ipynb) &mdash; builds a stream-event processor on a sliding time window for tagging and untagging users based on programmatic rules of user behavior.
+>>>>>>> c2f6a71fe129ef2e0905d788e9045b1c40b6e2fe
 
-The pre-deployed demos include the following use-cases applications; for more details, see [**demos/README.md**](demos/README.md) (available also as a [notebook](demos/README.ipynb):
+<a id="additional-demos"></a>
+### Additional Demos
 
-- <a id="nlp-demo"></a>**Natural language processing (NLP)** ([**nlp**](demos/nlp/nlp-example.ipynb)) &mdash; processes natural-language textual data &mdash; including spelling correction and sentiment analysis &mdash; and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
-- <a id="stream-enrich-demo"></a>**Stream enrichment** ([**stream-enrich**](demos/stream-enrich/stream-enrich.ipynb)) &mdash; implements a typical stream-based data-engineering pipeline, which is required in many real-world scenarios: data is streamed from an event streaming engine; the data is enriched, in real time, using data from a NoSQL table; the enriched data is saved to an output data stream and then consumed from this stream.
-- <a id="stocks-demo"></a>**Smart stock trading** ([**stocks**](demos/stocks/01-gen-demo-data.ipynb)) &mdash; reads stock-exchange data from an internet service into a time-series database (TSDB); uses Twitter to analyze the market sentiment on specific stocks, in real time; and saves the data to a platform NoSQL table that is used for generating reports and analyzing and visualizing the data on a Grafana dashboard.
-- <a id="location-based-recommendations-demo"></a>**Location-based recommendations** ([**location-based-recommendations**](demos/location-based-recommendations/01-generate-stores-and-customers.ipynb)) &mdash; generates real-time product purchase recommendations for users of a credit-card company based on the users' physical location.
-- <a id="real-time-user-segmentation-demo"></a>**Real-time user segmentation** ([**slots-stream**](demos/slots-stream/real-time-user-segmentation.ipynb)) &mdash; builds a stream-event processor on a sliding time window for tagging and untagging users based on programmatic rules of user behavior.
+You can download additional demos from GitHub &mdash; for example:
 
-<a id="jupyter-notebook-basics"></a>
-## Jupyter Notebook Basics
+- <a id="xgboost-demo"></a>[**XGBoost classification**](https://github.com/mlrun/demo-xgb-project) &mdash; uses XGBoost to perform binary classification on the popular Iris ML data set, and runs parallel model training with hyperparameters.
+- <a id="image-classification-demo"></a>[**Image classification**](https://github.com/mlrun/demo-image-classification) &mdash; builds and trains an ML model that identifies (recognizes) and classifies (labels) images by using Keras, TensorFlow, and Horovod.
 
-The platform's Jupyter Notebook service displays the JupyterLab UI, which consists of a collapsible left sidebar, a main work area (on the right), and a top menu bar.
-For details, see the [JupyterLab documentation](https://jupyterlab.readthedocs.io/en/stable/user/interface.html#the-jupyterlab-interface).
+For information on the available demos, see the [demo listing](https://github.com/mlrun/mlrun/blob/master/docs/demos.md).<br>
+For each downloaded demo, start out by reading its **README.md** file.
 
-The main work area (on the right) contains tabs of documents and activities &mdash; for creating, viewing, editing, and running  interactive notebooks, shell terminals, or consoles, as well as viewing and editing other common file types.
-To create a new notebook or terminal, select the **New Launcher** option (`+` icon) from the top action toolbar in the left sidebar.
+The following example code downloads the [mlrun/demo-xgb-project](https://github.com/mlrun/demo-xgb-project) XGBoost-classification demo:
 
-The top menu bar exposes available top-level actions, such as exporting a notebook in a different format.
 
-The left-sidebar menu contains commonly used tabs, including a **File Browser** (directory icon) for browsing files.<br>
-The home directory of the platform's Jupyter Notebook service contains the following files and directories:
+```sh
+%%sh
+# Download the MLRun XGBoost classificaiton demo
+cd /User/demos/
+git clone git://github.com/mlrun/demo-xgb-project.git
+```
 
-- **v3io** directory, which displays the contents of the `v3io` platform cluster data mount for browsing the contents of the cluster's data containers.
-  You can also browse the contents of the data containers from the **Data** page of the platform dashboard.
-- The contents of the running-user home directory &mdash; **users/&lt;running user&gt;**.
-  This directory contains the platform's [tutorial Jupyter notebooks](https://github.com/v3io/tutorials):
+<a id="platform-resources"></a>
+## Additional Platform Resources
 
-  - **welcome.ipynb** / [**README.md**](../README.md) &mdash; the current document, which provides a short introduction to the platform and how to use it to implement a full data science workflow.
-  - [**getting-started**]() &mdash; a directory containing getting-started tutorials that explain and demonstrate how to perform different platform operations using the platform APIs and integrated tools.
-  - [**demos**](demos/README.ipynb) &mdash; a directory containing [end-to-end application use-case demos](#end-to-end-use-case-applications).
-  - Scripts and related notebooks for [updating the tutorial notebooks](#update-notebooks) and [downloading additional demo applications](#mlrun-demos-download).
+- [Introduction video](https://www.youtube.com/watch?v=8OmAN4wd7To)
+- [In-depth platform overview](platform-overview.ipynb) with a break down of the steps for developing a full data science workflow from development to production
+- [Platform components, services, and development ecosystem introduction](https://www.iguazio.com/docs/intro/latest-release/ecosystem/)
+- [References](https://iguazio.com/docs/reference/latest-release/)
+- [nuclio-jupyter SDK](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md) for creating and deploying Nuclio functions with Python and Jupyter Notebook
+- [Iguazio sample data-set](http://iguazio-sample-data.s3.amazonaws.com/) public Amazon S3 bucket
 
+<<<<<<< HEAD
 For information about the predefined data containers and how to reference data in these containers, see [Platform Data Containers](getting-started/getting-started-basic.ipynb/#platform-data-containers) in the [**getting-started-basic**](getting-started/getting-started-basic.ipynb) tutorial notebook.
+=======
+<a id="misc"></a>
+## Miscellaneous
+>>>>>>> c2f6a71fe129ef2e0905d788e9045b1c40b6e2fe
 
 <a id="creating-virtual-environments-in-jupyter-notebook"></a>
 ### Creating Virtual Environments in Jupyter Notebook
@@ -243,25 +229,13 @@ See the [virutal-env](getting-started/virutal-env.ipynb) tutorial notebook for s
 You can use the provided **igz-tutorials-get.sh** script to update the tutorial notebooks to the latest stable version available on [GitHub](https://github.com/v3io/tutorials/).
 For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebook.
 
-<a id="additional-resources"></a>
-## Additional Resources
+<a id="v3io-dir"></a>
+### The v3io Directory
 
-<a id="platform-resources"></a>
-### Platform Documentation, Examples, and Sample Data Sets
-
-- [References](https://iguazio.com/docs/reference/latest-release/)
-- [Components, Services, and Development Ecosystem](https://www.iguazio.com/docs/intro/latest-release/ecosystem/)
-- [Iguazio sample data-set](http://iguazio-sample-data.s3.amazonaws.com/) public Amazon S3 bucket
-
- <a id="third-party-resources"></a>
- ### Third-Party Documentation, Examples, and Sample Data Sets
-
-- [10 Minutes to pandas](https://pandas.pydata.org/pandas-docs/stable/10min.html)
-- [JupyterLab Tutorial](https://jupyterlab.readthedocs.io/en/stable/)
-- [Machine Learning Algorithms In Layman's Terms](https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-1-d0368d769a7b)
-- [Registry of Open Data on AWS](https://registry.opendata.aws/)
+The **v3io** directory that you see in the file browser of the Jupyter UI displays the contents of the `v3io` data mount for browsing the platform data containers.
+For information about the predefined data containers and data mounts and how to reference data in these containers, see [Platform Data Containers](getting-started/getting-started-basic.ipynb/#platform-data-containers).
 
 <a id="support"></a>
-## Support
+### Support
 
 The Iguazio [support team](mailto:support@iguazio.com) will be happy to assist with any questions.
