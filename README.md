@@ -76,7 +76,7 @@ You can download all the additional demos from the [demos repository](https://gi
 
 
 ```python
-# Get the additional demos
+# Get additional demos
 !/User/get-additional-demos.sh
 ```
 
