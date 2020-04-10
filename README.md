@@ -60,7 +60,6 @@ For more details, see [**demos/README.md**](demos/README.md) (available also as 
 - <a id="nlp-demo"></a>[**Natural language processing (NLP)**](demos/nlp/nlp-example.ipynb) &mdash; processes natural-language textual data and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
 - <a id="stream-enrich-demo"></a>[**Stream enrichment**](demos/stream-enrich/stream-enrich.ipynb) &mdash; implements a typical stream-based data-engineering pipeline, including real-time data enrichment using a NoSQL table.
 - <a id="stocks-demo"></a>[**Smart stock trading**](demos/stocks/01-gen-demo-data.ipynb) &mdash; reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard.
-- <a id="location-based-recommendations-demo"></a>[**Location-based recommendations**](demos/location-based-recommendations/01-generate-stores-and-customers.ipynb) &mdash; generates real-time product purchase recommendations for users of a credit-card company based on the users' physical location.
 - <a id="real-time-user-segmentation-demo"></a>[**Real-time user segmentation**](demos/slots-stream/real-time-user-segmentation.ipynb) &mdash; builds a stream-event processor on a sliding time window for tagging and untagging users based on programmatic rules of user behavior.
 
 <a id="additional-demos"></a>
@@ -71,17 +70,14 @@ You can download additional demos from GitHub &mdash; for example:
 - <a id="xgboost-demo"></a>[**XGBoost classification**](https://github.com/mlrun/demo-xgb-project) &mdash; uses XGBoost to perform binary classification on the popular Iris ML data set, and runs parallel model training with hyperparameters.
 - <a id="image-classification-demo"></a>[**Image classification**](https://github.com/mlrun/demo-image-classification) &mdash; builds and trains an ML model that identifies (recognizes) and classifies (labels) images by using Keras, TensorFlow, and Horovod.
 
-For information on the available demos, see the [demo listing](https://github.com/mlrun/mlrun/blob/master/docs/demos.md).<br>
-For each downloaded demo, start out by reading its **README.md** file.
+For information on the available demos, see the [demo listing](https://github.com/mlrun/demos/blob/master/README.md).<br>
 
-The following example code downloads the [mlrun/demo-xgb-project](https://github.com/mlrun/demo-xgb-project) XGBoost-classification demo:
+You can download all the additional demos from the [demos repository](https://github.com/mlrun/demos) by executing the following command:
 
 
-```sh
-%%sh
-# Download the MLRun XGBoost classificaiton demo
-cd /User/demos/
-git clone git://github.com/mlrun/demo-xgb-project.git
+```python
+# Get additional demos
+!/User/get-additional-demos.sh
 ```
 
 <a id="platform-resources"></a>
