@@ -88,7 +88,6 @@ You can download all the additional demos from the [demos repository](https://gi
 - [Platform components, services, and development ecosystem introduction](https://www.iguazio.com/docs/intro/latest-release/ecosystem/)
 - [References](https://iguazio.com/docs/reference/latest-release/)
 - [nuclio-jupyter SDK](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md) for creating and deploying Nuclio functions with Python and Jupyter Notebook
-- [Iguazio sample data-set](http://iguazio-sample-data.s3.amazonaws.com/) public Amazon S3 bucket
 
 <a id="misc"></a>
 ## Miscellaneous
