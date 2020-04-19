@@ -46,6 +46,11 @@ The home directory of the platform's running-user directory (**/User/&lt;running
 > - To view and run the tutorials from the platform, you first need to create a Jupyter Notebook service.
 > - The **welcome.ipynb** notebook and main **README.md** file provide the same introduction in different formats.
 
+## Getting-Started Tutorial
+As a first step, see the getting-started tutorial to familiarize yourself with the platform.<br>
+<br>
+<a href="demos/getting-started-tutorial/getting-started-tutorial.ipynb">![View tutorial](./assets/images/view-tutorial-button.png)</a>
+
 <a id="end-to-end-use-case-applications"></a>
 ## End-to-End Use-Case Applications
 
