@@ -5,6 +5,7 @@ An initial introduction to the Iguazio Data Science Platform and the platform tu
 - [Platform Overview](#platform-overview)
 - [Data Science Workflow](#data-science-workflow)
 - [The Tutorial Notebooks](#the-tutorial-notebooks)
+- [Getting-Started Tutorial](#getting-started-tutorial)
 - [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
 - [Additional Platform Resources](#platform-resources)
 - [Miscellaneous](#misc)
@@ -46,8 +47,10 @@ The home directory of the platform's running-user directory (**/User/&lt;running
 > - To view and run the tutorials from the platform, you first need to create a Jupyter Notebook service.
 > - The **welcome.ipynb** notebook and main **README.md** file provide the same introduction in different formats.
 
+<a id="getting-started-tutorial"></a>
 ## Getting-Started Tutorial
-As a first step, see the getting-started tutorial to familiarize yourself with the platform.<br>
+
+Start out by running the getting-started tutorial to familiarize yourself with the platform and experience firsthand some of its main capabilities.<br>
 <br>
 <a href="demos/getting-started-tutorial/getting-started-tutorial.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
 
