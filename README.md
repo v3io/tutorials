@@ -52,7 +52,7 @@ The home directory of the platform's running-user directory (**/User/&lt;running
 
 Start out by running the getting-started tutorial to familiarize yourself with the platform and experience firsthand some of its main capabilities.<br>
 <br>
-<a href="demos/getting-started-tutorial/getting-started-tutorial.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
+<a href="getting-started-tutorial/getting-started-tutorial.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
 
 <a id="end-to-end-use-case-applications"></a>
 ## End-to-End Use-Case Applications
