@@ -5,6 +5,7 @@ An initial introduction to the Iguazio Data Science Platform and the platform tu
 - [Platform Overview](#platform-overview)
 - [Data Science Workflow](#data-science-workflow)
 - [The Tutorial Notebooks](#the-tutorial-notebooks)
+- [Getting-Started Tutorial](#getting-started-tutorial)
 - [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
 - [Additional Platform Resources](#platform-resources)
 - [Miscellaneous](#misc)
@@ -40,16 +41,18 @@ The platform provides a complete data science workflow in a single ready-to-use 
 <a id="the-tutorial-notebooks"></a>
 ## The Tutorial Notebooks
 
-The home directory of the platform's running-user directory (**/User/&lt;running user&gt;**) contains pre-deployed tutorial Jupyter notebooks with code samples and documentation to assist you in your development &mdash; including a **demos** directory with end-to-end use-case applications (see the next section) and a **getting-started** directory with examples for performing basic tasks.
+The home directory of the platform's running-user directory (**/User/&lt;running user&gt;**) contains pre-deployed tutorial Jupyter notebooks with code samples and documentation to assist you in your development &mdash; including a **demos** directory with end-to-end use-case applications (see the next section) and a **data-ingestion-and-preparation** directory with examples for performing data ingestion and preparation tasks.
 
 > **Note:**
 > - To view and run the tutorials from the platform, you first need to create a Jupyter Notebook service.
 > - The **welcome.ipynb** notebook and main **README.md** file provide the same introduction in different formats.
 
+<a id="getting-started-tutorial"></a>
 ## Getting-Started Tutorial
-As a first step, see the getting-started tutorial to familiarize yourself with the platform.<br>
+
+Start out by running the getting-started tutorial to familiarize yourself with the platform and experience firsthand some of its main capabilities.<br>
 <br>
-<a href="demos/getting-started-tutorial/getting-started-tutorial.ipynb">![View tutorial](./assets/images/view-tutorial-button.png)</a>
+<a href="getting-started-tutorial/getting-started-tutorial.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
 
 <a id="end-to-end-use-case-applications"></a>
 ## End-to-End Use-Case Applications
@@ -102,7 +105,7 @@ You can download all the additional demos from the [demos repository](https://gi
 
 A virtual environment is a named, isolated, working copy of Python that maintains its own files, directories, and paths so that you can work with specific versions of libraries or Python itself without affecting other Python projects.
 Virtual environments make it easy to cleanly separate projects and avoid problems with different dependencies and version requirements across components.
-See the [virutal-env](getting-started/virutal-env.ipynb) tutorial notebook for step-by-step instructions for using conda to create your own Python virtual environments, which will appear as custom kernels in Jupyter Notebook.
+See the [virtual-env](virtual-env.ipynb) tutorial notebook for step-by-step instructions for using conda to create your own Python virtual environments, which will appear as custom kernels in Jupyter Notebook.
 
 <a id="update-notebooks"></a>
 ### Updating the Tutorial Notebooks to the Latest Version
@@ -114,7 +117,7 @@ For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebo
 ### The v3io Directory
 
 The **v3io** directory that you see in the file browser of the Jupyter UI displays the contents of the `v3io` data mount for browsing the platform data containers.
-For information about the predefined data containers and data mounts and how to reference data in these containers, see [Platform Data Containers](getting-started/getting-started-basic.ipynb/#platform-data-containers).
+For information about the predefined data containers and data mounts and how to reference data in these containers, see [Platform Data Containers](data-ingestion-and-preparation/basic-data-ingestion-and-preparation.ipynb/#platform-data-containers).
 
 <a id="support"></a>
 ### Support

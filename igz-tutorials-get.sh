@@ -38,7 +38,7 @@ TEMP_DIR="${DEST_DIR}/temp-igz-tutorials"
 echo "Updating ${PRODUCT} tutorial files in ${DEST_DIR} ..."
 git clone ${GIT_REPO} ${TEMP_DIR}
 echo "Copying files to ${DEST_DIR}..."
-cp -rf ${TEMP_DIR}/getting-started ${DEST_DIR}
+cp -rf ${TEMP_DIR}/data-ingestion-and-preparation ${DEST_DIR}
 cp -rf ${TEMP_DIR}/demos ${DEST_DIR}
 cp -rf ${TEMP_DIR}/*.ipynb ${DEST_DIR}
 cp -rf ${TEMP_DIR}/assets ${DEST_DIR}
