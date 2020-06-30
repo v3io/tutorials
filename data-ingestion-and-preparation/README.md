@@ -1,159 +1,215 @@
-# Data ingestion and preparation overview
+# Data Ingestion and Preparation Overview
 
-- [Overview](#gs-overview)
-- [Basic flow](#basic)
-- [Reading from external database](#databases)
-- [Working with Spark](#spaek)
-- [Working with streaming](#streaming)
-- [Running SQL on Iguazio](#sql)
-- [Managing Parquet files](#parquet)
-- [Accessing Iguazio key value and time series](#frames)
-- [Getting data from AWS S3](#s3)
-- [Running dataframes on GPUs via Nvidia cuDF](#gpu)
-- [Running distributed Python with Dask](#dask)
+Learn about different methods for ingesting data into the Iguazio Data Science Platform, analyzing the data, and preparing it for the next step in your data pipeline.
 
-<a id="gs-overview"></a>
+- [Overview](#data-ingest-overview)
+  - [Platform Data Containers](#platform-data-containers)
+- [Basic Flow](#data-ingest-basic-flow)
+- [Reading from External Database](#data-ingest-external-dbs)
+  - [Using Spark over JDBC](#data-ingest-spark-over-jdbs)
+  - [Using SQLAlchemy](#data-ingest-sqlalchemy)
+- [Working with Spark](#data-ingest-spark)
+  - [Using Spark SQL and DataFrames](#data-ingest-spark-sql-n-dfs)
+- [Working with Streams](#data-ingest-streams)
+  - [Using Nuclio to Get Data from Common Streaming Engines](#data-ingest-streams-nuclio)
+  - [Using the Platform's Streaming Engine](#data-ingest-streams-platform)
+  - [Using Spark Streaming](#data-ingest-streams-spark)
+- [Running SQL Queries on Platform Dat](#data-ingest-sql)
+  - [Running Full ANSII Presto SQL Queries](#data-ingest-sql-presto)
+  - [Running Spark SQL Queries](#data-ingest-sql-spark)
+  - [Running SQL Queries from Nuclio Functions](#data-ingest-sql-nuclio)
+- [Working with Parquet Files](#data-ingest-parquet)
+- [Accessing Platform NoSQL and TSDB Data Using the Frames Library](#data-ingest-frames)
+- [Getting Data from AWS S3 Using curl](data-ingest-s3-curl)
+- [Running Distributed Python with Dask](#data-ingest-dask)
+- [Running DataFrames on GPUs using NVIDIA cuDF](#data-ingest-gpu)
+
+<a id="data-ingest-overview"></a>
 ## Overview
-This notebook provides an overview of the various options for collecting, storing and manipulating data in Iguazio with references to built-in <br> sample notebooks. The platform address the various requirements for manipulating data in each of the data science lifeccyle steps <br>
-Thus, provides a wide set of tools for handling data using various fraemworks. <br> 
 
-Working with data in the various stepts of the pipeline may require different tools and frameworks for each step especially when it comes to the difference <br>
-mechanism needed when you are in your research phase vs an operational phase where you need to build an inferene production pipeline <br>
-You may use different tools and technics within those various steps. <br>
-In the notebook you'll find short sections explaining the various solutions with links to more detailed notebooks<br>
+The Iguazio Data Science Platform (**"the platform"**) allows storing data in any format.
+The platform's multi-model data layer and related APIs provide enhanced support for working with NoSQL ("key-value"), time-series, and stream data.
+Various steps of the data science life cycle (pipeline) might require different tools and frameworks for working with data, especially when it comes to the different mechanisms required during the research and development phase versus the operational production phase.
+The platform features a wide set of methods for manipulating and managing data, of different formats, in each step of the data life cycle, using a variety of frameworks, tools, and API &mdash; such as Spark SQL and DataFrames, Spark Streaming, Presto SQL queries, pandas DataFrames, Dask, the V3IO Frames Python library, and web APIs
 
+This document provides an overview of various methods for collecting, storing, and manipulating data in the platform, and refers to sample tutorial notebooks that demonstrate how to use these methods.<br>
+For an in-depth overview of the platform and how it can be used to implement a full data science workflow, see the [**platform-overview.ipynb**](../platform-overview.ipynb) tutorial notebook.<br>
+For full end-to-end platform use-case application demos, see [**demos**](../demos/README.ipynb) tutorial notebooks directory.
 
+<br><img src="../assets/images/pipeline-diagram.jpg" alt="pipeline-diagram" width="1000"/><br>
 
+<a id="platform-data-containers"></a>
+### Platform Data Containers
 
+Data is stored within data containers in the platform's distributed file system (DFS).
+All platform clusters have two predefined containers:
 
-<br><img src="../assets/images/pipeline-diagram.JPG" alt="pipeline-diagram" width="1000"/><br>
+- <a id="default-container"></a> The default **"bigdata"** container.
+- <a id="users-container"></a>The **"users"** container, which is designed to contain **&lt;username&gt;** directories that provide individual development environments for storing user-specific data.
+  The platform's Jupyter Notebook, Zeppelin, and web-based shell "command-line services" automatically create such a directory for the running user of the service and set it as the home directory of the service environment.
+  You can leverage the following environment variables, which are predefined in the platform's command-line services, to access this running-user directory from your code:
 
+  - `V3IO_USERNAME` &mdash; set to the username of the running user of the Jupyter Notebook service.
+  - `V3IO_HOME` &mdash; set to the running-user directory in the "users" container &mdash; **users/&lt;running user&gt;**.
+  - `V3IO_HOME_URL` &mdash; set to the fully qualified `v3io` path to the running-user directory &mdash; `v3io://users/<running user>`.
 
+The data containers and their contents are referenced differently depending on the programming interface.
+For example:
 
-<a id="basic"></a>
+- In local file-system (FS) commands you use the predefined `v3io` root data mount &mdash; `/v3io/<container name>[/<data path>]`.
+  There's also a predefined local-FS `User` mount to the **users/&lt;running user&gt;** directory, and you can use the aforementioned environment variables when setting data paths.
+  For example, `/v3io/users/$V3IO_USERNAME`, `/v3io/$V3IO_HOME`, and `/User` are all valid ways of referencing the **users/&lt;running user&gt;** directory from a local FS command.
+- In Hadoop FS or Spark DataFrame commands you use a fully qualified path of the format `v3io://<container name>/<data path>`.
+  You can also use environment variables with these interfaces.
 
-## Basic flow
+For detailed information and examples on how to set the data path for each interface, see [Setting Data Paths](https://www.iguazio.com/docs/latest-release/tutorials/getting-started/fundamentals/#data-paths) and the examples in the platform's tutorial Jupyter notebooks.
 
-In this notebook you’ll go through basic scenarios of getting and manipulating data in Iguazio along with explaining some core concepts of working with  data on the system. <br> 
-Thie notebook covers how to get a csv file from an S3 bucket, convert it into a key value table using Spark, Run a SQL query and convert it into a parquet file <br>
-[**basic tutorial**](getting-started-basic.ipynb) 
+<a id="data-ingest-basic-flow"></a>
+## Basic Flow
 
+The [**basic-data-ingestion-and-preparation**](basic-data-ingestion-and-preparation.ipynb) tutorial walks you through basic scenarios of ingesting data from external sources into the platform's data store and manipulating the data using different data formats.
+The tutorial includes an example of ingesting a CSV file from an AWS S3 bucket; converting it into a NoSQL table using Spark DataFrames; running SQL queries on the table; and converting the table into a Parquet file.
 
-<a id="databases"></a>
-## Reading data from external databases
+<a id="data-ingest-external-dbs"></a>
+## Reading Data from External Databases
 
-Here are several examples of how to fetch data from external databases
+You can use different methods to read data from external databases into the platform's data store, such as the following:
 
+- [Using Spark over JDBC](#data-ingest-spark-over-jdbs)
+- [Using SQLAlchemy](#data-ingest-sqlalchemy)
+
+<a id="data-ingest-spark-over-jdbs"></a>
 ### Using Spark over JDBC
-Spark SQL includes a data source that can read data from other databases using Java database connectivity (JDBC).<br>
-The results are returned as a Spark DataFrame that can easily be processed in Spark SQL or joined with other data sources. <br>
-In this notebooks we have several examples of getting data from various databases such as MySQL , Oracle, Postgress and others <br>
-[**Spark over JDBC**](spark-jdbc.ipynb)
 
-### Using SQL Alchemy 
-In this notebook users can learn how to work with SQLAlchemy which is the Python SQL toolkit and Object Relational Mapper <br>
-that gives application developers the full power and flexibility of SQL and then read the data into dataframes and work with Python data frame on the dataset <br>
-[**Using SQLAlchemy**](read-external-db.ipynb)
+Spark SQL includes a data source that can read data from other databases using Java database connectivity (JDBC).
+The results are returned as a Spark DataFrame that can easily be processed using Spark SQL, or joined with other data sources.
+The [**spark-jdb**](spark-jdbc.ipynb) tutorial includes several examples of using Spark JDBC to ingest data from various databases &mdash; such as MySQL, Oracle, and PostgreSQL.
 
-<a id="spark"></a>
+<a id="data-ingest-sqlalchemy"></a>
+### Using SQLAlchemy
 
+The [**read-external-db**](read-external-db.ipynb) tutorial outlines how to ingest data using [SQLAlchemy](https://www.sqlalchemy.org/) &mdash; a Python SQL toolkit and Object Relational Mapper, which gives application developers the full power and flexibility of SQL &mdash; and then use Python DataFrames to work on the ingested data set.
+
+<a id="data-ingest-spark"></a>
 ## Working with Spark
 
-Spark is a built-in service in Iguazio and it uses for both analyzing and manipulating a large set of data in a distributed way as well as for analyzing streams using its Spark streaming module <br>
-Spark lets you query structured data inside Spark programs by using either SQL or a familiar DataFrame API.<br>
-DataFrames and SQL provide a common way to access a variety of data sources. <br>
-In this notebook, you'll learn how to use Spark SQL and DataFrames to access objects, tables, and unstructured data that persist in the data containers of the Iguazio data platform. <br>
-The platform's Spark drivers implement the data-source API and support predicate push down: <br>
-the queries are passed to the platform's data store, which returns only the relevant data. <br>
-This allow accelerated and high-speed access from Spark to data stored in the platform.<br>
-[**Working with Spark**](spark-sql-analytics.ipynb)
+The platform has a default pre-deployed Spark service that enables ingesting, analyzing, and manipulating data using different [Spark](http://spark.apache.org) APIs:
 
-### Ingesting data using Spark
-Spark can be useful for ingesting data into the system for both batch or micro batch processing <br>
-https://www.iguazio.com/docs/tutorials/latest-release/getting-started/data-ingestion-w-spark-qs/
+- [Using Spark SQL and DataFrames](#data-ingest-spark-sql)
+- Using the Spark Streaming API &mdash; see [Using Streaming Streaming](#data-ingest-streams-spark) under "Working with Spark".
 
+<a id="data-ingest-spark-sql-n-dfs"></a>
+### Using Spark SQL and DataFrames
 
-<a id="streaming"></a>
+Spark lets you write and query structured data inside Spark programs by using either SQL or a familiar DataFrame API.
+DataFrames and SQL provide a common way to access a variety of data sources.
+You can use the [Spark SQL and DataFrames](https://spark.apache.org/sql/) API to ingest data into the platform, for both batch and micro-batch processing, and analyze and manipulate large data sets, in a distributed manner.
 
-## Working with Streaming
+The platform's custom NoSQL Spark DataFrame implements the Spark data-source API to support a custom data source that enables reading and writing data in the platform's NoSQL store using Spark DataFrames, including enhanced features such as data pruning and filtering (predicate push down); queries are passed to the platform's data store, which returns only the relevant data.
+This allows accelerated and high-speed access from Spark to data stored in the platform.
 
-### Using Nuclio to get data from common streaming engines
-Iguazio has a serverless function (AKA Nuclio) that provides a mechanism to analyze and process real time events from various streaming engines. <br> 
-The following streaming frameworks are being supported:<br>
-Kafaka, kinesis, Azure event hub, Iguazio stream, RabbitMQ, MQTT <br>
-Using Nuclio functions for getting and analyzing streaming data in real time is a very common practice when building a real time pipeline. <br>
-Streaming could be: images/videos,  telemetry data , financial transactions, web clicks , sensors data etc.. <br> 
-Along with reading the stream events, customers can implement their own logic within the nuclio function to manipulate or enrich the data and prepare it for the next step in the pipeline.<br>
-The Nuclio serverless function can sustain high load of workloads with very low latencies ,thus it makes it very useful for building an event driven applications with strict latency requirements.<br>
-Here you can find additional information:<br>
-https://www.iguazio.com/docs/intro/latest-release/serverless/
+The [**spark-sql-analytics**](spark-sql-analytics.ipynb) tutorial demonstrates how to use Spark SQL and DataFrames to access objects, tables, and unstructured data that persists in the platform's data store.
 
-### Iguazio built-in streaming (V3IO) 
-Iguazio has its own built-in streaming engine called V3IO stream. This stream is often being used in real time pipeline for writing into a queue. <br> 
-it can also serve as a streaming engine in a similar way to kafka or kinesis so users don't need to use an external one. <br>
-In this notebook you’ll find an example of writing a nuclio function that uses Iguazio stream: <br>
-[**Reading from V3IO stream**](../demos/real-time-user-segmentation.ipynb)
+For more information and examples of data ingestion with Spark DataFrames, see [Getting Started with Data Ingestion Using Spark](https://www.iguazio.com/docs/latest-release/tutorials/getting-started/data-ingestn-w-spark-qs/).<br>
+For more about running SQL queries with Spark, see [Running Spark SQL Queries](#data-ingest-sql-spark) under "Running SQL Queries on Platform Data".
 
-### Spark streaming
-Need an example
+<a id="data-ingest-streams"></a>
+## Working with Streams
 
+The platform supports various methods for working with data streams, including the following:
 
-<a id="sql"></a>
+- [Using Nuclio to Get Data from Common Streaming Engines](#data-ingest-streams-nuclio)
+- [Using the Platform's Streaming Engine](#data-ingest-streams-platform)
+- [Using Spark Streaming](#data-ingest-streams-spark)
 
-## Runnig SQL queries on Iguazio data layer
+<a id="data-ingest-streams-nuclio"></a>
+### Using Nuclio to Get Data from Common Streaming Engines
 
-Users can run SQL queries to fetch data that resides on Iguazio key value and Parquet files. There are two options to run SQL query: <br>
+The platform has a default pre-deployed Nuclio service that uses Iguaio's [Nuclio](https://nuclio.io/) serverless-framework, which provides a mechanism for analyzing and processing real-time events from various streaming engines.
+Nuclio currently supports the following streaming frameworks &mdash; Kafka, kinesis, Azure Event Hubs, platform streams (a.k.a. V3IO streams), RabbitMQ, and MQTT.
 
-### Running full ANSII SQL queries
-Iguazio has a built-in service called Presto. Presto is an open source that provides distributed framework for running SQL queries. <br>
-To run a query using Presto from your notebook all you need to do is to use %SQL magic command and then write the query.  <br>
-Those queries will be running as distributed queries across Iguazio application nodes <br>
-In this basic tutorial you can find an example for running such query using the %SQL magic command <br>
-[**basic tutorial**](getting-started-basic.ipynb) <br>
+Using Nuclio functions to retrieve and analyze streaming data in real time is a very common practice when building a real-time data pipeline.
+You can stream any type of data &mdash; such as telemetry (NetOps) metrics, financial transactions, web clicks, or sensors data &mdash; in any format, including images and videos. 
+You can also implement your own logic within the Nuclio function to manipulate or enrich the consumed stream data and prepare it for the next step in the pipeline.
 
-Note that for running queries on Parquet table you need to work with Hive tables. In this notebook you can find an example <br> 
-of a script that takes a csv file and convert it to a hive table. <br>
-[**Working with Hive tables**](csv-to-hive.ipynb) <br>
+Nuclio serverless functions can sustain high workloads with very low latencies, thus making them very useful for building an event-driven applications with strict latency requirements.
 
-### Using Spark SQL
-Spark is a built-in service in running in the platfrom and users can run SQL queries using Spark SQL <br>
-[**Running SQL with Spark**](spark-sql-analytics.ipynb)
+For more information about Nuclio, see the platform's [serverless introduction](https://www.iguazio.com/docs/intro/latest-release/serverless/).
 
+<a id="data-ingest-streams-platform"></a>
+### Using the Platform's Streaming Engine 
 
-### Running SQL from a Nuclio function 
-In some cases users need to run a SQL query as part an event driven application. In this notebook you'll see an example of <br>
-running a SQL query as part of a nuclio function <br>
-[**Running SQL from Nuclio function**](nuclio-read-via-presto.ipynb)
+The platform features a custom streaming engine and a related stream format &mdash; a platform stream (a.k.a. V3IO stream).
+You can use the platform's streaming engine to write data into a queue in a real-time data pipeline, or as a standard streaming engine (similar to Kafka and Kinesis), so you don't need to use an external engine.
 
+The platform's streaming engine is currently available via the platform's [Streaming Web API](https://www.iguazio.com/docs/latest-release/reference/api-reference/web-apis/streaming-web-api/).<br>
+In addition, the platform's Spark-Streaming Integration API enables using the Spark Streaming API to work with platform streams, as explained in the next section ([Using Spark Streaming](#data-ingest-streams-spark)).
 
-<a id="parquet"></a>
+The [**real-time-user-segmentation**](../demos/slots-stream/real-time-user-segmentation.ipynb) demo tutorial notebook includes an example of a Nuclio function that uses platform streams.
 
-## Managing Parquet files
+<a id="data-ingest-streams-spark"></a>
+### Using Spark Streaming
 
-Parquet  is a columnar storage format that provides high-density high-performance file organization. The following section demonstrates how to create and write data to a Parquet table in the Iguazio Data Science Platform and read its contents. For information about <br> reading and writing Parquet files from Python applications view the notebook below: <br>
-[**Managing Parquet files**](parquet-read-write.ipynb) <br>
+You can use the [Spark Streaming](http://spark.apache.org/streaming/) API to ingest, consume, and analyze data using data streams.
+The platform features a custom [Spark-Streaming Integaration API](https://www.iguazio.com/docs/latest-release/reference/api-reference/spark-apis/spark-streaming-integration-api/) to allow using the Spark Streaming API with [platform streams](#data-ingest-streams-platform).
 
-Once you bring Parquet files into the platform you may want to create hive tables and run SQL queries on those tables <br>
-This notebook covers the way to do it: <br>
-[**Convert Parquet to hive**](parquet-to-hive.ipynb)
+<!-- TODO: Add more information / add a tutorial and refer to it. -->
 
+<a id="data-ingest-sql"></a>
+## Running SQL Queries on Platform Data
 
-<a id="frames"></a>
+You can run SQL queries on NoSQL and Parquet data in the platform's data store, using any of the folowing methods:
 
-## Accessing Iguazio's key value and Time series data using a native library (Frames)
+- [Running full ANSII Presto SQL queries](#data-ingest-sql-presto) using SQL magic
+- [Running Spark SQL queries](#data-ingest-sql-spark)
+- [Running SQL queries from Nuclio functions](#data-ingest-sql-nuclio)
 
-Iguazio has a multi model data layer that store data as key value and time series format. Users can access the data using various tools and APIs such as Spark, SQL or pandas dataframe and it can also access the data using a build-in framework called Frames. 
-Frames is a multi-model open-source data-access library, developed by Iguazio, which provides a unified high-performance DataFrame API for working with data in the data store of the Iguazio Data Science Platform. Frames currently supports the NoSQL (key/value) and time-series (TSDB) data models via its kv and tsdb backends.
-This notebook explain how to work with Frames: <br>
-[**Working with Frames**](frames.ipynb)
+<a id="data-ingest-sql-presto"></a>
+### Running Full ANSII Presto SQL Queries
 
+The platform has a default pre-deployed Presto service that enables using the [Presto](https://prestosql.io/) open-source distributed SQL query engine to run interactive SQL queries and perform high-performance low-latency interactive analytics on data that's stored in the platform.
+To run a Presto query from a Jupyter notebook, all you need is to use an SQL magic command &mdash; `%sql` followed by your Presto query.
+Such queries are executed as distributed queries across the platform's application nodes.
+The [**basic-data-ingestion-and-preparation**](basic-data-ingestion-and-preparationipynb) tutorial demonstrates how to run Presto queies using SQL magic.
 
-<a id="s3"></a>
+Note that for running queries on Parquet tables, you need to work with Hive tables.
+The [**csv-to-hive**](csv-to-hive.ipynb) tutorial includes a script that converts a CSV file into a Hive table.
 
-## Getting data from AWS S3
+<a id="data-ingest-sql-spark"></a>
+### Running Spark SQL Queries
 
-The simple way for getting data from S3 is just by using a curl command sending a request to the AWS S3 bucket
+The [**spark-sql-analytics**](spark-sql-analytics.ipynb) tutorial demonstrates how to run Spark SQL queries on data in the platform's data store.
 
+For more information about the platform's Spark service, see [Working with Spark](#data-ingest-spark) in this document.
+
+<a id="data-ingest-sql-nuclio"></a>
+### Running SQL Queries from Nuclio Functions 
+
+In some cases, you might need to run an SQL query as part an event-driven application.
+The [**nuclio-read-via-presto**](nuclio-read-via-presto.ipynb) tutorial demonstrates how to run an SQL query from a serverless Nuclio function.
+
+<a id="data-ingest-parquet"></a>
+## Working with Parquet Files
+
+[Parquet](https://parquet.apache.org/) is a columnar storage format that provides high-density high-performance file organization.<br>
+The [**parquet-read-write**](parquet-read-write.ipynb) tutorial demonstrates how to create and write data to a Parquet table in the platform and read data from the table.
+
+After you ingest Parquet files into the platform, you might want to create related Hive tables and run SQL queries on these tables.<br>
+The [**parquet-to-hive**](parquet-to-hive.ipynb) tutorial demonstrates how you can do this using Spark DataFrames.
+
+<a id="data-ingest-frames"></a>
+## Accessing Platform NoSQL and TSDB Data Using the Frames Library
+
+[V3IO Frames](https://github.com/v3io/frames) (**"Frames"**) is a multi-model open-source data-access library, developed by Iguazio, which provides a unified high-performance DataFrame API for working with data in the platform's data store.
+Frames currently supports the NoSQL (key-value) and time-series (TSDB) data models via its NoSQL (`nosql`|`kv`) and TSDB (`tsdb`) backends.
+The [**frames**](frames.ipynb) tutorial provides an introduction to Frames and demonstrates how to use it to work with NoSQL and TSDB data in the platform.
+
+<a id="data-ingest-s3-curl"></a>
+## Getting Data from AWS S3 Using curl
+
+A simple way to ingest data from the Amazon Simple Storage Service (S3) into the platform's data store is to run a curl command that sends an HTTP request to the relevant AWS S3 bucket, as demonstrated in the following code cell.
+For more information and examples, see the [**basic-data-ingestion-and-preparation**](basic-data-ingestion-and-preparation.ipynb#ingest-from-amazon-s3-using-curl) tutorial.
+<!-- TODO: Add a reference to the XCP tool and explain how to load a bulk of data from S3. -->
 
 
 ```sh
@@ -162,28 +218,21 @@ CSV_PATH="/User/examples/stocks.csv"
 curl -L "iguazio-sample-data.s3.amazonaws.com/2018-03-26_BINS_XETR08.csv" > ${CSV_PATH}
 ```
 
-Future – need to add a reference to the XCP tool and how to load bulk of data from S3
+<a id="data-ingest-dask"></a>
+## Running Distributed Python Code with Dask
 
-<a id="dask"></a>
+[Dask](https://dask.org/) is a flexible library for parallel computing in Python, which is useful for computations that don't fit into a DataFrame.
+Dask exposes low-level APIs that enable you to build custom systems for in-house applications.
+This helps parallelize Python processes and dramatically accelerates their performance.
+The [**dask-cluster**](dask-cluster.ipynb) tutorial demonstrates how to use Dask with platform data.
 
-## Running distributed python code with Dask
+<a id="data-ingest-gpu"></a>
+## Running DataFrames on GPUs using NVIDIA cuDF
 
-The dask frameworks enabling users to parallelize internal systems as not all computations fit into a dataframe. Dask exposes lower-level APIs letting you build custom systems for in-house applications. This helps parallelize python processes and dramatically accelerate their performance <br>
-[**Configuring a dask cluster**](dask-cluster.ipynb)
+The platform allows you to use NVIDIA’s [RAPIDS](https://rapids.ai/) open-source libraries suite to execute end-to-end data science and analytics pipelines entirely on GPUs.
+[cuDF](https://docs.rapids.ai/api/cudf/stable/) is a RAPIDS GPU DataFrame library for loading, joining, aggregating, filtering, and otherwise manipulating data.
+This library features a pandas-like API that will be familiar to data engineers and data scientists, who can use it to easily accelerate their workflows without going into the details of CUDA programming.
+The [**gpu-cudf-vs-pd**](gpu-cudf-vs-pd.ipynb) tutorial demonstrates how to use the cuDF library and compares performance benchmarks with pandas and cuDF.
 
-
-<a id="gpu"></a>
-
-## Running dataframes on GPUs via Nvidia cuDF
-
-Iguazio has deployed the Nvidia Rapids library as part of its solution enabling users to easily access GPU resources. <br>
-cuDF is a GPU DataFrame library for loading, joining, aggregating, filtering, and otherwise manipulating data. <br>
-cuDF provides a pandas-like API that will be familiar to data engineers & data scientists, so they can use it to easily accelerate their workflows without going into the details of CUDA programming. <br>
-This notebook provide a sample example of using cuDF  <br>
-[**cudf vs pandas dataframe**](gpu-cudf-vs-pd.ipynb)
-
-
-
-```python
-
-```
+> **Note:** To use the cuDF library, you need to create a RAPIDS Conda environment.
+> For more information, see the [**virtual-env**](virtual-env.ipynb#) tutorial.

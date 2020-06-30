@@ -41,7 +41,7 @@ The platform provides a complete data science workflow in a single ready-to-use 
 <a id="the-tutorial-notebooks"></a>
 ## The Tutorial Notebooks
 
-The home directory of the platform's running-user directory (**/User/&lt;running user&gt;**) contains pre-deployed tutorial Jupyter notebooks with code samples and documentation to assist you in your development &mdash; including a **demos** directory with end-to-end use-case applications (see the next section) and a **data-ingestion-and-preparation** directory with examples for performing data ingestion and preparation tasks.
+The home directory of the platform's running-user directory (**/User/&lt;running user&gt;**) contains pre-deployed tutorial Jupyter notebooks with code samples and documentation to assist you in your development &mdash; including a [**demos**](demos/README.ipynb) directory with end-to-end use-case applications (see the next section) and a [**data-ingestion-and-preparation**](data-ingestion-and-preparation/README.ipynb) directory with documentation and examples for performing data ingestion and preparation tasks.
 
 > **Note:**
 > - To view and run the tutorials from the platform, you first need to create a Jupyter Notebook service.
@@ -117,7 +117,7 @@ For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebo
 ### The v3io Directory
 
 The **v3io** directory that you see in the file browser of the Jupyter UI displays the contents of the `v3io` data mount for browsing the platform data containers.
-For information about the predefined data containers and data mounts and how to reference data in these containers, see [Platform Data Containers](data-ingestion-and-preparation/basic-data-ingestion-and-preparation.ipynb/#platform-data-containers).
+For information about the predefined data containers and data mounts and how to reference data in these containers, see [Platform Data Containers](data-ingestion-and-preparation/README.ipynb#platform-data-containers).
 
 <a id="support"></a>
 ### Support
