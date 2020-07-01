@@ -145,7 +145,7 @@ You can use the platform's streaming engine to write data into a queue in a real
 The platform's streaming engine is currently available via the platform's [Streaming Web API](https://www.iguazio.com/docs/latest-release/reference/api-reference/web-apis/streaming-web-api/).<br>
 In addition, the platform's Spark-Streaming Integration API enables using the Spark Streaming API to work with platform streams, as explained in the next section ([Using Spark Streaming](#data-ingest-streams-spark)).
 
-The [**real-time-user-segmentation**](../demos/slots-stream/real-time-user-segmentation.ipynb) demo tutorial notebook includes an example of a Nuclio function that uses platform streams.
+The [**stream-enrich**](../demos/stream-enrich/stream-enrich.ipynb) demo application includes an example of a Nuclio function that uses platform streams.
 
 <a id="data-ingest-streams-spark"></a>
 ### Using Spark Streaming
