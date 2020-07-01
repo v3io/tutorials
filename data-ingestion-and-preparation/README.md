@@ -15,7 +15,7 @@ Learn about different methods for ingesting data into the Iguazio Data Science P
   - [Using the Platform's Streaming Engine](#data-ingest-streams-platform)
   - [Using Spark Streaming](#data-ingest-streams-spark)
 - [Running SQL Queries on Platform Dat](#data-ingest-sql)
-  - [Running Full ANSII Presto SQL Queries](#data-ingest-sql-presto)
+  - [Running Full ANSI Presto SQL Queries](#data-ingest-sql-presto)
   - [Running Spark SQL Queries](#data-ingest-sql-spark)
   - [Running SQL Queries from Nuclio Functions](#data-ingest-sql-nuclio)
 - [Working with Parquet Files](#data-ingest-parquet)
@@ -73,10 +73,7 @@ The tutorial includes an example of ingesting a CSV file from an AWS S3 bucket; 
 <a id="data-ingest-external-dbs"></a>
 ## Reading Data from External Databases
 
-You can use different methods to read data from external databases into the platform's data store, such as the following:
-
-- [Using Spark over JDBC](#data-ingest-spark-over-jdbs)
-- [Using SQLAlchemy](#data-ingest-sqlalchemy)
+You can use different methods to read data from external databases into the platform's data store, such Spark over JDBC or SQLAlchemy.
 
 <a id="data-ingest-spark-over-jdbs"></a>
 ### Using Spark over JDBC
@@ -95,7 +92,7 @@ The [**read-external-db**](read-external-db.ipynb) tutorial outlines how to inge
 
 The platform has a default pre-deployed Spark service that enables ingesting, analyzing, and manipulating data using different [Spark](http://spark.apache.org) APIs:
 
-- [Using Spark SQL and DataFrames](#data-ingest-spark-sql)
+- Using Spark SQL and DataFrames
 - Using the Spark Streaming API &mdash; see [Using Streaming Streaming](#data-ingest-streams-spark) under "Working with Spark".
 
 <a id="data-ingest-spark-sql-n-dfs"></a>
@@ -191,7 +188,7 @@ The [**nuclio-read-via-presto**](nuclio-read-via-presto.ipynb) tutorial demonstr
 <a id="data-ingest-parquet"></a>
 ## Working with Parquet Files
 
-[Parquet](https://parquet.apache.org/) is a columnar storage format that provides high-density high-performance file organization.<br>
+Parquet is a columnar storage format that provides high-density high-performance file organization.<br>
 The [**parquet-read-write**](parquet-read-write.ipynb) tutorial demonstrates how to create and write data to a Parquet table in the platform and read data from the table.
 
 After you ingest Parquet files into the platform, you might want to create related Hive tables and run SQL queries on these tables.<br>
