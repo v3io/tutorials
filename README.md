@@ -80,7 +80,7 @@ You can download additional demos from GitHub &mdash; for example:
 
 For information on the available demos, see the [demos listing](https://github.com/mlrun/demos/blob/master/README.md).<br>
 
-You can download all the additional demos from the [demos repository](https://github.com/mlrun/demos) by executing the following command:
+You can download additional demos from the [demos repository](https://github.com/mlrun/demos) by executing the following command:
 
 
 ```python
