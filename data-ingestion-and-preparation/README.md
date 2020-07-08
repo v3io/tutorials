@@ -14,7 +14,7 @@ Learn about different methods for ingesting data into the Iguazio Data Science P
   - [Using Nuclio to Get Data from Common Streaming Engines](#data-ingest-streams-nuclio)
   - [Using the Platform's Streaming Engine](#data-ingest-streams-platform)
   - [Using Spark Streaming](#data-ingest-streams-spark)
-- [Running SQL Queries on Platform Dat](#data-ingest-sql)
+- [Running SQL Queries on Platform Data](#data-ingest-sql)
   - [Running Full ANSI Presto SQL Queries](#data-ingest-sql-presto)
   - [Running Spark SQL Queries](#data-ingest-sql-spark)
   - [Running SQL Queries from Nuclio Functions](#data-ingest-sql-nuclio)
@@ -122,8 +122,8 @@ The platform supports various methods for working with data streams, including t
 <a id="data-ingest-streams-nuclio"></a>
 ### Using Nuclio to Get Data from Common Streaming Engines
 
-The platform has a default pre-deployed Nuclio service that uses Iguaio's [Nuclio](https://nuclio.io/) serverless-framework, which provides a mechanism for analyzing and processing real-time events from various streaming engines.
-Nuclio currently supports the following streaming frameworks &mdash; Kafka, kinesis, Azure Event Hubs, platform streams (a.k.a. V3IO streams), RabbitMQ, and MQTT.
+The platform has a default pre-deployed Nuclio service that uses Iguazio's [Nuclio](https://nuclio.io/) serverless-framework, which provides a mechanism for analyzing and processing real-time events from various streaming engines.
+Nuclio currently supports the following streaming frameworks &mdash; Kafka, Kinesis, Azure Event Hubs, platform streams (a.k.a. V3IO streams), RabbitMQ, and MQTT.
 
 Using Nuclio functions to retrieve and analyze streaming data in real time is a very common practice when building a real-time data pipeline.
 You can stream any type of data &mdash; such as telemetry (NetOps) metrics, financial transactions, web clicks, or sensors data &mdash; in any format, including images and videos. 
@@ -148,26 +148,26 @@ The [**stream-enrich**](../demos/stream-enrich/stream-enrich.ipynb) demo applica
 ### Using Spark Streaming
 
 You can use the [Spark Streaming](http://spark.apache.org/streaming/) API to ingest, consume, and analyze data using data streams.
-The platform features a custom [Spark-Streaming Integaration API](https://www.iguazio.com/docs/latest-release/reference/api-reference/spark-apis/spark-streaming-integration-api/) to allow using the Spark Streaming API with [platform streams](#data-ingest-streams-platform).
+The platform features a custom [Spark-Streaming Integration API](https://www.iguazio.com/docs/latest-release/reference/api-reference/spark-apis/spark-streaming-integration-api/) to allow using the Spark Streaming API with [platform streams](#data-ingest-streams-platform).
 
 <!-- TODO: Add more information / add a tutorial and refer to it. -->
 
 <a id="data-ingest-sql"></a>
 ## Running SQL Queries on Platform Data
 
-You can run SQL queries on NoSQL and Parquet data in the platform's data store, using any of the folowing methods:
+You can run SQL queries on NoSQL and Parquet data in the platform's data store, using any of the following methods:
 
-- [Running full ANSII Presto SQL queries](#data-ingest-sql-presto) using SQL magic
+- [Running full ANSI Presto SQL queries](#data-ingest-sql-presto) using SQL magic
 - [Running Spark SQL queries](#data-ingest-sql-spark)
 - [Running SQL queries from Nuclio functions](#data-ingest-sql-nuclio)
 
 <a id="data-ingest-sql-presto"></a>
-### Running Full ANSII Presto SQL Queries
+### Running Full ANSI Presto SQL Queries
 
 The platform has a default pre-deployed Presto service that enables using the [Presto](https://prestosql.io/) open-source distributed SQL query engine to run interactive SQL queries and perform high-performance low-latency interactive analytics on data that's stored in the platform.
 To run a Presto query from a Jupyter notebook, all you need is to use an SQL magic command &mdash; `%sql` followed by your Presto query.
 Such queries are executed as distributed queries across the platform's application nodes.
-The [**basic-data-ingestion-and-preparation**](basic-data-ingestion-and-preparationipynb) tutorial demonstrates how to run Presto queies using SQL magic.
+The [**basic-data-ingestion-and-preparation**](basic-data-ingestion-and-preparationipynb) tutorial demonstrates how to run Presto queries using SQL magic.
 
 Note that for running queries on Parquet tables, you need to work with Hive tables.
 The [**csv-to-hive**](csv-to-hive.ipynb) tutorial includes a script that converts a CSV file into a Hive table.
@@ -226,7 +226,7 @@ The [**dask-cluster**](dask-cluster.ipynb) tutorial demonstrates how to use Dask
 <a id="data-ingest-gpu"></a>
 ## Running DataFrames on GPUs using NVIDIA cuDF
 
-The platform allows you to use NVIDIA’s [RAPIDS](https://rapids.ai/) open-source libraries suite to execute end-to-end data science and analytics pipelines entirely on GPUs.
+The platform allows you to use NVIDIA's [RAPIDS](https://rapids.ai/) open-source libraries suite to execute end-to-end data science and analytics pipelines entirely on GPUs.
 [cuDF](https://docs.rapids.ai/api/cudf/stable/) is a RAPIDS GPU DataFrame library for loading, joining, aggregating, filtering, and otherwise manipulating data.
 This library features a pandas-like API that will be familiar to data engineers and data scientists, who can use it to easily accelerate their workflows without going into the details of CUDA programming.
 The [**gpu-cudf-vs-pd**](gpu-cudf-vs-pd.ipynb) tutorial demonstrates how to use the cuDF library and compares performance benchmarks with pandas and cuDF.
