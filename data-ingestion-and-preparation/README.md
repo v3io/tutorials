@@ -33,7 +33,7 @@ Various steps of the data science life cycle (pipeline) might require different 
 The platform features a wide set of methods for manipulating and managing data, of different formats, in each step of the data life cycle, using a variety of frameworks, tools, and API &mdash; such as Spark SQL and DataFrames, Spark Streaming, Presto SQL queries, pandas DataFrames, Dask, the V3IO Frames Python library, and web APIs
 
 This document provides an overview of various methods for collecting, storing, and manipulating data in the platform, and refers to sample tutorial notebooks that demonstrate how to use these methods.<br>
-For an in-depth overview of the platform and how it can be used to implement a full data science workflow, see the [**platform-overview.ipynb**](../platform-overview.ipynb) tutorial notebook.<br>
+For an in-depth overview of the platform and how it can be used to implement a full data science workflow, see the [**platform-overview**](../platform-overview.ipynb) tutorial notebook.<br>
 For full end-to-end platform use-case application demos, see [**demos**](../demos/README.ipynb) tutorial notebooks directory.
 
 <br><img src="../assets/images/pipeline-diagram.jpg" alt="pipeline-diagram" width="1000"/><br>
@@ -80,7 +80,7 @@ You can use different methods to read data from external databases into the plat
 
 Spark SQL includes a data source that can read data from other databases using Java database connectivity (JDBC).
 The results are returned as a Spark DataFrame that can easily be processed using Spark SQL, or joined with other data sources.
-The [**spark-jdb**](spark-jdbc.ipynb) tutorial includes several examples of using Spark JDBC to ingest data from various databases &mdash; such as MySQL, Oracle, and PostgreSQL.
+The [**spark-jdbc**](spark-jdbc.ipynb) tutorial includes several examples of using Spark JDBC to ingest data from various databases &mdash; such as MySQL, Oracle, and PostgreSQL.
 
 <a id="data-ingest-sqlalchemy"></a>
 ### Using SQLAlchemy
