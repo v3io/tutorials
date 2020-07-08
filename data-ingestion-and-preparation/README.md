@@ -30,7 +30,7 @@ Learn about different methods for ingesting data into the Iguazio Data Science P
 The Iguazio Data Science Platform (**"the platform"**) allows storing data in any format.
 The platform's multi-model data layer and related APIs provide enhanced support for working with NoSQL ("key-value"), time-series, and stream data.
 Various steps of the data science life cycle (pipeline) might require different tools and frameworks for working with data, especially when it comes to the different mechanisms required during the research and development phase versus the operational production phase.
-The platform features a wide set of methods for manipulating and managing data, of different formats, in each step of the data life cycle, using a variety of frameworks, tools, and API &mdash; such as Spark SQL and DataFrames, Spark Streaming, Presto SQL queries, pandas DataFrames, Dask, the V3IO Frames Python library, and web APIs
+The platform features a wide set of methods for manipulating and managing data, of different formats, in each step of the data life cycle, using a variety of frameworks, tools, and APIs &mdash; such as Spark SQL and DataFrames, Spark Streaming, Presto SQL queries, pandas DataFrames, Dask, the V3IO Frames Python library, and web APIs.
 
 This document provides an overview of various methods for collecting, storing, and manipulating data in the platform, and refers to sample tutorial notebooks that demonstrate how to use these methods.<br>
 For an in-depth overview of the platform and how it can be used to implement a full data science workflow, see the [**platform-overview**](../platform-overview.ipynb) tutorial notebook.<br>
