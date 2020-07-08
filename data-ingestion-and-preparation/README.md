@@ -232,4 +232,4 @@ This library features a pandas-like API that will be familiar to data engineers 
 The [**gpu-cudf-vs-pd**](gpu-cudf-vs-pd.ipynb) tutorial demonstrates how to use the cuDF library and compares performance benchmarks with pandas and cuDF.
 
 > **Note:** To use the cuDF library, you need to create a RAPIDS Conda environment.
-> For more information, see the [**virtual-env**](virtual-env.ipynb#) tutorial.
+> For more information, see the [**virtual-env**](virtual-env.ipynb) tutorial.
