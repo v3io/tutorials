@@ -32,9 +32,9 @@ The platform's multi-model data layer and related APIs provide enhanced support 
 Various steps of the data science life cycle (pipeline) might require different tools and frameworks for working with data, especially when it comes to the different mechanisms required during the research and development phase versus the operational production phase.
 The platform features a wide set of methods for manipulating and managing data, of different formats, in each step of the data life cycle, using a variety of frameworks, tools, and APIs &mdash; such as Spark SQL and DataFrames, Spark Streaming, Presto SQL queries, pandas DataFrames, Dask, the V3IO Frames Python library, and web APIs.
 
-This document provides an overview of various methods for collecting, storing, and manipulating data in the platform, and refers to sample tutorial notebooks that demonstrate how to use these methods.<br>
-For an in-depth overview of the platform and how it can be used to implement a full data science workflow, see the [**platform-overview**](../platform-overview.ipynb) tutorial notebook.<br>
-For full end-to-end platform use-case application demos, see [**demos**](../demos/README.ipynb) tutorial notebooks directory.
+This tutorial provides an overview of various methods for collecting, storing, and manipulating data in the platform, and refers to sample tutorial notebooks that demonstrate how to use these methods.<br>
+For an in-depth overview of the platform and how it can be used to implement a full data science workflow, see the [**platform-overview**](../platform-overview.ipynb) tutorial notebook.
+For full end-to-end platform use-case application demos, see the [**demos**](../demos/README.ipynb) tutorial notebooks directory.
 
 <br><img src="../assets/images/pipeline-diagram.png" alt="pipeline-diagram" width="1000"/><br>
 
@@ -177,7 +177,7 @@ The [**csv-to-hive**](csv-to-hive.ipynb) tutorial includes a script that convert
 
 The [**spark-sql-analytics**](spark-sql-analytics.ipynb) tutorial demonstrates how to run Spark SQL queries on data in the platform's data store.
 
-For more information about the platform's Spark service, see [Working with Spark](#data-ingest-spark) in this document.
+For more information about the platform's Spark service, see [Working with Spark](#data-ingest-spark) in this tutorial.
 
 <a id="data-ingest-sql-nuclio"></a>
 ### Running SQL Queries from Nuclio Functions 
