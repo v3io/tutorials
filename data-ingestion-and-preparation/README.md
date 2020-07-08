@@ -36,7 +36,7 @@ This document provides an overview of various methods for collecting, storing, a
 For an in-depth overview of the platform and how it can be used to implement a full data science workflow, see the [**platform-overview**](../platform-overview.ipynb) tutorial notebook.<br>
 For full end-to-end platform use-case application demos, see [**demos**](../demos/README.ipynb) tutorial notebooks directory.
 
-<br><img src="../assets/images/pipeline-diagram.jpg" alt="pipeline-diagram" width="1000"/><br>
+<br><img src="../assets/images/pipeline-diagram.png" alt="pipeline-diagram" width="1000"/><br>
 
 <a id="platform-data-containers"></a>
 ### Platform Data Containers
