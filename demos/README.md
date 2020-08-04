@@ -1,6 +1,7 @@
 # End-to-End Platform Use-Case Application Demos
 
 - [Overview](#overview)
+- [Model deployment with Streaming](#model-deployment-with-streaming)
 - [Natural Language Processing (NLP)](#nlp-demo)
 - [Real-Time User Segmentation](#user-segmentation-demo)
 - [Smart Stock Trading](#stocks-demo)
@@ -11,6 +12,15 @@
 
 The **demos** tutorials directory contains full end-to-end use-case applications (demos) that demonstrate how to use the Iguazio Data Science Platform (**"the platform"**) and related tools to address data science requirements for different industries and implementations.<br>
 For information on how to get additional end-to-end platform demos, see the [**welcome.ipynb**](../welcome.ipynb#additional-demos) notebook or main [**README.md**](../README.md#additional-demos) file.
+
+<a id="model-deployment-with-streaming"></a>
+## Model Deployment with Streaming
+
+Deploy a model with streaming information. It is comprised of several steps:
+
+![Model deployment with streaming Real-time operational Pipeline](../assets/images/model-deployment-with-streaming.png)
+
+The demo covers the use case of 1st-day churn. However, it is easy to replace the data, related features and training model and reuse the same workflow for different business cases.
 
 <a id="nlp-demo"></a>
 ## Natural Language Processing (NLP)
