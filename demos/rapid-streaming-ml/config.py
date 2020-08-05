@@ -34,4 +34,4 @@ STREAM_CONFIGS = {'generated-stream': {
 PARTITION_ATTR = "user_id"
 ENRICHMENT_TABLE_PATH = path.join(DATA_PATH, 'enrichment-table')
 FEATURE_TABLE_PATH = path.join(DATA_PATH, 'feature-table')
-PARQUET_TARGET_PATH = path.join(DATA_PATH, 'events-pq')
+PARQUET_TARGET_PATH = path.join(DATA_PATH.replace(V3IO_USERNAME, '/User'),  'events-pq')
