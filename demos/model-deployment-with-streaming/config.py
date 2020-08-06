@@ -1,14 +1,13 @@
 # %load config.py
 from os import getenv, path
-import os
-
+from urllib.parse import urljoin
 
 V3IO_ACCESS_KEY = getenv('V3IO_ACCESS_KEY')
 V3IO_USERNAME = getenv('V3IO_USERNAME')
 CONTAINER = 'users'
 BATCH_SIZE = 1024
 WEB_API = "http://v3io-webapi:8081"
-WEB_API_USERS = "{0}/{1}/".format(WEB_API, CONTAINER)
+WEB_API_USERS = urljoin(WEB_API, CONTAINER)
 PROJECT_NAME = "model-deployment-with-streaming"
 DATA_PATH = path.join(V3IO_USERNAME, 'examples',PROJECT_NAME, 'data')
 STREAM_CONFIGS = {'generated-stream': {
