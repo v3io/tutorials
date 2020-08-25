@@ -20,7 +20,7 @@ Deploy a model with streaming information. It is comprised of several steps:
 
 ![Model deployment with streaming Real-time operational Pipeline](../assets/images/model-deployment-with-streaming.png)
 
-The demo covers the use case of 1st-day churn. However, it is easy to replace the data, related features and training model and reuse the same workflow for different business cases.
+The [demo](model-deployment-with-streaming/0-setup.ipynb) covers the use case of 1st-day churn. However, it is easy to replace the data, related features and training model and reuse the same workflow for different business cases.
 
 <a id="nlp-demo"></a>
 ## Natural Language Processing (NLP)
