@@ -1,6 +1,7 @@
 # End-to-End Platform Use-Case Application Demos
 
 - [Overview](#overview)
+- [Model deployment with Streaming](#model-deployment-with-streaming)
 - [Natural Language Processing (NLP)](#nlp-demo)
 - [Real-Time User Segmentation](#user-segmentation-demo)
 - [Smart Stock Trading](#stocks-demo)
@@ -11,6 +12,25 @@
 
 The **demos** tutorials directory contains full end-to-end use-case applications (demos) that demonstrate how to use the Iguazio Data Science Platform (**"the platform"**) and related tools to address data science requirements for different industries and implementations.<br>
 For information on how to get additional end-to-end platform demos, see the [**welcome.ipynb**](../welcome.ipynb#additional-demos) notebook or main [**README.md**](../README.md#additional-demos) file.
+
+<a id="model-deployment-with-streaming"></a>
+## Model Deployment with Streaming
+
+Deploy a model with streaming information. [The demo](model-deployment-with-streaming/0-setup.ipynb) covers the use case of 1<sup>st</sup>-day churn.
+
+The importance of 1<sup>st</sup>-day churn prediction:
+- In some segments of the gaming industry, the average 1st day churn is as high as 70%.
+- Acquiring new customers is 5x&ndash;25x more expensive than retaining existing ones.
+- Reducing churn by just 5% can boost profitability by 75%.
+- Improving retention has a 2x&ndash;4x greater impact on growth than acquisition.
+- The probability of selling to an existing customer is 60%&ndash;70%, but only 5%&ndash;20% for a prospect.
+- Churn rate also informs metrics like customer lifetime value (LTV).
+
+This demo is comprised of several steps:
+
+![Model deployment with streaming Real-time operational Pipeline](../assets/images/model-deployment-with-streaming.png)
+
+While this demo covers the use case of 1<sup>st</sup>-day churn, it is easy to replace the data, related features and training model and reuse the same workflow for different business cases.
 
 <a id="nlp-demo"></a>
 ## Natural Language Processing (NLP)
