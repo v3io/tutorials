@@ -1,16 +1,30 @@
 #!/usr/bin/env bash
-USER=${V3IO_USERNAME}
-DEST_DIR="/v3io/users/${USER}/demos"
-TEMP_DIR="${DEST_DIR}/temp-demos"
-GIT_REPO="https://github.com/mlrun/demos"
 
-git clone ${GIT_REPO} --branch master --single-branch --depth 1 ${TEMP_DIR}
+set -o errexit
+set -o pipefail
 
-echo "Copying files to ${DEST_DIR}..."
-mv ${TEMP_DIR}/README.md ${TEMP_DIR}/README-mlrun-demos.md
-cp -r ${TEMP_DIR}/* ${DEST_DIR}
+git_clone_or_pull() {
 
-echo "Deleting temporary ${TEMP_DIR} directory ..."
-rm -rf ${TEMP_DIR}
+    REPOSRC="${1}"
+    # Get the string after the last '/'
+    LOCALREPO="${REPOSRC##*/}"
+    
+    # Remove any extensions (e.g., if .git is there)
+    LOCALREPO="${LOCALREPO%.*}"
 
-echo "DONE"
+    # We do it this way so that we can abstract if from just git later on
+    LOCALREPO_VC_DIR="$LOCALREPO/.git"
+
+    echo "Reading $REPOSRC"
+
+    if [ ! -d $LOCALREPO_VC_DIR ]
+    then
+        git clone "$REPOSRC" "$LOCALREPO"
+    else
+        git -C $LOCALREPO pull origin
+    fi
+
+}
+
+git_clone_or_pull https://github.com/mlrun/demo-network-operations.git
+git_clone_or_pull https://github.com/mlrun/demo-stocks.git

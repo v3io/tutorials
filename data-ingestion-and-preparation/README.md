@@ -9,6 +9,7 @@ Learn about different methods for ingesting data into the Iguazio Data Science P
   - [Iguazio's Data-Object API](#data-ingest-iguazio-data-object-api)
   - [Iguazio's Key-Value API](#data-ingest-iguazio-kv-api)
   - [Iguazio's Streaming API](#data-ingest-iguazio-streaming-api)
+- [Nuclio](#data-ingest-nuclio)
 - [Reading from External Database](#data-ingest-external-dbs)
   - [Using Spark over JDBC](#data-ingest-spark-over-jdbs)
   - [Using SQLAlchemy](#data-ingest-sqlalchemy)
@@ -100,8 +101,17 @@ The platform’s Streaming API enables working with data in the platform as stre
 
 For more general information see [working with Streams](#data-ingest-streams) section.
 
-<a id="data-ingest-external-dbs"></a>
+<a id="data-ingest-nuclio"></a>
+## Nuclio
 
+The platform makes extensive use of [Nuclio serverless functions](https://github.com/nuclio/nuclio) to automate various tasks &mdash; such as data collection, extract-transform-load (ETL) processes, model serving, and batch jobs.
+Nuclio functions describe the code and include all the required resource definitions and configuration for running the code.
+The functions auto scale and can be versioned.
+The platform supports various methods for generating Nuclio functions &mdash; using the graphical dashboard, Docker, Git, or Jupyter Notebook &mdash; as demonstrated in the platform tutorials.
+
+The [**nuclio**](nuclio.ipynb) notebook shows a simple function deployment that uses NLP to correct text, perform sentiment analysis and language translation. Additional demos use Nuclio for machine learning model serving.
+
+<a id="data-ingest-external-dbs"></a>
 ## Reading Data from External Databases
 
 You can use different methods to read data from external databases into the platform's data store, such Spark over JDBC or SQLAlchemy.
