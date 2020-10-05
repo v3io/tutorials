@@ -28,3 +28,4 @@ git_clone_or_pull() {
 
 git_clone_or_pull https://github.com/mlrun/demo-network-operations.git
 git_clone_or_pull https://github.com/mlrun/demo-stocks.git
+#git_clone_or_pull https://github.com/mlrun/demo-model-deployment-with-streaming.git

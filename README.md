@@ -62,25 +62,30 @@ Iguazio provides full end-to-end use-case applications (demos) that demonstrate 
 <a id="predeployed-demos"></a>
 ### Pre-Deployed Platform Demos
 
-The platform comes pre-deployed with the following end-to-end use-case demos, which are available in the **demos** tutorial-notebooks directory.
-For more details, see [**demos/README.md**](demos/README.md) (available also as a [notebook](demos/README.ipynb)):
+The platform comes pre-deployed with the following end-to-end use-case demos, which are available in the [**MLRun demos repository**](https://github.com/mlrun/demos):
 
-- <a id="nlp-demo"></a>[**Natural language processing (NLP)**](demos/nlp/nlp-example.ipynb) &mdash; processes natural-language textual data and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
-- <a id="stream-enrich-demo"></a>[**Stream enrichment**](demos/stream-enrich/stream-enrich.ipynb) &mdash; implements a typical stream-based data-engineering pipeline, including real-time data enrichment using a NoSQL table.
-- <a id="stocks-demo"></a>[**Smart stock trading**](demos/stocks/01-gen-demo-data.ipynb) &mdash; reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard.
-- <a id="real-time-user-segmentation-demo"></a>[**Real-time user segmentation**](demos/slots-stream/real-time-user-segmentation.ipynb) &mdash; builds a stream-event processor on a sliding time window for tagging and untagging users based on programmatic rules of user behavior.
+- <a id="demo-sklearn-pipe"></a>[**scikit-learn pipeline**](https://github.com/mlrun/demos/blob/master/sklearn-pipe/) &mdash; builds a full end-to-end pipeline using [scikit-learn](https://scikit-learn.org) and the UCI [Iris data set](http://archive.ics.uci.edu/ml/datasets/iris).
+- <a id="demo-image-classification"></a>[**Image classification with distributed training**](https://github.com/mlrun/demos/tree/master/horovod-pipe) &mdash; implements an end-to-end image-classification solution using [TensorFlow](https://www.tensorflow.org/) (versions 1 or 2), [Keras](https://keras.io/), [Horovod](https://eng.uber.com/horovod/), and [Nuclio](https://nuclio.io/).
+- <a id=demo-face-recognition/>[**Face reconition**](https://github.com/mlrun/demos/tree/master/faces) &mdash; real-time capture, recognition, and classification of face images over a video stream, as well as location tracking of identities using [PyTorch](https://pytorch.org/), Image identification and tracking using [OpenCV](https://opencv.org/) and labeling application for tagging unidentified faces using [Streamlit](https://www.streamlit.io/)
+- <a id=demo-churn/>[**Customer churn prediction**](https://github.com/mlrun/demos/tree/master/churn) &mdash;  analyses of customer-churn data using the Kaggle [Telco Customer Churn data set](https://www.kaggle.com/blastchar/telco-customer-churn), model training and validation using [XGBoost](https://xgboost.readthedocs.io/), and model serving using real-time Nuclio serverless functions.
+
+You can update the demos repository by running the following command
+
+
+```python
+!git -C /User/demos pull origin
+```
 
 <a id="additional-demos"></a>
 ### Additional Demos
 
 You can download additional demos from GitHub &mdash; for example:
 
-- <a id="demo-sklearn-pipe"></a>[**scikit-learn AutoML pipeline**](https://github.com/mlrun/demos/blob/master/sklearn-pipe/) &mdash; builds a full end-to-end automated-ML (AutoML) pipeline using [scikit-learn](https://scikit-learn.org) and the UCI [Iris data set](http://archive.ics.uci.edu/ml/datasets/iris).
-- <a id="demo-horovd-image-classification"></a>[**Horovod image classification with distributed training**](https://github.com/mlrun/demos/tree/master/horovod-pipe) &mdash; implements an end-to-end image-classification solution using [TensorFlow](https://www.tensorflow.org/) (versions 1 or 2), [Keras](https://keras.io/), [Horovod](https://eng.uber.com/horovod/), and [Nuclio](https://nuclio.io/).
+- <a id="network-operations-demo"></a>[**Network operations**](https://github.com/mlrun/demo-network-operations) &mdash; error prediction based on network device telematry. Training pipeline to create a new model, serving with streaming and concept drift to monitor the model performance.
+- <a id="stocks-demo"></a>[**Smart stock trading**](https://github.com/mlrun/demo-stocks) &mdash; reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard.
+- <a id="model-deployment-with-streaming"></a>[**Model deployment with streaming**](https://github.com/mlrun/demo-model-deployment-with-streaming) &mdash; deploy model and calculate features in a streaming pipeline to address low latency processing, such as 1<sup>st</sup> day churn. This demo leverages Nuclio to use the same feature calculation function in training and in serving.
 
-For information on the available demos, see the [demos listing](https://github.com/mlrun/demos/blob/master/README.md).<br>
-
-You can download additional demos from the [demos repository](https://github.com/mlrun/demos) by executing the following command:
+You can download the additional demos from their respective repositories by executing the following command:
 
 
 ```python
@@ -95,6 +100,7 @@ You can download additional demos from the [demos repository](https://github.com
 - [In-depth platform overview](platform-overview.ipynb) with a break down of the steps for developing a full data science workflow from development to production
 - [Platform components, services, and development ecosystem introduction](https://www.iguazio.com/docs/latest-release/intro/ecosystem/)
 - [References](https://iguazio.com/docs/latest-release/reference/)
+- [MLRun documentation](https://mlrun.readthedocs.io/)
 - [nuclio-jupyter SDK](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md) for creating and deploying Nuclio functions with Python and Jupyter Notebook
 
 <a id="misc"></a>
