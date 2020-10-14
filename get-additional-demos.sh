@@ -6,26 +6,25 @@ set -o pipefail
 git_clone_or_pull() {
 
     REPOSRC="${1}"
-    # Get the string after the last '/'
-    LOCALREPO="${REPOSRC##*/}"
-    
-    # Remove any extensions (e.g., if .git is there)
-    LOCALREPO="${LOCALREPO%.*}"
+    LOCALREPO="${2}"
 
-    # We do it this way so that we can abstract if from just git later on
-    LOCALREPO_VC_DIR="$LOCALREPO/.git"
+    LOCALREPO_GIT_DIR="$LOCALREPO/.git"
 
     echo "Reading $REPOSRC"
 
-    if [ ! -d $LOCALREPO_VC_DIR ]
-    then
-        git clone "$REPOSRC" "$LOCALREPO"
+    if [ -d "$LOCALREPO_GIT_DIR" ]; then
+        git -C "$LOCALREPO" pull origin
+    elif [ -d "$LOCALREPO" ]; then
+        if [ -z ${3} ]; then
+            echo "'${LOCALREPO}' folder exists, but is not a git repository. Aborting." 1>&2
+            exit 1
+        else
+            echo "'${LOCALREPO}' folder exists, but is not a git repository."
+            git clone "$REPOSRC" "${3}"
+        fi
     else
-        git -C $LOCALREPO pull origin
+        git clone "$REPOSRC" "$LOCALREPO"
     fi
-
 }
 
-git_clone_or_pull https://github.com/mlrun/demo-network-operations.git
-git_clone_or_pull https://github.com/mlrun/demo-stocks.git
-#git_clone_or_pull https://github.com/mlrun/demo-model-deployment-with-streaming.git
+git_clone_or_pull https://github.com/mlrun/demos.git demos mlrun-demos

@@ -68,24 +68,10 @@ The platform comes pre-deployed with the following end-to-end use-case demos, wh
 - <a id="demo-image-classification"></a>[**Image classification with distributed training**](https://github.com/mlrun/demos/tree/master/horovod-pipe) &mdash; implements an end-to-end image-classification solution using [TensorFlow](https://www.tensorflow.org/) (versions 1 or 2), [Keras](https://keras.io/), [Horovod](https://eng.uber.com/horovod/), and [Nuclio](https://nuclio.io/).
 - <a id=demo-face-recognition/>[**Face reconition**](https://github.com/mlrun/demos/tree/master/faces) &mdash; real-time capture, recognition, and classification of face images over a video stream, as well as location tracking of identities using [PyTorch](https://pytorch.org/), Image identification and tracking using [OpenCV](https://opencv.org/) and labeling application for tagging unidentified faces using [Streamlit](https://www.streamlit.io/)
 - <a id=demo-churn/>[**Customer churn prediction**](https://github.com/mlrun/demos/tree/master/churn) &mdash;  analyses of customer-churn data using the Kaggle [Telco Customer Churn data set](https://www.kaggle.com/blastchar/telco-customer-churn), model training and validation using [XGBoost](https://xgboost.readthedocs.io/), and model serving using real-time Nuclio serverless functions.
-
-You can update the demos repository by running the following command
-
-
-```python
-!git -C /User/demos pull origin
-```
-
-<a id="additional-demos"></a>
-### Additional Demos
-
-You can download additional demos from GitHub &mdash; for example:
-
 - <a id="network-operations-demo"></a>[**Network operations**](https://github.com/mlrun/demo-network-operations) &mdash; error prediction based on network device telematry. Training pipeline to create a new model, serving with streaming and concept drift to monitor the model performance.
-- <a id="stocks-demo"></a>[**Smart stock trading**](https://github.com/mlrun/demo-stocks) &mdash; reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard.
-- <a id="model-deployment-with-streaming"></a>[**Model deployment with streaming**](https://github.com/mlrun/demo-model-deployment-with-streaming) &mdash; deploy model and calculate features in a streaming pipeline to address low latency processing, such as 1<sup>st</sup> day churn. This demo leverages Nuclio to use the same feature calculation function in training and in serving.
+- <a id="stocks-demo"></a>[**Stock trading**](https://github.com/mlrun/demo-stocks) &mdash; reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard.
 
-You can download the additional demos from their respective repositories by executing the following command:
+You can update the demos repository by running the following command below
 
 
 ```python
