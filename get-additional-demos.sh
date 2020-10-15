@@ -10,7 +10,7 @@ git_clone_or_pull() {
 
     LOCALREPO_GIT_DIR="$LOCALREPO/.git"
 
-    echo "Reading $REPOSRC"
+    echo "Reading $REPOSRC to $LOCALREPO" 
 
     if [ -d "$LOCALREPO_GIT_DIR" ]; then
         git -C "$LOCALREPO" pull origin
@@ -19,8 +19,8 @@ git_clone_or_pull() {
             echo "'${LOCALREPO}' folder exists, but is not a git repository. Aborting." 1>&2
             exit 1
         else
-            echo "'${LOCALREPO}' folder exists, but is not a git repository."
-            git clone "$REPOSRC" "${3}"
+            echo "'${LOCALREPO}' folder exists, but is not a git repository, switching to '${3}' instead."
+            git_clone_or_pull "$REPOSRC" "${3}"
         fi
     else
         git clone "$REPOSRC" "$LOCALREPO"
