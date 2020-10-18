@@ -57,27 +57,111 @@ Start out by running the getting-started tutorial to familiarize yourself with t
 <a id="end-to-end-use-case-applications"></a>
 ## End-to-End Use-Case Applications
 
-Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the platform and related tools to address data science requirements for different industries and implementations.
+Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the platform and related tools to address data science requirements for different industries and implementations. These demos are available in the [**MLRun demos repository**](https://github.com/mlrun/demos).
 
-<a id="predeployed-demos"></a>
-### Pre-Deployed Platform Demos
-
-The platform comes pre-deployed with the following end-to-end use-case demos, which are available in the [**MLRun demos repository**](https://github.com/mlrun/demos):
-
-- <a id="demo-sklearn-pipe"></a>[**scikit-learn pipeline**](https://github.com/mlrun/demos/blob/master/sklearn-pipe/) &mdash; builds a full end-to-end pipeline using [scikit-learn](https://scikit-learn.org) and the UCI [Iris data set](http://archive.ics.uci.edu/ml/datasets/iris).
-- <a id="demo-image-classification"></a>[**Image classification with distributed training**](https://github.com/mlrun/demos/tree/master/horovod-pipe) &mdash; implements an end-to-end image-classification solution using [TensorFlow](https://www.tensorflow.org/) (versions 1 or 2), [Keras](https://keras.io/), [Horovod](https://eng.uber.com/horovod/), and [Nuclio](https://nuclio.io/).
-- <a id=demo-face-recognition/>[**Face reconition**](https://github.com/mlrun/demos/tree/master/faces) &mdash; real-time capture, recognition, and classification of face images over a video stream, as well as location tracking of identities using [PyTorch](https://pytorch.org/), Image identification and tracking using [OpenCV](https://opencv.org/) and labeling application for tagging unidentified faces using [Streamlit](https://www.streamlit.io/)
-- <a id=demo-churn/>[**Customer churn prediction**](https://github.com/mlrun/demos/tree/master/churn) &mdash;  analyses of customer-churn data using the Kaggle [Telco Customer Churn data set](https://www.kaggle.com/blastchar/telco-customer-churn), model training and validation using [XGBoost](https://xgboost.readthedocs.io/), and model serving using real-time Nuclio serverless functions.
-- <a id="network-operations-demo"></a>[**Network operations**](https://github.com/mlrun/demo-network-operations) &mdash; error prediction based on network device telematry. Training pipeline to create a new model, serving with streaming and concept drift to monitor the model performance.
-- <a id="stocks-demo"></a>[**Stock trading**](https://github.com/mlrun/demo-stocks) &mdash; reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard.
-
-You can update the demos repository by running the following command below
+You can get the latest demos from the GitHub repository by running the following command:
 
 
 ```python
 # Get additional demos
 !/User/get-additional-demos.sh
 ```
+
+<a id="demo-sklearn-pipe"></a>
+### scikit-learn Pipeline
+
+Builds a full end-to-end pipeline using [scikit-learn](https://scikit-learn.org) and the UCI [Iris data set](http://archive.ics.uci.edu/ml/datasets/iris).
+
+<table align="left">
+    <tr>
+        <td align="center", style="border: 1px solid black; padding: 10px;">
+            <a href="demos/sklearn-pipe/sklearn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
+        </td>
+        <td align="center", style="border: 1px solid black; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/master/sklearn-pipe/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+    </tr>
+</table>
+
+<a id="demo-image-classification"></a>
+### Image Classification with Distributed Training
+
+Implements an end-to-end image-classification solution using [TensorFlow](https://www.tensorflow.org/) (versions 1 or 2), [Keras](https://keras.io/), [Horovod](https://eng.uber.com/horovod/), and [Nuclio](https://nuclio.io/).
+
+<table align="left">
+    <tr>
+        <td align="center", style="border: 1px solid black; padding: 10px;">
+            <a href="demos/horovod-pipe/horovod-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
+        </td>
+        <td align="center", style="border: 1px solid black; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/horovod-pipe/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+    </tr>
+</table>
+
+<a id=demo-face-recognition></a>
+### Face Reconition
+
+Real-time capture, recognition, and classification of face images over a video stream, as well as location tracking of identities using [PyTorch](https://pytorch.org/), Image identification and tracking using [OpenCV](https://opencv.org/) and labeling application for tagging unidentified faces using [Streamlit](https://www.streamlit.io/).
+
+<table align="left">
+    <tr>
+        <td align="center", style="border: 1px solid black; padding: 10px;">
+            <a href="demos/faces/faces-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
+        </td>
+        <td align="center", style="border: 1px solid black; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/faces/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+    </tr>
+</table>
+
+<a id=demo-churn></a>
+### Customer Churn Prediction
+
+Analyses of customer-churn data using the Kaggle [Telco Customer Churn data set](https://www.kaggle.com/blastchar/telco-customer-churn), model training and validation using [XGBoost](https://xgboost.readthedocs.io/), and model serving using real-time Nuclio serverless functions.
+
+<table align="left">
+    <tr>
+        <td align="center", style="border: 1px solid black; padding: 10px;">
+            <a href="demos/churn/churn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
+        </td>
+        <td align="center", style="border: 1px solid black; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/churn/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+    </tr>
+</table>
+
+<a id="stocks-demo"></a>
+### Stock Trading
+
+Reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard.
+
+<table align="left">
+    <tr>
+        <td align="center", style="border: 1px solid black; padding: 10px;">
+            <a href="demos/stocks/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
+        </td>
+        <td align="center", style="border: 1px solid black; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/stocks/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+    </tr>
+</table>
+
+<a id="network-operations-demo"></a>
+### Network Operations
+
+Error prediction based on network device telematry. Training pipeline to create a new model, serving with streaming and concept drift to monitor the model performance.
+
+<table align="left">
+    <tr>
+        <td align="center", style="border: 1px solid black; padding: 10px;">
+            <a href="demos/netops/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
+        </td>
+        <td align="center", style="border: 1px solid black; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/netops/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+    </tr>
+</table>
 
 <a id="platform-resources"></a>
 ## Additional Platform Resources
