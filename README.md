@@ -150,6 +150,15 @@ You can get the latest demos from the GitHub repository by running the following
     </tr>
     </table>
 
+## Data Ingestion and Preparation
+
+The Iguazio Data Science Platform (**"the platform"**) allows storing data in any format.
+The platform's multi-model data layer and related APIs provide enhanced support for working with NoSQL ("key-value"), time-series, and stream data.
+Various steps of the data science life cycle (pipeline) might require different tools and frameworks for working with data, especially when it comes to the different mechanisms required during the research and development phase versus the operational production phase.
+The platform features a wide set of methods for manipulating and managing data, of different formats, in each step of the data life cycle, using a variety of frameworks, tools, and APIs &mdash; such as Spark SQL and DataFrames, Spark Streaming, Presto SQL queries, pandas DataFrames, Dask, the V3IO Frames Python library, and web APIs.
+
+Refer to [data ingestion and preparation](./data-ingestion-and-preparation/README.ipynb) for an overview of various methods for collecting, storing, and manipulating data in the platform, and refers to sample tutorial notebooks that demonstrate how to use these methods.
+
 <a id="platform-resources"></a>
 ## Additional Platform Resources
 
