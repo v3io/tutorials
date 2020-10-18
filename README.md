@@ -67,147 +67,88 @@ You can get the latest demos from the GitHub repository by running the following
 !/User/get-additional-demos.sh
 ```
 
-|Demo|   |   |Description|
-|----|---|---|-----------|
-|**scikit-learn pipeline**|<a href="demos/sklearn-pipe/sklearn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" style="display: block;margin-left: auto;margin-right: auto;" /><p style="text-align: center;">Open locally</p></a>|<a target="_blank" href="https://github.com/mlrun/demos/blob/master/sklearn-pipe/"><img src="./assets/images/GitHub-Mark-32px.png" style="display: block;margin-left: auto;margin-right: auto;" /><p style="text-align: center;">View on GitHub</p></a>|Builds a full end-to-end pipeline using [scikit-learn](https://scikit-learn.org) and the UCI [Iris data set](http://archive.ics.uci.edu/ml/datasets/iris)|
-|**Image classification with distributed training**|<a href="demos/horovod-pipe/horovod-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" style="display: block;margin-left: auto;margin-right: auto;" /><p style="text-align: center;">Open locally</p></a>|<a target="_blank" href="https://github.com/mlrun/demos/tree/master/horovod-pipe/"><img src="./assets/images/GitHub-Mark-32px.png" style="display: block;margin-left: auto;margin-right: auto;" /><p style="text-align: center;">View on GitHub</p></a>|Implements an end-to-end image-classification solution using [TensorFlow](https://www.tensorflow.org/) (versions 1 or 2), [Keras](https://keras.io/), [Horovod](https://eng.uber.com/horovod/), and [Nuclio](https://nuclio.io/)
-|**Face reconition**|<a href="demos/faces/faces-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" style="display: block;margin-left: auto;margin-right: auto;" /><p style="text-align: center;">Open locally</p></a>|<a target="_blank" href="https://github.com/mlrun/demos/tree/master/faces/"><img src="./assets/images/GitHub-Mark-32px.png" style="display: block;margin-left: auto;margin-right: auto;" /><p style="text-align: center;">View on GitHub</p></a>|Real-time capture, recognition, and classification of face images over a video stream, as well as location tracking of identities using [PyTorch](https://pytorch.org/), Image identification and tracking using [OpenCV](https://opencv.org/) and labeling application for tagging unidentified faces using [Streamlit](https://www.streamlit.io/)|
-|**Customer churn prediction**|<a href="demos/churn/churn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" style="display: block;margin-left: auto;margin-right: auto;" /><p style="text-align: center;">Open locally</p></a>|<a target="_blank" href="https://github.com/mlrun/demos/blob/master/churn/"><img src="./assets/images/GitHub-Mark-32px.png" style="display: block;margin-left: auto;margin-right: auto;" /><p style="text-align: center;">View on GitHub</p></a>|Analyses of customer-churn data using the Kaggle [Telco Customer Churn data set](https://www.kaggle.com/blastchar/telco-customer-churn), model training and validation using [XGBoost](https://xgboost.readthedocs.io/), and model serving using real-time Nuclio serverless functions|
-|**Stock trading**|<a href="demos/stocks/project.ipynb.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" style="display: block;margin-left: auto;margin-right: auto;" /><p style="text-align: center;">Open locally</p></a>|<a target="_blank" href="https://github.com/mlrun/demos/blob/master/stocks/"><img src="./assets/images/GitHub-Mark-32px.png" style="display: block;margin-left: auto;margin-right: auto;" /><p style="text-align: center;">View on GitHub</p></a>|Reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard|
-|**Network operations**|<a href="demos/netops/project.ipynb.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" style="display: block;margin-left: auto;margin-right: auto;" /><p style="text-align: center;">Open locally</p></a>|<a target="_blank" href="https://github.com/mlrun/demos/tree/master/netops/"><img src="./assets/images/GitHub-Mark-32px.png" style="display: block;margin-left: auto;margin-right: auto;" /><p style="text-align: center;">View on GitHub</p></a>|Error prediction based on network device telematry. Training pipeline to create a new model, serving with streaming and concept drift to monitor the model performance|
-
 <table align="left">
     <tr>
-    <th>Demo</td>
-    <th>Description</td>
+    <th>Demo</th>
     <th></th>
     <th></th>
+    <th>Description</th>
     </tr>
     <tr>
         <td><b>scikit-learn pipeline</b></td>
-        <td>Builds a full end-to-end pipeline using <a href="https://scikit-learn.org">scikit-learn</a> and the UCI <a href="http://archive.ics.uci.edu/ml/datasets/iris">Iris data set</a>.</td>
-        <td align="center", style="padding: 10px;">
+        <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/sklearn-pipe/sklearn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
         </td>
-        <td align="center", style="padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/blob/master/sklearn-pipe/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/master/sklearn-pipe/">
+                <img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+        <td>
+            Builds a full end-to-end pipeline using <a href="https://scikit-learn.org">scikit-learn</a> and the UCI <a href="http://archive.ics.uci.edu/ml/datasets/iris">Iris data set</a>
         </td>
     </tr>
     <tr>
         <td><b>Image classification with distributed training</b></td>
-        <td>Implements an end-to-end image-classification solution using <a href="https://www.tensorflow.org/">TensorFlow</a> (versions 1 or 2), <a href="https://keras.io/">Keras</a>, <a href="https://eng.uber.com/horovod/">Horovod</a>, and <a href="https://nuclio.io/">Nuclio</a></td>
-        <td align="center", style="padding: 10px;">
+        <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/horovod-pipe/horovod-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
         </td>
-        <td align="center", style="padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/horovod-pipe/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/horovod-pipe/">
+                <img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+        <td>
+            Implements an end-to-end image-classification solution using <a href="https://www.tensorflow.org/">TensorFlow</a> (versions 1 or 2), <a href="https://keras.io/">Keras</a>, <a href="https://eng.uber.com/horovod/">Horovod</a>, and <a href="https://nuclio.io/">Nuclio</a>
         </td>
     </tr>
     <tr>
         <td><b>Face recognition</b></td>
-        <td>Real-time capture, recognition, and classification of face images over a video stream, as well as location tracking of identities using <a href="https://pytorch.org/">PyTorch</a>, Image identification and tracking using <a href="https://opencv.org/">OpenCV</a> and labeling application for tagging unidentified faces using <a href="https://www.streamlit.io/">Streamlit</a></td>
-        <td align="center", style="padding: 10px;">
+        <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/faces/faces-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
         </td>
-        <td align="center", style="padding: 10px;">
+        <td align="center", style="min-width:45px; padding: 10px;">
             <a target="_blank" href="https://github.com/mlrun/demos/tree/master/faces/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+        <td>
+            Real-time capture, recognition, and classification of face images over a video stream, as well as location tracking of identities using <a href="https://pytorch.org/">PyTorch</a>, Image identification and tracking using <a href="https://opencv.org/">OpenCV</a> and labeling application for tagging unidentified faces using <a href="https://www.streamlit.io/">Streamlit</a>
         </td>
     </tr>
     <tr>
         <td><b>Customer churn prediction</b></td>
-        <td>Analyses of customer-churn data using the Kaggle <a href="https://www.kaggle.com/blastchar/telco-customer-churn" rel="nofollow">Telco Customer Churn data set</a>, model training and validation using <a href="https://xgboost.readthedocs.io/" rel="nofollow">XGBoost</a>, and model serving using real-time Nuclio serverless functions</td>
-        <td align="center", style="padding: 10px;">
+        <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/churn/churn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
         </td>
-        <td align="center", style="padding: 10px;">
+        <td align="center", style="min-width:45px; padding: 10px;">
             <a target="_blank" href="https://github.com/mlrun/demos/tree/master/churn/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+        <td>
+            Analyses of customer-churn data using the Kaggle <a href="https://www.kaggle.com/blastchar/telco-customer-churn" rel="nofollow">Telco Customer Churn data set</a>, model training and validation using <a href="https://xgboost.readthedocs.io/" rel="nofollow">XGBoost</a>, and model serving using real-time Nuclio serverless functions
         </td>
     </tr>
     <tr>
         <td><b>Stock trading</b></td>
-        <td>Reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard</td>
-        <td align="center", style="padding: 10px;">
+        <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/stocks/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
         </td>
-        <td align="center", style="padding: 10px;">
+        <td align="center", style="min-width:45px; padding: 10px;">
             <a target="_blank" href="https://github.com/mlrun/demos/tree/master/stocks/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+        <td>
+            Reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard
         </td>
     </tr>
     <tr>
         <td><b>Network operations</b></td>
-        <td>Error prediction based on network device telematry. Training pipeline to create a new model, serving with streaming and concept drift to monitor the model performance</td>
-        <td align="center", style="padding: 10px;">
+        <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/netops/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
         </td>
-        <td align="center", style="padding: 10px;">
+        <td align="center", style="min-width:45px; padding: 10px;">
             <a target="_blank" href="https://github.com/mlrun/demos/tree/master/netops/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+        <td>
+            Error prediction based on network device telematry. Training pipeline to create a new model, serving with streaming and concept drift to monitor the model performance
         </td>
     </tr>
     </table>
-
-<a id=demo-face-recognition></a>
-### Face Reconition
-
-Real-time capture, recognition, and classification of face images over a video stream, as well as location tracking of identities using [PyTorch](https://pytorch.org/), Image identification and tracking using [OpenCV](https://opencv.org/) and labeling application for tagging unidentified faces using [Streamlit](https://www.streamlit.io/).
-
-<table align="left">
-    <tr>
-        <td align="center", style="border: 1px solid black; padding: 10px;">
-            <a href="demos/faces/faces-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
-        </td>
-        <td align="center", style="border: 1px solid black; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/faces/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
-        </td>
-    </tr>
-</table>
-
-<a id=demo-churn></a>
-### Customer Churn Prediction
-
-Analyses of customer-churn data using the Kaggle [Telco Customer Churn data set](https://www.kaggle.com/blastchar/telco-customer-churn), model training and validation using [XGBoost](https://xgboost.readthedocs.io/), and model serving using real-time Nuclio serverless functions.
-
-<table align="left">
-    <tr>
-        <td align="center", style="border: 1px solid black; padding: 10px;">
-            <a href="demos/churn/churn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
-        </td>
-        <td align="center", style="border: 1px solid black; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/churn/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
-        </td>
-    </tr>
-</table>
-
-<a id="stocks-demo"></a>
-### Stock Trading
-
-Reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard.
-
-<table align="left">
-    <tr>
-        <td align="center", style="border: 1px solid black; padding: 10px;">
-            <a href="demos/stocks/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
-        </td>
-        <td align="center", style="border: 1px solid black; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/stocks/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
-        </td>
-    </tr>
-</table>
-
-<a id="network-operations-demo"></a>
-### Network Operations
-
-Error prediction based on network device telematry. Training pipeline to create a new model, serving with streaming and concept drift to monitor the model performance.
-
-<table align="left">
-    <tr>
-        <td align="center", style="border: 1px solid black; padding: 10px;">
-            <a href="demos/netops/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
-        </td>
-        <td align="center", style="border: 1px solid black; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/netops/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
-        </td>
-    </tr>
-</table>
 
 <a id="platform-resources"></a>
 ## Additional Platform Resources
