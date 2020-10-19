@@ -260,7 +260,7 @@ For more information and examples, see the [**basic-data-ingestion-and-preparati
 ```sh
 %%sh
 CSV_PATH="/User/examples/stocks.csv"
-curl -L "iguazio-sample-data.s3.amazonaws.com/2018-03-26_BINS_XETR08.csv" > ${CSV_PATH}
+curl -L "https://s3.wasabisys.com/iguazio/data/stocks/2018-03-26_BINS_XETR08.csv" > ${CSV_PATH}
 ```
 
 <a id="data-ingest-dask"></a>
