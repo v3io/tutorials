@@ -103,7 +103,7 @@ You can get the latest demos from the GitHub repository by running the following
     <tr>
         <td><b>Face recognition</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/faces/faces-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
+            <a href="demos/faces/notebooks/faces-mlrun.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a target="_blank" href="https://github.com/mlrun/demos/tree/master/faces/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
