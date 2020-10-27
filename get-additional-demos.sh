@@ -92,12 +92,13 @@ git_clone_or_pull() {
         
         local exists=$(git -C ${localrepo} show-ref refs/heads/${branch} )
         if [ -z "${exists}" ]; then
+            git -C "${localrepo}" -c advice.detachedHead=false checkout origin/"${branch}"
             git -C "${localrepo}" checkout -b "${branch}"
         else
             git -C "${localrepo}" checkout "${branch}"
+            git -C "${localrepo}" merge origin/"${branch}"
         fi
         
-        git -C "${localrepo}" merge origin/"${branch}"
     elif [ -d "${localrepo}" ]; then
         if [ -z ${4} ]; then
             echo "'${localrepo}' folder exists, but is not a git repository. Aborting." 1>&2
