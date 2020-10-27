@@ -105,6 +105,10 @@ git_clone_or_pull() {
         else
             local old_localrepo="${4}"
             echo "'${localrepo}' folder exists, but is not a git repository, moving '${localrepo}' to '${old_localrepo}'."
+            if [ -d "${old_localrepo}" ]; then
+                echo "'${old_localrepo}' folder already exists. Aborting." 1>&2
+                exit 1
+            fi
             cp -r "${localrepo}" "${old_localrepo}"
             rm -r "${localrepo}"
             git clone "${reposrc}" -b "${branch}" "${localrepo}"
