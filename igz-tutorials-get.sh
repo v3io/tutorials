@@ -4,21 +4,21 @@ set -o errexit
 set -o pipefail
 
 SCRIPT=${BASH_SOURCE[0]}
-PRODUCT="Iguazio Data Science Platform"
-GIT_REPO="https://github.com/v3io/tutorials.git"
-USER=${V3IO_USERNAME}
+product="Iguazio Data Science Platform"
+git_repo="https://github.com/v3io/tutorials.git"
+user=${V3IO_USERNAME}
 
 USAGE="\
 $SCRIPT:
-Retrieves latest-release ${PRODUCT} tutorial files from the v3io/tutorials GitHub repo.
+Retrieves latest-release ${product} tutorial files from the v3io/tutorials GitHub repo.
 USAGE: ${SCRIPT} [-b branch/tag] [<username>]
 PARAMETERS:
   <username> - Username, which determines the directory to which to copy the files - /v3io/users/<username>.
                Default = \$V3IO_USERNAME (if set to a non-empty string)
 OPTIONS:
   -h|--help   -  Display this message and exit.
-  -b|--branch -  Branch name (default is latest tag of current platform version)."
-
+  -b|--branch -  Branch name (default is latest tag of current platform version).
+  --dry-run   -  Do not update the files, but rather show the pending changes."
 
 while :
 do
@@ -26,17 +26,21 @@ do
         -h | --help) echo -e "$USAGE"; exit 0 ;;
         -b|--branch)
             if [ "$2" ]; then
-                BRANCH=$2
+                branch=$2
                 shift
             else
                 echo "$SCRIPT: $1: missing branch name"; exit 1
             fi
             ;;
         --branch=?*)
-            BRANCH=${1#*=} # Delete everything up to "=" and assign the remainder.
+            branch=${1#*=} # Delete everything up to "=" and assign the remainder.
             ;;
         --branch=)         # Handle the case of an empty --branch=
             echo "$SCRIPT: $1: missing branch name"; exit 1
+            ;;
+        --dry-run)
+            echo "Dry run, no files will be copied."
+            dry_run=1
             ;;
         -*) echo "$SCRIPT: $1: Unknown option"; exit 1
             ;;
@@ -46,36 +50,40 @@ do
 done
 
 if [[ "$#" -eq 1 ]]; then
-    USER=${1}
-elif [ -z "${USER}" ]; then
+    user=${1}
+elif [ -z "${user}" ]; then
     echo -e "$USAGE"
     exit 1
 fi
 
 
-if [ -z "${BRANCH}" ]; then
-    PLATFORM_VERSION="${IGZ_VERSION%%_*}"
-    echo "Detected platform version: ${PLATFORM_VERSION}"
-    LATEST_TAG=`git ls-remote --tags --refs --sort='v:refname' "${GIT_REPO}" "refs/tags/v${PLATFORM_VERSION}.*" | tail -n1 | awk '{ print $2}'`
-    if [ -z "${LATEST_TAG}" ]; then
+if [ -z "${branch}" ]; then
+    platform_version="${IGZ_VERSION%%_*}"
+    echo "Detected platform version: ${platform_version}"
+    latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_repo}" "refs/tags/v${platform_version}.*" | tail -n1 | awk '{ print $2}'`
+    if [ -z "${latest_tag}" ]; then
         echo "No tag found, using master branch"
-        BRANCH=master
+        branch=master
     else
         # Remote the prfix from the tag
-        BRANCH=${LATEST_TAG#refs/tags/}
+        branch=${latest_tag#refs/tags/}
     fi
 fi
 
-DEST_DIR="/v3io/users/${USER}"
-TEMP_DIR="${DEST_DIR}/temp-igz-tutorials"
+dest_dir="/v3io/users/${user}"
+temp_dir="${dest_dir}/temp-igz-tutorials"
 
 # Get updated tutorials
-echo "Updating ${PRODUCT} tutorial files of branch ${BRANCH} in '${DEST_DIR}' ..."
-git -c advice.detachedHead=false clone "${GIT_REPO}" --branch "${BRANCH}" --single-branch --depth 1 "${TEMP_DIR}"
-echo "Copying files to '${DEST_DIR}'..."
+echo "Updating ${product} tutorial files of branch ${branch} in '${dest_dir}' ..."
+git -c advice.detachedHead=false clone "${git_repo}" --branch "${branch}" --single-branch --depth 1 "${temp_dir}"
 shopt -s extglob
-cp -rf "${TEMP_DIR}/"!(igz-tutorials-get.sh|update-tutorials.ipynb) "${DEST_DIR}"
-echo "Deleting temporary '${TEMP_DIR}' directory ..."
-rm -rf "${TEMP_DIR}"
+if [ -z "${dry_run}" ]; then
+    echo "Copying files to '${dest_dir}'..."
+    cp -rf "${temp_dir}/"!(igz-tutorials-get.sh|update-tutorials.ipynb) "${dest_dir}"
+else
+    echo "Files that will be copied to '${dest_dir}':"
+    find "${temp_dir}/"!(igz-tutorials-get.sh|update-tutorials.ipynb) -type f -printf "%p\n" | sed -e "s|^${temp_dir}/|./|"
+fi
+echo "Deleting temporary '${temp_dir}' directory ..."
+rm -rf "${temp_dir}"
 echo "DONE"
-
