@@ -73,17 +73,8 @@ TEMP_DIR="${DEST_DIR}/temp-igz-tutorials"
 echo "Updating ${PRODUCT} tutorial files of branch ${BRANCH} in '${DEST_DIR}' ..."
 git -c advice.detachedHead=false clone "${GIT_REPO}" --branch "${BRANCH}" --single-branch --depth 1 "${TEMP_DIR}"
 echo "Copying files to '${DEST_DIR}'..."
-cp -rf ${TEMP_DIR}/data-ingestion-and-preparation ${DEST_DIR}
-cp -rf ${TEMP_DIR}/examples ${DEST_DIR}
-cp -rf ${TEMP_DIR}/assets ${DEST_DIR}
-cp -rf ${TEMP_DIR}/getting-started-tutorial ${DEST_DIR}
-cp -f ${TEMP_DIR}/welcome.ipynb \
-      ${TEMP_DIR}/platform-overview.ipynb \
-      ${TEMP_DIR}/virtual-env.ipynb \
-      ${TEMP_DIR}/get-additional-demos.sh \
-      ${TEMP_DIR}/README.md \
-      ${TEMP_DIR}/LICENSE \
-      ${DEST_DIR}
+shopt -s extglob
+cp -rf "${TEMP_DIR}/"!(igz-tutorials-get.sh|update-tutorials.ipynb) "${DEST_DIR}"
 echo "Deleting temporary '${TEMP_DIR}' directory ..."
 rm -rf "${TEMP_DIR}"
 echo "DONE"
