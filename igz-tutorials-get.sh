@@ -3,7 +3,7 @@
 set -o errexit
 set -o pipefail
 
-SCRIPT=${BASH_SOURCE[0]}
+SCRIPT="$(basename $0)"
 product="Iguazio Data Science Platform"
 git_repo="https://github.com/v3io/tutorials.git"
 user=${V3IO_USERNAME}
@@ -20,6 +20,25 @@ OPTIONS:
   -b|--branch -  Branch name (default is latest tag of current platform version).
   --dry-run   -  Do not update the files, but rather show the pending changes."
 
+error_exit()
+{
+
+# ----------------------------------------------------------------
+# Function for exit due to fatal program error
+#   Accepts 1 argument:
+#     string containing descriptive error message
+# ----------------------------------------------------------------
+    echo "${SCRIPT}: ${1:-"Unknown Error"}" 1>&2
+    exit 1
+}
+
+error_usage()
+{
+    echo "${1:-"Unknown Error"}" 1>&2
+    echo -e "$USAGE"
+    exit 1
+}
+
 while :
 do
     case $1 in
@@ -29,20 +48,20 @@ do
                 branch=$2
                 shift
             else
-                echo "$SCRIPT: $1: missing branch name"; exit 1
+                error_usage "$1: missing branch name"
             fi
             ;;
         --branch=?*)
             branch=${1#*=} # Delete everything up to "=" and assign the remainder.
             ;;
         --branch=)         # Handle the case of an empty --branch=
-            echo "$SCRIPT: $1: missing branch name"; exit 1
+            error_usage "$1: missing branch name"
             ;;
         --dry-run)
             echo "Dry run, no files will be copied."
             dry_run=1
             ;;
-        -*) echo "$SCRIPT: $1: Unknown option"; exit 1
+        -*) error_usage "$1: Unknown option"
             ;;
         *) break;
     esac
@@ -52,8 +71,7 @@ done
 if [[ "$#" -eq 1 ]]; then
     user=${1}
 elif [ -z "${user}" ]; then
-    echo -e "$USAGE"
-    exit 1
+    error_usage "Missing user name."
 fi
 
 
@@ -62,8 +80,7 @@ if [ -z "${branch}" ]; then
     echo "Detected platform version: ${platform_version}"
     latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_repo}" "refs/tags/v${platform_version}.*" | tail -n1 | awk '{ print $2}'`
     if [ -z "${latest_tag}" ]; then
-        echo "No tag found with tag prefix 'v${platform_version}.*'. Aborting"
-        exit 1
+        error_exit "No tag found with tag prefix 'v${platform_version}.*'. Aborting"
     else
         # Remote the prfix from the tag
         branch=${latest_tag#refs/tags/}
@@ -72,7 +89,7 @@ if [ -z "${branch}" ]; then
 fi
 
 dest_dir="/v3io/users/${user}"
-temp_dir="${dest_dir}/temp-igz-tutorials"
+temp_dir=$(mktemp -d /tmp/temp-igz-tutorials.XXXXXXXXXX)
 
 # Get updated tutorials
 echo "Updating ${product} tutorial files of branch ${branch} in '${dest_dir}' ..."
