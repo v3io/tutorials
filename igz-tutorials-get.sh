@@ -62,11 +62,12 @@ if [ -z "${branch}" ]; then
     echo "Detected platform version: ${platform_version}"
     latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_repo}" "refs/tags/v${platform_version}.*" | tail -n1 | awk '{ print $2}'`
     if [ -z "${latest_tag}" ]; then
-        echo "No tag found, using master branch"
-        branch=master
+        echo "No tag found with tag prefix 'v${platform_version}.*'. Aborting"
+        exit 1
     else
         # Remote the prfix from the tag
         branch=${latest_tag#refs/tags/}
+        echo "Detected tag: ${branch}"
     fi
 fi
 

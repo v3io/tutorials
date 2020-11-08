@@ -67,61 +67,38 @@ if [ -z "${branch}" ]; then
     pip_mlrun=$(pip show mlrun | grep Version) || :
 
     if [ -z "${pip_mlrun}" ]; then
-        echo "MLRun version not found, using 'master' branch"
-        branch=master
+        echo "MLRun version not found. Aborting"
+        exit 1
     else
         echo "Detected MLRun ${pip_mlrun}"
         mlrun_version="${pip_mlrun##Version: }"
-        branch=`echo ${mlrun_version} | cut -d . -f1-2`.x
+        tag_prefix=`echo ${mlrun_version} | cut -d . -f1-2`
+        latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_repo}" "refs/tags/v${tag_prefix}.*" | tail -n1 | awk '{ print $2}'`
+        if [ -z "${latest_tag}" ]; then
+            echo "No tag found with tag prefix 'v${tag_prefix}.*'. Aborting"
+            exit 1
+        else
+            # Remote the prfix from the tag
+            branch=${latest_tag#refs/tags/}
+            echo "Detected tag: ${branch}"
+        fi
     fi
 fi
 
-
-git_clone_or_pull() {
-
-    local reposrc="${1}"
-    local branch="${2}"
-    local localrepo="${3}"
-
-    local localrepo_git_dir="${localrepo}/.git"
-
-    echo "Reading ${reposrc} to '${localrepo}' folder..." 
-
-    if [ -d "${localrepo_git_dir}" ]; then
-        git -C "${localrepo}" fetch origin "${branch}"
-        
-        local exists=$(git -C ${localrepo} show-ref refs/heads/${branch} )
-        if [ -z "${exists}" ]; then
-            git -C "${localrepo}" -c advice.detachedHead=false checkout origin/"${branch}"
-            git -C "${localrepo}" checkout -b "${branch}"
-        else
-            git -C "${localrepo}" checkout "${branch}"
-            git -C "${localrepo}" merge origin/"${branch}"
-        fi
-        
-    elif [ -d "${localrepo}" ]; then
-        if [ -z ${4} ]; then
-            echo "'${localrepo}' folder exists, but is not a git repository. Aborting." 1>&2
-            exit 1
-        else
-            local old_localrepo="${4}"
-            echo "'${localrepo}' folder exists, but is not a git repository, moving '${localrepo}' to '${old_localrepo}'."
-            if [ -d "${old_localrepo}" ]; then
-                echo "'${old_localrepo}' folder already exists. Aborting." 1>&2
-                exit 1
-            fi
-            cp -r "${localrepo}" "${old_localrepo}"
-            rm -r "${localrepo}"
-            git clone "${reposrc}" -b "${branch}" "${localrepo}"
-        fi
-    else
-        git clone "${reposrc}" -b "${branch}" "${localrepo}"
-    fi
-}
-
 dest_dir="/v3io/users/${user}"
 demos_dir="${dest_dir}/demos"
-old_demos_dir="${dest_dir}/demos.old"
 
-git_clone_or_pull "${git_repo}" "${branch}" "${demos_dir}" "${old_demos_dir}"
+if [ -d "${demos_dir}" ]; then
 
+    dt=$(date '+%Y%m%d%H%M%S');
+    old_demos_dir="${dest_dir}/demos.old/${dt}"
+
+    echo "Moving '${demos_dir}' to ${old_demos_dir}' ..."
+    
+    mkdir -p "${old_demos_dir}"
+    cp -r "${demos_dir}" "${old_demos_dir}"
+    rm -r "${demos_dir}"
+fi
+
+echo "Updating demos from ${git_repo} branch ${branch} to '${demos_dir}' ..."
+git -c advice.detachedHead=false clone "${git_repo}" --branch "${branch}" --single-branch --depth 1 "${demos_dir}"
