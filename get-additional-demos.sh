@@ -17,7 +17,8 @@ OPTIONS:
   -b|--branch -  Branch name (default is branch equivalent to the current MLRun version).
   -u|--user   -  Username, which determines the directory to which to copy the files - /v3io/users/<username>.
                  Default = \$V3IO_USERNAME (if set to a non-empty string).
-  --dry-run   -  Do not update the files, but rather show the pending changes."
+  --dry-run   -  Do not update the files, but rather show the pending changes.
+  --no-backup -  Do not backup the current demos directory."
 
 error_exit()
 {
@@ -56,10 +57,6 @@ do
         --branch=)         # Handle the case of an empty --branch=
             error_usage "$1: missing branch name"
             ;;
-        --dry-run)
-            echo "Dry run, no files will be copied."
-            dry_run=1
-            ;;
         -u|--user)
             if [ "$2" ]; then
                 user=$2
@@ -73,6 +70,14 @@ do
             ;;
         --user=)         # Handle the case of an empty --user=
             error_usage "$1: missing user name"
+            ;;
+        --dry-run)
+            echo "Dry run, no files will be copied."
+            dry_run=1
+            ;;
+        --no-backup)
+            echo "No backup of current demos directory will be created."
+            no_backup=1
             ;;
         -*) error_usage "$1: Unknown option"
             ;;
@@ -117,13 +122,17 @@ git -c advice.detachedHead=false clone "${git_repo}" --branch "${branch}" --sing
 if [ -z "${dry_run}" ]; then
     if [ -d "${demos_dir}" ]; then
 
-        dt=$(date '+%Y%m%d%H%M%S');
-        old_demos_dir="${dest_dir}/demos.old/${dt}"
+        if [ -z "${no_backup}" ]; then
+            dt=$(date '+%Y%m%d%H%M%S');
+            old_demos_dir="${dest_dir}/demos.old/${dt}"
 
-        echo "Moving '${demos_dir}' to ${old_demos_dir}' ..."
+            echo "Moving '${demos_dir}' to ${old_demos_dir}' ..."
 
-        mkdir -p "${old_demos_dir}"
-        cp -r "${demos_dir}/." "${old_demos_dir}" && rm -rf "${demos_dir}"
+            mkdir -p "${old_demos_dir}"
+            cp -r "${demos_dir}/." "${old_demos_dir}" && rm -rf "${demos_dir}"
+        else
+            rm -rf "${demos_dir}"
+        fi
     fi
 
     cp -r "${temp_dir}" "${demos_dir}"
