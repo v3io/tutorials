@@ -11,12 +11,13 @@ user=${V3IO_USERNAME}
 USAGE="\
 $SCRIPT:
 Retrieves latest-release demos from the mlrun/demos GitHub repo.
-USAGE: ${SCRIPT} [-b branch/tag] [-u username]
+USAGE: ${SCRIPT} [OPTIONS]
 OPTIONS:
   -h|--help   -  Display this message and exit.
   -b|--branch -  Branch name (default is branch equivalent to the current MLRun version).
   -u|--user   -  Username, which determines the directory to which to copy the files - /v3io/users/<username>.
-                 Default = \$V3IO_USERNAME (if set to a non-empty string)."
+                 Default = \$V3IO_USERNAME (if set to a non-empty string).
+  --dry-run   -  Do not update the files, but rather show the pending changes."
 
 error_exit()
 {
@@ -54,6 +55,10 @@ do
             ;;
         --branch=)         # Handle the case of an empty --branch=
             error_usage "$1: missing branch name"
+            ;;
+        --dry-run)
+            echo "Dry run, no files will be copied."
+            dry_run=1
             ;;
         -u|--user)
             if [ "$2" ]; then
@@ -95,34 +100,39 @@ if [ -z "${branch}" ]; then
         else
             # Remote the prfix from the tag
             branch=${latest_tag#refs/tags/}
-            echo "Detected tag: ${branch}"
+            echo "Detected ${git_repo} tag: ${branch}"
         fi
     fi
 fi
 
 dest_dir="/v3io/users/${user}"
 demos_dir="${dest_dir}/demos"
+temp_dir=$(mktemp -d /tmp/temp-get-demos.XXXXXXXXXX)
 
-if [ -d "${demos_dir}" ]; then
-
-    dt=$(date '+%Y%m%d%H%M%S');
-    old_demos_dir="${dest_dir}/demos.old/${dt}"
-
-    echo "Moving '${demos_dir}' to ${old_demos_dir}' ..."
-    
-    mkdir -p "${old_demos_dir}"
-    cp -r "${demos_dir}" "${old_demos_dir}" && rm -r "${demos_dir}"   
-fi
+trap "{ rm -rf $temp_dir; }" EXIT
 
 echo "Updating demos from ${git_repo} branch ${branch} to '${demos_dir}' ..."
+git -c advice.detachedHead=false clone "${git_repo}" --branch "${branch}" --single-branch --depth 1 "${temp_dir}"
 
-git -c advice.detachedHead=false clone "${git_repo}" --branch "${branch}" --single-branch --depth 1 "${demos_dir}" || {
+if [ -z "${dry_run}" ]; then
     if [ -d "${demos_dir}" ]; then
-        rm -r "${demos_dir}"
+
+        dt=$(date '+%Y%m%d%H%M%S');
+        old_demos_dir="${dest_dir}/demos.old/${dt}"
+
+        echo "Moving '${demos_dir}' to ${old_demos_dir}' ..."
+
+        mkdir -p "${old_demos_dir}"
+        cp -r "${demos_dir}/." "${old_demos_dir}" && rm -rf "${demos_dir}"
     fi
-    if [ ! -z ${old_demos_dir+x} ]; then
-        echo "Moving '${old_demos_dir}' back to ${demos_dir}' ..."
-        cp -r "${old_demos_dir}" "${demos_dir}" && rm -r "${old_demos_dir}"
-    fi
-    false
-}
+
+    cp -r "${temp_dir}" "${demos_dir}"
+else
+    echo "Files that will be copied to '${dest_dir}':"
+    find "${temp_dir}/" -not -path '*/\.*' -type f -printf "%p\n" | sed -e "s|^${temp_dir}/|./demos/|"
+fi
+
+echo "Deleting temporary '${temp_dir}' directory ..."
+rm -rf "${temp_dir}"
+
+echo "DONE"

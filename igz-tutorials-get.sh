@@ -11,7 +11,7 @@ user=${V3IO_USERNAME}
 USAGE="\
 $SCRIPT:
 Retrieves latest-release ${product} tutorial files from the v3io/tutorials GitHub repo.
-USAGE: ${SCRIPT} [-b branch/tag] [<username>]
+USAGE: ${SCRIPT} [OPTIONS] [<username>]
 PARAMETERS:
   <username> - Username, which determines the directory to which to copy the files - /v3io/users/<username>.
                Default = \$V3IO_USERNAME (if set to a non-empty string)
@@ -91,17 +91,22 @@ fi
 dest_dir="/v3io/users/${user}"
 temp_dir=$(mktemp -d /tmp/temp-igz-tutorials.XXXXXXXXXX)
 
+trap "{ rm -rf $temp_dir; }" EXIT
+
 # Get updated tutorials
 echo "Updating ${product} tutorial files of branch ${branch} in '${dest_dir}' ..."
 git -c advice.detachedHead=false clone "${git_repo}" --branch "${branch}" --single-branch --depth 1 "${temp_dir}"
+
 shopt -s extglob
 if [ -z "${dry_run}" ]; then
     echo "Copying files to '${dest_dir}'..."
     cp -rf "${temp_dir}/"!(igz-tutorials-get.sh|update-tutorials.ipynb) "${dest_dir}"
 else
     echo "Files that will be copied to '${dest_dir}':"
-    find "${temp_dir}/"!(igz-tutorials-get.sh|update-tutorials.ipynb) -type f -printf "%p\n" | sed -e "s|^${temp_dir}/|./|"
+    find "${temp_dir}/"!(igz-tutorials-get.sh|update-tutorials.ipynb) -not -path '*/\.*' -type f -printf "%p\n" | sed -e "s|^${temp_dir}/|./|"
 fi
+
 echo "Deleting temporary '${temp_dir}' directory ..."
 rm -rf "${temp_dir}"
+
 echo "DONE"
