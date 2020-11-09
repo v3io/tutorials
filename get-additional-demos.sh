@@ -72,11 +72,9 @@ do
             error_usage "$1: missing user name"
             ;;
         --dry-run)
-            echo "Dry run, no files will be copied."
             dry_run=1
             ;;
         --no-backup)
-            echo "No backup of current demos directory will be created."
             no_backup=1
             ;;
         -*) error_usage "$1: Unknown option"
@@ -88,6 +86,14 @@ done
 
 if [ -z "${user}" ]; then
     error_usage "Missing user name."
+fi
+
+if [ ! -z "${dry_run}" ]; then
+    echo "Dry run, no files will be copied."
+fi
+
+if [ ! -z "${no_backup}" ]; then
+    echo "No backup of current demos directory will be created."
 fi
 
 if [ -z "${branch}" ]; then
@@ -116,7 +122,7 @@ temp_dir=$(mktemp -d /tmp/temp-get-demos.XXXXXXXXXX)
 
 trap "{ rm -rf $temp_dir; }" EXIT
 
-echo "Updating demos from ${git_repo} branch ${branch} to '${demos_dir}' ..."
+echo "Updating demos from ${git_repo} branch ${branch} to '${demos_dir}'..."
 git -c advice.detachedHead=false clone "${git_repo}" --branch "${branch}" --single-branch --depth 1 "${temp_dir}"
 
 if [ -z "${dry_run}" ]; then
@@ -126,7 +132,7 @@ if [ -z "${dry_run}" ]; then
             dt=$(date '+%Y%m%d%H%M%S');
             old_demos_dir="${dest_dir}/demos.old/${dt}"
 
-            echo "Moving '${demos_dir}' to ${old_demos_dir}' ..."
+            echo "Moving '${demos_dir}' to ${old_demos_dir}'..."
 
             mkdir -p "${old_demos_dir}"
             cp -r "${demos_dir}/." "${old_demos_dir}" && rm -rf "${demos_dir}"
@@ -135,13 +141,14 @@ if [ -z "${dry_run}" ]; then
         fi
     fi
 
+    echo "Copying files to '${demos_dir}'..."
     cp -r "${temp_dir}" "${demos_dir}"
 else
     echo "Files that will be copied to '${dest_dir}':"
     find "${temp_dir}/" -not -path '*/\.*' -type f -printf "%p\n" | sed -e "s|^${temp_dir}/|./demos/|"
 fi
 
-echo "Deleting temporary '${temp_dir}' directory ..."
+echo "Deleting temporary directory '${temp_dir}..."
 rm -rf "${temp_dir}"
 
 echo "DONE"

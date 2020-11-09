@@ -58,7 +58,6 @@ do
             error_usage "$1: missing branch name"
             ;;
         --dry-run)
-            echo "Dry run, no files will be copied."
             dry_run=1
             ;;
         -*) error_usage "$1: Unknown option"
@@ -72,6 +71,10 @@ if [[ "$#" -eq 1 ]]; then
     user=${1}
 elif [ -z "${user}" ]; then
     error_usage "Missing user name."
+fi
+
+if [ ! -z "${dry_run}" ]; then
+    echo "Dry run, no files will be copied."
 fi
 
 
@@ -94,7 +97,7 @@ temp_dir=$(mktemp -d /tmp/temp-igz-tutorials.XXXXXXXXXX)
 trap "{ rm -rf $temp_dir; }" EXIT
 
 # Get updated tutorials
-echo "Updating ${product} tutorial files of branch ${branch} in '${dest_dir}' ..."
+echo "Updating ${product} tutorial files of branch ${branch} in '${dest_dir}'..."
 git -c advice.detachedHead=false clone "${git_repo}" --branch "${branch}" --single-branch --depth 1 "${temp_dir}"
 
 shopt -s extglob
@@ -106,7 +109,7 @@ else
     find "${temp_dir}/"!(igz-tutorials-get.sh|update-tutorials.ipynb) -not -path '*/\.*' -type f -printf "%p\n" | sed -e "s|^${temp_dir}/|./|"
 fi
 
-echo "Deleting temporary '${temp_dir}' directory ..."
+echo "Deleting temporary directory '${temp_dir}'..."
 rm -rf "${temp_dir}"
 
 echo "DONE"
