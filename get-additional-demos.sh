@@ -21,6 +21,7 @@ OPTIONS:
   -b|--branch -  Branch name (default is branch equivalent to the current MLRun version).
   -u|--user   -  Username, which determines the directory to which to copy the files - /v3io/users/<username>.
                  Default = \$V3IO_USERNAME (if set to a non-empty string).
+  --mlrun-ver -  Determine the branch based on the MLRun version, unless -b/--branch option is specified.
   --dry-run   -  Do not update the files, but rather show the pending changes.
   --no-backup -  Do not backup the current demos directory."
 
@@ -75,6 +76,20 @@ do
         --user=)         # Handle the case of an empty --user=
             error_usage "$1: missing user name"
             ;;
+        --mlrun-ver)
+            if [ "$2" ]; then
+                mlrun_version=$2
+                shift
+            else
+                error_usage "$1: missing MLRun version"
+            fi
+            ;;
+        --mlrun-ver=?*)
+            mlrun-version=${1#*=} # Delete everything up to "=" and assign the remainder.
+            ;;
+        --umlrun-ver=)         # Handle the case of an empty --mlrun-ver=
+            error_usage "$1: missing MLRun version"
+            ;;
         --dry-run)
             dry_run=1
             ;;
@@ -101,22 +116,28 @@ if [ ! -z "${no_backup}" ]; then
 fi
 
 if [ -z "${branch}" ]; then
-    pip_mlrun=$(pip show mlrun | grep Version) || :
 
-    if [ -z "${pip_mlrun}" ]; then
-        error_exit "MLRun version not found. Aborting."
-    else
-        echo "Detected MLRun ${pip_mlrun}"
-        mlrun_version="${pip_mlrun##Version: }"
-        tag_prefix=`echo ${mlrun_version} | cut -d . -f1-2`
-        latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_url}" "refs/tags/v${tag_prefix}.*" | tail -n1 | awk '{ print $2}'`
-        if [ -z "${latest_tag}" ]; then
-            error_exit "No tag found with tag prefix 'v${tag_prefix}.*'. Aborting"
+    if [ -z "${mlrun_version}" ]; then
+        pip_mlrun=$(pip show mlrun | grep Version) || :
+
+        if [ -z "${pip_mlrun}" ]; then
+            error_exit "MLRun version not found. Aborting."
         else
-            # Remote the prfix from the tag
-            branch=${latest_tag#refs/tags/}
-            echo "Detected ${git_url} tag: ${branch}"
+            echo "Detected MLRun ${pip_mlrun}"
+            mlrun_version="${pip_mlrun##Version: }"
         fi
+    else
+        echo "Looking for demos based on specified MLRun version: ${mlrun_version}."
+    fi
+    
+    tag_prefix=`echo ${mlrun_version} | cut -d . -f1-2`
+    latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_url}" "refs/tags/v${tag_prefix}.*" | tail -n1 | awk '{ print $2}'`
+    if [ -z "${latest_tag}" ]; then
+        error_exit "No tag found with tag prefix 'v${tag_prefix}.*'. Aborting"
+    else
+        # Remote the prfix from the tag
+        branch=${latest_tag#refs/tags/}
+        echo "Detected ${git_url} tag: ${branch}"
     fi
 fi
 
