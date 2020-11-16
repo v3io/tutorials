@@ -5,7 +5,11 @@ set -o pipefail
 
 SCRIPT="$(basename $0)"
 product="Iguazio Data Science Platform"
-git_repo="https://github.com/mlrun/demos.git"
+
+git_owner=mlrun
+git_repo=demos
+git_base_url="https://github.com/${git_owner}/${git_repo}" 
+git_url="${git_base_url}.git"
 user=${V3IO_USERNAME}
 
 USAGE="\
@@ -105,13 +109,13 @@ if [ -z "${branch}" ]; then
         echo "Detected MLRun ${pip_mlrun}"
         mlrun_version="${pip_mlrun##Version: }"
         tag_prefix=`echo ${mlrun_version} | cut -d . -f1-2`
-        latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_repo}" "refs/tags/v${tag_prefix}.*" | tail -n1 | awk '{ print $2}'`
+        latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_url}" "refs/tags/v${tag_prefix}.*" | tail -n1 | awk '{ print $2}'`
         if [ -z "${latest_tag}" ]; then
             error_exit "No tag found with tag prefix 'v${tag_prefix}.*'. Aborting"
         else
             # Remote the prfix from the tag
             branch=${latest_tag#refs/tags/}
-            echo "Detected ${git_repo} tag: ${branch}"
+            echo "Detected ${git_url} tag: ${branch}"
         fi
     fi
 fi
@@ -122,8 +126,12 @@ temp_dir=$(mktemp -d /tmp/temp-get-demos.XXXXXXXXXX)
 
 trap "{ rm -rf $temp_dir; }" EXIT
 
-echo "Updating demos from ${git_repo} branch ${branch} to '${demos_dir}'..."
-git -c advice.detachedHead=false clone "${git_repo}" --branch "${branch}" --single-branch --depth 1 "${temp_dir}"
+tar_url="${git_base_url}/archive/${branch}.tar.gz"
+
+echo "Copying to temporary directory '${temp_dir}'..."
+wget -qO- "${tar_url}" | tar xz -C "${temp_dir}" --strip-components 1
+
+echo "Updating demos from ${git_url} branch ${branch} to '${demos_dir}'..."
 
 if [ -z "${dry_run}" ]; then
     if [ -d "${demos_dir}" ]; then
@@ -132,7 +140,7 @@ if [ -z "${dry_run}" ]; then
             dt=$(date '+%Y%m%d%H%M%S');
             old_demos_dir="${dest_dir}/demos.old/${dt}"
 
-            echo "Moving '${demos_dir}' to ${old_demos_dir}'..."
+            echo "Moving existing '${demos_dir}' to ${old_demos_dir}'..."
 
             mkdir -p "${old_demos_dir}"
             cp -r "${demos_dir}/." "${old_demos_dir}" && rm -rf "${demos_dir}"

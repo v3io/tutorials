@@ -5,7 +5,10 @@ set -o pipefail
 
 SCRIPT="$(basename $0)"
 product="Iguazio Data Science Platform"
-git_repo="https://github.com/v3io/tutorials.git"
+git_owner=v3io
+git_repo=tutorials
+git_base_url="https://github.com/${git_owner}/${git_repo}" 
+git_url="${git_base_url}.git"
 user=${V3IO_USERNAME}
 
 USAGE="\
@@ -81,13 +84,13 @@ fi
 if [ -z "${branch}" ]; then
     platform_version="${IGZ_VERSION%%_*}"
     echo "Detected platform version: ${platform_version}"
-    latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_repo}" "refs/tags/v${platform_version}.*" | tail -n1 | awk '{ print $2}'`
+    latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_url}" "refs/tags/v${platform_version}.*" | tail -n1 | awk '{ print $2}'`
     if [ -z "${latest_tag}" ]; then
         error_exit "No tag found with tag prefix 'v${platform_version}.*'. Aborting"
     else
         # Remote the prfix from the tag
         branch=${latest_tag#refs/tags/}
-        echo "Detected tag: ${branch}"
+        echo "Detected ${git_url} tag: ${branch}"
     fi
 fi
 
@@ -97,9 +100,12 @@ temp_dir=$(mktemp -d /tmp/temp-igz-tutorials.XXXXXXXXXX)
 trap "{ rm -rf $temp_dir; }" EXIT
 
 # Get updated tutorials
-echo "Updating ${product} tutorial files of branch ${branch} in '${dest_dir}'..."
-git -c advice.detachedHead=false clone "${git_repo}" --branch "${branch}" --single-branch --depth 1 "${temp_dir}"
+tar_url="${git_base_url}/archive/${branch}.tar.gz"
 
+echo "Copying to temporary directory '${temp_dir}'..."
+wget -qO- "${tar_url}" | tar xz -C "${temp_dir}" --strip-components 1
+
+echo "Updating ${product} tutorial files of branch ${branch} to '${dest_dir}'..."
 shopt -s extglob
 if [ -z "${dry_run}" ]; then
     echo "Copying files to '${dest_dir}'..."
