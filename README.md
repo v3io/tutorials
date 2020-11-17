@@ -57,36 +57,107 @@ Start out by running the getting-started tutorial to familiarize yourself with t
 <a id="end-to-end-use-case-applications"></a>
 ## End-to-End Use-Case Applications
 
-Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the platform and related tools to address data science requirements for different industries and implementations.
+Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the platform and related tools to address data science requirements for different industries and implementations. These demos are available in the [**MLRun demos repository**](https://github.com/mlrun/demos).
 
-<a id="predeployed-demos"></a>
-### Pre-Deployed Platform Demos
-
-The platform comes pre-deployed with the following end-to-end use-case demos, which are available in the **demos** tutorial-notebooks directory.
-For more details, see [**demos/README.md**](demos/README.md) (available also as a [notebook](demos/README.ipynb)):
-
-- <a id="nlp-demo"></a>[**Natural language processing (NLP)**](demos/nlp/nlp-example.ipynb) &mdash; processes natural-language textual data and generates a Nuclio serverless function that translates any given text string to another (configurable) language.
-- <a id="stream-enrich-demo"></a>[**Stream enrichment**](demos/stream-enrich/stream-enrich.ipynb) &mdash; implements a typical stream-based data-engineering pipeline, including real-time data enrichment using a NoSQL table.
-- <a id="stocks-demo"></a>[**Smart stock trading**](demos/stocks/01-gen-demo-data.ipynb) &mdash; reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard.
-- <a id="real-time-user-segmentation-demo"></a>[**Real-time user segmentation**](demos/slots-stream/real-time-user-segmentation.ipynb) &mdash; builds a stream-event processor on a sliding time window for tagging and untagging users based on programmatic rules of user behavior.
-
-<a id="additional-demos"></a>
-### Additional Demos
-
-You can download additional demos from GitHub &mdash; for example:
-
-- <a id="demo-sklearn-pipe"></a>[**scikit-learn AutoML pipeline**](https://github.com/mlrun/demos/blob/master/sklearn-pipe/) &mdash; builds a full end-to-end automated-ML (AutoML) pipeline using [scikit-learn](https://scikit-learn.org) and the UCI [Iris data set](http://archive.ics.uci.edu/ml/datasets/iris).
-- <a id="demo-horovd-image-classification"></a>[**Horovod image classification with distributed training**](https://github.com/mlrun/demos/tree/master/horovod-pipe) &mdash; implements an end-to-end image-classification solution using [TensorFlow](https://www.tensorflow.org/) (versions 1 or 2), [Keras](https://keras.io/), [Horovod](https://eng.uber.com/horovod/), and [Nuclio](https://nuclio.io/).
-
-For information on the available demos, see the [demos listing](https://github.com/mlrun/demos/blob/master/README.md).<br>
-
-You can download additional demos from the [demos repository](https://github.com/mlrun/demos) by executing the following command:
+You can get the latest demos from the GitHub repository by running the following command:
 
 
 ```python
 # Get additional demos
 !/User/get-additional-demos.sh
 ```
+
+<table align="left">
+    <tr>
+    <th>Demo</th>
+    <th></th>
+    <th></th>
+    <th>Description</th>
+    </tr>
+    <tr>
+        <td><b>scikit-learn pipeline</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/scikit-learn-pipeline/sklearn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/master/scikit-learn-pipeline/">
+                <img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+        <td>
+            Builds a full end-to-end pipeline using <a href="https://scikit-learn.org">scikit-learn</a> and the UCI <a href="http://archive.ics.uci.edu/ml/datasets/iris">Iris data set</a>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Image classification with distributed training</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/image-classification-with-distributed-training/horovod-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/image-classification-with-distributed-training/">
+                <img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+        <td>
+            Implements an end-to-end image-classification solution using <a href="https://www.tensorflow.org/">TensorFlow</a> (versions 1 or 2), <a href="https://keras.io/">Keras</a>, <a href="https://eng.uber.com/horovod/">Horovod</a>, and <a href="https://nuclio.io/">Nuclio</a>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Face recognition</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/realtime-face-recognition/notebooks/face-recognition.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/realtime-face-recognition/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+        <td>
+            Real-time capture, recognition, and classification of face images over a video stream, as well as location tracking of identities using <a href="https://pytorch.org/">PyTorch</a>, Image identification and tracking using <a href="https://opencv.org/">OpenCV</a> and labeling application for tagging unidentified faces using <a href="https://www.streamlit.io/">Streamlit</a>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Customer churn prediction</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/customer-churn-prediction/churn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/customer-churn-prediction/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+        <td>
+            Analyses of customer-churn data using the Kaggle <a href="https://www.kaggle.com/blastchar/telco-customer-churn" rel="nofollow">Telco Customer Churn data set</a>, model training and validation using <a href="https://xgboost.readthedocs.io/" rel="nofollow">XGBoost</a>, and model serving using real-time Nuclio serverless functions
+        </td>
+    </tr>
+    <tr>
+        <td><b>Stock trading</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/stock-analysis/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/stock-analysis/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+        <td>
+            Reads stock-exchange data from an internet service into a time-series database (TSDB) and performs real-time market-sentiment analysis on specific stocks; the data is saved to a platform NoSQL table for generating reports and analyzing and visualizing the data on a Grafana dashboard
+        </td>
+    </tr>
+    <tr>
+        <td><b>Network operations with drift detection</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/network-operations/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png" /><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/network-operations/"><img src="./assets/images/GitHub-Mark-32px.png" /><br>View on GitHub</a>
+        </td>
+        <td>
+            Error prediction based on network device telematry. Training pipeline to create a new model, serving with streaming and concept drift to monitor the model performance
+        </td>
+    </tr>
+    </table>
+
+## Data Ingestion and Preparation
+
+The Iguazio Data Science Platform (**"the platform"**) allows storing data in any format.
+The platform's multi-model data layer and related APIs provide enhanced support for working with NoSQL ("key-value"), time-series, and stream data.
+Various steps of the data science life cycle (pipeline) might require different tools and frameworks for working with data, especially when it comes to the different mechanisms required during the research and development phase versus the operational production phase.
+The platform features a wide set of methods for manipulating and managing data, of different formats, in each step of the data life cycle, using a variety of frameworks, tools, and APIs &mdash; such as Spark SQL and DataFrames, Spark Streaming, Presto SQL queries, pandas DataFrames, Dask, the V3IO Frames Python library, and web APIs.
+
+Refer to [data ingestion and preparation](./data-ingestion-and-preparation/README.ipynb) for an overview of various methods for collecting, storing, and manipulating data in the platform, and refers to sample tutorial notebooks that demonstrate how to use these methods.
 
 <a id="platform-resources"></a>
 ## Additional Platform Resources
@@ -95,6 +166,7 @@ You can download additional demos from the [demos repository](https://github.com
 - [In-depth platform overview](platform-overview.ipynb) with a break down of the steps for developing a full data science workflow from development to production
 - [Platform components, services, and development ecosystem introduction](https://www.iguazio.com/docs/latest-release/intro/ecosystem/)
 - [References](https://iguazio.com/docs/latest-release/reference/)
+- [MLRun documentation](https://mlrun.readthedocs.io/)
 - [nuclio-jupyter SDK](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md) for creating and deploying Nuclio functions with Python and Jupyter Notebook
 
 <a id="misc"></a>

@@ -5,6 +5,10 @@ Learn about different methods for ingesting data into the Iguazio Data Science P
 - [Overview](#data-ingest-overview)
   - [Platform Data Containers](#platform-data-containers)
 - [Basic Flow](#data-ingest-basic-flow)
+- [Iguazio's Platform Data Layer](#data-ingest-iguazio-platform-data-layer)
+  - [Iguazio's Data-Object API](#data-ingest-iguazio-data-object-api)
+  - [Iguazio's Key-Value API](#data-ingest-iguazio-kv-api)
+  - [Iguazio's Streaming API](#data-ingest-iguazio-streaming-api)
 - [Reading from External Database](#data-ingest-external-dbs)
   - [Using Spark over JDBC](#data-ingest-spark-over-jdbs)
   - [Using SQLAlchemy](#data-ingest-sqlalchemy)
@@ -34,11 +38,12 @@ The platform features a wide set of methods for manipulating and managing data, 
 
 This tutorial provides an overview of various methods for collecting, storing, and manipulating data in the platform, and refers to sample tutorial notebooks that demonstrate how to use these methods.<br>
 For an in-depth overview of the platform and how it can be used to implement a full data science workflow, see the [**platform-overview**](../platform-overview.ipynb) tutorial notebook.
-For full end-to-end platform use-case application demos, see the [**demos**](../demos/README.ipynb) tutorial notebooks directory.
+For full end-to-end platform use-case application demos, see the [**welcome notebook**](../welcome.ipynb#end-to-end-use-case-applications)
 
 <br><img src="../assets/images/pipeline-diagram.png" alt="pipeline-diagram" width="1000"/><br>
 
 <a id="platform-data-containers"></a>
+
 ### Platform Data Containers
 
 Data is stored within data containers in the platform's distributed file system (DFS).
@@ -65,10 +70,35 @@ For example:
 For detailed information and examples on how to set the data path for each interface, see [Setting Data Paths](https://www.iguazio.com/docs/latest-release/tutorials/getting-started/fundamentals/#data-paths) and the examples in the platform's tutorial Jupyter notebooks.
 
 <a id="data-ingest-basic-flow"></a>
+
 ## Basic Flow
 
 The [**basic-data-ingestion-and-preparation**](basic-data-ingestion-and-preparation.ipynb) tutorial walks you through basic scenarios of ingesting data from external sources into the platform's data store and manipulating the data using different data formats.
 The tutorial includes an example of ingesting a CSV file from an AWS S3 bucket; converting it into a NoSQL table using Spark DataFrames; running SQL queries on the table; and converting the table into a Parquet file.
+
+<a id="data-ingest-iguazio-platform-data-layer"></a>
+
+## Iguazio's Platform Data Layer
+
+<a id="data-ingest-iguazio-data-object-api"></a>
+
+### Iguazio's Data-Object API
+
+The platform’s Simple-Object API enables performing simple data-object operations that resembles Amazon’s Simple Storage Service (S3) API. In addition to the S3-like capabilities, the Simple-Object Web API enables appending data to existing objects. The [**v3io-objects notebook**](v3io-objects.ipynb) demonstrates the API usage.
+
+<a id="data-ingest-iguazio-kv-api"></a>
+
+### Iguazio's Key-Value API
+
+The platform’s Key-Value (KV) API provides access to the NoSQL database service, which enables storing and consuming data in a tabular format. The [**v3io-kv notebook**](v3io-kv.ipynb) demonstrates the API usage.
+
+<a id="data-ingest-iguazio-streaming-api"></a>
+
+### Iguazio's Streaming API
+
+The platform’s Streaming API enables working with data in the platform as streams. The [**v3io-streams notebook**](v3io-streams.ipynb) demonstrates the API usage.
+
+For more general information see [working with Streams](#data-ingest-streams) section.
 
 <a id="data-ingest-external-dbs"></a>
 ## Reading Data from External Databases
@@ -76,6 +106,7 @@ The tutorial includes an example of ingesting a CSV file from an AWS S3 bucket; 
 You can use different methods to read data from external databases into the platform's data store, such Spark over JDBC or SQLAlchemy.
 
 <a id="data-ingest-spark-over-jdbs"></a>
+
 ### Using Spark over JDBC
 
 Spark SQL includes a data source that can read data from other databases using Java database connectivity (JDBC).
@@ -83,11 +114,13 @@ The results are returned as a Spark DataFrame that can easily be processed using
 The [**spark-jdbc**](spark-jdbc.ipynb) tutorial includes several examples of using Spark JDBC to ingest data from various databases &mdash; such as MySQL, Oracle, and PostgreSQL.
 
 <a id="data-ingest-sqlalchemy"></a>
+
 ### Using SQLAlchemy
 
 The [**read-external-db**](read-external-db.ipynb) tutorial outlines how to ingest data using [SQLAlchemy](https://www.sqlalchemy.org/) &mdash; a Python SQL toolkit and Object Relational Mapper, which gives application developers the full power and flexibility of SQL &mdash; and then use Python DataFrames to work on the ingested data set.
 
 <a id="data-ingest-spark"></a>
+
 ## Working with Spark
 
 The platform has a default pre-deployed Spark service that enables ingesting, analyzing, and manipulating data using different [Spark](http://spark.apache.org) APIs:
@@ -96,6 +129,7 @@ The platform has a default pre-deployed Spark service that enables ingesting, an
 - Using the Spark Streaming API &mdash; see [Using Streaming Streaming](#data-ingest-streams-spark) under "Working with Spark".
 
 <a id="data-ingest-spark-sql-n-dfs"></a>
+
 ### Using Spark SQL and DataFrames
 
 Spark lets you write and query structured data inside Spark programs by using either SQL or a familiar DataFrame API.
@@ -111,6 +145,7 @@ For more information and examples of data ingestion with Spark DataFrames, see [
 For more about running SQL queries with Spark, see [Running Spark SQL Queries](#data-ingest-sql-spark) under "Running SQL Queries on Platform Data".
 
 <a id="data-ingest-streams"></a>
+
 ## Working with Streams
 
 The platform supports various methods for working with data streams, including the following:
@@ -120,6 +155,7 @@ The platform supports various methods for working with data streams, including t
 - [Using Spark Streaming](#data-ingest-streams-spark)
 
 <a id="data-ingest-streams-nuclio"></a>
+
 ### Using Nuclio to Get Data from Common Streaming Engines
 
 The platform has a default pre-deployed Nuclio service that uses Iguazio's [Nuclio](https://nuclio.io/) serverless-framework, which provides a mechanism for analyzing and processing real-time events from various streaming engines.
@@ -134,6 +170,7 @@ Nuclio serverless functions can sustain high workloads with very low latencies, 
 For more information about Nuclio, see the platform's [serverless introduction](https://www.iguazio.com/docs/intro/latest-release/serverless/).
 
 <a id="data-ingest-streams-platform"></a>
+
 ### Using the Platform's Streaming Engine 
 
 The platform features a custom streaming engine and a related stream format &mdash; a platform stream (a.k.a. V3IO stream).
@@ -142,9 +179,12 @@ You can use the platform's streaming engine to write data into a queue in a real
 The platform's streaming engine is currently available via the platform's [Streaming Web API](https://www.iguazio.com/docs/latest-release/reference/api-reference/web-apis/streaming-web-api/).<br>
 In addition, the platform's Spark-Streaming Integration API enables using the Spark Streaming API to work with platform streams, as explained in the next section ([Using Spark Streaming](#data-ingest-streams-spark)).
 
-The [**stream-enrich**](../demos/stream-enrich/stream-enrich.ipynb) demo application includes an example of a Nuclio function that uses platform streams.
+The [**v3io-streams notebook**](v3io-streams.ipynb) demonstrates basic usage of the streaming API.
+
+The [**model meployment with streaming demo**](https://github.com/mlrun/demo-model-deployment-with-streaming) demo application includes an example of a Nuclio function that uses platform streams.
 
 <a id="data-ingest-streams-spark"></a>
+
 ### Using Spark Streaming
 
 You can use the [Spark Streaming](http://spark.apache.org/streaming/) API to ingest, consume, and analyze data using data streams.
@@ -153,6 +193,7 @@ The platform features a custom [Spark-Streaming Integration API](https://www.igu
 <!-- TODO: Add more information / add a tutorial and refer to it. -->
 
 <a id="data-ingest-sql"></a>
+
 ## Running SQL Queries on Platform Data
 
 You can run SQL queries on NoSQL and Parquet data in the platform's data store, using any of the following methods:
@@ -162,6 +203,7 @@ You can run SQL queries on NoSQL and Parquet data in the platform's data store, 
 - [Running SQL queries from Nuclio functions](#data-ingest-sql-nuclio)
 
 <a id="data-ingest-sql-presto"></a>
+
 ### Running Full ANSI Presto SQL Queries
 
 The platform has a default pre-deployed Presto service that enables using the [Presto](https://prestosql.io/) open-source distributed SQL query engine to run interactive SQL queries and perform high-performance low-latency interactive analytics on data that's stored in the platform.
@@ -173,6 +215,7 @@ Note that for running queries on Parquet tables, you need to work with Hive tabl
 The [**csv-to-hive**](csv-to-hive.ipynb) tutorial includes a script that converts a CSV file into a Hive table.
 
 <a id="data-ingest-sql-spark"></a>
+
 ### Running Spark SQL Queries
 
 The [**spark-sql-analytics**](spark-sql-analytics.ipynb) tutorial demonstrates how to run Spark SQL queries on data in the platform's data store.
@@ -180,12 +223,14 @@ The [**spark-sql-analytics**](spark-sql-analytics.ipynb) tutorial demonstrates h
 For more information about the platform's Spark service, see [Working with Spark](#data-ingest-spark) in this tutorial.
 
 <a id="data-ingest-sql-nuclio"></a>
+
 ### Running SQL Queries from Nuclio Functions 
 
 In some cases, you might need to run an SQL query as part an event-driven application.
 The [**nuclio-read-via-presto**](nuclio-read-via-presto.ipynb) tutorial demonstrates how to run an SQL query from a serverless Nuclio function.
 
 <a id="data-ingest-parquet"></a>
+
 ## Working with Parquet Files
 
 Parquet is a columnar storage format that provides high-density high-performance file organization.<br>
@@ -195,6 +240,7 @@ After you ingest Parquet files into the platform, you might want to create relat
 The [**parquet-to-hive**](parquet-to-hive.ipynb) tutorial demonstrates how you can do this using Spark DataFrames.
 
 <a id="data-ingest-frames"></a>
+
 ## Accessing Platform NoSQL and TSDB Data Using the Frames Library
 
 [V3IO Frames](https://github.com/v3io/frames) (**"Frames"**) is a multi-model open-source data-access library, developed by Iguazio, which provides a unified high-performance DataFrame API for working with data in the platform's data store.
@@ -202,6 +248,7 @@ Frames currently supports the NoSQL (key-value) and time-series (TSDB) data mode
 The [**frames**](frames.ipynb) tutorial provides an introduction to Frames and demonstrates how to use it to work with NoSQL and TSDB data in the platform.
 
 <a id="data-ingest-s3-curl"></a>
+
 ## Getting Data from AWS S3 Using curl
 
 A simple way to ingest data from the Amazon Simple Storage Service (S3) into the platform's data store is to run a curl command that sends an HTTP request to the relevant AWS S3 bucket, as demonstrated in the following code cell.
@@ -212,10 +259,11 @@ For more information and examples, see the [**basic-data-ingestion-and-preparati
 ```sh
 %%sh
 CSV_PATH="/User/examples/stocks.csv"
-curl -L "iguazio-sample-data.s3.amazonaws.com/2018-03-26_BINS_XETR08.csv" > ${CSV_PATH}
+curl -L "https://s3.wasabisys.com/iguazio/data/stocks/2018-03-26_BINS_XETR08.csv" > ${CSV_PATH}
 ```
 
 <a id="data-ingest-dask"></a>
+
 ## Running Distributed Python Code with Dask
 
 [Dask](https://dask.org/) is a flexible library for parallel computing in Python, which is useful for computations that don't fit into a DataFrame.
@@ -224,6 +272,7 @@ This helps parallelize Python processes and dramatically accelerates their perfo
 The [**dask-cluster**](dask-cluster.ipynb) tutorial demonstrates how to use Dask with platform data.
 
 <a id="data-ingest-gpu"></a>
+
 ## Running DataFrames on GPUs using NVIDIA cuDF
 
 The platform allows you to use NVIDIA's [RAPIDS](https://rapids.ai/) open-source libraries suite to execute end-to-end data science and analytics pipelines entirely on GPUs.
@@ -232,4 +281,4 @@ This library features a pandas-like API that will be familiar to data engineers 
 The [**gpu-cudf-vs-pd**](gpu-cudf-vs-pd.ipynb) tutorial demonstrates how to use the cuDF library and compares performance benchmarks with pandas and cuDF.
 
 > **Note:** To use the cuDF library, you need to create a RAPIDS Conda environment.
-> For more information, see the [**virtual-env**](virtual-env.ipynb) tutorial.
+> For more information, see the [**virtual-env**](../virtual-env.ipynb) tutorial.
