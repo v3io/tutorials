@@ -2,33 +2,31 @@
 
 Learn about different methods for ingesting data into the Iguazio Data Science Platform, analyzing the data, and preparing it for the next step in your data pipeline.
 
-- [Data Ingestion and Preparation Overview](#data-ingestion-and-preparation-overview)
-  - [Overview](#overview)
-    - [Platform Data Containers](#platform-data-containers)
-  - [Basic Flow](#basic-flow)
-  - [Iguazio's Platform Data Layer](#iguazios-platform-data-layer)
-    - [Iguazio's Data-Object API](#iguazios-data-object-api)
-    - [Iguazio's Key-Value API](#iguazios-key-value-api)
-    - [Iguazio's Streaming API](#iguazios-streaming-api)
-  - [Nuclio](#nuclio)
-  - [Reading Data from External Databases](#reading-data-from-external-databases)
-    - [Using Spark over JDBC](#using-spark-over-jdbc)
-    - [Using SQLAlchemy](#using-sqlalchemy)
-  - [Working with Spark](#working-with-spark)
-    - [Using Spark SQL and DataFrames](#using-spark-sql-and-dataframes)
-  - [Working with Streams](#working-with-streams)
-    - [Using Nuclio to Get Data from Common Streaming Engines](#using-nuclio-to-get-data-from-common-streaming-engines)
-    - [Using the Platform's Streaming Engine](#using-the-platforms-streaming-engine)
-    - [Using Spark Streaming](#using-spark-streaming)
-  - [Running SQL Queries on Platform Data](#running-sql-queries-on-platform-data)
-    - [Running Full ANSI Presto SQL Queries](#running-full-ansi-presto-sql-queries)
-    - [Running Spark SQL Queries](#running-spark-sql-queries)
-    - [Running SQL Queries from Nuclio Functions](#running-sql-queries-from-nuclio-functions)
-  - [Working with Parquet Files](#working-with-parquet-files)
-  - [Accessing Platform NoSQL and TSDB Data Using the Frames Library](#accessing-platform-nosql-and-tsdb-data-using-the-frames-library)
-  - [Getting Data from AWS S3 Using curl](#getting-data-from-aws-s3-using-curl)
-  - [Running Distributed Python Code with Dask](#running-distributed-python-code-with-dask)
-  - [Running DataFrames on GPUs using NVIDIA cuDF](#running-dataframes-on-gpus-using-nvidia-cudf)
+- [Overview](#data-ingest-overview)
+  - [Platform Data Containers](#platform-data-containers)
+- [Basic Flow](#data-ingest-basic-flow)
+- [Iguazio's Platform Data Layer](#data-ingest-iguazio-platform-data-layer)
+  - [Iguazio's Data-Object API](#data-ingest-iguazio-data-object-api)
+  - [Iguazio's Key-Value API](#data-ingest-iguazio-kv-api)
+  - [Iguazio's Streaming API](#data-ingest-iguazio-streaming-api)
+- [Reading from External Database](#data-ingest-external-dbs)
+  - [Using Spark over JDBC](#data-ingest-spark-over-jdbs)
+  - [Using SQLAlchemy](#data-ingest-sqlalchemy)
+- [Working with Spark](#data-ingest-spark)
+  - [Using Spark SQL and DataFrames](#data-ingest-spark-sql-n-dfs)
+- [Working with Streams](#data-ingest-streams)
+  - [Using Nuclio to Get Data from Common Streaming Engines](#data-ingest-streams-nuclio)
+  - [Using the Platform's Streaming Engine](#data-ingest-streams-platform)
+  - [Using Spark Streaming](#data-ingest-streams-spark)
+- [Running SQL Queries on Platform Data](#data-ingest-sql)
+  - [Running Full ANSI Presto SQL Queries](#data-ingest-sql-presto)
+  - [Running Spark SQL Queries](#data-ingest-sql-spark)
+  - [Running SQL Queries from Nuclio Functions](#data-ingest-sql-nuclio)
+- [Working with Parquet Files](#data-ingest-parquet)
+- [Accessing Platform NoSQL and TSDB Data Using the Frames Library](#data-ingest-frames)
+- [Getting Data from AWS S3 Using curl](data-ingest-s3-curl)
+- [Running Distributed Python with Dask](#data-ingest-dask)
+- [Running DataFrames on GPUs using NVIDIA cuDF](#data-ingest-gpu)
 
 <a id="data-ingest-overview"></a>
 ## Overview
@@ -101,16 +99,6 @@ The platform’s Key-Value (KV) API provides access to the NoSQL database servic
 The platform’s Streaming API enables working with data in the platform as streams. The [**v3io-streams notebook**](v3io-streams.ipynb) demonstrates the API usage.
 
 For more general information see [working with Streams](#data-ingest-streams) section.
-
-<a id="data-ingest-nuclio"></a>
-## Nuclio
-
-The platform makes extensive use of [Nuclio serverless functions](https://github.com/nuclio/nuclio) to automate various tasks &mdash; such as data collection, extract-transform-load (ETL) processes, model serving, and batch jobs.
-Nuclio functions describe the code and include all the required resource definitions and configuration for running the code.
-The functions auto scale and can be versioned.
-The platform supports various methods for generating Nuclio functions &mdash; using the graphical dashboard, Docker, Git, or Jupyter Notebook &mdash; as demonstrated in the platform tutorials.
-
-The [**nuclio**](nuclio.ipynb) notebook shows a simple function deployment that uses NLP to correct text, perform sentiment analysis and language translation. Additional demos use Nuclio for machine learning model serving.
 
 <a id="data-ingest-external-dbs"></a>
 ## Reading Data from External Databases
