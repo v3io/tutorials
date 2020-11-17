@@ -142,9 +142,9 @@ if [ -z "${branch}" ]; then
 fi
 
 dest_dir="/v3io/users/${user}"
+demos_dir="${dest_dir}/demos"
 echo "Updating demos from ${git_url} branch ${branch} to '${demos_dir}'..."
 
-demos_dir="${dest_dir}/demos"
 temp_dir=$(mktemp -d /tmp/temp-get-demos.XXXXXXXXXX)
 trap "{ rm -rf $temp_dir; }" EXIT
 echo "Copying to temporary directory '${temp_dir}'..."
