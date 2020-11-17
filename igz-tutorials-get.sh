@@ -95,17 +95,17 @@ if [ -z "${branch}" ]; then
 fi
 
 dest_dir="/v3io/users/${user}"
-temp_dir=$(mktemp -d /tmp/temp-igz-tutorials.XXXXXXXXXX)
+echo "Updating ${product} tutorial files of branch ${branch} to '${dest_dir}'..."
 
+
+temp_dir=$(mktemp -d /tmp/temp-igz-tutorials.XXXXXXXXXX)
 trap "{ rm -rf $temp_dir; }" EXIT
+echo "Copying to temporary directory '${temp_dir}'..."
 
 # Get updated tutorials
 tar_url="${git_base_url}/archive/${branch}.tar.gz"
-
-echo "Copying to temporary directory '${temp_dir}'..."
 wget -qO- "${tar_url}" | tar xz -C "${temp_dir}" --strip-components 1
 
-echo "Updating ${product} tutorial files of branch ${branch} to '${dest_dir}'..."
 shopt -s extglob
 if [ -z "${dry_run}" ]; then
     echo "Copying files to '${dest_dir}'..."

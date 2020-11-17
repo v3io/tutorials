@@ -142,17 +142,15 @@ if [ -z "${branch}" ]; then
 fi
 
 dest_dir="/v3io/users/${user}"
+echo "Updating demos from ${git_url} branch ${branch} to '${demos_dir}'..."
+
 demos_dir="${dest_dir}/demos"
 temp_dir=$(mktemp -d /tmp/temp-get-demos.XXXXXXXXXX)
-
 trap "{ rm -rf $temp_dir; }" EXIT
+echo "Copying to temporary directory '${temp_dir}'..."
 
 tar_url="${git_base_url}/archive/${branch}.tar.gz"
-
-echo "Copying to temporary directory '${temp_dir}'..."
 wget -qO- "${tar_url}" | tar xz -C "${temp_dir}" --strip-components 1
-
-echo "Updating demos from ${git_url} branch ${branch} to '${demos_dir}'..."
 
 if [ -z "${dry_run}" ]; then
     if [ -d "${demos_dir}" ]; then
