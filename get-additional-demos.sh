@@ -169,7 +169,8 @@ if [ -z "${dry_run}" ]; then
     fi
 
     echo "Copying files to '${demos_dir}'..."
-    cp -r "${temp_dir}" "${demos_dir}"
+    mkdir -p "${demos_dir}"
+    cp -RT "${temp_dir}" "${demos_dir}"
 else
     echo "Files that will be copied to '${dest_dir}':"
     find "${temp_dir}/" -not -path '*/\.*' -type f -printf "%p\n" | sed -e "s|^${temp_dir}/|./demos/|"
