@@ -7,10 +7,12 @@ An initial introduction to the Iguazio Data Science Platform and the platform tu
 - [The Tutorial Notebooks](#the-tutorial-notebooks)
 - [Getting-Started Tutorial](#getting-started-tutorial)
 - [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
+- [Data Ingestion and Preparation](#data-ingestion-and-preparation)
 - [Additional Platform Resources](#platform-resources)
 - [Miscellaneous](#misc)
 
 <a id="platform-overview"></a>
+
 ## Platform Overview
 
 The Iguazio Data Science Platform (**"the platform"**) is a fully integrated and secure data science platform as a service (PaaS), which simplifies development, accelerates performance, facilitates collaboration, and addresses operational challenges.
@@ -27,6 +29,7 @@ The platform incorporates the following components:
 <br><img src="./assets/images/igz-self-service-platform.png" alt="Self-service data science platform" width="650"/><br>
 
 <a id="data-science-workflow"></a>
+
 ## Data Science Workflow
 
 The platform provides a complete data science workflow in a single ready-to-use platform that includes all the required building blocks for creating data science applications from research to production:
@@ -39,6 +42,7 @@ The platform provides a complete data science workflow in a single ready-to-use 
 ![Data Science Workflow](./assets/images/igz-data-science-workflow.gif)
 
 <a id="the-tutorial-notebooks"></a>
+
 ## The Tutorial Notebooks
 
 The home directory of the platform's running-user directory (**/User/&lt;running user&gt;**) contains pre-deployed tutorial Jupyter notebooks with code samples and documentation to assist you in your development &mdash; including a [**demos**](demos/README.ipynb) directory with end-to-end use-case applications (see the next section) and a [**data-ingestion-and-preparation**](data-ingestion-and-preparation/README.ipynb) directory with documentation and examples for performing data ingestion and preparation tasks.
@@ -55,6 +59,7 @@ Start out by running the getting-started tutorial to familiarize yourself with t
 <a href="getting-started-tutorial/getting-started-tutorial.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
 
 <a id="end-to-end-use-case-applications"></a>
+
 ## End-to-End Use-Case Applications
 
 Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the platform and related tools to address data science requirements for different industries and implementations. These demos are available in the [**MLRun demos repository**](https://github.com/mlrun/demos).
@@ -150,26 +155,45 @@ You can get the latest demos from the GitHub repository by running the following
     </tr>
     </table>
 
+<a id="data-ingestion-and-preparation"></a>
+
 ## Data Ingestion and Preparation
 
 The Iguazio Data Science Platform (**"the platform"**) allows storing data in any format.
 The platform's multi-model data layer and related APIs provide enhanced support for working with NoSQL ("key-value"), time-series, and stream data.
 Various steps of the data science life cycle (pipeline) might require different tools and frameworks for working with data, especially when it comes to the different mechanisms required during the research and development phase versus the operational production phase.
-The platform features a wide set of methods for manipulating and managing data, of different formats, in each step of the data life cycle, using a variety of frameworks, tools, and APIs &mdash; such as Spark SQL and DataFrames, Spark Streaming, Presto SQL queries, pandas DataFrames, Dask, the V3IO Frames Python library, and web APIs.
+The platform features a wide set of methods for manipulating and managing data, of different formats, in each step of the data life cycle, using a variety of frameworks, tools, and APIs &mdash; such as:
+- Spark SQL and DataFrames
+- Spark Streaming
+- Presto SQL queries
+- pandas DataFrames
+- Dask
+- V3IO Frames Python library
+- V3IO SDK
+- Web APIs.
 
 Refer to [data ingestion and preparation](./data-ingestion-and-preparation/README.ipynb) for an overview of various methods for collecting, storing, and manipulating data in the platform, and refers to sample tutorial notebooks that demonstrate how to use these methods.
 
+<a href="data-ingestion-and-preparation/README.ipynb"><img src="./assets/images/open-data-ingestion-and-preparation-button.png" alt="Open data ingestion and preparation"/></a>
+
 <a id="platform-resources"></a>
+
 ## Additional Platform Resources
+
+Refer to the [MLRun documentation](https://mlrun.readthedocs.io) for more information
+
+<a href="https://mlrun.readthedocs.io"><img src="./assets/images/open-mlrun-docs-button.png" alt="Open MLRun Documentation"/></a>
+
+Other resources:
 
 - [Introduction video](https://www.youtube.com/watch?v=8OmAN4wd7To)
 - [In-depth platform overview](platform-overview.ipynb) with a break down of the steps for developing a full data science workflow from development to production
 - [Platform components, services, and development ecosystem introduction](https://www.iguazio.com/docs/latest-release/intro/ecosystem/)
-- [References](https://iguazio.com/docs/latest-release/reference/)
-- [MLRun documentation](https://mlrun.readthedocs.io/)
+- [Iguazio platform References](https://iguazio.com/docs/latest-release/reference/)
 - [nuclio-jupyter SDK](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md) for creating and deploying Nuclio functions with Python and Jupyter Notebook
 
 <a id="misc"></a>
+
 ## Miscellaneous
 
 <a id="creating-virtual-environments-in-jupyter-notebook"></a>
