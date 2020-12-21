@@ -6,7 +6,7 @@ An initial introduction to the Iguazio Data Science Platform and the platform tu
 - [Data Science Workflow](#data-science-workflow)
 - [The Tutorial Notebooks](#the-tutorial-notebooks)
 - [Getting-Started Tutorial](#getting-started-tutorial)
-- [End-to-End Use-Case Applications](#end-to-end-use-case-applications)
+- [End-to-End Use-Case Applications (Demos)](#end-to-end-use-case-applications)
 - [Data Ingestion and Preparation](#data-ingestion-and-preparation)
 - [Additional Platform Resources](#platform-resources)
 - [Miscellaneous](#misc)
@@ -60,7 +60,7 @@ Start out by running the getting-started tutorial to familiarize yourself with t
 
 <a id="end-to-end-use-case-applications"></a>
 
-## End-to-End Use-Case Applications
+## End-to-End Use-Case Applications (Demos)
 
 Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the platform and related tools to address data science requirements for different industries and implementations. These demos are available in the [**MLRun demos repository**](https://github.com/mlrun/demos).
 
@@ -73,10 +73,10 @@ You can get the latest demos from the GitHub repository by running the following
 ```
 
 <table align="left">
-    <tr>
+    <tr align="left">
     <th>Demo</th>
-    <th></th>
-    <th></th>
+    <th/>
+    <th/>
     <th>Description</th>
     </tr>
     <tr>
