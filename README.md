@@ -138,7 +138,7 @@ You can get the latest demos from the GitHub repository by running the following
         </td>
     </tr>
     <tr>
-        <td><b>NetOps Demo: Predictive Network Operations/Telemetry</b></td>
+        <td><b>NetOps Demo: Predictive Network Operations / Telemetry</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/network-operations/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
@@ -155,10 +155,11 @@ You can get the latest demos from the GitHub repository by running the following
 
 ## Data Ingestion and Preparation
 
-The Iguazio Data Science Platform (**"the platform"**) allows storing data in any format.
+The platform allows storing data in any format.
 The platform's multi-model data layer and related APIs provide enhanced support for working with NoSQL ("key-value"), time-series, and stream data.
 Various steps of the data science life cycle (pipeline) might require different tools and frameworks for working with data, especially when it comes to the different mechanisms required during the research and development phase versus the operational production phase.
-The platform features a wide set of methods for manipulating and managing data, of different formats, in each step of the data life cycle, using a variety of frameworks, tools, and APIs &mdash; such as:
+The platform features a wide array of methods for manipulating and managing data, of different formats, in each step of the data life cycle, using a variety of frameworks, tools, and APIs &mdash; such as as the following:
+
 - Spark SQL and DataFrames
 - Spark Streaming
 - Presto SQL queries
@@ -166,26 +167,26 @@ The platform features a wide set of methods for manipulating and managing data, 
 - Dask
 - V3IO Frames Python library
 - V3IO SDK
-- Web APIs.
+- Web APIs
 
-Refer to [data ingestion and preparation](./data-ingestion-and-preparation/README.ipynb) for an overview of various methods for collecting, storing, and manipulating data in the platform, and refers to sample tutorial notebooks that demonstrate how to use these methods.
-
-<a href="data-ingestion-and-preparation/README.ipynb"><img src="./assets/images/open-data-ingestion-and-preparation-button.png" alt="Open data ingestion and preparation"/></a>
+The data ingestion and preparation tutorial README (**data-ingestion-and-preparation/README.ipynb/.md**) provides an overview of various methods for collecting, storing, and manipulating data in the platform, and references to sample tutorial notebooks that demonstrate how to use these methods.
+<br>
+**&#x25B6; [Open the README notebook](./data-ingestion-and-preparation/README.ipynb) / [Markdown file](data-ingestion-and-preparation/README.md)**
 
 <a id="platform-resources"></a>
 
 ## Additional Platform Resources
 
-Refer to the [MLRun documentation](https://mlrun.readthedocs.io) for more information
+You can find more information and resources in the MLRun documentation:
+<br>
+**&#x25B6; [Open the MLRun documentation](https://mlrun.readthedocs.io)**
 
-<a href="https://mlrun.readthedocs.io"><img src="./assets/images/open-mlrun-docs-button.png" alt="Open MLRun Documentation"/></a>
-
-Other resources:
+You might also find the folloiwng resources useful:
 
 - [Introduction video](https://www.youtube.com/watch?v=8OmAN4wd7To)
 - [In-depth platform overview](platform-overview.ipynb) with a break down of the steps for developing a full data science workflow from development to production
 - [Platform components, services, and development ecosystem introduction](https://www.iguazio.com/docs/latest-release/intro/ecosystem/)
-- [Iguazio platform References](https://iguazio.com/docs/latest-release/reference/)
+- [Platform references](https://iguazio.com/docs/latest-release/reference/)
 - [nuclio-jupyter SDK](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md) for creating and deploying Nuclio functions with Python and Jupyter Notebook
 
 <a id="misc"></a>
