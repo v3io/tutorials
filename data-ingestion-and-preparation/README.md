@@ -27,6 +27,7 @@ Learn about different methods for ingesting data into the Iguazio Data Science P
 - [Getting Data from AWS S3 Using curl](data-ingest-s3-curl)
 - [Running Distributed Python with Dask](#data-ingest-dask)
 - [Running DataFrames on GPUs using NVIDIA cuDF](#data-ingest-gpu)
+- [Creating Dashboards with Grafana](#data-grafana)
 
 <a id="data-ingest-overview"></a>
 ## Overview
@@ -282,3 +283,9 @@ The [**gpu-cudf-vs-pd**](gpu-cudf-vs-pd.ipynb) tutorial demonstrates how to use 
 
 > **Note:** To use the cuDF library, you need to create a RAPIDS Conda environment.
 > For more information, see the [**virtual-env**](../virtual-env.ipynb) tutorial.
+
+<a id="data-grafana"></a>
+
+## Creating Dashboards with Grafana
+
+You can create a Grafana dashboard programmatically using the Iguazio API. This allows you to define a dashboard that reads from the Iguazio data layer and display tables and charts of this data. The [**grafana-grafwiz example**](grafana-grafwiz.ipynb) demonstrates how to do that.
