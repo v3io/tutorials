@@ -19,13 +19,13 @@ USAGE: ${SCRIPT} [OPTIONS]
 OPTIONS:
   -h|--help   -  Display this message and exit.
   -b|--branch -  Git branch name. Default: The latest release branch that
-                 matches the version of the running MLRun service.
+                 matches the version of the installed 'mlrun' package.
   -u|--user   -  Username, which determines the directory to which to copy the
                  retrieved demo files (/v3io/users/<username>).
                  Default: \$V3IO_USERNAME, if set to a non-empty string.
   --mlrun-ver -  The MLRun version for which to get demos; determines the Git
                  branch from which to get the demos, unless -b|--branch is set.
-                 Default: The version of the running MLRun service.
+                 Default: The version of the installed 'mlrun' package.
   --dry-run   -  Show files to update but don't execute the update.
   --no-backup -  Don't back up the existing demos directory before the update.
                  Default: Back up the existing demos directory to a
