@@ -65,7 +65,7 @@ Start out by running the getting-started tutorial to familiarize yourself with t
 
 Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the platform and related tools to address data science requirements for different industries and implementations.
 These demos are available in the [MLRun demos repository](https://github.com/mlrun/demos).
-Use the provided [**get-additional-demos.sh**](./get-additional-demos.sh) script to get updated demos from this repository.
+Use the provided [**update-demos.sh**](./update-demos.sh) script to get updated demos from this repository.
 By default, the script retrieves the files from the latest release that matches the version of the installed `mlrun` package (see [Installing and Updating the MLRun Python Package](#mlrun-python-pkg-install-n-update)).
 The files are copied to the **/v3io/users/&lt;username&gt;/demos** directory, where `<username>` is the name of the running user (`$V3IO_USERNAME`) unless you set the `-u|--user` flag to another username.
 > **Note:** Before running the script, close any open files in the **demos** directory.
@@ -73,14 +73,14 @@ The files are copied to the **/v3io/users/&lt;username&gt;/demos** directory, wh
 
 ```python
 # Get additional demos
-!/User/get-additional-demos.sh
+!/User/update-demos.sh
 ```
 
 For full usage instructions, run the script with the `-h` or `--help` flag:
 
 
 ```python
-!/User/get-additional-demos.sh --help
+!/User/update-demos.sh --help
 ```
 
 <table align="left">
