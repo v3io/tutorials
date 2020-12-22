@@ -13,15 +13,17 @@ user=${V3IO_USERNAME}
 
 USAGE="\
 $SCRIPT:
-Retrieves latest-release ${product} tutorial files from the v3io/tutorials GitHub repo.
+Retrieves updated ${product} tutorial files from the v3io/tutorials GitHub repository.
 USAGE: ${SCRIPT} [OPTIONS] [<username>]
 PARAMETERS:
-  <username> - Username, which determines the directory to which to copy the files - /v3io/users/<username>.
-               Default = \$V3IO_USERNAME (if set to a non-empty string)
+  <username> -  Username, which determines the directory to which to copy the
+                retrieved files (/v3io/users/<username>).
+                Default: \$V3IO_USERNAME, if set to a non-empty string.
 OPTIONS:
   -h|--help   -  Display this message and exit.
-  -b|--branch -  Branch name (default is latest tag of current platform version).
-  --dry-run   -  Do not update the files, but rather show the pending changes."
+  -b|--branch -  Git branch name. Default: The latest release branch that
+                 matches the current platform version.
+  --dry-run   -  Show files to update but don't execute the update."
 
 error_exit()
 {
@@ -51,19 +53,19 @@ do
                 branch=$2
                 shift
             else
-                error_usage "$1: missing branch name"
+                error_usage "$1: Missing branch name."
             fi
             ;;
         --branch=?*)
             branch=${1#*=} # Delete everything up to "=" and assign the remainder.
             ;;
         --branch=)         # Handle the case of an empty --branch=
-            error_usage "$1: missing branch name"
+            error_usage "$1: Missing branch name."
             ;;
         --dry-run)
             dry_run=1
             ;;
-        -*) error_usage "$1: Unknown option"
+        -*) error_usage "$1: Unknown option."
             ;;
         *) break;
     esac
@@ -77,7 +79,7 @@ elif [ -z "${user}" ]; then
 fi
 
 if [ ! -z "${dry_run}" ]; then
-    echo "Dry run, no files will be copied."
+    echo "Dry run; no files will be copied."
 fi
 
 
@@ -86,9 +88,9 @@ if [ -z "${branch}" ]; then
     echo "Detected platform version: ${platform_version}"
     latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_url}" "refs/tags/v${platform_version}.*" | tail -n1 | awk '{ print $2}'`
     if [ -z "${latest_tag}" ]; then
-        error_exit "No tag found with tag prefix 'v${platform_version}.*'. Aborting"
+        error_exit "Couldn't locate a Git tag with prefix 'v${platform_version}.*'. Aborting..."
     else
-        # Remote the prfix from the tag
+        # Remove the prefix from the Git tag
         branch=${latest_tag#refs/tags/}
         echo "Detected ${git_url} tag: ${branch}"
     fi
@@ -97,10 +99,9 @@ fi
 dest_dir="/v3io/users/${user}"
 echo "Updating ${product} tutorial files of branch ${branch} to '${dest_dir}'..."
 
-
 temp_dir=$(mktemp -d /tmp/temp-igz-tutorials.XXXXXXXXXX)
 trap "{ rm -rf $temp_dir; }" EXIT
-echo "Copying to temporary directory '${temp_dir}'..."
+echo "Copying files to a temporary directory '${temp_dir}'..."
 
 # Get updated tutorials
 tar_url="${git_base_url}/archive/${branch}.tar.gz"
@@ -111,7 +112,8 @@ if [ -z "${dry_run}" ]; then
     echo "Copying files to '${dest_dir}'..."
     cp -rf "${temp_dir}/"!(igz-tutorials-get.sh|update-tutorials.ipynb) "${dest_dir}"
 else
-    echo "Files that will be copied to '${dest_dir}':"
+    # Dry run
+    echo "Identified the following files to copy to '${dest_dir}':"
     find "${temp_dir}/"!(igz-tutorials-get.sh|update-tutorials.ipynb) -not -path '*/\.*' -type f -printf "%p\n" | sed -e "s|^${temp_dir}/|./|"
 fi
 

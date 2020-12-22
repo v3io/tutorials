@@ -63,14 +63,24 @@ Start out by running the getting-started tutorial to familiarize yourself with t
 
 ## End-to-End Use-Case Applications (Demos)
 
-Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the platform and related tools to address data science requirements for different industries and implementations. These demos are available in the [**MLRun demos repository**](https://github.com/mlrun/demos).
-
-You can get the latest demos from the GitHub repository by running the following command:
+Iguazio provides full end-to-end use-case applications (demos) that demonstrate how to use the platform and related tools to address data science requirements for different industries and implementations.
+These demos are available in the [MLRun demos repository](https://github.com/mlrun/demos).
+Use the provided [**get-additional-demos.sh**](./get-additional-demos.sh) script to get updated demos from this repository.
+By default, the script retrieves the files from the latest release that matches the version of the installed `mlrun` package (see [Installing and Updating the MLRun Python Package](#mlrun-python-pkg-install-n-update)).
+The files are copied to the **/v3io/users/&lt;username&gt;/demos** directory, where `<username>` is the name of the running user (`$V3IO_USERNAME`) unless you set the `-u|--user` flag to another username.
+> **Note:** Before running the script, close any open files in the **demos** directory.
 
 
 ```python
 # Get additional demos
 !/User/get-additional-demos.sh
+```
+
+For full usage instructions, run the script with the `-h` or `--help` flag:
+
+
+```python
+!/User/get-additional-demos.sh --help
 ```
 
 <table align="left">
@@ -198,7 +208,7 @@ The data ingestion and preparation tutorial README (**data-ingestion-and-prepara
 
 You can find more information and resources in the MLRun documentation:
 <br>
-**&#x25B6; [Open the MLRun documentation](https://mlrun.readthedocs.io)**
+**&#x25B6; [View the MLRun documentation](https://mlrun.readthedocs.io)**
 
 You might also find the folloiwng resources useful:
 
@@ -220,9 +230,10 @@ Virtual environments make it easy to cleanly separate projects and avoid problem
 See the [virtual-env](virtual-env.ipynb) tutorial notebook for step-by-step instructions for using conda to create your own Python virtual environments, which will appear as custom kernels in Jupyter Notebook.
 
 <a id="update-notebooks"></a>
-### Updating the Tutorial Notebooks to the Latest Version
+### Updating the Tutorial Notebooks
 
-You can use the provided **igz-tutorials-get.sh** script to update the tutorial notebooks to the latest stable version available on [GitHub](https://github.com/v3io/tutorials/).
+You can use the provided **igz-tutorials-get.sh** script to get updated platform tutorials from the [tutorials GitHub repository](https://github.com/v3io/tutorials/).
+By default, the script retrieves the files from the latest release that matches the current platform version.
 For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebook.
 
 <a id="v3io-dir"></a>
