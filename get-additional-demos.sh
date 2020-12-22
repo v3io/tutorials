@@ -29,7 +29,7 @@ OPTIONS:
   --dry-run   -  Show files to update but don't execute the update.
   --no-backup -  Don't back up the existing demos directory before the update.
                  Default: Back up the existing demos directory to a
-                 /v3io/users/<username>/demos.old.<timestamp>/ directory."
+                 /v3io/users/<username>/demos.old/<timestamp>/ directory."
 
 error_exit()
 {
