@@ -5,10 +5,10 @@ Learn about different methods for ingesting data into the Iguazio Data Science P
 - [Overview](#data-ingest-overview)
   - [Platform Data Containers](#platform-data-containers)
 - [Basic Flow](#data-ingest-basic-flow)
-- [Iguazio's Platform Data Layer](#data-ingest-iguazio-platform-data-layer)
-  - [Iguazio's Data-Object API](#data-ingest-iguazio-data-object-api)
-  - [Iguazio's Key-Value API](#data-ingest-iguazio-kv-api)
-  - [Iguazio's Streaming API](#data-ingest-iguazio-streaming-api)
+- [The Platform's Data Layer](#data-ingest-platform-data-layer)
+  - [The Data-Object Platform API](#data-ingest-platform-data-object-api)
+  - [The NoSQL (Key-Value) Platform API](#data-ingest-platform-nosql-api)
+  - [The Streaming Platform API](#data-ingest-platform-streaming-api)
 - [Reading from External Database](#data-ingest-external-dbs)
   - [Using Spark over JDBC](#data-ingest-spark-over-jdbs)
   - [Using SQLAlchemy](#data-ingest-sqlalchemy)
@@ -27,7 +27,7 @@ Learn about different methods for ingesting data into the Iguazio Data Science P
 - [Getting Data from AWS S3 Using curl](data-ingest-s3-curl)
 - [Running Distributed Python with Dask](#data-ingest-dask)
 - [Running DataFrames on GPUs using NVIDIA cuDF](#data-ingest-gpu)
-- [Creating Dashboards with Grafana](#data-grafana)
+- [Visualizing Data with Grafana](#data-ingest-grafana)
 
 <a id="data-ingest-overview"></a>
 ## Overview
@@ -39,7 +39,8 @@ The platform features a wide set of methods for manipulating and managing data, 
 
 This tutorial provides an overview of various methods for collecting, storing, and manipulating data in the platform, and refers to sample tutorial notebooks that demonstrate how to use these methods.<br>
 For an in-depth overview of the platform and how it can be used to implement a full data science workflow, see the [**platform-overview**](../platform-overview.ipynb) tutorial notebook.
-For full end-to-end platform use-case application demos, see the [**welcome notebook**](../welcome.ipynb#end-to-end-use-case-applications)
+<br>
+For information about the available full end-to-end platform use-case application demos, see the [**welcome**](../welcome.ipynb#end-to-end-use-case-applications) notebook or the matching [**README.md**](../README.md#end-to-end-use-case-applications) file.
 
 <br><img src="../assets/images/pipeline-diagram.png" alt="pipeline-diagram" width="1000"/><br>
 
@@ -77,29 +78,34 @@ For detailed information and examples on how to set the data path for each inter
 The [**basic-data-ingestion-and-preparation**](basic-data-ingestion-and-preparation.ipynb) tutorial walks you through basic scenarios of ingesting data from external sources into the platform's data store and manipulating the data using different data formats.
 The tutorial includes an example of ingesting a CSV file from an AWS S3 bucket; converting it into a NoSQL table using Spark DataFrames; running SQL queries on the table; and converting the table into a Parquet file.
 
-<a id="data-ingest-iguazio-platform-data-layer"></a>
+<a id="data-ingest-platform-data-layer"></a>
 
-## Iguazio's Platform Data Layer
+## The Platform's Data Layer
 
-<a id="data-ingest-iguazio-data-object-api"></a>
+<a id="data-ingest-platform-data-object-api"></a>
 
-### Iguazio's Data-Object API
+The platform features an extremely fast and secure data layer that supports SQL, NoSQL, time-series databases, files (simple objects), and streaming, and exposes multiple APIs for working with the different data types &mdash; including [simple-object](#data-ingest-platform-data-object-api), [NoSQL ("key-value")](#data-ingest-platform-nosql-api), and [streaming](#data-ingest-platform-streaming-api) APIs.
 
-The platform’s Simple-Object API enables performing simple data-object operations that resembles Amazon’s Simple Storage Service (S3) API. In addition to the S3-like capabilities, the Simple-Object Web API enables appending data to existing objects. The [**v3io-objects notebook**](v3io-objects.ipynb) demonstrates the API usage.
+### The Data-Object Platform API
 
-<a id="data-ingest-iguazio-kv-api"></a>
+The platform’s Simple-Object API enables performing simple data-object and container operations that resemble the Amazon Web Services (AWS) Simple Storage Service (S3) API.
+In addition to the S3-like capabilities, the Simple-Object Web API enables appending data to existing objects.
+For more information and API usage examples, see the [**v3io-objects**](v3io-objects.ipynb) tutorial.
 
-### Iguazio's Key-Value API
+<a id="data-ingest-platform-nosql-api"></a>
 
-The platform’s Key-Value (KV) API provides access to the NoSQL database service, which enables storing and consuming data in a tabular format. The [**v3io-kv notebook**](v3io-kv.ipynb) demonstrates the API usage.
+### The NoSQL (Key-Value) Platform API
 
-<a id="data-ingest-iguazio-streaming-api"></a>
+The platform’s NoSQL (a.k.a. Key-Value/KV) API provides access to the platform's NoSQL data store (database service), which enables storing and consuming data in a tabular format.
+For more information and API usage examples, see the [**v3io-kv**](v3io-kv.ipynb) tutorial.
 
-### Iguazio's Streaming API
+<a id="data-ingest-platform-streaming-api"></a>
 
-The platform’s Streaming API enables working with data in the platform as streams. The [**v3io-streams notebook**](v3io-streams.ipynb) demonstrates the API usage.
+### The Streaming Platform API
 
-For more general information see [working with Streams](#data-ingest-streams) section.
+The platform’s Streaming API enables working with data in the platform as streams.
+For more information and API usage examples, see the [**v3io-streams**](v3io-streams.ipynb) tutorial.
+In addition, see the [Working with Streams](#data-ingest-streams) section in the current tutorial for general information about different methods for working with data streams in the platform.
 
 <a id="data-ingest-external-dbs"></a>
 ## Reading Data from External Databases
@@ -180,9 +186,11 @@ You can use the platform's streaming engine to write data into a queue in a real
 The platform's streaming engine is currently available via the platform's [Streaming Web API](https://www.iguazio.com/docs/latest-release/reference/api-reference/web-apis/streaming-web-api/).<br>
 In addition, the platform's Spark-Streaming Integration API enables using the Spark Streaming API to work with platform streams, as explained in the next section ([Using Spark Streaming](#data-ingest-streams-spark)).
 
-The [**v3io-streams notebook**](v3io-streams.ipynb) demonstrates basic usage of the streaming API.
+The [**v3io-streams**](v3io-streams.ipynb) tutorial demonstrates basic usage of the streaming API.
 
-The [**model meployment with streaming demo**](https://github.com/mlrun/demo-model-deployment-with-streaming) demo application includes an example of a Nuclio function that uses platform streams.
+<!-- [IntInfo] The referenced demo deson't exist.
+The [**model deployment with streaming**](https://github.com/mlrun/demo-model-deployment-with-streaming) demo application includes an example of a Nuclio function that uses platform streams.
+-->
 
 <a id="data-ingest-streams-spark"></a>
 
@@ -284,8 +292,14 @@ The [**gpu-cudf-vs-pd**](gpu-cudf-vs-pd.ipynb) tutorial demonstrates how to use 
 > **Note:** To use the cuDF library, you need to create a RAPIDS Conda environment.
 > For more information, see the [**virtual-env**](../virtual-env.ipynb) tutorial.
 
-<a id="data-grafana"></a>
+<a id="data-ingest-grafana"></a>
 
-## Creating Dashboards with Grafana
+## Visualizing Data with Grafana
 
-You can create a Grafana dashboard programmatically using the Iguazio API. This allows you to define a dashboard that reads from the Iguazio data layer and display tables and charts of this data. The [**grafana-grafwiz example**](grafana-grafwiz.ipynb) demonstrates how to do that.
+The platform has a Grafana service with predefined dashboards that leverage the monitoring service to display monitoring data, such as performance statistics, for application services.
+You can also define custom Grafana dashboards for monitoring, visualizing, and understanding data stored in the platform, such as time-series metrics and NoSQL data.
+You can read and analyze data from the platform's data store and visualize it on Grafana dashboards in the desired formats, such as tables and graphs.
+This can be done by using the custom `iguazio` data source, or by using a Prometheus data source for running Prometheus queries on platform TSDB tables.
+You can also issue data alerts and create, explore, and share dashboards.
+
+You can use Iguazio's [grafwiz](https://github.com/v3io/grafwiz) Python library to create an deploy Grafana dashboards programmatically, as demonstrated in the [**grafana-grafwiz**](grafana-grafwiz.ipynb) tutorial.
