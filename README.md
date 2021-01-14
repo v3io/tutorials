@@ -59,6 +59,8 @@ Start out by running the getting-started tutorial to familiarize yourself with t
 <br>
 <a href="demos/getting-started-tutorial/tutorial-1-MLRun-basics.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
 
+You can also view the tutorial on [**GitHub**](https://github.com/mlrun/demos/blob/release/v0.6.x-latest/getting-started-tutorial/tutorial-1-MLRun-basics.ipynb)
+
 <a id="end-to-end-use-case-applications"></a>
 
 ## End-to-End Use-Case Application and How-To Demos
@@ -83,17 +85,14 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
 !/User/update-demos.sh --help
 ```
 
+### End-to-End Use-Case Application Demos
+
 <table align="left">
     <tr align="left" style="border-bottom: 1pt solid black;">
     <th>Demo</th>
     <th/>
     <th/>
     <th>Description</th>
-    </tr>
-    <tr id="demos-e2e-use-case-apps" align="left" style="border-bottom: 1pt solid black;">
-        <td colspan="3"><b>End-to-End Use-Case Application Demos</b></td>
-        <td/>
-        <td/>
     </tr>
     <tr>
         <td><b>scikit-learn Demo: Full AutoML Pipeline</b></td>
@@ -165,24 +164,41 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
             The demo implements both model training and inference, including model monitoring and concept-drift detection.
         </td>
     </tr>
-    <tr id="demos-how-tos" align="left" style="border-bottom: 1pt solid black; border-top: 1pt solid black;">
-        <td colspan="3"><b>How-To Demos</b></td>
-        <td/>
-        <td/>
+    </table>
+
+### How-to Demos
+
+<table align="left">
+    <tr align="left" style="border-bottom: 1pt solid black;">
+    <th>Demo</th>
+    <th/>
+    <th/>
+    <th>Description</th>
     </tr>
     <tr>
         <td><b>How-To: Converting Existing ML Code to an MLRun Project</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/converting-to-mlrun/mlrun-code.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+            <a href="demos/howto/converting-to-mlrun/mlrun-code.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.6.x-latest/converting-to-mlrun/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.6.x-latest/howto/converting-to-mlrun"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates how to convert existing ML code to an MLRun project.
             The demo implements an MLRun project for taxi ride-fare prediction based on a <a href="https://www.kaggle.com/jsylas/python-version-of-top-ten-rank-r-22-m-2-88">Kaggle notebook</a> with an ML Python script that uses data from the <a href="https://www.kaggle.com/c/new-york-city-taxi-fare-prediction">New York City Taxi Fare Prediction competition</a>.
         </td>
     </tr>
-    </table>
+    <tr>
+        <td><b>How-To: Using Spark with MLRun</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/howto/spark"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.6.x-latest/howto/spark"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+        </td>
+        <td>This set of notebooks demostrate how to use MLRun to run a Spark job.
+        </td>
+    </tr>
+</table>
 
 <a id="mlrun-python-pkg-install-n-update"></a>
 
