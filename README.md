@@ -188,14 +188,36 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
         </td>
     </tr>
     <tr>
-        <td><b>How-To: Using Spark with MLRun</b></td>
+        <td><b>How-To: Run a Spark job to read CSV file</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/howto/spark"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+            <a href="demos/howto/spark/spark_mlrun_read_csv.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.6.x-latest/howto/spark"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_mlrun_read_csv.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
-        <td>This set of notebooks demostrate how to use MLRun to run a Spark job.
+        <td>Run a Spark job which reads a csv file and logs the dataset to MLRun database.
+        </td>
+    </tr>
+    <tr>
+        <td><b>How-To: Run a Spark Job to analyze data</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/howto/spark/spark_mlrun_describe.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_mlrun_describe.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+        </td>
+        <td>Create and run a Spark job which generates profile report from an Apache Spark DataFrame (based on pandas_profiling).
+        </td>
+    </tr>
+    <tr>
+        <td><b>How-To: Spark Job with Spark Operator</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/howto/spark/spark_operator.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_operator.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+        </td>
+        <td>Demonstrates how to use [spark operator](https://github.com/GoogleCloudPlatform/spark-on-k8s-operator) for running a Spark job over Kubernetes.
         </td>
     </tr>
 </table>
