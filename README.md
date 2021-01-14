@@ -57,7 +57,9 @@ The home directory of the platform's running-user directory (**/User/&lt;running
 
 Start out by running the getting-started tutorial to familiarize yourself with the platform and experience firsthand some of its main capabilities.<br>
 <br>
-<a href="getting-started-tutorial/getting-started-tutorial.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
+<a href="demos/getting-started-tutorial/tutorial-1-MLRun-basics.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
+
+You can also view the tutorial on [**GitHub**](https://github.com/mlrun/demos/blob/release/v0.6.x-latest/getting-started-tutorial/tutorial-1-MLRun-basics.ipynb)
 
 <a id="end-to-end-use-case-applications"></a>
 
@@ -83,6 +85,8 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
 !/User/update-demos.sh --help
 ```
 
+### End-to-End Use-Case Application Demos
+
 <table align="left">
     <tr align="left" style="border-bottom: 1pt solid black;">
     <th>Demo</th>
@@ -90,18 +94,13 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
     <th/>
     <th>Description</th>
     </tr>
-    <tr id="demos-e2e-use-case-apps" align="left" style="border-bottom: 1pt solid black;">
-        <td colspan="3"><b>End-to-End Use-Case Application Demos</b></td>
-        <td/>
-        <td/>
-    </tr>
     <tr>
         <td><b>scikit-learn Demo: Full AutoML Pipeline</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/scikit-learn-pipeline/sklearn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/blob/master/scikit-learn-pipeline/">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.6.x-latest/scikit-learn-pipeline">
                 <img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates how to build a full end-to-end automated-ML (AutoML) pipeline using <a href="https://scikit-learn.org">scikit-learn</a> and the UCI <a href="http://archive.ics.uci.edu/ml/datasets/iris">Iris data set</a>.
@@ -113,7 +112,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
             <a href="demos/image-classification-with-distributed-training/horovod-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/image-classification-with-distributed-training/">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.6.x-latest/image-classification-with-distributed-training/">
                 <img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates an end-to-end image-classification solution using <a href="https://www.tensorflow.org/">TensorFlow</a> (versions 1 or 2), <a href="https://keras.io/">Keras</a>, <a href="https://eng.uber.com/horovod/">Horovod</a>, and <a href="https://nuclio.io/">Nuclio</a>.
@@ -125,7 +124,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
             <a href="demos/realtime-face-recognition/notebooks/face-recognition.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/realtime-face-recognition/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.6.x-latest/realtime-face-recognition/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates real-time capture, recognition, and classification of face images over a video stream, as well as location tracking of identities, using <a href="https://pytorch.org/">PyTorch</a>, <a href="https://opencv.org/">OpenCV</a>, and <a href="https://www.streamlit.io/">Streamlit</a>.
         </td>
@@ -136,7 +135,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
             <a href="demos/customer-churn-prediction/churn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/customer-churn-prediction/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.6.x-latest/customer-churn-prediction/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates analysis of customer-churn data using the Kaggle <a href="https://www.kaggle.com/blastchar/telco-customer-churn" rel="nofollow">Telco Customer Churn data set</a>, model training and validation using <a href="https://xgboost.readthedocs.io/" rel="nofollow">XGBoost</a>, and model serving using real-time Nuclio serverless functions.
         </td>
@@ -147,7 +146,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
             <a href="demos/stock-analysis/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/stock-analysis/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.6.x-latest/stock-analysis/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates how to tackle a common requirement of running a data-engineering pipeline as part of ML model serving by reading data from external data sources and generating insights using ML models.
             The demo reads stock data from an external source, analyzes the related market news, and visualizes the analyzed data in a Grafana dashboard.
@@ -159,30 +158,69 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
             <a href="demos/network-operations/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/network-operations/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.6.x-latest/network-operations/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates how to build an automated ML pipeline for predicting network outages based on network-device telemetry, also known as Network Operations (NetOps).
             The demo implements both model training and inference, including model monitoring and concept-drift detection.
         </td>
     </tr>
-    <tr id="demos-how-tos" align="left" style="border-bottom: 1pt solid black; border-top: 1pt solid black;">
-        <td colspan="3"><b>How-To Demos</b></td>
-        <td/>
-        <td/>
+    </table>
+
+### How-to Demos
+
+<table align="left">
+    <tr align="left" style="border-bottom: 1pt solid black;">
+    <th>Demo</th>
+    <th/>
+    <th/>
+    <th>Description</th>
     </tr>
     <tr>
         <td><b>How-To: Converting Existing ML Code to an MLRun Project</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/converting-to-mlrun/mlrun-code.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+            <a href="demos/howto/converting-to-mlrun/mlrun-code.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/master/converting-to-mlrun/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.6.x-latest/howto/converting-to-mlrun"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates how to convert existing ML code to an MLRun project.
             The demo implements an MLRun project for taxi ride-fare prediction based on a <a href="https://www.kaggle.com/jsylas/python-version-of-top-ten-rank-r-22-m-2-88">Kaggle notebook</a> with an ML Python script that uses data from the <a href="https://www.kaggle.com/c/new-york-city-taxi-fare-prediction">New York City Taxi Fare Prediction competition</a>.
         </td>
     </tr>
-    </table>
+    <tr>
+        <td><b>How-To: Run a Spark job to read CSV file</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/howto/spark/spark_mlrun_read_csv.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_mlrun_read_csv.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+        </td>
+        <td>Run a Spark job which reads a csv file and logs the dataset to MLRun database.
+        </td>
+    </tr>
+    <tr>
+        <td><b>How-To: Run a Spark Job to analyze data</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/howto/spark/spark_mlrun_describe.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_mlrun_describe.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+        </td>
+        <td>Create and run a Spark job which generates profile report from an Apache Spark DataFrame (based on pandas_profiling).
+        </td>
+    </tr>
+    <tr>
+        <td><b>How-To: Spark Job with Spark Operator</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/howto/spark/spark_operator.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_operator.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+        </td>
+        <td>Demonstrates how to use <a target="_blank" href="https://github.com/GoogleCloudPlatform/spark-on-k8s-operator">spark operator</a> for running a Spark job over Kubernetes.
+        </td>
+    </tr>
+</table>
 
 <a id="mlrun-python-pkg-install-n-update"></a>
 
