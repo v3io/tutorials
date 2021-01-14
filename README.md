@@ -217,7 +217,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
         <td align="center", style="min-width:45px; padding: 10px;">
             <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_operator.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
-        <td>Demonstrates how to use [spark operator](https://github.com/GoogleCloudPlatform/spark-on-k8s-operator) for running a Spark job over Kubernetes.
+        <td>Demonstrates how to use <a target="_blank" href="https://github.com/GoogleCloudPlatform/spark-on-k8s-operator">spark operator</a> for running a Spark job over Kubernetes.
         </td>
     </tr>
 </table>
