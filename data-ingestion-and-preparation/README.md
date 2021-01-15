@@ -51,16 +51,18 @@ For information about the available full end-to-end platform use-case applicatio
 Data is stored within data containers in the platform's distributed file system (DFS).
 All platform clusters have two predefined containers:
 
-- <a id="users-container"></a>**"users"** &mdash; this container is designed to contain **&lt;username&gt;** directories that provide individual development environments for storing user-specific data.
+- <a id="users-container"></a>**"users"** &mdash; This container is designed to contain **&lt;username&gt;** directories that provide individual development environments for storing user-specific data.
   The platform's Jupyter Notebook, Zeppelin, and web-based shell "command-line services" automatically create such a directory for the running user of the service and set it as the home directory of the service environment.
   You can leverage the following environment variables, which are predefined in the platform's command-line services, to access this running-user directory from your code:
 
   - `V3IO_USERNAME` &mdash; set to the username of the running user of the Jupyter Notebook service.
   - `V3IO_HOME` &mdash; set to the running-user directory in the "users" container &mdash; **users/&lt;running user&gt;**.
   - `V3IO_HOME_URL` &mdash; set to the fully qualified `v3io` path to the running-user directory &mdash; `v3io://users/<running user>`.
-
-- <a id="default-container"></a>**"projects"** &mdash; this container is designed to store shared project artifacts.
-
+- <a id="projects-container"></a>**"projects"** &mdash; This container is designed to store shared project artifacts.<br>
+    When creating a new project, the default artifacts path is **projects/&lt;project name&gt;/artifacts**.
+- <a id="bigdata-container"></a>**"bigdata"** &mdash; This container has no special significance in the current release, and it will no longer be predefined in future releases.
+    However, you'll still be able to use your existing "bigdata" container and all its data, or create a custom container by this name if it doesn't already exist.
+    
 The data containers and their contents are referenced differently depending on the programming interface.
 For example:
 
