@@ -20,9 +20,9 @@ The Iguazio Data Science Platform (**"the platform"**) is a fully integrated and
 The platform incorporates the following components:
 
 - A data science workbench that includes Jupyter Notebook, integrated analytics engines, and Python packages
-- Model management with experiments tracking and automated pipeline capabilities
+- **MLRun** for Model management with experiments tracking and automated pipeline capabilities
 - Managed data and machine-learning (ML) services over a scalable Kubernetes cluster
-- A real-time serverless functions framework &mdash; Nuclio
+- A real-time serverless functions framework for model serving (Nuclio)
 - An extremely fast and secure data layer that supports SQL, NoSQL, time-series databases, files (simple objects), and streaming
 - Integration with third-party data sources such as Amazon S3, HDFS, SQL databases, and streaming or messaging protocols
 - Real-time dashboards based on Grafana
