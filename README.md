@@ -6,7 +6,7 @@ An initial introduction to the Iguazio Data Science Platform and the platform tu
 - [Data Science Workflow](#data-science-workflow)
 - [The Tutorial Notebooks](#the-tutorial-notebooks)
 - [Getting-Started Tutorial](#getting-started-tutorial)
-- [End-to-End Use-Case Application and How-To Demos](#end-to-end-use-case-applications)
+- [End-to-End Use-Case Application and How-To Demos](#demos)
 - [Installing and Updating the MLRun Python Package](#mlrun-python-pkg-install-n-update)
 - [Data Ingestion and Preparation](#data-ingestion-and-preparation)
 - [Additional Platform Resources](#platform-resources)
@@ -20,9 +20,9 @@ The Iguazio Data Science Platform (**"the platform"**) is a fully integrated and
 The platform incorporates the following components:
 
 - A data science workbench that includes Jupyter Notebook, integrated analytics engines, and Python packages
-- **MLRun** for Model management with experiments tracking and automated pipeline capabilities
+- The [MLRun](https://github.com/mlrun/mlrun) open-source MLOps orchestration framework for ML model management with experiments tracking and pipeline automation
 - Managed data and machine-learning (ML) services over a scalable Kubernetes cluster
-- A real-time serverless functions framework for model serving (Nuclio)
+- A real-time serverless functions framework for model serving ([Nuclio](https://nuclio.io/))
 - An extremely fast and secure data layer that supports SQL, NoSQL, time-series databases, files (simple objects), and streaming
 - Integration with third-party data sources such as Amazon S3, HDFS, SQL databases, and streaming or messaging protocols
 - Real-time dashboards based on Grafana
@@ -53,15 +53,16 @@ The home directory of the platform's running-user directory (**/User/&lt;running
 > - The **welcome.ipynb** notebook and main **README.md** file provide the same introduction in different formats.
 
 <a id="getting-started-tutorial"></a>
+
 ## Getting-Started Tutorial
 
-Start out by running the getting-started tutorial to familiarize yourself with the platform and experience firsthand some of its main capabilities.<br>
-<br>
+Start out by running the getting-started tutorial to familiarize yourself with the platform and experience firsthand some of its main capabilities.
+
 <a href="demos/getting-started-tutorial/tutorial-1-MLRun-basics.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
 
-You can also view the tutorial on [**GitHub**](https://github.com/mlrun/demos/blob/release/v0.6.x-latest/getting-started-tutorial/tutorial-1-MLRun-basics.ipynb)
+You can also view the tutorial on [GitHub](https://github.com/mlrun/demos/blob/release/v0.6.x-latest/getting-started-tutorial/tutorial-1-MLRun-basics.ipynb).
 
-<a id="end-to-end-use-case-applications"></a>
+<a id="demos"></a>
 
 ## End-to-End Use-Case Application and How-To Demos
 
@@ -85,6 +86,8 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
 !/User/update-demos.sh --help
 ```
 
+<a id="end-to-end-use-case-applications"></a>
+
 ### End-to-End Use-Case Application Demos
 
 <table align="left">
@@ -95,7 +98,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
     <th>Description</th>
     </tr>
     <tr>
-        <td><b>scikit-learn Demo: Full AutoML Pipeline</b></td>
+        <td><b>scikit-learn Demo: Full AutoML pipeline</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/scikit-learn-pipeline/sklearn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
@@ -107,7 +110,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
         </td>
     </tr>
     <tr>
-        <td><b>Image Classification with Distributed Training Demo</b></td>
+        <td><b>Image-Classification Demo: Image classification with distributed training</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/image-classification-with-distributed-training/horovod-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
@@ -119,7 +122,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
         </td>
     </tr>
     <tr>
-        <td><b>Faces Demo: Real-Time Image Recognition with Deep Learning</b></td>
+        <td><b>Faces Demo: Real-time image recognition with deep learning</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/realtime-face-recognition/notebooks/face-recognition.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
@@ -130,7 +133,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
         </td>
     </tr>
     <tr>
-        <td><b>Churn Demo: Real-Time Customer-Churn Prediction</b></td>
+        <td><b>Churn Demo: Real-time customer-churn prediction</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/customer-churn-prediction/churn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
@@ -153,7 +156,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
         </td>
     </tr>
     <tr>
-        <td><b>NetOps Demo: Predictive Network Operations / Telemetry</b></td>
+        <td><b>NetOps Demo: Predictive network operations / telemetry</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/network-operations/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
@@ -164,9 +167,11 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
             The demo implements both model training and inference, including model monitoring and concept-drift detection.
         </td>
     </tr>
-    </table>
+</table>
 
-### How-to Demos
+<a id="howto-demos"></a>
+
+### How-To Demos
 
 <table align="left">
     <tr align="left" style="border-bottom: 1pt solid black;">
@@ -176,7 +181,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
     <th>Description</th>
     </tr>
     <tr>
-        <td><b>How-To: Converting Existing ML Code to an MLRun Project</b></td>
+        <td><b>How-To: Converting existing ML code to an MLRun project</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/howto/converting-to-mlrun/mlrun-code.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
@@ -188,36 +193,36 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
         </td>
     </tr>
     <tr>
-        <td><b>How-To: Run a Spark job to read CSV file</b></td>
+        <td><b>How-To: Running a Spark job for reading a CSV file</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/howto/spark/spark_mlrun_read_csv.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_mlrun_read_csv.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
-        <td>Run a Spark job which reads a csv file and logs the dataset to MLRun database.
+        <td>Demonstrates how to run a Spark job that reads a CSV file and logs the data set to an MLRun database.
         </td>
     </tr>
     <tr>
-        <td><b>How-To: Run a Spark Job to analyze data</b></td>
+        <td><b>How-To: Running a Spark job for analyzing data</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/howto/spark/spark_mlrun_describe.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_mlrun_describe.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
-        <td>Create and run a Spark job which generates profile report from an Apache Spark DataFrame (based on pandas_profiling).
+        <td>Demonstrates how to create and run a Spark job that generates a profile report from an Apache Spark DataFrame based on pandas profiling.
         </td>
     </tr>
     <tr>
-        <td><b>How-To: Spark Job with Spark Operator</b></td>
+        <td><b>How-To: Running a Spark Job with Spark Operator</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/howto/spark/spark_operator.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_operator.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
-        <td>Demonstrates how to use <a target="_blank" href="https://github.com/GoogleCloudPlatform/spark-on-k8s-operator">spark operator</a> for running a Spark job over Kubernetes.
+        <td>Demonstrates how to use <a target="_blank" href="https://github.com/GoogleCloudPlatform/spark-on-k8s-operator">Spark Operator</a> to run a Spark job over Kubernetes with MLRun.
         </td>
     </tr>
 </table>
