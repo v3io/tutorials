@@ -58,9 +58,9 @@ The home directory of the platform's running-user directory (**/User/&lt;running
 
 Start out by running the getting-started tutorial to familiarize yourself with the platform and experience firsthand some of its main capabilities.
 
-<a href="demos/getting-started-tutorial/tutorial-1-MLRun-basics.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
+<a href="demos/getting-started-tutorial/README.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
 
-You can also view the tutorial on [GitHub](https://github.com/mlrun/demos/blob/release/v0.6.x-latest/getting-started-tutorial/tutorial-1-MLRun-basics.ipynb).
+You can also view the tutorial on [GitHub](https://github.com/mlrun/demos/blob/release/v0.6.x-latest/getting-started-tutorial/README.ipynb).
 
 <a id="demos"></a>
 
