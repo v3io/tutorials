@@ -58,9 +58,9 @@ The home directory of the platform's running-user directory (**/User/&lt;running
 
 Start out by running the getting-started tutorial to familiarize yourself with the platform and experience firsthand some of its main capabilities.
 
-<a href="demos/getting-started-tutorial/tutorial-1-MLRun-basics.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
+<a href="demos/getting-started-tutorial/README.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
 
-You can also view the tutorial on [GitHub](https://github.com/mlrun/demos/blob/release/v0.6.x-latest/getting-started-tutorial/tutorial-1-MLRun-basics.ipynb).
+You can also view the tutorial on [GitHub](https://github.com/mlrun/demos/blob/release/v0.6.x-latest/getting-started-tutorial/README.ipynb).
 
 <a id="demos"></a>
 
@@ -195,10 +195,10 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
     <tr>
         <td><b>How-To: Running a Spark job for reading a CSV file</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/howto/spark/spark_mlrun_read_csv.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+            <a href="demos/howto/spark/spark-mlrun-read-csv.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_mlrun_read_csv.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark-mlrun-read-csv.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates how to run a Spark job that reads a CSV file and logs the data set to an MLRun database.
         </td>
@@ -206,10 +206,10 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
     <tr>
         <td><b>How-To: Running a Spark job for analyzing data</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/howto/spark/spark_mlrun_describe.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+            <a href="demos/howto/spark/spark-mlrun-describe.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_mlrun_describe.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_mlrun-describe.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates how to create and run a Spark job that generates a profile report from an Apache Spark DataFrame based on pandas profiling.
         </td>
@@ -217,10 +217,10 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
     <tr>
         <td><b>How-To: Running a Spark Job with Spark Operator</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/howto/spark/spark_operator.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+            <a href="demos/howto/spark/spark-operator.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_operator.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark-operator.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates how to use <a target="_blank" href="https://github.com/GoogleCloudPlatform/spark-on-k8s-operator">Spark Operator</a> to run a Spark job over Kubernetes with MLRun.
         </td>
