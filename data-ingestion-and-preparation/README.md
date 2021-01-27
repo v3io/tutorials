@@ -238,10 +238,15 @@ For more information about the platform's Spark service, see [Working with Spark
 
 ### Running SQL Queries from Nuclio Functions 
 
-In some cases, you might need to run an SQL query as part an event-driven application.
+In some cases, you might need to run an SQL query as part of an event-driven application.
 The [**nuclio-read-via-presto**](nuclio-read-via-presto.ipynb) tutorial demonstrates how to run an SQL query from a serverless Nuclio function.
 
 <a id="data-ingest-parquet"></a>
+
+### Running SQL Queries from MLRun job 
+
+In some cases, you might need to run an SQL query as part of MLRun job.
+The [**mlrun-read-via-presto**](mlrun-read-via-presto.ipynb) tutorial demonstrates how to run an SQL query from an mlrun job.
 
 ## Working with Parquet Files
 
