@@ -22,7 +22,7 @@ Learn about different methods for ingesting data into the Iguazio Data Science P
   - [Running Full ANSI Presto SQL Queries](#data-ingest-sql-presto)
   - [Running Spark SQL Queries](#data-ingest-sql-spark)
   - [Running SQL Queries from Nuclio Functions](#data-ingest-sql-nuclio)
-  - [Running SQL Queries from Mlrun Job](#data-ingest-sql-mlrun)
+  - [Running SQL Queries from MLRun Jobs](#data-ingest-sql-mlrun)
 - [Working with Parquet Files](#data-ingest-parquet)
 - [Accessing Platform NoSQL and TSDB Data Using the Frames Library](#data-ingest-frames)
 - [Getting Data from AWS S3 Using curl](data-ingest-s3-curl)
@@ -239,15 +239,15 @@ For more information about the platform's Spark service, see [Working with Spark
 
 ### Running SQL Queries from Nuclio Functions 
 
-In some cases, you might need to run an SQL query as part of an event-driven application.
+In some cases, you might need to run SQL queries as part of an event-driven application.
 The [**nuclio-read-via-presto**](nuclio-read-via-presto.ipynb) tutorial demonstrates how to run an SQL query from a serverless Nuclio function.
 
 <a id="data-ingest-sql-mlrun"></a>
 
-### Running SQL Queries from MLRun job 
+### Running SQL Queries from MLRun Jobs
 
-In some cases, you might need to run an SQL query as part of MLRun job.
-The [**mlrun-read-via-presto**](mlrun-read-via-presto.ipynb) tutorial demonstrates how to run an SQL query from an mlrun job.
+In some cases, you might need to run SQL queries as part of an MLRun job.
+The [**mlrun-read-via-presto**](mlrun-read-via-presto.ipynb) tutorial demonstrates how to run an SQL query from an MLRun job using Presto.
 
 <a id="data-ingest-parquet"></a>
 
