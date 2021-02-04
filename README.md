@@ -209,7 +209,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
             <a href="demos/howto/spark/spark-mlrun-describe.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark_mlrun-describe.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.6.x-latest/howto/spark/spark-mlrun-describe.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates how to create and run a Spark job that generates a profile report from an Apache Spark DataFrame based on pandas profiling.
         </td>
@@ -231,7 +231,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
 
 ## Installing and Updating the MLRun Python Package
 
-The demo applications and many of the platform tutorials use [MLRun](https://github.com/mlrun/mlrun) &mdash; Iguazio's end-to-end open-source MLOps solution for managing and automating your entire analytics and machine-learning life cycle, from data ingestion through model development to full pipeline deployment in production.
+The demo applications and many of the platform tutorials use [MLRun](https://mlrun.readthedocs.io) &mdash; Iguazio's end-to-end open-source MLOps solution for managing and automating your entire analytics and machine-learning life cycle, from data ingestion through model development to full pipeline deployment in production.
 MLRun is available in the platform via a default (pre-deployed) shared platform service (`mlrun`).
 However, to use MLRun from Python code (such as in the demo and tutorial notebooks), you also need to install the [MLRun Python package](https://readthedocs.org/projects/mlrun/) (`mlrun`).
 The version of the installed package must match the version of the platform's MLRun service and must be updated whenever the service's version is updated.
