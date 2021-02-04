@@ -20,7 +20,7 @@ The Iguazio Data Science Platform (**"the platform"**) is a fully integrated and
 The platform incorporates the following components:
 
 - A data science workbench that includes Jupyter Notebook, integrated analytics engines, and Python packages
-- The [MLRun](https://github.com/mlrun/mlrun) open-source MLOps orchestration framework for ML model management with experiments tracking and pipeline automation
+- The [MLRun](https://mlrun.readthedocs.io) open-source MLOps orchestration framework for ML model management with experiments tracking and pipeline automation
 - Managed data and machine-learning (ML) services over a scalable Kubernetes cluster
 - A real-time serverless functions framework for model serving ([Nuclio](https://nuclio.io/))
 - An extremely fast and secure data layer that supports SQL, NoSQL, time-series databases, files (simple objects), and streaming
