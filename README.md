@@ -275,7 +275,7 @@ You can find more information and resources in the MLRun documentation:
 <br>
 **&#x25B6; [View the MLRun documentation](https://mlrun.readthedocs.io)**
 
-You might also find the folloiwng resources useful:
+You might also find the following resources useful:
 
 - [Introduction video](https://www.youtube.com/watch?v=8OmAN4wd7To)
 - [In-depth platform overview](platform-overview.ipynb) with a break down of the steps for developing a full data science workflow from development to production
