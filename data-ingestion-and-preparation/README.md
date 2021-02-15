@@ -286,7 +286,7 @@ curl -L "https://s3.wasabisys.com/iguazio/data/stocks/2018-03-26_BINS_XETR08.csv
 
 ## Running Distributed Python Code with Dask
 
-[Dask](https://dask.org/) is a flexible library for parallel computing in Python, which is useful for computations that don't fit into a DataFrame.
+[Dask](https://dask.org/) is a flexible library for parallel computation in Python, which is useful for computations that don't fit into a DataFrame.
 Dask exposes low-level APIs that enable you to build custom systems for in-house applications.
 This helps parallelize Python processes and dramatically accelerates their performance.
 The [**dask-cluster**](dask-cluster.ipynb) tutorial demonstrates how to use Dask with platform data.
