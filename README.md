@@ -60,7 +60,7 @@ Start out by running the getting-started tutorial to familiarize yourself with t
 
 <a href="demos/getting-started-tutorial/README.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
 
-You can also view the tutorial on [GitHub](https://github.com/mlrun/demos/blob/release/v0.6.x-latest/getting-started-tutorial/README.ipynb).
+You can also view the tutorial on [GitHub](https://github.com/mlrun/demos/blob/release/v0.6.x-latest/getting-started-tutorial/README.md).
 
 <a id="demos"></a>
 
@@ -115,8 +115,7 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
             <a href="demos/image-classification-with-distributed-training/horovod-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.6.x-latest/image-classification-with-distributed-training/">
-                <img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.6.x-latest/image-classification-with-distributed-training/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates an end-to-end image-classification solution using <a href="https://www.tensorflow.org/">TensorFlow</a> (versions 1 or 2), <a href="https://keras.io/">Keras</a>, <a href="https://eng.uber.com/horovod/">Horovod</a>, and <a href="https://nuclio.io/">Nuclio</a>.
         </td>
@@ -237,7 +236,7 @@ However, to use MLRun from Python code (such as in the demo and tutorial noteboo
 The version of the installed package must match the version of the platform's MLRun service and must be updated whenever the service's version is updated.
 
 The platform provides an [**align_mlrun.sh**](./align_mlrun.sh) script for simplifying the MLRun package installation and version synchronization with the MLRun service.
-The script is available in the running-user directory (your Jupyter home directory), which is accessible via the **/User** data mount.
+The script is available in the running-user directory (your Jupyter home directory), which is accessible via the `/User` data mount.
 Use the following command to run this script for the initial package installation (after creating a new Jupyter Notebook service) and whenever the MLRun service is updated; (the command should be run for each Jupyter Notebook service):
 
 
@@ -305,7 +304,7 @@ For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebo
 ### The v3io Directory
 
 The **v3io** directory that you see in the file browser of the Jupyter UI displays the contents of the `v3io` data mount for browsing the platform data containers.
-For information about the predefined data containers and data mounts and how to reference data in these containers, see [Platform Data Containers](data-ingestion-and-preparation/README.ipynb#platform-data-containers).
+For information about the platform's data containers and how to reference data in these containers, see [Platform Data Containers](data-ingestion-and-preparation/README.ipynb#platform-data-containers).
 
 <a id="support"></a>
 ### Support
