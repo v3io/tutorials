@@ -3,10 +3,10 @@
 Learn about different methods for ingesting data into the Iguazio Data Science Platform, analyzing the data, and preparing it for the next step in your data pipeline.
 
 - [Overview](#data-ingest-overview)
-  - [Platform Data Containers](#platform-data-containers)
 - [Basic Flow](#data-ingest-basic-flow)
 - [The Platform's Data Layer](#data-ingest-platform-data-layer)
-  - [The Data-Object Platform API](#data-ingest-platform-data-object-api)
+  - [Platform Data Containers](#platform-data-containers)
+  - [The Simple-Object Platform API](#data-ingest-platform-simple-object-api)
   - [The NoSQL (Key-Value) Platform API](#data-ingest-platform-nosql-api)
   - [The Streaming Platform API](#data-ingest-platform-streaming-api)
 - [Reading from External Database](#data-ingest-external-dbs)
@@ -33,47 +33,16 @@ Learn about different methods for ingesting data into the Iguazio Data Science P
 <a id="data-ingest-overview"></a>
 ## Overview
 
-The Iguazio Data Science Platform (**"the platform"**) allows storing data in any format.
+The Iguazio Data Science Platform ("the platform") allows storing data in any format.
 The platform's multi-model data layer and related APIs provide enhanced support for working with NoSQL ("key-value"), time-series, and stream data.
 Various steps of the data science life cycle (pipeline) might require different tools and frameworks for working with data, especially when it comes to the different mechanisms required during the research and development phase versus the operational production phase.
 The platform features a wide set of methods for manipulating and managing data, of different formats, in each step of the data life cycle, using a variety of frameworks, tools, and APIs &mdash; such as Spark SQL and DataFrames, Spark Streaming, Presto SQL queries, pandas DataFrames, Dask, the V3IO Frames Python library, and web APIs.
 
 This tutorial provides an overview of various methods for collecting, storing, and manipulating data in the platform, and refers to sample tutorial notebooks that demonstrate how to use these methods.<br>
 For an in-depth overview of the platform and how it can be used to implement a full data science workflow, see the [**platform-overview**](../platform-overview.ipynb) tutorial notebook.
-<br>
-For information about the available full end-to-end platform use-case application demos, see the [**welcome**](../welcome.ipynb#end-to-end-use-case-applications) notebook or the matching [**README.md**](../README.md#end-to-end-use-case-applications) file.
+For information about the available full end-to-end use-case application and how-to demos, see the [**welcome**](../welcome.ipynb#end-to-end-use-case-applications) notebook or the matching [**README.md**](../README.md#end-to-end-use-case-applications) file.
 
 <br><img src="../assets/images/pipeline-diagram.png" alt="pipeline-diagram" width="1000"/><br>
-
-<a id="platform-data-containers"></a>
-
-### Platform Data Containers
-
-Data is stored within data containers in the platform's distributed file system (DFS).
-All platform clusters have two predefined containers:
-
-- <a id="users-container"></a>**"users"** &mdash; This container is designed to contain **&lt;username&gt;** directories that provide individual development environments for storing user-specific data.
-  The platform's Jupyter Notebook, Zeppelin, and web-based shell "command-line services" automatically create such a directory for the running user of the service and set it as the home directory of the service environment.
-  You can leverage the following environment variables, which are predefined in the platform's command-line services, to access this running-user directory from your code:
-
-  - `V3IO_USERNAME` &mdash; set to the username of the running user of the Jupyter Notebook service.
-  - `V3IO_HOME` &mdash; set to the running-user directory in the "users" container &mdash; **users/&lt;running user&gt;**.
-  - `V3IO_HOME_URL` &mdash; set to the fully qualified `v3io` path to the running-user directory &mdash; `v3io://users/<running user>`.
-- <a id="projects-container"></a>**"projects"** &mdash; This container is designed to store shared project artifacts.<br>
-    When creating a new project, the default artifacts path is **projects/&lt;project name&gt;/artifacts**.
-- <a id="bigdata-container"></a>**"bigdata"** &mdash; This container has no special significance in the current release, and it will no longer be predefined in future releases.
-    However, you'll still be able to use your existing "bigdata" container and all its data, or create a custom container by this name if it doesn't already exist.
-    
-The data containers and their contents are referenced differently depending on the programming interface.
-For example:
-
-- In local file-system (FS) commands you use the predefined `v3io` root data mount &mdash; `/v3io/<container name>[/<data path>]`.
-  There's also a predefined local-FS `User` mount to the **users/&lt;running user&gt;** directory, and you can use the aforementioned environment variables when setting data paths.
-  For example, `/v3io/users/$V3IO_USERNAME`, `/v3io/$V3IO_HOME`, and `/User` are all valid ways of referencing the **users/&lt;running user&gt;** directory from a local FS command.
-- In Hadoop FS or Spark DataFrame commands you use a fully qualified path of the format `v3io://<container name>/<data path>`.
-  You can also use environment variables with these interfaces.
-
-For detailed information and examples on how to set the data path for each interface, see [Setting Data Paths](https://www.iguazio.com/docs/v3.0/tutorials/getting-started/fundamentals/#data-paths) and the examples in the platform's tutorial Jupyter notebooks.
 
 <a id="data-ingest-basic-flow"></a>
 
@@ -86,13 +55,44 @@ The tutorial includes an example of ingesting a CSV file from an AWS S3 bucket; 
 
 ## The Platform's Data Layer
 
-<a id="data-ingest-platform-data-object-api"></a>
+The platform features an extremely fast and secure data layer (a.k.a. "data store") that supports storing data in different formats &mdash; SQL, NoSQL, time-series databases, files (simple objects), and streaming.
+The data is stored within data containers and can be accessed using a variety of APIs &mdash; including [simple-object](#data-ingest-platform-simple-object-api), [NoSQL ("key-value")](#data-ingest-platform-nosql-api), and [streaming](#data-ingest-platform-streaming-api) APIs.
 
-The platform features an extremely fast and secure data layer that supports SQL, NoSQL, time-series databases, files (simple objects), and streaming, and exposes multiple APIs for working with the different data types &mdash; including [simple-object](#data-ingest-platform-data-object-api), [NoSQL ("key-value")](#data-ingest-platform-nosql-api), and [streaming](#data-ingest-platform-streaming-api) APIs.
+<a id="platform-data-containers"></a>
 
-### The Data-Object Platform API
+### Platform Data Containers
 
-The platform’s Simple-Object API enables performing simple data-object and container operations that resemble the Amazon Web Services (AWS) Simple Storage Service (S3) API.
+Data is stored within data containers in the platform's distributed file system (DFS), which makes up the platform's data layer.
+All platform clusters have several predefined containers:
+
+- <a id="users-container"></a>**"users"** &mdash; This container is designed to contain **&lt;username&gt;** directories that provide individual development environments for storing user-specific data.
+  The platform's Jupyter Notebook, Zeppelin, and web-based shell "command-line services" automatically create such a directory for the running user of the service and set it as the home directory of the service environment.
+  You can leverage the following environment variables, which are predefined in the platform's command-line services, to access this running-user directory from your code:
+
+  - `V3IO_USERNAME` &mdash; set to the username of the running user of the Jupyter Notebook service.
+  - `V3IO_HOME` &mdash; set to the running-user directory in the "users" container &mdash; **users/&lt;running user&gt;**.
+  - `V3IO_HOME_URL` &mdash; set to the fully qualified `v3io` path to the running-user directory &mdash; `v3io://users/<running user>`.
+- <a id="projects-container"></a>**"projects"** &mdash; This container is designed to store shared project artifacts.<br>
+    When creating a new project, the default artifacts path is **projects/&lt;project name&gt;/artifacts**.
+- <a id="bigdata-container"></a>**"bigdata"** &mdash; This container has no special significance in the current release, and it will no longer be predefined in future releases.
+    However, you'll still be able to use your existing "bigdata" container and all its data, or create a custom container by this name if it doesn't already exist.
+
+The data containers and their contents are referenced differently depending on the programming interface.
+For example:
+
+- In local file-system (FS) commands you use the predefined `v3io` root data mount &mdash; `/v3io/<container name>[/<data path>]`.
+  There's also a predefined local-FS `User` mount to the **users/&lt;running user&gt;** directory, and you can use the aforementioned environment variables when setting data paths.
+  For example, `/v3io/users/$V3IO_USERNAME`, `/v3io/$V3IO_HOME`, and `/User` are all valid ways of referencing the **users/&lt;running user&gt;** directory from a local FS command.
+- In Hadoop FS or Spark DataFrame commands you use a fully qualified path of the format `v3io://<container name>/<data path>`.
+  You can also use environment variables with these interfaces.
+
+For detailed information and examples on how to set the data path for each interface, see [Setting Data Paths](https://www.iguazio.com/docs/v3.0/tutorials/getting-started/fundamentals/#data-paths) and the examples in the platform's tutorial Jupyter notebooks.
+
+<a id="data-ingest-platform-simple-object-api"></a>
+
+### The Simple-Object Platform API
+
+The platform's Simple-Object API enables performing simple data-object and container operations that resemble the Amazon Web Services (AWS) Simple Storage Service (S3) API.
 In addition to the S3-like capabilities, the Simple-Object Web API enables appending data to existing objects.
 For more information and API usage examples, see the [**v3io-objects**](v3io-objects.ipynb) tutorial.
 
@@ -100,14 +100,14 @@ For more information and API usage examples, see the [**v3io-objects**](v3io-obj
 
 ### The NoSQL (Key-Value) Platform API
 
-The platform’s NoSQL (a.k.a. Key-Value/KV) API provides access to the platform's NoSQL data store (database service), which enables storing and consuming data in a tabular format.
+The platform's NoSQL (a.k.a. key-value/KV) API provides access to the platform's NoSQL data store (database service), which enables storing and consuming data in a tabular format.
 For more information and API usage examples, see the [**v3io-kv**](v3io-kv.ipynb) tutorial.
 
 <a id="data-ingest-platform-streaming-api"></a>
 
 ### The Streaming Platform API
 
-The platform’s Streaming API enables working with data in the platform as streams.
+The platform's Streaming API enables working with data in the platform as streams.
 For more information and API usage examples, see the [**v3io-streams**](v3io-streams.ipynb) tutorial.
 In addition, see the [Working with Streams](#data-ingest-streams) section in the current tutorial for general information about different methods for working with data streams in the platform.
 
@@ -192,7 +192,7 @@ In addition, the platform's Spark-Streaming Integration API enables using the Sp
 
 The [**v3io-streams**](v3io-streams.ipynb) tutorial demonstrates basic usage of the streaming API.
 
-<!-- [IntInfo] The referenced demo deson't exist.
+<!-- [IntInfo] The referenced demo doesn't exist.
 The [**model deployment with streaming**](https://github.com/mlrun/demo-model-deployment-with-streaming) demo application includes an example of a Nuclio function that uses platform streams.
 -->
 
