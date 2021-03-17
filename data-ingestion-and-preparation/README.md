@@ -86,7 +86,7 @@ For example:
 - In Hadoop FS or Spark DataFrame commands you use a fully qualified path of the format `v3io://<container name>/<data path>`.
   You can also use environment variables with these interfaces.
 
-For detailed information and examples on how to set the data path for each interface, see [Setting Data Paths](https://www.iguazio.com/docs/v3.0/tutorials/getting-started/fundamentals/#data-paths) and the examples in the platform's tutorial Jupyter notebooks.
+For detailed information and examples on how to set the data path for each interface, see [API Data Paths](https://www.iguazio.com/docs/v3.0/data-layer/apis/data-paths/) and the examples in the platform's tutorial Jupyter notebooks.
 
 <a id="data-ingest-platform-simple-object-api"></a>
 
@@ -152,7 +152,7 @@ This allows accelerated and high-speed access from Spark to data stored in the p
 
 The [**spark-sql-analytics**](spark-sql-analytics.ipynb) tutorial demonstrates how to use Spark SQL and DataFrames to access objects, tables, and unstructured data that persists in the platform's data store.
 
-For more information and examples of data ingestion with Spark DataFrames, see [Getting Started with Data Ingestion Using Spark](https://www.iguazio.com/docs/v3.0/tutorials/getting-started/data-ingestn-w-spark-qs/).<br>
+For more information and examples of data ingestion with Spark DataFrames, see [Getting Started with Data Ingestion Using Spark](https://www.iguazio.com/docs/v3.0/data-layer/spark-data-ingestion-qs/).<br>
 For more about running SQL queries with Spark, see [Running Spark SQL Queries](#data-ingest-sql-spark) under "Running SQL Queries on Platform Data".
 
 <a id="data-ingest-streams"></a>
@@ -178,7 +178,7 @@ You can also implement your own logic within the Nuclio function to manipulate o
 
 Nuclio serverless functions can sustain high workloads with very low latencies, thus making them very useful for building an event-driven applications with strict latency requirements.
 
-For more information about Nuclio, see the platform's [serverless introduction](https://www.iguazio.com/docs/intro/latest-release/serverless/).
+For more information about Nuclio, see [the platform's Nuclio service overview](https://www.iguazio.com/docs/v3.0/services/app-services/nuclio/).
 
 <a id="data-ingest-streams-platform"></a>
 
@@ -187,7 +187,7 @@ For more information about Nuclio, see the platform's [serverless introduction](
 The platform features a custom streaming engine and a related stream format &mdash; a platform stream (a.k.a. V3IO stream).
 You can use the platform's streaming engine to write data into a queue in a real-time data pipeline, or as a standard streaming engine (similar to Kafka and Kinesis), so you don't need to use an external engine.
 
-The platform's streaming engine is currently available via the platform's [Streaming Web API](https://www.iguazio.com/docs/v3.0/reference/api-reference/web-apis/streaming-web-api/).<br>
+The platform's streaming engine is currently available via the platform's [Streaming Web API](https://www.iguazio.com/docs/v3.0/data-layer/reference/web-apis/streaming-web-api/).<br>
 In addition, the platform's Spark-Streaming Integration API enables using the Spark Streaming API to work with platform streams, as explained in the next section ([Using Spark Streaming](#data-ingest-streams-spark)).
 
 The [**v3io-streams**](v3io-streams.ipynb) tutorial demonstrates basic usage of the streaming API.
@@ -201,7 +201,7 @@ The [**model deployment with streaming**](https://github.com/mlrun/demo-model-de
 ### Using Spark Streaming
 
 You can use the [Spark Streaming](http://spark.apache.org/streaming/) API to ingest, consume, and analyze data using data streams.
-The platform features a custom [Spark-Streaming Integration API](https://www.iguazio.com/docs/v3.0/reference/api-reference/spark-apis/spark-streaming-integration-api/) to allow using the Spark Streaming API with [platform streams](#data-ingest-streams-platform).
+The platform features a custom [Spark-Streaming Integration API](https://www.iguazio.com/docs/v3.0/data-layer/reference/spark-apis/spark-streaming-integration-api/) to allow using the Spark Streaming API with [platform streams](#data-ingest-streams-platform).
 
 <!-- TODO: Add more information / add a tutorial and refer to it. -->
 

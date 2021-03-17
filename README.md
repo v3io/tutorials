@@ -278,8 +278,8 @@ You might also find the following resources useful:
 
 - [Introduction video](https://www.youtube.com/watch?v=8OmAN4wd7To)
 - [In-depth platform overview](platform-overview.ipynb) with a break down of the steps for developing a full data science workflow from development to production
-- [Platform components, services, and development ecosystem introduction](https://www.iguazio.com/docs/v3.0/intro/ecosystem/)
-- [Platform references](https://iguazio.com/docs/latest-release/reference/)
+- [Platform Services](https://www.iguazio.com/docs/v3.0/services/)
+- [Platform data layer](https://www.iguazio.com/docs/v3.0/data-layer/), including [references](https://www.iguazio.com/docs/v3.0/data-layer/reference/)
 - [nuclio-jupyter SDK](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md) for creating and deploying Nuclio functions with Python and Jupyter Notebook
 
 <a id="misc"></a>
