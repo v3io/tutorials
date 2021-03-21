@@ -219,7 +219,7 @@ You can run SQL queries on NoSQL and Parquet data in the platform's data store, 
 
 ### Running Full ANSI Presto SQL Queries
 
-The platform has a default pre-deployed Presto service that enables using the [Presto](https://prestosql.io/) open-source distributed SQL query engine to run interactive SQL queries and perform high-performance low-latency interactive analytics on data that's stored in the platform.
+The platform has a default pre-deployed Presto service that enables using the [Presto](https://trino.io/) open-source distributed SQL query engine to run interactive SQL queries and perform high-performance low-latency interactive analytics on data that's stored in the platform.
 To run a Presto query from a Jupyter notebook, all you need is to use an SQL magic command &mdash; `%sql` followed by your Presto query.
 Such queries are executed as distributed queries across the platform's application nodes.
 The [**basic-data-ingestion-and-preparation**](basic-data-ingestion-and-preparationipynb) tutorial demonstrates how to run Presto queries using SQL magic.
