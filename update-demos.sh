@@ -93,7 +93,7 @@ do
         --mlrun-ver=?*)
             mlrun_version=${1#*=} # Delete everything up to "=" and assign the remainder.
             ;;
-        --umlrun-ver=)         # Handle the case of an empty --mlrun-ver=
+        --mlrun-ver=)         # Handle the case of an empty --mlrun-ver=
             error_usage "$1: Missing MLRun version."
             ;;
         --dry-run)
