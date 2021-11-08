@@ -86,9 +86,10 @@ fi
 if [ -z "${branch}" ]; then
     platform_version="${IGZ_VERSION%%_*}"
     echo "Detected platform version: ${platform_version}"
-    latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_url}" "refs/tags/v${platform_version}.*" | tail -n1 | awk '{ print $2}'`
+    tag_prefix=`echo ${platform_version} | cut -d . -f1-2`
+    latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_url}" "refs/tags/v${tag_prefix}.*" | tail -n1 | awk '{ print $2}'`
     if [ -z "${latest_tag}" ]; then
-        error_exit "Couldn't locate a Git tag with prefix 'v${platform_version}.*'. Aborting..."
+        error_exit "Couldn't locate a Git tag with prefix 'v${tag_prefix}.*'. Aborting..."
     else
         # Remove the prefix from the Git tag
         branch=${latest_tag#refs/tags/}
