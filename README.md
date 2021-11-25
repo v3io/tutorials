@@ -166,6 +166,28 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
             The demo implements both model training and inference, including model monitoring and concept-drift detection.
         </td>
     </tr>
+    <tr>
+        <td><b>News Article Summarization and Keyword Extraction via NLP</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/news-article-nlp/news_article_nlp.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.8.x-latest/news-article-nlp/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+        </td>
+        <td>Demonstrates how to create an NLP pipeline that will summarize and extract keywords from a news article URL. We will be using state-of-the-art transformer models such as BERT to perform these NLP tasks.
+        </td>
+    </tr>
+<tr>
+        <td><b>Mask Detection</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/mask-detection/1-training-and-evaluation.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.8.x-latest/mask-detection/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+        </td>
+        <td>Demonstrates how to  use MLRun to create a mask detection app. We'll train a model that classifies an image of a person as wearing a mask or not, and serve it to an HTTP endpoint.
+        </td>
+    </tr>
 </table>
 
 <a id="howto-demos"></a>
