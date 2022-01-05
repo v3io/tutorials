@@ -90,81 +90,12 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
 
 ### End-to-End Use-Case Application Demos
 
-<table align="left">
-    <tr align="left" style="border-bottom: 1pt solid black;">
+<table margin-left>
+    <tr text-align="left" style="border-bottom: 1pt solid black;">
     <th>Demo</th>
     <th/>
     <th/>
     <th>Description</th>
-    </tr>
-    <tr>
-        <td><b>scikit-learn Demo: Full AutoML pipeline</b></td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/scikit-learn-pipeline/sklearn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
-        </td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.8.x-latest/scikit-learn-pipeline">
-                <img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
-        </td>
-        <td>Demonstrates how to build a full end-to-end automated-ML (AutoML) pipeline using <a href="https://scikit-learn.org">scikit-learn</a> and the UCI <a href="http://archive.ics.uci.edu/ml/datasets/iris">Iris data set</a>.
-        </td>
-    </tr>
-    <tr>
-        <td><b>Image-Classification Demo: Image classification with distributed training</b></td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/image-classification-with-distributed-training/horovod-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
-        </td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.8.x-latest/image-classification-with-distributed-training/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
-        </td>
-        <td>Demonstrates an end-to-end image-classification solution using <a href="https://www.tensorflow.org/">TensorFlow</a> (versions 1 or 2), <a href="https://keras.io/">Keras</a>, <a href="https://eng.uber.com/horovod/">Horovod</a>, and <a href="https://nuclio.io/">Nuclio</a>.
-        </td>
-    </tr>
-    <tr>
-        <td><b>Faces Demo: Real-time image recognition with deep learning</b></td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/realtime-face-recognition/notebooks/face-recognition.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
-        </td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.8.x-latest/realtime-face-recognition/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
-        </td>
-        <td>Demonstrates real-time capture, recognition, and classification of face images over a video stream, as well as location tracking of identities, using <a href="https://pytorch.org/">PyTorch</a>, <a href="https://opencv.org/">OpenCV</a>, and <a href="https://www.streamlit.io/">Streamlit</a>.
-        </td>
-    </tr>
-    <tr>
-        <td><b>Churn Demo: Real-time customer-churn prediction</b></td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/customer-churn-prediction/churn-project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
-        </td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.8.x-latest/customer-churn-prediction/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
-        </td>
-        <td>Demonstrates analysis of customer-churn data using the Kaggle <a href="https://www.kaggle.com/blastchar/telco-customer-churn" rel="nofollow">Telco Customer Churn data set</a>, model training and validation using <a href="https://xgboost.readthedocs.io/" rel="nofollow">XGBoost</a>, and model serving using real-time Nuclio serverless functions.
-        </td>
-    </tr>
-    <tr>
-        <td><b>Stock-Analysis Demo</b></td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/stock-analysis/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
-        </td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.8.x-latest/stock-analysis/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
-        </td>
-        <td>Demonstrates how to tackle a common requirement of running a data-engineering pipeline as part of ML model serving by reading data from external data sources and generating insights using ML models.
-            The demo reads stock data from an external source, analyzes the related market news, and visualizes the analyzed data in a Grafana dashboard.
-        </td>
-    </tr>
-    <tr>
-        <td><b>NetOps Demo: Predictive network operations / telemetry</b></td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/network-operations/project.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
-        </td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.8.x-latest/network-operations/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
-        </td>
-        <td>Demonstrates how to build an automated ML pipeline for predicting network outages based on network-device telemetry, also known as Network Operations (NetOps).
-            The demo implements both model training and inference, including model monitoring and concept-drift detection.
-        </td>
     </tr>
     <tr>
         <td><b>News Article Summarization and Keyword Extraction via NLP</b></td>
