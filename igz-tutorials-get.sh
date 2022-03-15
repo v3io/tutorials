@@ -82,6 +82,9 @@ if [ ! -z "${dry_run}" ]; then
     echo "Dry run; no files will be copied."
 fi
 
+if ! (curl -s --connect-timeout 2 github.com &>/dev/null); then
+    error_exit "Github is unreachable, Aborting..."
+fi
 
 if [ -z "${branch}" ]; then
     platform_version="${IGZ_VERSION%%_*}"
