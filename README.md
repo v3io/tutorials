@@ -132,6 +132,19 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
             feature sets, then train the models, then deploy it as an online serving function, and then close the loop with model monitoring.
         </td>
     </tr>
+     <tr>
+        <td><b>NetOps Demo: Predictive Network Operations/Telemetry</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/network-operations/README.md"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/1.0.x/network-operations/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+        </td>
+        <td>This demo demonstrates how to build an automated machine-learning (ML) pipeline for predicting network outages based on network-device telemetry, also known as Network Operations (NetOps).
+The demo implements feature engineering, model training, testing, inference, and model monitoring (with concept-drift detection).
+The demo uses a offline/real-time metrics simulator to generate semi-random network telemetry data that is used across the pipeline.
+        </td>
+    </tr>
 </table>
 
 <a id="howto-demos"></a>
