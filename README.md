@@ -262,14 +262,7 @@ For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebo
 <a id="v3io-dir"></a>
 ### The v3io Directory
 
-The **v3io** directory that you see in the file browser of the Jupyter UI displays the contents of the `v3io` data mount for browsing the platform data containers.
-
-All platform clusters have several predefined containers:
-- **"users"** &mdash; This container is designed to contain **&lt;username&gt;** directories that provide individual development environments for storing user-specific data.
-- **"projects"** &mdash; This container is designed to store shared project artifacts.<br>
-    When creating a new project, the default artifacts path is **projects/&lt;project name&gt;/artifacts**.
-- **"bigdata"** &mdash; This container has no special significance in the current release, and it will no longer be predefined in future releases.
-    However, you'll still be able to use your existing "bigdata" container and all its data, or create a custom container by this name if it doesn't already exist.
+The **v3io** directory that you see in the file browser of the Jupyter UI displays the contents of the `v3io` data mount for browsing the platform data containers. For information about the platform's data containers and how to reference data in these containers, see [Data Containers](https://www.iguazio.com/docs/latest-release/data-layer/containers/).
 
 <a id="support"></a>
 ### Support
