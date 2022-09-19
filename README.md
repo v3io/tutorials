@@ -46,7 +46,7 @@ The platform provides a complete data science workflow in a single ready-to-use 
 
 ## The Tutorial Notebooks
 
-The home directory of the platform's running-user directory (**/User/&lt;running user&gt;**) contains pre-deployed tutorial Jupyter notebooks with code samples and documentation to assist you in your development &mdash; including a [**demos**](demos/README.ipynb) directory with end-to-end use-case applications (see the next section) and a [**data-ingestion-and-preparation**](data-ingestion-and-preparation/README.ipynb) directory with documentation and examples for performing data ingestion and preparation tasks.
+The home directory of the platform's running-user directory (**/User/&lt;running user&gt;**) contains pre-deployed tutorial Jupyter notebooks with code samples and documentation to assist you in your development &mdash; including a [**demos**](demos/README.ipynb) directory with end-to-end use-case applications (see the next section).
 
 > **Note:**
 > - To view and run the tutorials from the platform, you first need to create a Jupyter Notebook service.
@@ -60,7 +60,7 @@ Start out by running the getting-started tutorial to familiarize yourself with t
 
 <a href="demos/getting-started-tutorial/README.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
 
-You can also view the tutorial on [GitHub](https://github.com/mlrun/demos/blob/release/v0.9.x-latest/getting-started-tutorial/README.md).
+You can also view the tutorial on [GitHub](https://github.com/mlrun/demos/blob/release/v0.6.x-latest/getting-started-tutorial/README.md).
 
 <a id="demos"></a>
 
@@ -90,55 +90,59 @@ For full usage instructions, run the script with the `-h` or `--help` flag:
 
 ### End-to-End Use-Case Application Demos
 
-<table margin-left>
-    <tr text-align="left" style="border-bottom: 1pt solid black;">
+<table align="left">
+    <tr align="left" style="border-bottom: 1pt solid black;">
     <th>Demo</th>
     <th/>
     <th/>
     <th>Description</th>
     </tr>
     <tr>
-        <td><b>News Article Summarization and Keyword Extraction via NLP</b></td>
+        <td><b>Mask detection</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/news-article-nlp/news_article_nlp.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
-        </td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.9.x-latest/news-article-nlp/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
-        </td>
-        <td>Demonstrates how to create an NLP pipeline that will summarize and extract keywords from a news article URL. We will be using state-of-the-art transformer models such as BERT to perform these NLP tasks.
-        </td>
-    </tr>
-    <tr>
-        <td><b>Mask Detection</b></td>
-        <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/mask-detection/1-training-and-evaluation.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+            <a href="demos/mask-detection/README.md"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.9.x-latest/mask-detection/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/1.1.x/mask-detection/">
+                <img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
-        <td>Demonstrates how to use MLRun to create a mask detection app. We'll train a model that classifies an image of a person as wearing a mask or not, and serve it to an HTTP endpoint.
+        <td>This demo contains 3 notebooks where we:
+      1. Train and evaluate a model for detecting if a person is wearing a mask in an image by using Tensorflow.Keras or PyTorch.<br>
+      2. Serve the model as a serverless function in a http endpoint.<br>
+      3. Write an automatic pipeline where we download a dataset of images, train and evaluate the model, then optimize the model (using ONNX) and serve it.
         </td>
     </tr>
     <tr>
         <td><b>Fraud Prevention - Iguazio Feature Store</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a href="demos/fraud-prevention-feature-store/01-ingest-datasources.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+            <a href="demos/fraud-prevention-feature-store/README.md"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.9.x-latest/fraud-prevention-feature-store"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/1.1.x/fraud-prevention-feature-store/">
+                <img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
-        <td>Demonstrates how to develop a fraud prevention pipeline using the Iguazio feature store.
-            The demo creates a full end to end flow starting with creating feature sets,then deploying them as operational
-            feature sets, then train the models, then deploy it as an online serving function, and then close the loop with model monitoring.
+        <td>Demonstrates the feature store usage for fraud prevention: Data ingestion & preparation; Model training & testing; Model serving; Building An Automated ML Pipeline.
         </td>
     </tr>
-     <tr>
+    <tr>
+        <td><b>News Article Summarization and Keyword Extraction via NLP</b></td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a href="demos/news-article-nlp/README.md"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
+        </td>
+        <td align="center", style="min-width:45px; padding: 10px;">
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/1.1.x/news-article-nlp/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+        </td>
+        <td>This demo creates an NLP pipeline that summarizes and extract keywords from a news article URL. We will be using state-of-the-art transformer models. such as BERT. to perform these NLP tasks.
+Additionally, we will use MLRun's real-time inference graphs to create the pipeline. This allows for easy containerization and deployment of the pipeline on top of a production-ready Kubernetes cluster.
+        </td>
+    </tr>
+    <tr>
         <td><b>NetOps Demo: Predictive Network Operations/Telemetry</b></td>
         <td align="center", style="min-width:45px; padding: 10px;">
             <a href="demos/network-operations/README.md"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/1.0.x/network-operations/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/1.1.x/network-operations/"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>This demo demonstrates how to build an automated machine-learning (ML) pipeline for predicting network outages based on network-device telemetry, also known as Network Operations (NetOps).
 The demo implements feature engineering, model training, testing, inference, and model monitoring (with concept-drift detection).
@@ -164,7 +168,7 @@ The demo uses a offline/real-time metrics simulator to generate semi-random netw
             <a href="demos/howto/converting-to-mlrun/mlrun-code.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/tree/release/v0.9.x-latest/howto/converting-to-mlrun"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/tree/1.1.x/howto/converting-to-mlrun"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates how to convert existing ML code to an MLRun project.
             The demo implements an MLRun project for taxi ride-fare prediction based on a <a href="https://www.kaggle.com/jsylas/python-version-of-top-ten-rank-r-22-m-2-88">Kaggle notebook</a> with an ML Python script that uses data from the <a href="https://www.kaggle.com/c/new-york-city-taxi-fare-prediction">New York City Taxi Fare Prediction competition</a>.
@@ -176,7 +180,7 @@ The demo uses a offline/real-time metrics simulator to generate semi-random netw
             <a href="demos/howto/spark/spark-mlrun-read-csv.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.9.x-latest/howto/spark/spark-mlrun-read-csv.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/1.1.x/howto/spark/spark-mlrun-read-csv.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates how to run a Spark job that reads a CSV file and logs the data set to an MLRun database.
         </td>
@@ -187,7 +191,7 @@ The demo uses a offline/real-time metrics simulator to generate semi-random netw
             <a href="demos/howto/spark/spark-mlrun-describe.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.9.x-latest/howto/spark/spark-mlrun-describe.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/1.1.x/howto/spark/spark-mlrun-describe.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates how to create and run a Spark job that generates a profile report from an Apache Spark DataFrame based on pandas profiling.
         </td>
@@ -198,7 +202,7 @@ The demo uses a offline/real-time metrics simulator to generate semi-random netw
             <a href="demos/howto/spark/spark-operator.ipynb"><img src="./assets/images/Jupyter-Logo-32px.png"/><br>Open locally</a>
         </td>
         <td align="center", style="min-width:45px; padding: 10px;">
-            <a target="_blank" href="https://github.com/mlrun/demos/blob/release/v0.9.x-latest/howto/spark/spark-operator.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
+            <a target="_blank" href="https://github.com/mlrun/demos/blob/1.1.x/howto/spark/spark-operator.ipynb"><img src="./assets/images/GitHub-Mark-32px.png"/><br>View on GitHub</a>
         </td>
         <td>Demonstrates how to use <a target="_blank" href="https://github.com/GoogleCloudPlatform/spark-on-k8s-operator">Spark Operator</a> to run a Spark job over Kubernetes with MLRun.
         </td>
@@ -209,9 +213,9 @@ The demo uses a offline/real-time metrics simulator to generate semi-random netw
 
 ## Installing and Updating the MLRun Python Package
 
-The demo applications and many of the platform tutorials use [MLRun](https://mlrun.readthedocs.io) &mdash; Iguazio's end-to-end open-source MLOps solution for managing and automating your entire analytics and machine-learning life cycle, from data ingestion through model development to full pipeline deployment in production.
+The demo applications and many of the platform tutorials use [MLRun](https://docs.mlrun.org) &mdash; Iguazio's end-to-end open-source MLOps solution for managing and automating your entire analytics and machine-learning life cycle, from data ingestion through model development to full pipeline deployment in production.
 MLRun is available in the platform via a default (pre-deployed) shared platform service (`mlrun`).
-However, to use MLRun from Python code (such as in the demo and tutorial notebooks), you also need to install the [MLRun Python package](https://readthedocs.org/projects/mlrun/) (`mlrun`).
+However, to use MLRun from Python code (such as in the demo and tutorial notebooks), you also need to install the [MLRun Python package](https://docs.mlrun.org) (`mlrun`).
 The version of the installed package must match the version of the platform's MLRun service and must be updated whenever the service's version is updated.
 
 The platform provides an [**align_mlrun.sh**](./align_mlrun.sh) script for simplifying the MLRun package installation and version synchronization with the MLRun service.
@@ -223,43 +227,19 @@ Use the following command to run this script for the initial package installatio
 !/User/align_mlrun.sh
 ```
 
-<a id="data-ingestion-and-preparation"></a>
-
-## Data Ingestion and Preparation
-
-The platform allows storing data in any format.
-The platform's multi-model data layer and related APIs provide enhanced support for working with NoSQL ("key-value"), time-series, and stream data.
-Various steps of the data science life cycle (pipeline) might require different tools and frameworks for working with data, especially when it comes to the different mechanisms required during the research and development phase versus the operational production phase.
-The platform features a wide array of methods for manipulating and managing data, of different formats, in each step of the data life cycle, using a variety of frameworks, tools, and APIs &mdash; such as as the following:
-
-- Spark SQL and DataFrames
-- Spark Streaming
-- Presto SQL queries
-- pandas DataFrames
-- Dask
-- V3IO Frames Python library
-- V3IO SDK
-- Web APIs
-
-The data ingestion and preparation tutorial README (**data-ingestion-and-preparation/README.ipynb/.md**) provides an overview of various methods for collecting, storing, and manipulating data in the platform, and references to sample tutorial notebooks that demonstrate how to use these methods.
-<br>
-**&#x25B6; [Open the README notebook](./data-ingestion-and-preparation/README.ipynb) / [Markdown file](data-ingestion-and-preparation/README.md)**
-
 <a id="platform-resources"></a>
 
 ## Additional Platform Resources
 
 You can find more information and resources in the MLRun documentation:
 <br>
-**&#x25B6; [View the MLRun documentation](https://mlrun.readthedocs.io)**
+**&#x25B6; [View the MLRun documentation](https://docs.mlrun.org)**
 
 You might also find the following resources useful:
 
-- [Introduction video](https://www.youtube.com/watch?v=8OmAN4wd7To)
-- [In-depth platform overview](platform-overview.ipynb) with a break down of the steps for developing a full data science workflow from development to production
-- [Platform Services](https://www.iguazio.com/docs/v3.0/services/)
-- [Platform data layer](https://www.iguazio.com/docs/v3.0/data-layer/), including [references](https://www.iguazio.com/docs/v3.0/data-layer/reference/)
-- [nuclio-jupyter SDK](https://github.com/nuclio/nuclio-jupyter/blob/master/README.md) for creating and deploying Nuclio functions with Python and Jupyter Notebook
+- [Introduction video](https://www.youtube.com/watch?v=GS_4XUIudsY)
+- [Platform Services](https://www.iguazio.com/docs/latest-release/services/)
+
 
 <a id="misc"></a>
 
@@ -282,8 +262,7 @@ For details, see the [**update-tutorials.ipynb**](update-tutorials.ipynb) notebo
 <a id="v3io-dir"></a>
 ### The v3io Directory
 
-The **v3io** directory that you see in the file browser of the Jupyter UI displays the contents of the `v3io` data mount for browsing the platform data containers.
-For information about the platform's data containers and how to reference data in these containers, see [Platform Data Containers](data-ingestion-and-preparation/README.ipynb#platform-data-containers).
+The **v3io** directory that you see in the file browser of the Jupyter UI displays the contents of the `v3io` data mount for browsing the platform data containers. For information about the platform's data containers and how to reference data in these containers, see [Data Containers](https://www.iguazio.com/docs/latest-release/data-layer/containers/).
 
 <a id="support"></a>
 ### Support
