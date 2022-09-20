@@ -8,7 +8,6 @@ An initial introduction to the Iguazio Data Science Platform and the platform tu
 - [Getting-Started Tutorial](#getting-started-tutorial)
 - [End-to-End Use-Case Application and How-To Demos](#demos)
 - [Installing and Updating the MLRun Python Package](#mlrun-python-pkg-install-n-update)
-- [Data Ingestion and Preparation](#data-ingestion-and-preparation)
 - [Additional Platform Resources](#platform-resources)
 - [Miscellaneous](#misc)
 
