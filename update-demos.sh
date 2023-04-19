@@ -137,9 +137,10 @@ if [ -z "${branch}" ]; then
     fi
     
     tag_prefix=`echo ${mlrun_version} | cut -d . -f1-2`
-    latest_tag=`git ls-remote --tags --refs --sort='v:refname' "${git_url}" "refs/tags/v${tag_prefix}.*" | tail -n1 | awk '{ print $2}'`
+    latest_tag=`git ls-remote --tags --refs --sort=-v:refname ${git_base_url} | grep ${mlrun_version%%r*} | grep -v '\^{}' | grep -v 'rc' | grep -v 'RC' | head -n1 | awk '{print $2}' | sed 's#refs/tags/##'`
     if [ -z "${latest_tag}" ]; then
-        error_exit "Couldn't locate a Git tag with prefix 'v${tag_prefix}.*'. Aborting..."
+        error_exit "Couldn't locate a Git tag with prefix 'v${tag_prefix}.*'."
+        latest_tag=`git ls-remote --tags --refs --sort=-v:refname ${git_base_url} | grep ${mlrun_version%%r*} | grep -v '\^{}' | head -n1 | awk '{print $2}' | sed 's#refs/tags/##'`
     else
         # Remove the prefix from the Git tag
         branch=${latest_tag#refs/tags/}
