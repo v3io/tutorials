@@ -55,7 +55,7 @@ The home directory of the platform's running-user directory (**/User/&lt;running
 
 ## Getting-Started Tutorial
 
-Start out by running the getting-started [tutorial](https://docs.mlrun.org/en/latest/tutorial/01-mlrun-basics.html) to familiarize yourself with the platform and experience firsthand some of its main capabilities.
+Start out by running the [getting-started tutorial](https://docs.mlrun.org/en/latest/tutorial/01-mlrun-basics.html) to familiarize yourself with the platform and experience firsthand some of its main capabilities.
 
 <a id="demos"></a>
 
