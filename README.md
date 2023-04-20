@@ -1,6 +1,6 @@
-# Welcome to the Iguazio Data Science Platform
+# Welcome to the Iguazio MLOps Platform
 
-An initial introduction to the Iguazio Data Science Platform and the platform tutorials
+An initial introduction to the Iguazio MLOps Platform and the platform tutorials
 
 - [Platform Overview](#platform-overview)
 - [Data Science Workflow](#data-science-workflow)
@@ -15,7 +15,7 @@ An initial introduction to the Iguazio Data Science Platform and the platform tu
 
 ## Platform Overview
 
-The Iguazio Data Science Platform (**"the platform"**) is a fully integrated and secure data science platform as a service (PaaS), which simplifies development, accelerates performance, facilitates collaboration, and addresses operational challenges.
+The Iguazio MLOps Platform (**"the platform"**) is a fully integrated and secure data science platform as a service (PaaS), which simplifies development, accelerates performance, facilitates collaboration, and addresses operational challenges.
 The platform incorporates the following components:
 
 - A data science workbench that includes Jupyter Notebook, integrated analytics engines, and Python packages
@@ -55,7 +55,11 @@ The home directory of the platform's running-user directory (**/User/&lt;running
 
 ## Getting-Started Tutorial
 
-Start out by running the [getting-started tutorial](https://docs.mlrun.org/en/latest/tutorial/01-mlrun-basics.html) to familiarize yourself with the platform and experience firsthand some of its main capabilities.
+Start out by running the getting-started tutorial to familiarize yourself with the platform and experience firsthand some of its main capabilities.
+
+<a href="demos/getting-started-tutorial/README.ipynb"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
+
+You can also view the tutorial on [GitHub](https://docs.mlrun.org/en/latest/tutorial/01-mlrun-basics.html).
 
 <a id="demos"></a>
 
