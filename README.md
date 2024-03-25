@@ -250,7 +250,7 @@ You might also find the following resources useful:
 
 - [Introduction video](https://www.youtube.com/watch?v=GS_4XUIudsY)
 - [Platform Services](https://www.iguazio.com/docs/latest-release/services/)
-- [Python SDK for management APIs](https://www.iguazio.com/docs/latest-release/cluster-mgmt/mgmt-sdk/): A Python SDK for controlling and performing operations on the the Iguazio system via REST-API
+- [Python SDK for management APIs](https://www.iguazio.com/docs/latest-release/cluster-mgmt/mgmt-sdk/): A Python SDK for controlling and performing operations on the the Iguazio system via REST-API.
 
 
 <a id="misc"></a>
