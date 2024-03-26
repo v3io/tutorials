@@ -58,7 +58,7 @@ Start out by running the getting-started tutorial to familiarize yourself with t
 
 <a href="https://docs.mlrun.org/en/stable/tutorials/01-mlrun-basics.html"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
 
-You can also view the tutorial on [GitHub](https://docs.mlrun.org/en/latest/tutorial/01-mlrun-basics.html).
+You can also view the tutorial on [GitHub](https://docs.mlrun.org/en/latest/tutorials/01-mlrun-basics.html).
 
 <a id="demos"></a>
 
