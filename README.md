@@ -118,8 +118,7 @@ tools to address data science requirements for different industries and implemen
         </td>
         <td align="left" >This repository demonstrates the usage of Language Models (LLMs) and MLRun to build an 
             interactive chatbot using your own data for Retrieval Augmented Question Answering. The data is 
-            ingested and indexed into a Vector Database to be queried by an LLM in real-time.
-            
+            ingested and indexed into a Vector Database to be queried by an LLM in real-time.<br>            
             The project utilizes MLRun for orchestration/deployment, HuggingFace embeddings for indexing data, 
             Milvus for the vector database, OpenAI's GPT-3.5 model for generating responses, Langchain to 
             retrieve relevant data from the vector store and augment the response from the LLM, and Gradio 
