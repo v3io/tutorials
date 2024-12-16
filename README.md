@@ -130,7 +130,7 @@ tools to address data science requirements for different industries and implemen
 <a id="howto-demos"></a>
 ### ML Demos
 
-You can update these demos with the [**update_demos.sh**](https://github.com/mlrun/demos/blob/master/update_demos.sh) 
+You can update these demos with the [**update_demos.sh**](https://github.com/mlrun/demos/blob/1.7.x/update_demos.sh) 
 script to get latest demos from this repository. 
 By default, the script retrieves the files from the latest release that matches the version of the installed `mlrun` package (see [Installing and Updating the MLRun Python Package](#mlrun-python-pkg-install-n-update)).
 The files are copied to the **/v3io/users/&lt;username&gt;/demos** directory, where `<username>` is the name of the running user (`$V3IO_USERNAME`) unless you set the `-u|--user` flag to another username.
