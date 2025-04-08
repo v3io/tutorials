@@ -62,7 +62,7 @@ The home directory of the platform's running-user directory (**/User/&lt;running
 
 ## Getting-Started Tutorial
 
-Start out by running the getting-started tutorial to familiarize yourself with the platform and experience firsthand some of its main capabilities.
+Start out by running the Quick Start tutorial to familiarize yourself with the platform and experience firsthand some of its main capabilities.
 
 <a href="https://docs.mlrun.org/en/stable/tutorials/01-mlrun-basics.html"><img src="./assets/images/view-tutorial-button.png" alt="View tutorial"/></a>
 
@@ -165,7 +165,7 @@ For full usage instructions, run the script with the -h or --help flag:
         <td>This demo contains 3 notebooks that:
       1. Train and evaluate a model for detecting if a person is wearing a mask in an image by using Tensorflow.Keras or PyTorch.<br>
       2. Serve the model as a serverless function in a http endpoint.<br>
-      3. Write an automatic pipeline where we download a dataset of images, train and evaluate the model, then optimize the model (using ONNX) and serve it.
+      3. Write an automatic pipeline where you download a dataset of images, train and evaluate the model, then optimize the model (using ONNX) and serve it.
         </td>
     </tr>
     <tr>
